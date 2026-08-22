@@ -529,16 +529,7 @@ cargo install lsp-cli
 
 2026-08-06 Wk 32 Thu - 16:41 +03:00
 
-Currently I see a lot of boxes!
-
-https://wiki.gentoo.org/wiki/Fonts
-
-```sh
-emerge --ask media-fonts/liberation-fonts
-emerge --ask media-fonts/noto
-emerge --ask media-fonts/noto-cjk
-emerge --ask media-fonts/noto-emoji
-```
+[[006 Install fonts for new gentoo system]]
 
 ## Sway Screenshot using slurpshot
 
@@ -648,3 +639,63 @@ Can be updated with `/usr/sbin/update-ca-certificates`.`
 See also:
 - https://github.com/glguy/irc-core/wiki/Automatically-authenticating-to-NickServ
 - https://modern.ircdocs.horse/ `IRC Protocol Standard`
+
+## 1lab/Mikan
+
+2026-08-22 Wk 34 Sat - 07:59 +03:00
+
+https://codeberg.org/1lab/mikan
+
+```sh
+REPO=1lab/mikan && git clone git@codeberg.org:$REPO ~/src/cloned/cb/$REPO
+cabal update
+cabal install -foptimise-heavily exe:mikan
+mikan --setup
+```
+
+The recommended use of this is with its agda-mode in emacs. See [[#Emacs]] for installation.
+
+This is probably similar to Agda, although emacs is primary, other modes are possible such as `agda-vim` to try: https://agda.readthedocs.io/en/v2.6.2.2/tools/emacs-mode.html. But as agda-mode is the most supported, we should compare against it.
+
+- https://github.com/derekelkins/agda-vim
+- https://github.com/msuperdock/vim-agda
+
+## Emacs
+
+2026-08-22 Wk 34 Sat - 16:35 +03:00
+
+https://wiki.gentoo.org/wiki/GNU_Emacs
+
+```sh
+# in /etc/portage/package.use/app-editors/emacs {
+	app-editors/emacs gui gtk -X
+# }
+
+su
+emerge --ask app-editors/emacs
+emerge --ask --update --changed-use @world
+```
+
+Spawn [[011 Configuring emacs in main gentoo system]] ^spawn-entry-caaa8f
+
+
+## Agda
+
+2026-08-22 Wk 34 Sat - 18:33 +03:00
+
+https://agda.readthedocs.io/en/v2.6.2.2/getting-started/installation.html#installing-the-agda-and-the-agda-mode-programs
+
+```sh
+cabal update
+cabal install Agda
+
+# out
+Installing   Agda-2.8.0 (exe:agda)
+Completed    Agda-2.8.0 (exe:agda)
+Symlinking 'agda' to '/home/lan/.cabal/bin/agda'
+Symlinking 'agda-mode' to '/home/lan/.cabal/bin/agda-mode'
+```
+
+
+Spawn [[lan/2026/main/task/001 Install a new Gentoo system/entry/012 Configuring Agda]] ^spawn-entry-9b07ea
+

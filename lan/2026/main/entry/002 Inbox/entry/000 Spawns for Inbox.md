@@ -18,5 +18,8 @@ Spawn [[lan/2026/main/entry/002 Inbox/entry/001 Done Inbox]] ^spawn-entry-383e5c
 
 Spawn [[lan/2026/main/entry/002 Inbox/entry/002 Pend Inbox]] ^spawn-entry-d80f32
 
-Spawn [[lan/2026/main/entry/002 Inbox/entry/003 Inbox Status Change Logs]] ^spawn-entry-a60daa
+Spawn [[003 Inbox Sort Change Logs]] ^spawn-entry-a60daa
 
+2026-08-22 Wk 34 Sat - 03:45 +03:00
+
+Spawn [[004 Out of Focus Inbox]] ^spawn-entry-10e4b0

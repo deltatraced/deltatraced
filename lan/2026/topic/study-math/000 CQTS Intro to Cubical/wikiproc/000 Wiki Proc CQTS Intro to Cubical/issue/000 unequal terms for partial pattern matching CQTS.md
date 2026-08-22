@@ -9,6 +9,10 @@ Spawned by: [[lan/2026/topic/study-math/000 CQTS Intro to Cubical/wikiproc/000 W
 
 Spawned in: [[lan/2026/topic/study-math/000 CQTS Intro to Cubical/wikiproc/000 Wiki Proc CQTS Intro to Cubical/000 Wiki Proc CQTS Intro to Cubical#^spawn-issue-373c33|^spawn-issue-373c33]]
 
+# Script
+
+
+
 # Journal
 
 2026-06-22 Wk 26 Mon - 11:25 +03:00
@@ -343,3 +347,91 @@ Spawn [[002 Agda What code prints the error message of the compiler? 7273757e5e]
 2026-07-17 Wk 29 Fri - 14:05 +03:00
 
 Added to [[002 Inbox]]
+
+2026-08-22 Wk 34 Sat - 04:08 +03:00
+
+Getting back to this. I am on a new gentoo system now so I need to reproduce the issue. And let's see if we can just fix it simply to bypass the need to reverse engineer compiler code and continue with [[000 Wiki CQTS Intro to Cubical]].
+
+[[002 Quick new Installs for Gentoo System#1lab/Mikan]]
+
+2026-08-22 Wk 34 Sat - 19:23 +03:00
+
+Precedence changes the error.
+
+```haskell
+-- Repro : {ℓ : Level} → {A : Type ℓ} → (i j k : I) → Partial (~ i ∨ ∂ j ∨ ~ k) A
+Repro : {ℓ : Level} → {A : Type ℓ} → (i j k : I) → Partial ((~ i) ∨ ∂ j ∨ (~ k)) A
+```
+
+```sh
+mikan ~/a.agda
+
+# out (error)
+Checking a (/home/lan/a.agda).
+/home/lan/a.agda:28.7-8: error: [NotInScope]
+Not in scope:
+  i at /home/lan/a.agda:28.7-8
+    (did you mean
+       'Agda.Primitive.Cubical.I' or
+       'I'?)
+when scope checking i
+```
+
+Is `I = Agda.Primitive.Cubical.I` insufficient?
+
+https://agda.readthedocs.io/en/latest/getting-started/a-taste-of-agda.html
+
+Apparently mikan looks for `.mkn` files too now: 
+
+```
+where .AGDA denotes a legal extension for an Agda file
+(i.e., one of .mkn .agda .lagda .lagda.rst .lagda.tex .lagda.md
+```
+
+https://agda.readthedocs.io/en/latest/language/module-system.html
+
+2026-08-22 Wk 34 Sat - 19:46 +03:00
+
+Changing the script to use imports
+
+```haskell
+-- in ~/a.agda
+open import Agda.Primitive using (
+    LevelUniv; 
+    Level) renaming (
+    lzero to ℓ-zero;
+    lsuc to ℓ-suc;
+    _⊔_ to ℓ-max)
+
+open import Agda.Primitive.Cubical using (
+    I; 
+    i0; 
+    i1; 
+    Partial) renaming (
+        primIMin to infixr 20 _∧_;
+        primIMax to infixr 20 _∨_;
+        primINeg to infix 30 ~_)
+
+∂ : I → I
+∂ i = i ∨ (~ i)
+
+-- Repro : {ℓ : Level} → {A : Type ℓ} → (i j k : I) → Partial (~ i ∨ ∂ j ∨ ~ k) A
+Repro : {ℓ : Level} → {A : Type ℓ} → (i j k : I) → Partial ((~ i) ∨ ∂ j ∨ (~ k)) A
+Repro i j k (i = i0) = {!!}
+```
+
+```sh
+mikan ~/a.agda
+
+# out
+Checking a (/home/lan/a.agda).
+/home/lan/a.agda:22.1-28: error: [UnequalTerms]
+The terms
+  ~ i ∨ (j ∨ ~ j) ∨ ~ k
+and
+  ~ i
+are not equal at type I
+when checking the definition of Repro
+```
+
+So not precedence now.

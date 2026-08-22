@@ -14,7 +14,11 @@ This is inbox for items that we aren't working on but are pending so that we ret
 
 # Inbox Pending 0
 
+**Task Inbox**
 - [[000 Source assets from outside the note repository to keep it light]]
+
+**Issue Inbox**
+- [[000 Fix tmux C-a e bad interaction with arrows]]
 
 # Inbox Pending 1
 
