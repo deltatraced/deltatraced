@@ -81,3 +81,7 @@ https://www.reddit.com/r/neovim/comments/15qyenb/remove_prefixed_dot_when_using_
 
 I want to find this `<C-X><C-O>` autocompletion mode. In neovim it says `^X mode (^]^D^E^F^I^K^L^N^O^P^Rs^U^V^Y)`
 
+2026-08-23 Wk 34 Sun - 06:39 +03:00
+
+Spawn [[lan/2026/main/task/001 Install a new Gentoo system/task/009 Configure haskell lsp for neovim]] ^spawn-task-48de34
+

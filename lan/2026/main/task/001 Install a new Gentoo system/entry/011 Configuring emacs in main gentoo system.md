@@ -57,3 +57,27 @@ Now that emacs is recursively configurable we need configuration for https://cod
 https://agda.readthedocs.io/en/v2.6.2.2/getting-started/installation.html#running-the-agda-mode-program
 
 [[002 Quick new Installs for Gentoo System#Agda]]
+
+2026-08-23 Wk 34 Sun - 03:48 +03:00
+
+```sh
+agda-mode setup
+```
+
+This basically appends
+
+```lisp
+; in /home/lan/.emacs.el
+(load-file (let ((coding-system-for-read 'utf-8))
+                (shell-command-to-string "agda --emacs-mode locate")))
+```
+
+Which we can add ourselves to `/home/lan/src/cloned/cb/lan22h/dotfiles/etc/emacs/init_d/agda/init.el`.
+
+2026-08-23 Wk 34 Sun - 04:34 +03:00
+
+```sh
+# in /home/lan/src/cloned/cb/lan22h/dotfiles
+git commit # out { [main 9bdaaf1] add emacs and vim agda support }
+```
+

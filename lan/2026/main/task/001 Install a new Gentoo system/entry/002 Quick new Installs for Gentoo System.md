@@ -1,7 +1,7 @@
 ---
 context_type: entry
 ---
-
+لألأ
 Parent: [[lan/2026/main/task/001 Install a new Gentoo system/001 Install a new Gentoo system]]
 
 Spawned by: [[lan/2026/main/task/001 Install a new Gentoo system/001 Install a new Gentoo system]]
@@ -118,7 +118,7 @@ emerge --ask app-text/tree
 Interesting wink.
 
 OK
-
+it will even tr
 ## mgba
 
 2026-07-30 Wk 31 Thu - 09:34 +03:00
@@ -678,7 +678,6 @@ emerge --ask --update --changed-use @world
 
 Spawn [[011 Configuring emacs in main gentoo system]] ^spawn-entry-caaa8f
 
-
 ## Agda
 
 2026-08-22 Wk 34 Sat - 18:33 +03:00
@@ -699,3 +698,42 @@ Symlinking 'agda-mode' to '/home/lan/.cabal/bin/agda-mode'
 
 Spawn [[lan/2026/main/task/001 Install a new Gentoo system/entry/012 Configuring Agda]] ^spawn-entry-9b07ea
 
+## Fcitx
+
+2026-08-23 Wk 34 Sun - 01:07 +03:00
+
+Needing this to be able to type in pinyin or other IME keyboard systems.
+
+https://wiki.gentoo.org/wiki/Fcitx
+
+```sh
+su
+emerge --ask app-i18n/fcitx
+```
+
+We also want wubi:
+
+```sh
+su
+emerge --ask app-i18n/fcitx-chinese-addons
+```
+
+2026-08-23 Wk 34 Sun01:34 +03:00
+
+https://wiki.gentoo.org/wiki/Equery
+
+```sh
+equery check gtk # out (relevant) { * Checking gui-libs/gtk-4.20.4 ... }
+equery check qt # out { !!! No installed packages matching 'qt' }
+```
+
+Configure fcitx environmental variables accordingly. In my case: https://fcitx-im.org/wiki/Using_Fcitx_5_on_Wayland#Sway
+
+Let's also get `fcitx-configtool`:
+
+https://packages.gentoo.org/packages/app-i18n/fcitx-configtool
+
+```sh
+su
+emerge app-i18n/fcitx-configtool
+```

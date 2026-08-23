@@ -1,6 +1,6 @@
 ---
 context_type: task
-status: todo
+status: done
 ---
 
 Parent: [[lan/2026/main/task/001 Install a new Gentoo system/001 Install a new Gentoo system]]
@@ -60,7 +60,7 @@ endif
 
 ```diff
 # in /home/lan/src/forked/gh/LanHikari22/msuperdock/branches/vim-agda@allow-configurable-agda-exec/autoload/agda.vim
--let g:agda_job = jobstart(['agda', '--interactioindicating it is using the mikan executable which is aware of `Type`.n-json'] + g:agda_args
+-let g:agda_job = jobstart(['agda', '--interaction-json'] + g:agda_args
 +let g:agda_job = jobstart([g:agda_executable, '--interaction-json'] + g:agda_args
 ```
 
@@ -188,3 +188,17 @@ Loading Agda (command ignored).
 ```
 
 So it has some mechanism of indicating the command is invalid. If we set `g:agda_executable` to `""` we instead get `Agda executable not found.`.
+
+2026-08-22 Wk 34 Sat - 22:32 +03:00
+
+The PR is here: https://github.com/msuperdock/vim-agda/pull/7
+
+2026-08-22 Wk 34 Sat - 22:46 +03:00
+
+Oh oops, we should also update the documentation about the new option!
+
+```sh
+# in /home/lan/src/forked/gh/LanHikari22/msuperdock/branches/vim-agda@allow-configurable-agda-exec
+git commit # out { [allow-configurable-agda-exec e266873] doc g:agda_executable in README }
+```
+
