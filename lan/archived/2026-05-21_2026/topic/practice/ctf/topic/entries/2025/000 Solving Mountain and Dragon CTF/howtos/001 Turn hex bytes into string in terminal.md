@@ -28,7 +28,7 @@ It seems to break into three different segments
 
 2025-07-30 Wk 31 Wed - 06:58
 
-From [[003 NUMEROLOGY]],
+From a CTF called numerology I attempted,
 
 ```sh
 echo "expand 32-byte k" | xxd -p | fold -w4 | xargs
