@@ -61,3 +61,33 @@ cd ~/src/cloned/gh/$REPO
 
 - [[006 Configuring nvim on new gentoo install]]
 - $\to$ [[009 Configure haskell lsp for neovim]]
+
+It doesn't build.
+
+2026-08-23 Wk 34 Sun - 11:47 +03:00
+
+How do I get emacs agda mode to recognize `.lagda.md` files?
+
+Some work in [[011 Configuring emacs in main gentoo system]]
+
+- https://codeberg.org/1lab/mikan 
+- https://agda.readthedocs.io/en/v2.6.2.2/tools/emacs-mode.html
+
+2026-08-23 Wk 34 Sun - 12:02 +03:00
+
+https://github.com/agda/agda/issues/2837
+
+This targets lack of support for `.lagda.md`
+
+https://github.com/agda/agda/issues/2837#issuecomment-473282957 mentions
+
+```lisp
+(add-to-list 'auto-mode-alist '("\\.lagda.md\\'" . agda2-mode))
+```
+
+It works!
+
+Maybe this should be in the docs? I'll just put a mention in chat, as both the mikan and agda teams could pick up on this.
+
+[#general > agda-mode doesn't recognize .lagda @ 💬](https://agda.zulipchat.com/#narrow/channel/238741-general/topic/agda-mode.20doesn.27t.20recognize.20.2Elagda/near/618387835)
+

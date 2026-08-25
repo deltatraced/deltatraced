@@ -42,3 +42,7 @@ Search for the entry before creating to ensure logs have continuity.
 
 --/ 2026-08-22 Wk 34 Sat - 20:24 +03:00 | Status: Focus
 --/
+
+- [[000 unequal terms for partial pattern matching CQTS]]
+
+--/ 2026-08-26 Wk 35 Wed - 01:42 +03:00 | Status: Issue Active $\to$ Issue Done

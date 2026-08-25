@@ -15,7 +15,7 @@ Spawned in: [[000 introduction-to-cubical#^spawn-task-c926a2|^spawn-task-c926a2]
 
 2026-04-14 Wk 16 Tue - 08:06 +03:00
 
-Gonna use haskell code. For some reason agda is not yet recognized here.
+Gonna pretend it is haskell code. For some reason agda is not yet recognized here (obsidian markdown).
 
 ```haskell
 ×-map-≃-underlying : {A A' B B' : Type ℓ} → (f : A ≃ A') → (g : B ≃ B')
@@ -24,6 +24,8 @@ Gonna use haskell code. For some reason agda is not yet recognized here.
 ```
 
 I am trying to create the above path goal, so I am going to save some details here.
+
+The problem is in `/home/lan/src/cloned/gh/CQTS/branches/introduction-to-cubical@solve/lectures/2--Paths-and-Identifications/2-6--Univalence.lagda.md`
 
 2026-04-14 Wk 16 Tue - 08:08 +03:00
 

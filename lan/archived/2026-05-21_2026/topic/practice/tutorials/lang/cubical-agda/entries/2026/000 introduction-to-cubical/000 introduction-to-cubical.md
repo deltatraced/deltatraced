@@ -1,4 +1,6 @@
 
+Updated: See [[000 Wiki Proc CQTS Intro to Cubical]]
+
 # 1 What is this?
 
 A place for Accompanying notes I might take going through the exercises. See https://cqts.github.io/introduction-to-cubical.

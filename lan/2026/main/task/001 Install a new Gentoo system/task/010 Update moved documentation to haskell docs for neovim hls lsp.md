@@ -68,3 +68,6 @@ mv haskell-language-server/ haskell-language-server@docs-update-moved-nvim-lspco
 git commit # out (relevant) { [master a15da1bd] docs: updated moved nvim-lspconfig page }
 ```
 
+2026-08-23 Wk 34 Sun - 08:37 +03:00
+
+Here's the PR: https://github.com/haskell/haskell-language-server/pull/5051.

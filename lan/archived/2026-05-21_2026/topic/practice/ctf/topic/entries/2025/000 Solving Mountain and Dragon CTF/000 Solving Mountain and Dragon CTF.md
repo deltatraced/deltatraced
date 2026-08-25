@@ -11,6 +11,19 @@ It can be found [here](https://2tie.rustedlogic.net/games/adv/adventure.html) [[
 
 # 2 Journal
 
+2026-08-26 Wk 35 Wed - 00:02 +03:00
+
+`/home/lan/src/cloned/cb/deltatraced/deltatraced/lan/archived/2026-05-21_2026/topic/practice/ctf/topic/entries/2025/000 Solving Mountain and Dragon CTF/000 Solving Mountain and Dragon CTF.md`
+
+```sh
+echo "en000 000 2026-08-26 Wk 35 Wed - 00:02 +03:00" | sha1sum | head -c6
+
+# out
+a04fd2
+```
+
+Files for this project are moved to `/home/lan/src/cloned/cb/lan22h-experiments/note-files/proj/a04fd2-mountain-n-dragon-ctf`.
+
 2025-07-30 Wk 31 Wed - 04:06
 
 <img src="https://raw.githubusercontent.com/delta-domain-rnd/delta-trace/refs/heads/main/attachments/Pasted%20image%2020250730040151.png" />

@@ -1,14 +1,14 @@
 ---
-parent: "[[000 Proc introduction-to-cubical archive]]"
-spawned_by: "[[000 Proc introduction-to-cubical archive]]"
+parent: "[[000 Wiki Proc introduction-to-cubical archive]]"
+spawned_by: "[[000 Wiki Proc introduction-to-cubical archive]]"
 context_type: entry
 ---
 
-Parent: [[000 Proc introduction-to-cubical archive]]
+Parent: [[000 Wiki Proc introduction-to-cubical archive]]
 
-Spawned by: [[000 Proc introduction-to-cubical archive]]
+Spawned by: [[000 Wiki Proc introduction-to-cubical archive]]
 
-Spawned in: [[000 Proc introduction-to-cubical archive#^spawn-entry-a22647|^spawn-entry-a22647]]
+Spawned in: [[000 Wiki Proc introduction-to-cubical archive#^spawn-entry-a22647|^spawn-entry-a22647]]
 
 # 1 Journal
 

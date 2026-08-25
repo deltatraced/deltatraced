@@ -5,7 +5,7 @@
 
 Spawn [[000 Spawn Logs for intro to cubical]] ^spawn-entry-b49346
 
-Process Notes: [[000 Proc introduction-to-cubical archive]]
+Process Notes: [[000 Wiki Proc introduction-to-cubical archive]]
 
 Homepage Wiki: [[001 Wiki Categories]]
 

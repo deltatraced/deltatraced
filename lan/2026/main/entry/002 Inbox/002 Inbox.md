@@ -5,8 +5,6 @@
 
 **Issue Inbox**
 
-- [[000 unequal terms for partial pattern matching CQTS]]
-
 **Current Focus Inbox**
 
 - [[000 idris-community idris2-tutorial]]
@@ -14,7 +12,7 @@
 # Inbox Sorts
 
 - [[002 Pend Inbox]]
-- [[001 Done Inbox]]
+- [[001 Done Outbox]]
 - [[004 Out of Focus Inbox]]
 - [[003 Inbox Sort Change Logs]]
 

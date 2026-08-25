@@ -1,6 +1,6 @@
 ---
 context_type: issue
-status: todo
+status: done
 ---
 
 Parent: [[lan/2026/topic/study-math/000 CQTS Intro to Cubical/wikiproc/000 Wiki Proc CQTS Intro to Cubical/000 Wiki Proc CQTS Intro to Cubical]]
@@ -9,10 +9,103 @@ Spawned by: [[lan/2026/topic/study-math/000 CQTS Intro to Cubical/wikiproc/000 W
 
 Spawned in: [[lan/2026/topic/study-math/000 CQTS Intro to Cubical/wikiproc/000 Wiki Proc CQTS Intro to Cubical/000 Wiki Proc CQTS Intro to Cubical#^spawn-issue-373c33|^spawn-issue-373c33]]
 
-# Script
+# Reproduction
 
+```haskell
+-- in ~/a.agda
+open import Agda.Primitive using (
+    LevelUniv; 
+    Level) renaming (
+    lzero to ℓ-zero;
+    lsuc to ℓ-suc;
+    _⊔_ to ℓ-max)
 
+open import Agda.Primitive.Cubical using (
+    I; 
+    i0; 
+    i1; 
+    Partial) renaming (
+        primIMin to infixr 20 _∧_;
+        primIMax to infixr 20 _∨_;
+        primINeg to infix 30 ~_)
 
+∂ : I → I
+∂ i = i ∨ (~ i)
+
+-- Repro : {ℓ : Level} → {A : Type ℓ} → (i j k : I) → Partial (~ i ∨ ∂ j ∨ ~ k) A
+Repro : {ℓ : Level} → {A : Type ℓ} → (i j k : I) → Partial ((~ i) ∨ ∂ j ∨ (~ k)) A
+Repro i j k (i = i0) = {!!}
+```
+
+`Repro` gives us an error:
+
+```sh
+mikan ~/a.agda
+
+# out
+Checking a (/home/lan/a.agda).
+/home/lan/a.agda:22.1-28: error: [UnequalTerms]
+The terms
+  ~ i ∨ (j ∨ ~ j) ∨ ~ k
+and
+  ~ i
+are not equal at type I
+when checking the definition of Repro
+```
+
+# Resolution
+
+We explored a simple case and found the same error:
+
+```haskell
+-- in ~/a.agda
+data Bool : Type where
+  true  : Bool
+  false : Bool
+
+true-false-Partial : (i : I) → Partial (i ∨ ~ i) Bool
+--true-false-Partial i (i = i0) = true
+--true-false-Partial i (i = i1) = false
+true-false-Partial i (i = i0) = {!!}
+```
+
+```
+/home/lan/a.agda:31.1-37: error: [UnequalTerms]
+The terms
+  i ∨ ~ i
+and
+  ~ i
+are not equal at type I
+when checking the definition of true-false-Partial
+```
+
+Turns out the real problem is that this won't type check unless you pattern mach all the points covered by the formula.
+
+So this works:
+
+```haskell
+-- in ~/a.agda
+true-false-Partial : (i : I) → Partial (i ∨ ~ i) Bool
+--true-false-Partial i (i = i0) = true
+--true-false-Partial i (i = i1) = false
+true-false-Partial i (i = i0) = {!!}
+true-false-Partial i (i = i1) = {!!}
+```
+
+For `Repro`, this resolves the error:
+
+```haskell
+-- in ~/a.agda
+Repro : {ℓ : Level} → {A : Type ℓ} → (i j k : I) → Partial ((~ i) ∨ ∂ j ∨ (~ k)) A
+Repro i j k (i = i0) = {!!}
+Repro i j k (j = i0) = {!!}
+Repro i j k (j = i1) = {!!}
+Repro i j k (k = i0) = {!!}
+```
+
+Find this at `/home/lan/src/cloned/cb/lan22h-experiments/code-examples/lang/mkn/mkn/ex000_partial_fn_definition_cases_must_be_complete`
+
+∎
 # Journal
 
 2026-06-22 Wk 26 Mon - 11:25 +03:00
@@ -435,3 +528,63 @@ when checking the definition of Repro
 ```
 
 So not precedence now.
+
+2026-08-23 Wk 34 Sun - 11:11 +03:00
+
+We have agda-mode for emacs setup for mikan now. So we can `emacs ~/a.agda` and do the usual actions we're used to in vscode before, like `C-c C-l` for agda load.
+
+We can do `Repro = {!!}` and do `C-c C-r` to fill in introduction forms, and `C-c C-.` to see the context at a hole.
+
+Many other commands at https://agda.readthedocs.io/en/latest/tools/emacs-mode.html
+
+2026-08-23 Wk 34 Sun - 18:39 +03:00
+
+Okay we get a similar error here:
+
+```haskell
+-- in ~/a.agda
+data Bool : Type where
+  true  : Bool
+  false : Bool
+
+true-false-Partial : (i : I) → Partial (i ∨ ~ i) Bool
+--true-false-Partial i (i = i0) = true
+--true-false-Partial i (i = i1) = false
+true-false-Partial i (i = i0) = {!!}
+```
+
+```
+/home/lan/a.agda:31.1-37: error: [UnequalTerms]
+The terms
+  i ∨ ~ i
+and
+  ~ i
+are not equal at type I
+when checking the definition of true-false-Partial
+```
+
+So it seems the reason is because we have to pattern match the formula to cover both `(i = i0)` and `(i = i1)` with the holes, or it complains because the formula does not match the signature.
+
+This is valid:
+
+```haskell
+-- in ~/a.agda
+true-false-Partial : (i : I) → Partial (i ∨ ~ i) Bool
+--true-false-Partial i (i = i0) = true
+--true-false-Partial i (i = i1) = false
+true-false-Partial i (i = i0) = {!!}
+true-false-Partial i (i = i1) = {!!}
+```
+
+So this works:
+
+```haskell
+-- in ~/a.agda
+Repro : {ℓ : Level} → {A : Type ℓ} → (i j k : I) → Partial ((~ i) ∨ ∂ j ∨ (~ k)) A
+Repro i j k (i = i0) = {!!}
+Repro i j k (j = i0) = {!!}
+Repro i j k (j = i1) = {!!}
+Repro i j k (k = i0) = {!!}
+```
+
+This resolves the problem!
