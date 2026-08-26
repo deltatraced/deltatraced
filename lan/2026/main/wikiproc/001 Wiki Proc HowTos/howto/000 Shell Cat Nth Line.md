@@ -17,6 +17,8 @@ sed `{lineno}q;d` {filename}
 
 This quits after reaching `{lineno}` instead of processing the whole file, and gives us only that line. so `sed '1q;d' some_file` would give us the first line.
 
+This can also be found at `/home/lan/src/cloned/cb/lan22h-experiments/code-examples/lang/sh/sh/ex000_cat_but_get_nth_line` over at https://codeberg.org/lan22h-experiments/code-examples.
+
 # Journal
 
 2026-07-04 Wk 27 Sat - 19:29 +03:00

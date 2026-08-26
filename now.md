@@ -1,5 +1,9 @@
 
-Here I document what I am currently up to. For a more general catalog, check [[lan/archived/2026-05-21_2026/main/wiki/001 Wiki Categories/001 Wiki Categories]].
+Here I document what I am currently up to.
+
+For a more general catalog, check [[lan/archived/2026-05-21_2026/main/wiki/001 Wiki Categories/001 Wiki Categories]].
+
+For my posts, see [[002 Posts]].
 
 For more about now pages: https://sive.rs/nowff
 
