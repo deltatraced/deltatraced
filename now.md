@@ -1,9 +1,9 @@
 
 Here I document what I am currently up to.
 
-For a more general catalog, check [[lan/archived/2026-05-21_2026/main/wiki/001 Wiki Categories/001 Wiki Categories]].
-
-For my posts, see [[002 Posts]].
+- For a more general catalog, see [[lan/archived/2026-05-21_2026/main/wiki/001 Wiki Categories/001 Wiki Categories]].
+- For my posts, see [[002 Posts]].
+- Notes on this repository follow the clusterline method. To learn more about its underlying concepts see [[003 Wiki Clusterline Concepts]].
 
 For more about now pages: https://sive.rs/nowff
 
@@ -40,7 +40,7 @@ I recently installed Gentoo on my main PC: [[001 Install a new Gentoo system]], 
 - Setup mikan and investigate some good first issues
 	- [[lan/archived/2026-05-21_2026/topic/contribute/open source/possibly/cb 1lab mikan/issues/2026/000 mikan-88/000 mikan-88]]
 
-# See also
+# Other project nows
 
 I also maintain different note repositories with a now page and inbox:
 
