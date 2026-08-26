@@ -19,7 +19,7 @@
 # See also
 
 - [[now]]
-- [[006 Working on Log]]
+- [[006 Now Logs]]
 
 # Journal
 
