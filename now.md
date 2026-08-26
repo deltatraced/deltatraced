@@ -4,8 +4,7 @@ Here I document what I am currently up to.
 - For a more general catalog, see [[lan/archived/2026-05-21_2026/main/wiki/001 Wiki Categories/001 Wiki Categories]].
 - For my posts, see [[002 Posts]].
 - Notes on this repository follow the clusterline method. To learn more about its underlying concepts see [[003 Wiki Clusterline Concepts]].
-
-For more about now pages: https://sive.rs/nowff
+- For more about now pages, see https://sive.rs/nowff.
 
 # Inbox
 
