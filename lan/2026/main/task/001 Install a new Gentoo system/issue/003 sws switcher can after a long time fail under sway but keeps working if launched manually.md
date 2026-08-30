@@ -115,7 +115,7 @@ https://github.com/AdrienLeGuillou/sway_window_swithcher_dmenu/issues/2
 ```sh
 git clone git@github.com:LanHikari22/sway_window_swithcher_dmenu.git ~/src/forked/gh/LanHikari22/AdrienLeGuillou/sway_window_swithcher_dmenu
 
-# in /home/lan/src/forked/gh/LanHikari22/AdrienLeGuillou/sway_window_swithcher_dmenu/.git/config {
+12 in /home/lan/src/forked/gh/LanHikari22/AdrienLeGuillou/sway_window_swithcher_dmenu/.git/config {
 	[remote "upstream"]
 	    url = git@github.com:AdrienLeGuillou/sway_window_swithcher_dmenu.git
 		fetch = +refs/heads/*:refs/remotes/origin/*

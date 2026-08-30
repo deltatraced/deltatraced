@@ -59,5 +59,43 @@ aᴬ aᴮ aĈ aᴰ aᴱ aꟳ aᴳ aᴴ aᴵ aᴶ aᴷ aᴸ aᴹ aᴺ aᴼ aᴾ a
 
 2026-08-25 Wk 35 Tue - 09:05 +03:00
 
-
 Spawn [[003 mkn If I do not specify the universe levels of type arguments - are they assumed type 0?]] ^spawn-invst-756aad
+
+2026-08-27 Wk 35 Thu - 07:38 +03:00
+
+```haskell
+-- in /home/lan/src/idea/cb/lan22h-experiments/problems-mkn/proj/gh/cqts/introduction-to-cubical/cqts-lect1/src/cqts-lect1.agda
+Σ-map¹ :
+  {ℓ₁ ℓ₂ ℓ₃ ℓ₄ : Level}
+  → {A : Type ℓ₁}
+  → {A' : Type ℓ₂}
+  → {B : A → Type ℓ₃}
+  → {B' : A' → Type ℓ₄}
+  → (f : A → A')
+  → (g : {a : A} → B a → B' (f a))
+  → (Σ[ a ∈ A ] B a → Σ[ a' ∈ A' ] B' a')
+
+Σ-map¹ f g (a , b) = f a , g b
+```
+
+This type should be more strict than this. We should be able to map to an `Σ[ a' ∈ A' ] B' a'` where `a' ≡ f a` holds, but this should do for this review and we're just in the first lecture.
+
+2026-08-27 Wk 35 Thu - 08:07 +03:00
+
+In `cqts-lect1.agda` I have been giving outputs of different universe levels than the inputs. Maybe it could also do as the `ℓ-max` of the input levels though.
+
+2026-08-28 Wk 35 Fri - 05:40 +03:00
+
+```haskell
+-- in /home/lan/src/idea/cb/lan22h-experiments/problems-mkn/proj/gh/cqts/introduction-to-cubical/cqts-lect1/src/lect-1-2-inductive-types.agda
+data List (A : Type) : Type where
+  [] : List A
+  _::_ : A → List A → List A
+```
+
+I think it's good to think of the constructors to an inductive type as being their own declared objects, rather than as functions.
+
+So here we have an object `[] : List A`. We also have objects whose definition depend on an `A` and another `List A`. Say for example `5 :: []` for the case where `A` is a natural number.
+
+This is why we don't have to supply a definition for this as if it were a function declaration. The last enter in the constructor is the type in question and signifies that it is an object of that type, but it may depend on some other data, including of the type itself.
+

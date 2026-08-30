@@ -2,7 +2,7 @@
 parent: "[[000 Getting Started for LCR]]"
 spawned_by: "[[000 Compile cubical agda to an executable using ctqs sources]]"
 context_type: task
-status: todo
+status: done
 ---
 
 Parent: [[000 Getting Started for LCR]]
@@ -66,3 +66,9 @@ Awesome! We have syntax highlighting now, and we're able to do `\forall` for exa
 We can also see if [gh neoclide/coc.nvim](https://github.com/neoclide/coc.nvim) offers an extension in [wiki register-custom-language-servers](https://github.com/neoclide/coc.nvim/wiki/Language-servers#register-custom-language-servers). It is not listed. It makes sense for the more advanced hole-based features etc, but I figured they might support at least the usual pop-up type display for example.
 
 So we are able to call `:call AgdaLoad(v:false)`, but not `:call AgdaVersion(v:false)`
+
+2026-08-30 Wk 35 Sun - 04:44 +03:00
+
+Closed by [[011 Configuring emacs in main gentoo system]]
+
+Other effort is in [[012 Configuring Agda]]

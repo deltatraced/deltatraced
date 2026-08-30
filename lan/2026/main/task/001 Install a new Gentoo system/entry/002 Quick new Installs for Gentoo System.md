@@ -737,3 +737,47 @@ https://packages.gentoo.org/packages/app-i18n/fcitx-configtool
 su
 emerge app-i18n/fcitx-configtool
 ```
+
+## Wofi
+
+2026-08-30 Wk 35 Sun - 02:43 +03:00
+
+https://github.com/SimplyCEO/wofi
+
+```sh
+REPO=SimplyCEO/wofi && git clone --depth 1 git@github.com:$REPO ~/src/cloned/gh/$REPO
+
+# in /home/lan/src/cloned/gh/SimplyCEO/wofi
+cmake -S . -B build \
+  -DCMAKE_INSTALL_PREFIX=/usr/local \
+  -DENABLE_RUN=1 \
+  -DENABLE_DRUN=1 \
+  -DENABLE_DMENU=1
+cmake --build build
+```
+
+```sh
+# in /home/lan/src/cloned/gh/SimplyCEO/wofi
+su
+
+cmake --install build
+
+# out
+-- Installing: /usr/local/share/man/man1/wofi.1
+-- Installing: /usr/local/share/man/man3/wofi.3
+-- Installing: /usr/local/share/man/man5/wofi.5
+-- Installing: /usr/local/share/man/man7/wofi.7
+-- Installing: /usr/local/share/man/man3/wofi-api.3
+-- Installing: /usr/local/share/man/man3/wofi-config.3
+-- Installing: /usr/local/share/man/man7/wofi-keys.7
+-- Installing: /usr/local/share/man/man3/wofi-map.3
+-- Installing: /usr/local/share/man/man3/wofi-utils.3
+-- Installing: /usr/local/share/man/man3/wofi-widget-builder.3
+-- Installing: /usr/local/include/wofi/map.h
+-- Installing: /usr/local/include/wofi/utils_g.h
+-- Installing: /usr/local/include/wofi/utils.h
+-- Installing: /usr/local/include/wofi/widget_builder_api.h
+-- Installing: /usr/local/include/wofi/wofi_api.h
+-- Installing: /usr/local/bin/wofi
+```
+

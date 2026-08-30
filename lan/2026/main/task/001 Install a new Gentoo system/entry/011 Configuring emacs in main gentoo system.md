@@ -81,3 +81,9 @@ Which we can add ourselves to `/home/lan/src/cloned/cb/lan22h/dotfiles/etc/emacs
 git commit # out { [main 9bdaaf1] add emacs and vim agda support }
 ```
 
+2026-08-30 Wk 35 Sun - 04:45 +03:00
+
+```sh
+# in /home/lan/src/cloned/cb/lan22h/dotfiles
+git commit # out { [main 27d684b] emacs: allow switching between mikan and agda }
+```

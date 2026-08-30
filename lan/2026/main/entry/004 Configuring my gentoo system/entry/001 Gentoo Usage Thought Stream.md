@@ -66,3 +66,19 @@ function FnTims()
 endfunction
 ```
 
+2026-08-29 Wk 35 Sat - 12:19 +03:00
+
+Could be nice to have more workspace numbers with sway
+
+- https://www.reddit.com/r/swaywm/comments/163nrn1/deleted_by_user/
+- $\to$ https://github.com/EllaTheCat/dopamine-2020/blob/master/i3-config.d/cfg03
+
+This person does double digits.
+
+--/ 2026-08-30 Wk 35 Sun - 04:50 +03:00
+Disabling this configuration in favor of fuzzy searchable named workspaces as implemented in [[001 Add switch by name for sway workspaces]]
+--/
+
+2026-08-30 Wk 35 Sun - 01:30 +03:00
+
+Spawn [[lan/2026/main/entry/004 Configuring my gentoo system/task/001 Add switch by name for sway workspaces]] ^spawn-task-2dd401
