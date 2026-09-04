@@ -15,7 +15,7 @@ Process Note: [[002 Proc Process notes should preserve the conditions of knowled
 
 [[000 Term Process Note]]
 
-The reason that [[001 Process notes should be immutable to act as an audit]] and [[006 Process notes are meant to be mined for evidence rather than read]] is that they are not written to be reader-facing, they are written to allow a future reverse engineer to reconstruct the knowledge work that produces artifacts.
+The reason that [[001 Process notes should be immutable to act as an audit]] and [[006 Process notes are meant to be mined for evidence rather than linearly read]] is that they are not written to be reader-facing, they are written to allow a future reverse engineer to reconstruct the knowledge work that produces artifacts.
 
 This means that we need process notes to host the key information considered that later is used to complete some objective. This could include key citations that changed our knowledge, mini experiments that taught us properties about our tools and systems, and assertions written at the time they are believed as well as why they are modified or invalidated written when this shift in belief occurs.
 

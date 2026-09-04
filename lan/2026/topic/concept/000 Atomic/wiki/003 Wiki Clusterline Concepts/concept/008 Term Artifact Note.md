@@ -14,7 +14,7 @@ Artifacts in general may be deliverables and documents expected to be refined to
 
 Artifact notes are the default for wiki notes. They are the reason we have the wiki and wikiproc seperation, which is this change of the default expectation of a cluster.
 
-Artifact notes can be freely revised, and a process note may track the knowledge work involved in justifying those revisions. They may be freely reader-facing or target specific audiance, wheras [[006 Process notes are meant to be mined for evidence rather than read]]
+Artifact notes can be freely revised, and a process note may track the knowledge work involved in justifying those revisions. They may be freely reader-facing or target specific audiance, wheras [[006 Process notes are meant to be mined for evidence rather than linearly read]]
 
 This concept note is an artifact note, as it sits in a wiki cluster which by default hosts artifact notes.
 

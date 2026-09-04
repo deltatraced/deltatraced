@@ -14,7 +14,7 @@ A process note is a note written as a series of timestamped logs. It captures, a
 
 Some things to consider about process notes:
 - [[001 Process notes should be immutable to act as an audit]]
-- [[006 Process notes are meant to be mined for evidence rather than read]]
+- [[006 Process notes are meant to be mined for evidence rather than linearly read]]
 - [[021 Process notes should preserve the conditions of knowledge]]
 - [[016 Note Title denotes a given context]]
 - [[021 Process notes should preserve the conditions of knowledge]]

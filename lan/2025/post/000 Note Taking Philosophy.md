@@ -72,10 +72,12 @@ If documentation is included in note repositories, it is clearly marked as docum
 
 # 4 On Use of Large Language Models (LLMs)
 
-[edited 2026-08-15 Wk 33 Sat - 02:48 +03:00]
+[edited 2026-09-04 Wk 36 Fri - 13:21 +03:00]
 
-This note repository, `deltatraced`, has come to be my way for expressing my joy striving for exactness with my work.
+This note repository, `deltatraced`, has come to be my way for expressing my joy for striving for exactness with my work.
 
-LLMs are stochastic tools and deeply non-explanatory, and therefore should generally be avoided. Even using them as "last resort" implies that the problem could not have been solved otherwise. But it could. I can read the source code itself and try to find the problem. I can contract the relevant experts if I need assistance. And in practice, this has been what I have strived and tried to do up to this writing.
+LLMs are stochastic tools and deeply non-explanatory, and therefore should generally be avoided. Even using them as "last resort" implies that the problem could not have been solved otherwise. But it could. I can read the source code itself and try to find the problem. I can contract the relevant experts if I need assistance. and up to time of this writing, that's what I strive to do.
 
 I believe choosing the higher effort path can foster a better knowledge ecosystem for us all. As I am hopeful that this repository would make my work easier to reverse engineer should anyone ever be interested, I will also put the effort to study the work of others carefully and hopefully contribute to improving that work with them. And I think it would benefit my hypothetical interested reverse engineer much more if I myself am explicit with how I solve problems in my practice.
+
+It is the search that is the point.

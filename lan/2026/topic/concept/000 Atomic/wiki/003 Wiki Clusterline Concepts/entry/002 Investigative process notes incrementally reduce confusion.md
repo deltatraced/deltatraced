@@ -20,7 +20,7 @@ As an example, when looking to work on contributing work for an open source proj
 
 Per [[003 Overview notes in a cluster clarify how that cluster ought be navigated]], it is useful to provide a link in PRs to an overview note that organizes the cluster of an issue. One key thing to display is the progression of investigative questions posed and solved, finally followed by any tasks required to finish the engineering task that closes the issue.
 
-Make use of [[005 Process Notes may contain artifact sections in non journal headers]]. Since the overview section is linked in a PR, these wiki sections can give readers key information. Remember, [[006 Process notes are meant to be mined for evidence rather than read]].
+Make use of [[005 Process Notes may contain artifact sections in non journal headers]]. Since the overview section is linked in a PR, these wiki sections can give readers key information. Remember, [[006 Process notes are meant to be mined for evidence rather than linearly read]].
 
 Also, remember these are notes, and so are by definition optional to check. If linked in a PR, do not give them high significance. A footnote reference about internal dev notes at the end can suffice.
 

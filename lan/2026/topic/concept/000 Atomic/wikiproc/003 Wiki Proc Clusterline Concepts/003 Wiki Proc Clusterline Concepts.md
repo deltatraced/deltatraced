@@ -33,7 +33,7 @@ Spawn [[005 Process Notes may contain artifact sections in non journal headers]]
 
 Renaming `005 Process Notes may contain wiki sections in non journal headers`. This isn't *just* about wiki sections. We now clarified this term to `artifact sections`.  New name: `005 Process Notes may contain artifact sections in non journal headers`.
 
-Spawn [[006 Process notes are meant to be mined for evidence rather than read]] ^spawn-entry-e36725
+Spawn [[006 Process notes are meant to be mined for evidence rather than linearly read]] ^spawn-entry-e36725
 
 2026-06-17 Wk 25 Wed - 13:41 +03:00
 
@@ -47,7 +47,7 @@ Spawn [[lan/2026/topic/concept/000 Atomic/wiki/003 Wiki Clusterline Concepts/ent
 
 Spawn [[011 Redos for Note Handle routes multiple full redoing of a given note]] ^spawn-entry-5a20aa
 
-Spawn [[lan/2026/topic/concept/000 Atomic/wiki/003 Wiki Clusterline Concepts/entry/012 Interations for Note handle captures branching progressions of a note]] ^spawn-entry-e0d85b
+Spawn [[012 Iterations for Note handle captures branching progressions of a note]] ^spawn-entry-e0d85b
 
 Spawn [[lan/2026/topic/concept/000 Atomic/wikiproc/003 Wiki Proc Clusterline Concepts/entry/000 Proc Investigative process notes incrementally reduce confusion]] ^spawn-entry-216ab4
 
@@ -121,5 +121,10 @@ Spawn [[lan/2026/topic/concept/000 Atomic/wiki/003 Wiki Clusterline Concepts/ent
 
 Spawn [[026 Prefer grammars of use over activity-derived classifications]] ^spawn-entry-a7b7be
 
-2026-07-12 Wk 28 Sun - 02:26 +03:00
+2026-09-01 Wk 36 Tue - 04:13 +03:00
+
+Spawn [[027 Use timestamp subcards and markers like TODO to allow multiple active threads within the same process note]] ^spawn-entry-6756bc
+
+Spawn [[lan/2026/topic/concept/000 Atomic/wikiproc/003 Wiki Proc Clusterline Concepts/entry/004 Proc Use timestamp subcards and markers like TODO to allow multiple active threads within the same process note]] ^spawn-entry-10ae15
+
 
