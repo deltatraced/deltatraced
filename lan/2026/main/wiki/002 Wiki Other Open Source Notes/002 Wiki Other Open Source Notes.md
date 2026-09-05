@@ -28,7 +28,7 @@ Andy Matuschak's notes are a great reference for how concept-based atomic notes 
 - [[019 Self judgment hinders learning by redirecting us away from technical signs to identity and narrative]]
 - [[020 Learning is an apprenticeship to signs]]
 
-This helps maintain the atomicity of notes since the content of such notes should only work to establish its title conclusion. This is a good demonstration of how having a good title can influence our writing. Their notes being non-reader-facing is also very cool and the first instance of notes I found in this style that make this commitment explicit. It is also true for me since [[006 Process notes are meant to be mined for evidence rather than read]].
+This helps maintain the atomicity of notes since the content of such notes should only work to establish its title conclusion. This is a good demonstration of how having a good title can influence our writing. Their notes being non-reader-facing is also very cool and the first instance of notes I found in this style that make this commitment explicit. It is also true for me since [[006 Process notes are meant to be mined for evidence rather than linearly read]].
 
 Not all conceptual notes are propositions, some are denoting concepts, so their naming scheme is different. This is also inspired by their notes. Example:
 

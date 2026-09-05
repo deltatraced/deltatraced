@@ -781,3 +781,38 @@ cmake --install build
 -- Installing: /usr/local/bin/wofi
 ```
 
+## Idris 2
+
+2026-09-04 Wk 36 Fri - 06:06 +03:00
+
+Through [[000 idris-community idris2-tutorial]]
+
+- https://idris-lang.org/pages/download.html
+	- .$\to$ https://github.com/stefan-hoeck/idris2-pack
+	- .$\to$ https://cisco.github.io/ChezScheme/
+		- $\to$ https://github.com/cisco/ChezScheme
+		- $\to$ https://github.com/cisco/ChezScheme/blob/main/BUILDING
+
+Spawn [[lan/2026/main/task/001 Install a new Gentoo system/issue/004 Error linking ChezScheme cur_term]] ^spawn-issue-838600
+
+We need to get Chez Scheme first.
+
+https://packages.gentoo.org/packages/dev-scheme/chez
+
+Doesn't seem to allow us to specify `-ncurses`, as it calculates that the use flag is included anyway.
+
+```sh
+# in /etc/portage/package.use/dev-scheme/chez {
+	-X
+# }
+
+su
+emerge --ask dev-scheme/chez
+```
+
+Spawn [[lan/2026/main/task/001 Install a new Gentoo system/issue/005 Error installing idris2-pack unable to read tree]] ^spawn-issue-1fedcc
+
+
+```sh
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/stefan-hoeck/idris2-pack/main/install.bash)"
+```
