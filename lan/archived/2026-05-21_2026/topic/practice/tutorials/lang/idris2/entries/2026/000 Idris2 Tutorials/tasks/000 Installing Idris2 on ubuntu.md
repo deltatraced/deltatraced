@@ -2,7 +2,7 @@
 parent: "[[000 Idris2 Website Tutorial]]"
 spawned_by: "[[000 Idris2 Website Tutorial]]"
 context_type: task
-status: todo
+status: wontdo
 ---
 
 Parent: [[000 Idris2 Website Tutorial]]
@@ -112,3 +112,7 @@ pack new app hello
 ```
 
 Now we can use `pack build` and `pack run`.
+
+2026-09-07 Wk 37 Mon - 10:23 +03:00
+
+status $\to$ wontdo, we're now in gentoo: [[002 Quick new Installs for Gentoo System#Idris 2]]

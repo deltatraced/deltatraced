@@ -23,10 +23,14 @@ tutorial.
 echo '000 en000 000 2026-08-22 Wk 34 Sat - 03:34 +03:00' | sha1sum | head -c6
 
 # out
-9e3cf2l
+9e3cf2
 ```
 
-Find the tutorial at `/home/lan/src/cloned/cb/lan22h-experiments/note-files/proj/9e3cf2l-idris2-community-tut`.
+Find the tutorial at `/home/lan/src/cloned/cb/lan22h-experiments/note-files/proj/9e3cf2-idris2-community-tut`.
+
+--/ 2026-09-07 Wk 37 Mon - 09:32 +03:00
+
+Updated mistaken `9e3cf2l` to `9e3cf2`
 
 --/
 
@@ -34,3 +38,20 @@ Find the tutorial at `/home/lan/src/cloned/cb/lan22h-experiments/note-files/proj
 
 [[002 Quick new Installs for Gentoo System#Idris 2]]
 
+2026-09-05 Wk 36 Sat - 20:13 +03:00
+
+Spawn [[lan/2026/topic/tutorials/000 Tutorials/entry/000 idris-community idris2-tutorial/task/000 Setup an example hello project for idris2]] ^spawn-task-6928b0
+
+2026-09-05 Wk 36 Sat - 21:57 +03:00
+
+The order of the tutorial might be inferrable from https://github.com/idris-community/idris2-tutorial/blob/main/tutorial.ipkg
+
+You can also check [idris2-tut](https://idris-community.github.io/idris2-tutorial/Tutorial/Intro.html)
+
+
+# References
+
+1. [idris2-tut](https://idris-community.github.io/idris2-tutorial/Tutorial/Intro.html)
+
+
+2026-09-06 Wk 36 Sun - 07:51 +03:00j

@@ -69,8 +69,8 @@ Just doing `git checkout 74b33730b6fea649b15e8d01ab099df9effcc7a0` would not.
 https://github.com/idris-lang/Idris2/issues?q=is%3Aissue%20unable%20to%20read%20tree yields nothing.
 
 - https://github.com/idris-lang/Idris2
-	- .$\to$ https://github.com/idris-lang/Idris2/blob/main/INSTALL.md
-	- .$\to$ https://github.com/stefan-hoeck/idris2-pack
+	- . $\to$ https://github.com/idris-lang/Idris2/blob/main/INSTALL.md
+	- . $\to$ https://github.com/stefan-hoeck/idris2-pack
 		- $\to$ https://github.com/stefan-hoeck/idris2-pack/blob/main/install.bash
 
 ```sh
@@ -190,3 +190,86 @@ HEAD is now at 74b33730b allow manual triggering of build workflows (#3853)
 ```
 
 This also works.
+
+2026-09-05 Wk 36 Sat - 05:28 +03:00
+
+Opening an issue.
+
+https://github.com/stefan-hoeck/idris2-pack/issues/399
+
+2026-09-05 Wk 36 Sat - 07:22 +03:00
+
+Ooh they already got back to me within 2h!
+
+Let's try this again.
+
+```sh
+rm -rf ~/.local/state/pack/
+rm -rf ~/.cache/pack
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/stefan-hoeck/idris2-pack/main/install.bash)"
+
+# out (error, relevant)
++ git checkout 74b33730b6fea649b15e8d01ab099df9effcc7a0
+fatal: unable to read tree (74b33730b6fea649b15e8d01ab099df9effcc7a0)
+
+```
+
+Still?
+
+Oh wait the PR is open: https://github.com/stefan-hoeck/idris2-pack/pull/400
+
+Let's confirm an end-to-end from that PR and report back.
+
+```sh
+rm -rf ~/.local/state/pack/
+rm -rf ~/.cache/pack
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/stefan-hoeck/idris2-pack/refs/heads/full_clone/install.bash)"
+
+# out (relevant)
+Package Collection  : nightly-260903
+Idris2 URL          : https://github.com/idris-lang/Idris2
+Idris2 Version      : 0.8.0
+Idris2 Commit       : 74b33730b6fea649b15e8d01ab099df9effcc7a0
+Scheme Executable   : chezscheme
+Pack Commit         : 846a90d76d1d4c451484eb09773f11a9e2fd58f2
+Installed Libraries : base
+                      contrib
+                      idris2
+                      linear
+                      network
+                      prelude
+                      test
+```
+
+```sh
+idris2 --version # out { Idris 2, version 0.8.0-7 }
+```
+
+```sh
+pack info
+
+# out
+Package Collection  : nightly-260903
+Idris2 URL          : https://github.com/idris-lang/Idris2
+Idris2 Version      : 0.8.0
+Idris2 Commit       : 74b33730b6fea649b15e8d01ab099df9effcc7a0
+Scheme Executable   : chezscheme
+Pack Commit         : 846a90d76d1d4c451484eb09773f11a9e2fd58f2
+Installed Libraries : base
+                      contrib
+                      idris2
+                      linear
+                      network
+                      prelude
+                      test
+
+```
+
+Added report to https://github.com/stefan-hoeck/idris2-pack/pull/400
+
+2026-09-05 Wk 36 Sat - 14:02 +03:00
+
+https://github.com/stefan-hoeck/idris2-pack/issues/378
+
+It seems this suggestion might have been why we're using `--depth=1`, though only in the case of Idris2, and it might have been fine for the `idris2-pack-db` at least per my own use case.
+

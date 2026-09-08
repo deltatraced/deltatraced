@@ -99,3 +99,6 @@ So here we have an object `[] : List A`. We also have objects whose definition d
 
 This is why we don't have to supply a definition for this as if it were a function declaration. The last enter in the constructor is the type in question and signifies that it is an object of that type, but it may depend on some other data, including of the type itself.
 
+2026-09-06 Wk 36 Sun - 09:55 +03:00
+
+

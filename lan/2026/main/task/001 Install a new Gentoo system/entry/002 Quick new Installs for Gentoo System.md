@@ -812,7 +812,20 @@ emerge --ask dev-scheme/chez
 
 Spawn [[lan/2026/main/task/001 Install a new Gentoo system/issue/005 Error installing idris2-pack unable to read tree]] ^spawn-issue-1fedcc
 
+Installed it temporarily from
 
 ```sh
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/stefan-hoeck/idris2-pack/main/install.bash)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/stefan-hoeck/idris2-pack/refs/heads/full_clone/install.bash)"
 ```
+
+due to the above issue.
+
+For `idris2-lsp`, 
+
+https://github.com/idris-community/idris2-lsp
+
+ at askthe ```sh
+pack install-app idris2-lsp
+```
+
+Then for nvim: https://github.com/idris-community/idris2-nvim

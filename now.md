@@ -2,11 +2,14 @@
 
 Here I document what I am currently up to.
 
-Also,
-- For a more general catalog, see [[lan/archived/2026-05-21_2026/main/wiki/001 Wiki Categories/001 Wiki Categories]].
+# Also
+
 - For my posts, see [[002 Posts]].
-- Notes on this repository follow the clusterline method. To learn more about its underlying concepts, see [[003 Wiki Clusterline Concepts]].
 - I have an inbox of tasks and investigations I work on at [[002 Inbox]]. See below for a more coarse description of what I'm up to.
+- Devlog-like logs in [[001 Weekly Act Log]].
+- Thoughts and comments can be found in [[007 Thought Stream Weeks]].
+- Notes on this repository follow the clusterline method. To learn more about its underlying concepts, see [[003 Wiki Clusterline Concepts]].
+- For a more general (but sorta outdated as-of-now oops) catalog, see [[lan/archived/2026-05-21_2026/main/wiki/001 Wiki Categories/001 Wiki Categories]].
 - For more about now pages, see https://sive.rs/nowff.
 
 # Sharing
@@ -17,7 +20,7 @@ If you use a similar system or know of such a system, please share it in https:/
 
 # Current Focus
 
-See also: [[000 Was in focus]]
+For prior focus, see [[000 Was in focus]]. 
 
 2026-08-27 Wk 35 Thu - 01:59 +03:00
 
