@@ -13,13 +13,14 @@ The issue is immersion is broken so I am discouraged from using it: When I use t
 2026-07-19 Wk 29 Sun - 02:02 +03:00
 
 I work this way with `(C-a) + e` because I like cubical tabs where you can only switch back and forth in a particular way. For example:
-- Between two labeled windows, C-a tab
-- Between two tabs, C-p
-- Between two zoomed panes, C-e
-- Between two terminal apps, C-backtick, although this breaks the cubical nature, it is more like two layers, each their own cubes navigations.
+
+* Between two labeled windows, C-a tab
+* Between two tabs, C-p
+* Between two zoomed panes, C-e
+* Between two terminal apps, C-backtick, although this breaks the cubical nature, it is more like two layers, each their own cubes navigations.
 
 I also go to a named label window by search: C-g. The history here lets me switch back and forth between the current and previous, which is the cubical tab operation. This is inside the terminal, I also switch between labeled applications globally. For example: Alt+Enter `tmu` (for tmux) to enter the terminal, or Alt+Enter `obs` to go to obsidian, or `Alt+Enter rsch ros` to go to a browser research tap on ROS.
 
 2026-07-19 Wk 29 Sun - 02:12 +03:00
 
-Added to [[002 Inbox]]
+Added to [002 Inbox](../../entry/002%20Inbox/002%20Inbox.md)

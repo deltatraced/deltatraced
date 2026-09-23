@@ -2,16 +2,16 @@
 context_type: task
 status: done
 tags:
-  - rust
+- rust
 ---
 
-Parent: [[002 Wiki Proc Questions]]
+Parent: [002 Wiki Proc Questions](../002%20Wiki%20Proc%20Questions.md)
 
-Spawned by: [[002 Wiki Proc Questions]]
+Spawned by: [002 Wiki Proc Questions](../002%20Wiki%20Proc%20Questions.md)
 
-Spawned in: [[002 Wiki Proc Questions#^spawn-task-46dbb3|^spawn-task-46dbb3]]
+Spawned in: [^spawn-task-46dbb3](../002%20Wiki%20Proc%20Questions.md#spawn-task-46dbb3)
 
-Wiki: [[000 False Why does rust f64 try_into for u64 say infallible error]]
+Wiki: [000 False Why does rust f64 try_into for u64 say infallible error](../../../wiki/002%20Wiki%20Questions/task/000%20False%20Why%20does%20rust%20f64%20try_into%20for%20u64%20say%20infallible%20error.md)
 
 # Journal
 
@@ -27,7 +27,7 @@ At the same time, f64 and u64 *are* equivalent when you only care about f64 as a
 
 The question was renamed `Invalid` because it does not express a true proposition. The fact is, there is no `From<f64>` for `u64`. But when you use `?` you get this error message:
 
-```
+````
 error[E0277]: the trait bound `Result<u64, _>: TryFrom<f64>` is not satisfied
   --> src/silverbullet_syscalls/util.rs:40:31
    |
@@ -38,14 +38,14 @@ error[E0277]: the trait bound `Result<u64, _>: TryFrom<f64>` is not satisfied
    = note: required for `f64` to implement `Into<Result<u64, _>>`
    = note: required for `Result<u64, _>` to implement `TryFrom<f64>`
    = note: required for `f64` to implement `TryInto<Result<u64, _>>`
-```
+````
 
 and above it in vscode, it says:
 
-```
+````
 this can't be annotated with `?` because it has type `Result<_, Infallible>`rustc[E0277](https://doc.rust-lang.org/error-index.html#E0277)
 
 util.rs(40, 41): original diagnostic
-```
+````
 
 And I was confused with the `Result<_, Infallible>`, interpreting it as if there does exist a non-failing conversion.

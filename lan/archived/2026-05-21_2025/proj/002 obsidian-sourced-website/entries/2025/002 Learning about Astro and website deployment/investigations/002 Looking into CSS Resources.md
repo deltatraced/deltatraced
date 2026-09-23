@@ -1,6 +1,4 @@
-
 # 1 Journal
-
 
 2025-09-01 Wk 36 Mon - 18:09
 
@@ -8,7 +6,8 @@ This [geeksforgeeks post](https://www.geeksforgeeks.org/blogs/best-css-framework
 
 They also say!
 
-> Bulma is a **CSS** framework. As such, the sole output is a single CSS file: [bulma.css](https://github.com/jgthms/bulma/blob/main/css/bulma.css)
+ > 
+ > Bulma is a **CSS** framework. As such, the sole output is a single CSS file: [bulma.css](https://github.com/jgthms/bulma/blob/main/css/bulma.css)
 
 which is cool!
 

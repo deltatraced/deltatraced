@@ -1,16 +1,14 @@
-
 # 1 Journal
 
-
-- [x]
+* [x] 
 
 2025-08-01 Wk 31 Fri - 13:49
 
 So I could do
 
-```ts
+````ts
 export var m_tape_snapshot: number[] = g.g.tape;
-```
+````
 
 But is this a shallow copy or just setting a reference?
 

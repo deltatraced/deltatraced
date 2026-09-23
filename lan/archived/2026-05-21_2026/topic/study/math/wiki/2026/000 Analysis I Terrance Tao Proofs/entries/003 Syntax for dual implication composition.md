@@ -1,20 +1,20 @@
 ---
-parent: "[[000 Analysis I Terrance Tao Proofs]]"
-spawned_by: "[[000 Spawn Logs for Analysis I Terrance Tao Proofs]]"
+parent: '[[000 Analysis I Terrance Tao Proofs]]'
+spawned_by: '[[000 Spawn Logs for Analysis I Terrance Tao Proofs]]'
 context_type: entry
 ---
 
-Parent: [[000 Analysis I Terrance Tao Proofs]]
+Parent: [000 Analysis I Terrance Tao Proofs](../000%20Analysis%20I%20Terrance%20Tao%20Proofs.md)
 
-Spawned by: [[000 Spawn Logs for Analysis I Terrance Tao Proofs]]
+Spawned by: [000 Spawn Logs for Analysis I Terrance Tao Proofs](000%20Spawn%20Logs%20for%20Analysis%20I%20Terrance%20Tao%20Proofs.md)
 
-Spawned in: [[000 Spawn Logs for Analysis I Terrance Tao Proofs#^spawn-entry-67346a|^spawn-entry-67346a]]
+Spawned in: [^spawn-entry-67346a](000%20Spawn%20Logs%20for%20Analysis%20I%20Terrance%20Tao%20Proofs.md#spawn-entry-67346a)
 
 ---
 
-As used in the proof [[002 six_not_2]], we have a proof that looks like 
+As used in the proof [002 six_not_2](../tasks/002%20six_not_2.md), we have a proof that looks like
 
-```haskell
+````haskell
 six-not-two : 6 ≠ 2
 six-not-two (h₀ : 6 ≡ 2) = (p₀ .fst) h₀
   where
@@ -26,8 +26,7 @@ six-not-two (h₀ : 6 ≡ 2) = (p₀ .fst) h₀
          ((    4) ≡ (    0)) ↔⟨ ↔-refl {- unfold 4 -} ⟩ 
          ((suc 3) ≡ (    0)) ↔⟨ ↔-⊥ ℕ-ax3 3 ⟩ 
          ⊥                   ∎↔
-```
-
+````
 
 `↔-refl` should encode the expectation that having a term implies we have it. The reason it is there is for elaboration reasons, for things that hold by definition.
 

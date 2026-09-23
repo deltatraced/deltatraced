@@ -2,20 +2,21 @@
 context_type: entry
 ---
 
-Parent: [[lan/2026/topic/study-math/000 CQTS Intro to Cubical/wikiproc/000 Wiki Proc CQTS Intro to Cubical/000 Wiki Proc CQTS Intro to Cubical]]
+Parent: [lan/2026/topic/study-math/000 CQTS Intro to Cubical/wikiproc/000 Wiki Proc CQTS Intro to Cubical/000 Wiki Proc CQTS Intro to Cubical](../000%20Wiki%20Proc%20CQTS%20Intro%20to%20Cubical.md)
 
-Spawned by: [[lan/2026/topic/study-math/000 CQTS Intro to Cubical/wikiproc/000 Wiki Proc CQTS Intro to Cubical/entry/001 Proc CQTS retract equiv]]
+Spawned by: [lan/2026/topic/study-math/000 CQTS Intro to Cubical/wikiproc/000 Wiki Proc CQTS Intro to Cubical/entry/001 Proc CQTS retract equiv](001%20Proc%20CQTS%20retract%20equiv.md)
 
-Spawned in: [[lan/2026/topic/study-math/000 CQTS Intro to Cubical/wikiproc/000 Wiki Proc CQTS Intro to Cubical/entry/001 Proc CQTS retract equiv#^spawn-entry-9534d2|^spawn-entry-9534d2]]
+Spawned in: [^spawn-entry-9534d2](001%20Proc%20CQTS%20retract%20equiv.md#spawn-entry-9534d2)
 
 # Journal
 
 ## Iteration 1
+
 ### Iteration 1.0 Work I had from before
 
 Before I change too much:
 
-```haskell
+````haskell
 (Me)
                             ↓ refl
                       y — — — — — — — — > y
@@ -128,19 +129,20 @@ retract-≡ {A = A} {B = B} r {x} {y} .section .proof p = H₀ p
     H₀ : (p : x ≡ y) → (retract-≡ r .map) ((retract-≡ r .section .map) p) ≡ p
     H₀ p = λ i j → {!   !}
 $$$
-```
+````
 
     Sq₀₀-faces i j k (i = i0) = face j k
       where
         face : Square (sp x) (sp y) (pB p) (p₁ p)
     Sq₀₀ : Square p₁ p refl refl
     Sq₀₀ i j = {!hcomp ((~ i) ∨ ∂ j) (Sq₀₀-faces i j) !}### Iteration 1.0.1 Retained
+    
 
 ### Iteration 1.1 Reset
 
 Resetting back to this workspace:
 
-```haskell
+````haskell
 retract-≡ : {ℓ₀ : Level} → {A B : Type ℓ₀} → (r : B RetractOnto A)
   → {x y : A}
   → (r .section .map x ≡ r .section .map y) RetractOnto (x ≡ y)
@@ -159,14 +161,15 @@ retract-≡ {A = A} {B = B} r {x} {y} .section .proof p = H₀ p
 
     H₀ : (p : x ≡ y) → (retract-≡ r .map) ((retract-≡ r .section .map) p) ≡ p
     H₀ p = λ i j → {!   !}
-```
+````
 
 ## Iteration 2
+
 ### Iteration 2.1  Cube Drawing Search
 
 Template
 
-```
+````
                          ↓ [.......]
               [.......] — — — — — — — — > [.......]
                     / ^                 / ^
@@ -184,11 +187,11 @@ Template
         [.......] — — — — — — —  [.......]
                     ↑ [.......]
 
-```
+````
 
 2026-06-18 Wk 25 Thu - 21:28 +03:00
 
-```
+````
 rs{a} = λ (a : A) → r .map (r .section .map a)
 sp{a} = λ (a : A) → r .section .proof a
 B p   = λ (p : x ≡ y) → ap (r .map) (ap (r .section .map) p)
@@ -210,9 +213,9 @@ B p   = λ (p : x ≡ y) → ap (r .map) (ap (r .section .map) p)
         [....msx] — — — — — — —  [x......]
                     ↑ [....spx]
 
-```
+````
 
-```
+````
                          ↓ [spy....]
               [msy....] — — — — — — — — > [y......]
                     / ^                 / ^
@@ -265,11 +268,11 @@ B p   = λ (p : x ≡ y) → ap (r .map) (ap (r .section .map) p)
               | /                 | /
         [x......] — — — — — — —  [msx....]
                     ↑ [~spx...]
-```
+````
 
 2026-06-20 Wk 25 Sat - 10:24 +03:00
 
-```
+````
 ms{a} = λ (a : A) → r .map (r .section .map a)
 sp{a} = λ (a : A) → r .section .proof a
 B p   = λ (p : x ≡ y) → ap (r .map) (ap (r .section .map) p)
@@ -293,13 +296,13 @@ p₁    = (sym spx) ∙∙ B p ∙∙ (spy)
               | /                 | /
         [msx....] — — — — — — —  [x......]
                     ↑ [spx....]
-```
+````
 
 ### Iteration 2.2 Cube Faces Filled
 
 2026-06-20 Wk 25 Sat - 10:34 +03:00
 
-```
+````
 ms{a} = λ (a : A) → r .map (r .section .map a)
 sp{a} = λ (a : A) → r .section .proof a
 B p   = λ (p : x ≡ y) → ap (r .map) (ap (r .section .map) p)
@@ -321,4 +324,4 @@ p₁    = (sym spx) ∙∙ B p ∙∙ (spy)
               | /                 | /
         [msx....] — — — — — — —  [x......]
                     ↑ [spx....]
-```
+````

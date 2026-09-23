@@ -1,11 +1,10 @@
 # 1 Time Summary – 001 Create a reference basic website and host it with wasmer
 
-| Note/Heading | Time Spent |
-|--------------|------------|
-| **Total** | **11h 51m 43s** |
-| [[001 Create a reference basic website and host it with wasmer]] | **11h 51m 43s** |
-| &nbsp;&nbsp;&nbsp;&nbsp;[[001 Create a reference basic website and host it with wasmer#3.3 Follow with wweb static npm website tutorial\|3.3 Follow with wweb static npm website tutorial]] | 8h 22m 55s |
-| &nbsp;&nbsp;&nbsp;&nbsp;[[001 Create a reference basic website and host it with wasmer#3.5 Find and follow process to deploy multiple npm projects under wasmer\|3.5 Find and follow process to deploy multiple npm projects under wasmer]] | 1h 38m 51s |
-| &nbsp;&nbsp;&nbsp;&nbsp;[[001 Create a reference basic website and host it with wasmer#3.1 Follow along wasmer documentation\|3.1 Follow along wasmer documentation]] | 1h 23m 12s |
-| &nbsp;&nbsp;&nbsp;&nbsp;[[001 Create a reference basic website and host it with wasmer#3.4 Deploy wwebdev tutorial project with wasmer\|3.4 Deploy wwebdev tutorial project with wasmer]] | 0h 26m 45s |
-
+|Note/Heading|Time Spent|
+|------------|----------|
+|**Total**|**11h 51m 43s**|
+|[001 Create a reference basic website and host it with wasmer](../../../../../../lan/archived/2026-05-21_2025/proj/002%20obsidian-sourced-website/tasks/2025/001%20Create%20a%20reference%20basic%20website%20and%20host%20it%20with%20wasmer/001%20Create%20a%20reference%20basic%20website%20and%20host%20it%20with%20wasmer.md)|**11h 51m 43s**|
+|    [3.3 Follow with wweb static npm website tutorial](../../../../../../lan/archived/2026-05-21_2025/proj/002%20obsidian-sourced-website/tasks/2025/001%20Create%20a%20reference%20basic%20website%20and%20host%20it%20with%20wasmer/001%20Create%20a%20reference%20basic%20website%20and%20host%20it%20with%20wasmer.md#33-follow-with-wweb-static-npm-website-tutorial)|8h 22m 55s|
+|    [3.5 Find and follow process to deploy multiple npm projects under wasmer](../../../../../../lan/archived/2026-05-21_2025/proj/002%20obsidian-sourced-website/tasks/2025/001%20Create%20a%20reference%20basic%20website%20and%20host%20it%20with%20wasmer/001%20Create%20a%20reference%20basic%20website%20and%20host%20it%20with%20wasmer.md#35-find-and-follow-process-to-deploy-multiple-npm-projects-under-wasmer)|1h 38m 51s|
+|    [3.1 Follow along wasmer documentation](../../../../../../lan/archived/2026-05-21_2025/proj/002%20obsidian-sourced-website/tasks/2025/001%20Create%20a%20reference%20basic%20website%20and%20host%20it%20with%20wasmer/001%20Create%20a%20reference%20basic%20website%20and%20host%20it%20with%20wasmer.md#31-follow-along-wasmer-documentation)|1h 23m 12s|
+|    [3.4 Deploy wwebdev tutorial project with wasmer](../../../../../../lan/archived/2026-05-21_2025/proj/002%20obsidian-sourced-website/tasks/2025/001%20Create%20a%20reference%20basic%20website%20and%20host%20it%20with%20wasmer/001%20Create%20a%20reference%20basic%20website%20and%20host%20it%20with%20wasmer.md#34-deploy-wwebdev-tutorial-project-with-wasmer)|0h 26m 45s|

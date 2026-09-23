@@ -1,12 +1,10 @@
-
 # 1 Journal
 
-
-- [x]
+* [x] 
 
 From this [stackoverflow answer](https://stackoverflow.com/a/67702746/6944447),
 
-```python
+````python
 import time
 
 start = time.time()
@@ -14,4 +12,4 @@ start = time.time()
 end = time.time()
 
 print(f"Time taken to run the code was {end-start} seconds")
-```
+````

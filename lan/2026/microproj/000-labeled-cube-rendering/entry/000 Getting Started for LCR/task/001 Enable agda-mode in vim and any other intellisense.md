@@ -1,15 +1,15 @@
 ---
-parent: "[[000 Getting Started for LCR]]"
-spawned_by: "[[000 Compile cubical agda to an executable using ctqs sources]]"
+parent: '[[000 Getting Started for LCR]]'
+spawned_by: '[[000 Compile cubical agda to an executable using ctqs sources]]'
 context_type: task
 status: done
 ---
 
-Parent: [[000 Getting Started for LCR]]
+Parent: [000 Getting Started for LCR](../000%20Getting%20Started%20for%20LCR.md)
 
-Spawned by: [[000 Compile cubical agda to an executable using ctqs sources]]
+Spawned by: [000 Compile cubical agda to an executable using ctqs sources](000%20Compile%20cubical%20agda%20to%20an%20executable%20using%20ctqs%20sources.md)
 
-Spawned in: [[000 Compile cubical agda to an executable using ctqs sources#^spawn-task-207da8|^spawn-task-207da8]]
+Spawned in: [^spawn-task-207da8](000%20Compile%20cubical%20agda%20to%20an%20executable%20using%20ctqs%20sources.md#spawn-task-207da8)
 
 # 1 Journal
 
@@ -27,7 +27,7 @@ Let's try to install `(1)` since `(3)` and `(4)` are in nvim.
 
 It said we can copy the structure in, maybe like so:
 
-```
+````
 # in /home/lan/.vim
 git clone https://github.com/derekelkins/agda-vim.git
 mv agda-vim/agda-utf8.vim .
@@ -37,27 +37,27 @@ mv agda-vim/ftdetect .
 mv agda-vim/ftplugin .
 mv agda-vim/syntax .
 rm -rf agda-vim
-```
+````
 
 but this would not be very tidy. Let's install [gh tpope/vim-pathogen](https://github.com/tpope/vim-pathogen):
 
-```sh
+````sh
 mkdir -p ~/.vim/autoload ~/.vim/bundle && \
 curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
-```
+````
 
 Then add this to `~/.vimrc`:
 
-```vimrc
+````vimrc
 execute pathogen#infect()
-```
+````
 
 Now we can install it via pathogen:
 
-```sh
+````sh
 # in /home/lan/.vim/bundle
 git clone https://github.com/derekelkins/agda-vim.git
-```
+````
 
 Awesome! We have syntax highlighting now, and we're able to do `\forall` for example.
 
@@ -69,6 +69,6 @@ So we are able to call `:call AgdaLoad(v:false)`, but not `:call AgdaVersion(v:f
 
 2026-08-30 Wk 35 Sun - 04:44 +03:00
 
-Closed by [[011 Configuring emacs in main gentoo system]]
+Closed by [011 Configuring emacs in main gentoo system](../../../../../main/task/001%20Install%20a%20new%20Gentoo%20system/entry/011%20Configuring%20emacs%20in%20main%20gentoo%20system.md)
 
-Other effort is in [[012 Configuring Agda]]
+Other effort is in [012 Configuring Agda](../../../../../main/task/001%20Install%20a%20new%20Gentoo%20system/entry/012%20Configuring%20Agda.md)

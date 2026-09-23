@@ -2,18 +2,18 @@
 context_type: entry
 ---
 
-Parent: [[lan/2026/topic/concept/000 Atomic/wiki/003 Wiki Clusterline Concepts/003 Wiki Clusterline Concepts]]
+Parent: [lan/2026/topic/concept/000 Atomic/wiki/003 Wiki Clusterline Concepts/003 Wiki Clusterline Concepts](../003%20Wiki%20Clusterline%20Concepts.md)
 
-Spawned by: [[lan/2026/topic/concept/000 Atomic/wikiproc/003 Wiki Proc Clusterline Concepts/003 Wiki Proc Clusterline Concepts]]
+Spawned by: [lan/2026/topic/concept/000 Atomic/wikiproc/003 Wiki Proc Clusterline Concepts/003 Wiki Proc Clusterline Concepts](../../../wikiproc/003%20Wiki%20Proc%20Clusterline%20Concepts/003%20Wiki%20Proc%20Clusterline%20Concepts.md)
 
-Spawned in: [[lan/2026/topic/concept/000 Atomic/wikiproc/003 Wiki Proc Clusterline Concepts/003 Wiki Proc Clusterline Concepts#^spawn-entry-a7b7be|^spawn-entry-a7b7be]]
+Spawned in: [^spawn-entry-a7b7be](../../../wikiproc/003%20Wiki%20Proc%20Clusterline%20Concepts/003%20Wiki%20Proc%20Clusterline%20Concepts.md#spawn-entry-a7b7be)
 
 ---
 
 It can be tempting to classify by project particulars. Maybe we create a folder tree by project component. This can result in a few issues:
 
 1. The classification system we come up with will rarely generalize to other projects. The folders are all particulars of a specific work, and so our notes become more fragmented than they could be.
-2. It becomes harder to derive standards in our note taking practice since we are often only concerned with the individual work and not how we may work in the space of all possible such works.
+1. It becomes harder to derive standards in our note taking practice since we are often only concerned with the individual work and not how we may work in the space of all possible such works.
 
 Let's call the above semantics of use. Every work has its own particular shape: Different requirements, data, tools, and connections.
 
@@ -23,13 +23,13 @@ Thinking about grammars of use motivates the development of standards, and gives
 
 # Examples
 
-For example, this right here is an [[008 Term Artifact Note|artifact]] note with a **note type** of entry. A note type of entry typically is associated with writing, and is differentiated from other types like investigation and task by the fact that it does not require a resolution signal.
+For example, this right here is an [artifact](../concept/008%20Term%20Artifact%20Note.md) note with a **note type** of entry. A note type of entry typically is associated with writing, and is differentiated from other types like investigation and task by the fact that it does not require a resolution signal.
 
-Many notes we take may be easily thought of as investigations, issues, policy judgments, or entries. These note types I have created for clusterline were derived as grammars of use, they apply to many possible works and not simply any particular one. This allowed me to reason about [[000 Term Process Note|process notes]] as a kind of entity, even though most of my notes fit that description.
+Many notes we take may be easily thought of as investigations, issues, policy judgments, or entries. These note types I have created for clusterline were derived as grammars of use, they apply to many possible works and not simply any particular one. This allowed me to reason about [process notes](../concept/000%20Term%20Process%20Note.md) as a kind of entity, even though most of my notes fit that description.
 
-Another example is the Inbox note cluster. It can accumulates and sorts not just TODOs and emails but also scattered questions and points of confusion I have across all my notes that may not be related to my current investigation. 
+Another example is the Inbox note cluster. It can accumulates and sorts not just TODOs and emails but also scattered questions and points of confusion I have across all my notes that may not be related to my current investigation.
 
-An investigation is a close-ended question with a defined means of resolution, wheras an exploration is an open-ended area of research that can generate new leads. 
+An investigation is a close-ended question with a defined means of resolution, wheras an exploration is an open-ended area of research that can generate new leads.
 
 # Grammars of use are machines
 

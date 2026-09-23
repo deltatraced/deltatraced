@@ -1,33 +1,34 @@
 ---
 status: backlog
-is_entry:
+is_entry: null
 ---
-#lan #entry #writing
+
+\#lan #entry #writing
 
 # 1 Journal
 
 2025-07-03 Wk 27 Thu - 17:21
 
-According to [github docs on creating profile README](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile/managing-your-profile-readme) [[#^1]],
+According to [github docs on creating profile README](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile/managing-your-profile-readme) [^1](Wk%2027%20000%20Creating%20a%20README%20for%20my%20github%20profile.md#1),
 
 I need to create a repository with the same name as my github username.
 
 Interesting that it is treated special in the UI too:
 
-![[Pasted image 20250703172525.png]]
+![Pasted image 20250703172525.png](../../../../../../../../../attachments/Pasted%20image%2020250703172525.png)
 
-![[Pasted image 20250703172621.png]]
+![Pasted image 20250703172621.png](../../../../../../../../../attachments/Pasted%20image%2020250703172621.png)
 
 2025-07-03 Wk 27 Thu - 17:29
 
 Cloning it into my system
 
-```sh
+````sh
 mkdir -p ~/src/cloned/gh/LanHikari22
 cd ~/src/cloned/gh/LanHikari22
 git clone git@github.com:LanHikari22/LanHikari22.git
 cd LanHikari22
-```
+````
 
 They have some suggestions:
 
@@ -50,11 +51,13 @@ Here are some ideas to get you started:
 
 We also should change this description. It's been there a while:
 
-> A Computer Engineer! Into software engineering, reverse engineering, embedded systems, and FPGAs. Looking to solve hard problems.
+ > 
+ > A Computer Engineer! Into software engineering, reverse engineering, embedded systems, and FPGAs. Looking to solve hard problems.
 
 Changed to
 
-> Computer engineer interested in reproducibility of knowledge and computer systems, reverse engineering, data analysis, and tooling.
+ > 
+ > Computer engineer interested in reproducibility of knowledge and computer systems, reverse engineering, data analysis, and tooling.
 
 ## 1.1 Inspiration
 
@@ -67,4 +70,5 @@ Changed to
 [Xe Iaso website](https://xeiaso.net/) and [github](https://github.com/Xe).
 
 # 2 References
+
 1. [github docs on creating profile README](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile/managing-your-profile-readme) ^1

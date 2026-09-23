@@ -1,22 +1,22 @@
 ---
-parent: "[[001 Math Problems]]"
-spawned_by: "[[000 Spawn Logs for Math Problems]]"
+parent: '[[001 Math Problems]]'
+spawned_by: '[[000 Spawn Logs for Math Problems]]'
 context_type: entry
 ---
 
-Parent: [[001 Math Problems]]
+Parent: [001 Math Problems](../001%20Math%20Problems.md)
 
-Spawned by: [[000 Spawn Logs for Math Problems]]
+Spawned by: [000 Spawn Logs for Math Problems](000%20Spawn%20Logs%20for%20Math%20Problems.md)
 
-Spawned in: [[000 Spawn Logs for Math Problems#^spawn-entry-b236db|^spawn-entry-b236db]]
+Spawned in: [^spawn-entry-b236db](000%20Spawn%20Logs%20for%20Math%20Problems.md#spawn-entry-b236db)
 
-For Problem [[002 NW Alg Top S1 Mult 1 Failed Attempt 1]]
+For Problem [002 NW Alg Top S1 Mult 1 Failed Attempt 1](../tasks/002%20NW%20Alg%20Top%20S1%20Mult%201%20Failed%20Attempt%201.md)
 
 ---
 
 # 1 Code
 
-```python
+````python
 from typing import Callable, Tuple
 
 def e(h: float) -> (float, float):
@@ -62,11 +62,11 @@ def test(mult_op : Callable[[FloatPair, FloatPair], FloatPair]):
 				print(f"h1={h1}, h2={h2}, lhs={lhs}, rhs={rhs}.")
 				return
 	print("OK")
-```
+````
 
 # 2 Iterations
 
-```python
+````python
 # Failed the test at i=0, j=0, h1=0.0, h2=0.0, lhs=(0.0, 0.0), rhs=(1.0, 0.0).
 def pair_mult_2(p1: (float, float), p2: (float, float)) -> (float, float):
 	u = p1[0]
@@ -94,9 +94,9 @@ def pair_mult_2(p1: (float, float), p2: (float, float)) -> (float, float):
 	return (u * v_ - u_ * v, u * v_ + u_ * v)
 test(pair_mult_2)
 
-```
+````
 
-```python
+````python
 # Failed the test at i=0, j=0, h1=0.0, h2=0.0, lhs=(1.0, 1.0), rhs=(1.0, 0.0).
 def pair_mult_2(p1: (float, float), p2: (float, float)) -> (float, float):
 	u = p1[0]
@@ -105,11 +105,11 @@ def pair_mult_2(p1: (float, float), p2: (float, float)) -> (float, float):
 	v_ = p2[1]
 	return (u * u_ - v * v_, u * u_ + v * v_)
 test(pair_mult_2)
-```
+````
 
 This last test gives us 1.0 for lhs as expected, at least for the trivial case. Let's try to vary `(u * u_ - v * v_, ?)`
 
-```python
+````python
 # ZeroDivisionError: float division by zero
 def pair_mult_2(p1: (float, float), p2: (float, float)) -> (float, float):
 	u = p1[0]
@@ -119,10 +119,9 @@ def pair_mult_2(p1: (float, float), p2: (float, float)) -> (float, float):
 	return (u * u_ - v * v_, u * v_ + u_ * v)
 test(pair_mult_2)
 
-```
+````
 
-
-```python
+````python
 # Failed the test at i=1, j=0, h1=0.01, h2=0.0, lhs=(0.9998000199980002, -0.019998000199980003), rhs=(0.9998000199980002, 0.019998000199980003).
 def pair_mult_2(p1: (float, float), p2: (float, float)) -> (float, float):
 	u = p1[0]
@@ -131,7 +130,6 @@ def pair_mult_2(p1: (float, float), p2: (float, float)) -> (float, float):
 	v_ = p2[1]
 	return (u * u_ - v * v_, u * v_ - u_ * v)
 test(pair_mult_2)
-```
+````
 
 This was able to cover it for all cases at `i=0`
-

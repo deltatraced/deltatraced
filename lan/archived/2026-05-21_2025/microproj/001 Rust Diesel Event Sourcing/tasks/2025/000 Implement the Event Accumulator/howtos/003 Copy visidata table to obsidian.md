@@ -1,15 +1,15 @@
 ---
-parent: "[[000 Implement the Event Accumulator]]"
-spawned_by: "[[009 Fix conceptual bug of not tracking branch information for soft reset]]"
+parent: '[[000 Implement the Event Accumulator]]'
+spawned_by: '[[009 Fix conceptual bug of not tracking branch information for soft reset]]'
 context_type: howto
 status: todo
 ---
 
-Parent: [[000 Implement the Event Accumulator]]
+Parent: [000 Implement the Event Accumulator](../000%20Implement%20the%20Event%20Accumulator.md)
 
-Spawned by: [[009 Fix conceptual bug of not tracking branch information for soft reset]]
+Spawned by: [009 Fix conceptual bug of not tracking branch information for soft reset](../tasks/009%20Fix%20conceptual%20bug%20of%20not%20tracking%20branch%20information%20for%20soft%20reset.md)
 
-Spawned in: [[009 Fix conceptual bug of not tracking branch information for soft reset#^spawn-howto-499709|^spawn-howto-499709]]
+Spawned in: [^spawn-howto-499709](../tasks/009%20Fix%20conceptual%20bug%20of%20not%20tracking%20branch%20information%20for%20soft%20reset.md#spawn-howto-499709)
 
 # 1 Objective
 

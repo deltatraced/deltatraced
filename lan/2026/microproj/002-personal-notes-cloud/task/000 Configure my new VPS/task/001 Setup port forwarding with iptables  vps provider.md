@@ -3,22 +3,24 @@ context_type: task
 status: done
 ---
 
-Parent: [[lan/2026/microproj/002-personal-notes-cloud/task/000 Configure my new VPS/000 Configure my new VPS]]
+Parent: [lan/2026/microproj/002-personal-notes-cloud/task/000 Configure my new VPS/000 Configure my new VPS](../000%20Configure%20my%20new%20VPS.md)
 
-Spawned by: [[lan/2026/microproj/002-personal-notes-cloud/task/000 Configure my new VPS/task/000 Configure my deltatraced dns and publish a test page on it publicly]]
+Spawned by: [lan/2026/microproj/002-personal-notes-cloud/task/000 Configure my new VPS/task/000 Configure my deltatraced dns and publish a test page on it publicly](000%20Configure%20my%20deltatraced%20dns%20and%20publish%20a%20test%20page%20on%20it%20publicly.md)
 
-Spawned in: [[lan/2026/microproj/002-personal-notes-cloud/task/000 Configure my new VPS/task/000 Configure my deltatraced dns and publish a test page on it publicly#^spawn-task-4ddedd|^spawn-task-4ddedd]]
+Spawned in: [^spawn-task-4ddedd](000%20Configure%20my%20deltatraced%20dns%20and%20publish%20a%20test%20page%20on%20it%20publicly.md#spawn-task-4ddedd)
 
 # Process
+
 ## Setup
 
-```sh
+````sh
 # in vps
 sudo apt install iptables-persistent
-```
+````
+
 ## port forwarding file
 
-```sh
+````sh
 #!/bin/sh
 
 VPSIP=TODO
@@ -74,7 +76,8 @@ port_forward "test_http" $r1_protocol $r1_port_internal $r1_port_incoming && \
 
 echo "> save iptables rules" && \
 sudo netfilter-persistent save
-```
+````
+
 # Journal
 
 ## Definitions
@@ -101,10 +104,10 @@ https://bit.hosting/en/help/network/port-forwarding-nat
 
 This will replace `ufw`:
 
-```sh
+````sh
 # in vps
 sudo apt install iptables-persistent
-```
+````
 
 This saves the rules (IPv4 and IPv6) to `/etc/iptables/rules.v4` and `/etc/iptables/rules.v6`.
 
@@ -120,7 +123,7 @@ To check whether port forwarding is enabled: `cat /proc/sys/net/ipv4/conf/{inter
 
 To allow it: `sudo sysctl net.ipv4.conf.{interface}.forwarding=1`
 
-```sh
+````sh
 # in vps > ~/port-forwarding
 sudo iptables -F
 sudo netfilter-persistent flush
@@ -128,4 +131,4 @@ sudo iptables -A PREROUTING -t nat -p tcp -i {interface} --dport {port_incoming}
 sudo iptables -A POSTROUTING -t nat -p tcp -d {VPSIP} --dport {port_internal} -j MASQUERADE
 sudo iptables -A FORWARD -p tcp -d {VPSIP} --dport {port_internal} -m state --state NEW,ESTABLISHED,RELATED -j ACCEPT
 sudo netfilter-persistent save
-```
+````

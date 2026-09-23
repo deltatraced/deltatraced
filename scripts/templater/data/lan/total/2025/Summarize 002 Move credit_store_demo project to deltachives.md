@@ -1,14 +1,13 @@
 # 1 Time Summary – 002 Move credit_store_demo project to deltachives
 
-| Note/Heading | Time Spent |
-|--------------|------------|
-| **Total** | **11h 7m 41s** |
-| [[002 Move credit_store_demo project to deltachives]] | **11h 7m 41s** |
-| &nbsp;&nbsp;&nbsp;&nbsp;[[001 Register tables to process for event accumulator]] | 3h 1m 1s |
-| &nbsp;&nbsp;&nbsp;&nbsp;[[000 Reviewing impl Trait type meaning]] | 1h 59m 8s |
-| &nbsp;&nbsp;&nbsp;&nbsp;[[000 Modularize shi shell use in credit store demo]] | 1h 58m 15s |
-| &nbsp;&nbsp;&nbsp;&nbsp;[[002 Getting a generic diesel update all function to work]] | 1h 15m 0s |
-| &nbsp;&nbsp;&nbsp;&nbsp;[[001 Getting many debugging logs from rustyline while using shi]] | 0h 48m 43s |
-| &nbsp;&nbsp;&nbsp;&nbsp;[[000 Internal state for shi shell not passing to new thread safely]] | 0h 33m 38s |
-| &nbsp;&nbsp;&nbsp;&nbsp;[[002 Update credit store schema for required version event id]] | 0h 26m 43s |
-
+|Note/Heading|Time Spent|
+|------------|----------|
+|**Total**|**11h 7m 41s**|
+|[002 Move credit_store_demo project to deltachives](../../../../../../lan/archived/2026-05-21_2025/microproj/001%20Rust%20Diesel%20Event%20Sourcing/tasks/2025/002%20Move%20credit_store_demo%20project%20to%20deltachives/002%20Move%20credit_store_demo%20project%20to%20deltachives.md)|**11h 7m 41s**|
+|    [001 Register tables to process for event accumulator](../../../../../../lan/archived/2026-05-21_2025/microproj/001%20Rust%20Diesel%20Event%20Sourcing/tasks/2025/002%20Move%20credit_store_demo%20project%20to%20deltachives/tasks/001%20Register%20tables%20to%20process%20for%20event%20accumulator.md)|3h 1m 1s|
+|    [000 Reviewing impl Trait type meaning](../../../../../../lan/archived/2026-05-21_2025/microproj/001%20Rust%20Diesel%20Event%20Sourcing/tasks/2025/002%20Move%20credit_store_demo%20project%20to%20deltachives/investigations/000%20Reviewing%20impl%20Trait%20type%20meaning.md)|1h 59m 8s|
+|    [000 Modularize shi shell use in credit store demo](../../../../../../lan/archived/2026-05-21_2025/microproj/001%20Rust%20Diesel%20Event%20Sourcing/tasks/2025/002%20Move%20credit_store_demo%20project%20to%20deltachives/tasks/000%20Modularize%20shi%20shell%20use%20in%20credit%20store%20demo.md)|1h 58m 15s|
+|    [002 Getting a generic diesel update all function to work](../../../../../../lan/archived/2026-05-21_2025/microproj/001%20Rust%20Diesel%20Event%20Sourcing/tasks/2025/002%20Move%20credit_store_demo%20project%20to%20deltachives/issues/002%20Getting%20a%20generic%20diesel%20update%20all%20function%20to%20work.md)|1h 15m 0s|
+|    [001 Getting many debugging logs from rustyline while using shi](../../../../../../lan/archived/2026-05-21_2025/microproj/001%20Rust%20Diesel%20Event%20Sourcing/tasks/2025/002%20Move%20credit_store_demo%20project%20to%20deltachives/issues/001%20Getting%20many%20debugging%20logs%20from%20rustyline%20while%20using%20shi.md)|0h 48m 43s|
+|    [000 Internal state for shi shell not passing to new thread safely](../../../../../../lan/archived/2026-05-21_2025/microproj/001%20Rust%20Diesel%20Event%20Sourcing/tasks/2025/002%20Move%20credit_store_demo%20project%20to%20deltachives/issues/000%20Internal%20state%20for%20shi%20shell%20not%20passing%20to%20new%20thread%20safely.md)|0h 33m 38s|
+|    [002 Update credit store schema for required version event id](../../../../../../lan/archived/2026-05-21_2025/microproj/001%20Rust%20Diesel%20Event%20Sourcing/tasks/2025/002%20Move%20credit_store_demo%20project%20to%20deltachives/tasks/002%20Update%20credit%20store%20schema%20for%20required%20version%20event%20id.md)|0h 26m 43s|

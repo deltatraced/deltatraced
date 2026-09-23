@@ -3,13 +3,13 @@ context_type: task
 status: todo
 ---
 
-Parent: [[lan/2026/topic/oss/000 OSS Contrib/task/000 SB Option to only have base name in title/000 SB Option to only have base name in title]]
+Parent: [lan/2026/topic/oss/000 OSS Contrib/task/000 SB Option to only have base name in title/000 SB Option to only have base name in title](../000%20SB%20Option%20to%20only%20have%20base%20name%20in%20title.md)
 
-Spawned by: [[lan/2026/topic/oss/000 OSS Contrib/task/000 SB Option to only have base name in title/000 SB Option to only have base name in title]]
+Spawned by: [lan/2026/topic/oss/000 OSS Contrib/task/000 SB Option to only have base name in title/000 SB Option to only have base name in title](../000%20SB%20Option%20to%20only%20have%20base%20name%20in%20title.md)
 
-Spawned in: [[lan/2026/topic/oss/000 OSS Contrib/task/000 SB Option to only have base name in title/000 SB Option to only have base name in title#^spawn-task-502552|^spawn-task-502552]]
+Spawned in: [^spawn-task-502552](../000%20SB%20Option%20to%20only%20have%20base%20name%20in%20title.md#spawn-task-502552)
 
-Overview: [[001 Overview SB Option to only have base name in title]]
+Overview: [001 Overview SB Option to only have base name in title](../entry/001%20Overview%20SB%20Option%20to%20only%20have%20base%20name%20in%20title.md)
 
 # Journal
 
@@ -21,72 +21,72 @@ This PR was closed likely due to the `make fmt` commit, so let's reopen without 
 
 It did seem like a bad idea to just modify all these files, but I did put the result of `make fmt` in its own commit. I thought this should make it easy to just check the other commit for review, and advise on the `make fmt` to be reverted. But I guess they would rather that the commit doesn't exist at all. Hopefully the PR is okay to review without this commit.
 
-```sh
+````sh
 # in /home/lan/src/cloned/gh/LanHikari22/forked/silverbulletmd/branches/silverbullet@title-text-config
 git lg
 
 # out
 * 528b5741 (HEAD -> title-text-config, origin/title-text-config) chore: run make fmt
 * a86350da Add option to strip title full path to name via service (#2016)
-```
+````
 
-```sh
+````sh
 # in /home/lan/src/cloned/gh/LanHikari22/forked/silverbulletmd/branches/silverbullet@title-text-config
 git reset --hard HEAD~1
 git push origin title-text-config --force
-```
+````
 
 https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/configuring-a-remote-repository-for-a-fork
 
-```sh
+````sh
 # in /home/lan/src/cloned/gh/LanHikari22/forked/silverbulletmd/branches/silverbullet@title-text-config
 git remote add upstream git@github.com:silverbulletmd/silverbullet.git
 git config pull.rebase false
 git pull upstream main
-```
+````
 
 I would rather my commit be at the top, and to not have to merge if I can help it.
 
-```
+````
 commit a86350dabbbe0c22c69d9373f8fc959d9c0d7d08 (origin/title-text-config)
 * / a86350da (origin/title-text-config) Add option to strip title full path to name via service (#2016)
-```
+````
 
 [so ans How can I generate a Git patch for a specific commit?](https://stackoverflow.com/a/6658352/6944447)
 
-```sh
+````sh
 # in /home/lan/src/cloned/gh/LanHikari22/forked/silverbulletmd/branches/silverbullet@title-text-config
 git format-patch -1 a86350da
 
 # out
 0001-Add-option-to-strip-title-full-path-to-name-via-serv.patch
-```
+````
 
-```sh
+````sh
 # in /home/lan/src/cloned/gh/LanHikari22/forked/silverbulletmd/branches/silverbullet@title-text-config
 mv 0001-Add-option-to-strip-title-full-path-to-name-via-serv.patch ~/tmp/
-```
+````
 
 Remove repo and start over,
 
-```sh
+````sh
 # in /home/lan/src/cloned/gh/LanHikari22/forked/silverbulletmd/branches/silverbullet@title-text-config
 mv ..
 rm -rf silverbullet@title-text-config
 git clone git@github.com:LanHikari22/silverbullet.git
 mv silverbullet silverbullet@title-text-config
-```
+````
 
-```sh
+````sh
 # in /home/lan/src/cloned/gh/LanHikari22/forked/silverbulletmd/branches/silverbullet@title-text-config > branch main
 git remote add upstream git@github.com:silverbulletmd/silverbullet.git
 git config pull.rebase false
 git pull upstream main
 git push origin main
 git checkout -b title-text-config
-```
+````
 
-```sh
+````sh
 # in /home/lan/src/cloned/gh/LanHikari22/forked/silverbulletmd/branches/silverbullet@title-text-config
 git apply --verbose ~/tmp/0001-Add-option-to-strip-title-full-path-to-name-via-serv.patch
 
@@ -114,34 +114,35 @@ error: client/types/ui.ts: patch does not apply
 Checking patch libraries/Library/Std/Config.md...
 Checking patch libraries/Library/Std/Pages/Name Customizations.md...
 Checking patch plug-api/lib/ref.ts...
-```
+````
 
-```sh
+````sh
 # in /home/lan/src/cloned/gh/LanHikari22/forked/silverbulletmd/branches/silverbullet@title-text-config
 git apply --check ~/tmp/0001-Add-option-to-strip-title-full-path-to-name-via-serv.patch
 error: patch failed: client/types/ui.ts:73
 error: client/types/ui.ts: patch does not apply
-```
+````
 
-```sh
+````sh
 # in /home/lan/src/cloned/gh/LanHikari22/forked/silverbulletmd/branches/silverbullet@title-text-config
 git am -3 < ~/tmp/0001-Add-option-to-strip-title-full-path-to-name-via-serv.patch
-```
+````
 
 [so ans Update git commit author date when amending](https://stackoverflow.com/a/35515190/6944447)
 
-```sh
+````sh
 # in /home/lan/src/cloned/gh/LanHikari22/forked/silverbulletmd/branches/silverbullet@title-text-config
 git commit --amend --date=now --no-edit
-```
+````
 
 Need to amend with some formatting changes:
-- `libraries/Library/Std/Pages/Name Customizations.md` has space at the end of some lines
-- `client/reducer.ts` my change used tabs. They are using spaces.
+
+* `libraries/Library/Std/Pages/Name Customizations.md` has space at the end of some lines
+* `client/reducer.ts` my change used tabs. They are using spaces.
 
 2026-06-18 Wk 25 Thu - 19:01 +03:00
 
-```sh
+````sh
 # in /home/lan/src/cloned/gh/LanHikari22/forked/silverbulletmd/branches/silverbullet@title-text-config
 make setup
 make test
@@ -151,19 +152,19 @@ make test
       Tests  873 passed (873)
    Start at  19:02:24
    Duration  3.48s (transform 20.57s, setup 0ms, import 29.06s, tests 4.08s, environment 20ms)
-```
+````
 
 So test fails this time.
 
-This is the same failure we get from upstream main now. 
+This is the same failure we get from upstream main now.
 
 We're in the middle of a migration from a go-based server to a rust-based one. The instructions for running the server changed from `air <PATH-TO-YOUR-SPACE>` in the README to `./target/release/silverbullet <PATH-TO-YOUR-SPACE>`
 
 2026-06-20 Wk 25 Sat - 11:55 +03:00
 
-The plug still works after the rust migration. We can see now that the service is only added once, before I've seen it three times: 
+The plug still works after the rust migration. We can see now that the service is only added once, before I've seen it three times:
 
-```ts
+````ts
 export async function customizePageTitleViaService(): Promise<string> {
   if (client.ui.viewState.current === undefined) {
     return new Promise(function (resolve, _reject) {
@@ -195,20 +196,20 @@ export async function customizePageTitleViaService(): Promise<string> {
     }
   }
 }
-```
+````
 
-```
+````
 [Client] AAA00.00
 [Client] AAA00.01 (path lan/2026/main/wikiproc/000 Wiki Proc Weekly/entry/000 Proc Tasks From 2026 Wk 23)
 [Client] AAA00.02 (services (j [{"priority":1,"id":"8bf72faf-3f82-4c56-a35d-3f287a4d331f"}]))
 [Client] AAA00.03b
-```
+````
 
 2026-06-20 Wk 25 Sat - 11:58 +03:00
 
 Okay we're ready to submit a new PR for this since it still works. Let's make sure it's at the top again:
 
-```sh
+````sh
 # in /home/lan/src/cloned/gh/LanHikari22/forked/silverbulletmd/branches/silverbullet@title-text-config
 git format-patch -1 886ec37e
 mv ~/tmp/0001-Add-option-to-strip-title-full-path-to-name-via-serv.patch ~/tmp/0001-Add-option-to-strip-title-full-path-to-name-via-serv.patch.0
@@ -216,17 +217,17 @@ mv 0001-Add-option-to-strip-title-full-path-to-name-via-serv.patch ~/tmp/
 git checkout main
 git branch -D title-text-config
 git pull upstream main
-```
+````
 
 This time all tests pass from upstream!
 
-```sh
+````sh
 # in /home/lan/src/cloned/gh/LanHikari22/forked/silverbulletmd/branches/silverbullet@title-text-config
 git checkout -b title-text-config
 git am -3 < ~/tmp/0001-Add-option-to-strip-title-full-path-to-name-via-serv.patch
 git commit --amend --date=now --no-edit
-```
+````
 
-Testing manually again. There's a big index job again and the service won't kick off. and even though through [[000 SB How are the plugin files fetched? d2fd43e4]] we learned that the rust backend now respects `.gitignore`, it is still indexing things under `node_modules/` which I gitignore in my plug. But adding them to my space `.gitignore` does filter them from indexing.
+Testing manually again. There's a big index job again and the service won't kick off. and even though through [000 SB How are the plugin files fetched? d2fd43e4](../../../investigation/000%20How%20does%20Silverbullet%20plugin%20loading%20work%3F%20d2fd43e4/investigation/000%20SB%20How%20are%20the%20plugin%20files%20fetched%3F%20d2fd43e4.md) we learned that the rust backend now respects `.gitignore`, it is still indexing things under `node_modules/` which I gitignore in my plug. But adding them to my space `.gitignore` does filter them from indexing.
 
 Manual testing OK. Automatic testing OK. We're ready for PR.

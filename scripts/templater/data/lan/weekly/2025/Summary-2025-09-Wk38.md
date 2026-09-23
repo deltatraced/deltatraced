@@ -1,20 +1,19 @@
 # 1 Time Summary – Week 38
 
-| Note/Heading | Time Spent |
-|--------------|------------|
-| **Total** | **16h 2m 11s** |
-| [[002 Move credit_store_demo project to deltachives]] | **11h 7m 41s** |
-| &nbsp;&nbsp;&nbsp;&nbsp;[[001 Register tables to process for event accumulator]] | 3h 1m 1s |
-| &nbsp;&nbsp;&nbsp;&nbsp;[[000 Reviewing impl Trait type meaning]] | 1h 59m 8s |
-| &nbsp;&nbsp;&nbsp;&nbsp;[[000 Modularize shi shell use in credit store demo]] | 1h 58m 15s |
-| &nbsp;&nbsp;&nbsp;&nbsp;[[002 Getting a generic diesel update all function to work]] | 1h 15m 0s |
-| &nbsp;&nbsp;&nbsp;&nbsp;[[001 Getting many debugging logs from rustyline while using shi]] | 0h 48m 43s |
-| &nbsp;&nbsp;&nbsp;&nbsp;[[000 Internal state for shi shell not passing to new thread safely]] | 0h 33m 38s |
-| &nbsp;&nbsp;&nbsp;&nbsp;[[002 Update credit store schema for required version event id]] | 0h 26m 43s |
-| [[000 Attempting to upgrade rustyline for shi]] | **2h 33m 6s** |
-| &nbsp;&nbsp;&nbsp;&nbsp;[[000 Prepare new branch for shi rustyline upgrade]] | 0h 22m 24s |
-| [[000 Wk 37 Addressing shi PR 10]] | **2h 21m 25s** |
-| &nbsp;&nbsp;&nbsp;&nbsp;[[001 Looking into shi quotation removal]] | 1h 24m 15s |
-| &nbsp;&nbsp;&nbsp;&nbsp;[[000 Look into tarpaulin use]] | 0h 49m 6s |
-| &nbsp;&nbsp;&nbsp;&nbsp;[[000 grep git commits by changes content for a string]] | 0h 8m 4s |
-
+|Note/Heading|Time Spent|
+|------------|----------|
+|**Total**|**16h 2m 11s**|
+|[002 Move credit_store_demo project to deltachives](../../../../../../lan/archived/2026-05-21_2025/microproj/001%20Rust%20Diesel%20Event%20Sourcing/tasks/2025/002%20Move%20credit_store_demo%20project%20to%20deltachives/002%20Move%20credit_store_demo%20project%20to%20deltachives.md)|**11h 7m 41s**|
+|    [001 Register tables to process for event accumulator](../../../../../../lan/archived/2026-05-21_2025/microproj/001%20Rust%20Diesel%20Event%20Sourcing/tasks/2025/002%20Move%20credit_store_demo%20project%20to%20deltachives/tasks/001%20Register%20tables%20to%20process%20for%20event%20accumulator.md)|3h 1m 1s|
+|    [000 Reviewing impl Trait type meaning](../../../../../../lan/archived/2026-05-21_2025/microproj/001%20Rust%20Diesel%20Event%20Sourcing/tasks/2025/002%20Move%20credit_store_demo%20project%20to%20deltachives/investigations/000%20Reviewing%20impl%20Trait%20type%20meaning.md)|1h 59m 8s|
+|    [000 Modularize shi shell use in credit store demo](../../../../../../lan/archived/2026-05-21_2025/microproj/001%20Rust%20Diesel%20Event%20Sourcing/tasks/2025/002%20Move%20credit_store_demo%20project%20to%20deltachives/tasks/000%20Modularize%20shi%20shell%20use%20in%20credit%20store%20demo.md)|1h 58m 15s|
+|    [002 Getting a generic diesel update all function to work](../../../../../../lan/archived/2026-05-21_2025/microproj/001%20Rust%20Diesel%20Event%20Sourcing/tasks/2025/002%20Move%20credit_store_demo%20project%20to%20deltachives/issues/002%20Getting%20a%20generic%20diesel%20update%20all%20function%20to%20work.md)|1h 15m 0s|
+|    [001 Getting many debugging logs from rustyline while using shi](../../../../../../lan/archived/2026-05-21_2025/microproj/001%20Rust%20Diesel%20Event%20Sourcing/tasks/2025/002%20Move%20credit_store_demo%20project%20to%20deltachives/issues/001%20Getting%20many%20debugging%20logs%20from%20rustyline%20while%20using%20shi.md)|0h 48m 43s|
+|    [000 Internal state for shi shell not passing to new thread safely](../../../../../../lan/archived/2026-05-21_2025/microproj/001%20Rust%20Diesel%20Event%20Sourcing/tasks/2025/002%20Move%20credit_store_demo%20project%20to%20deltachives/issues/000%20Internal%20state%20for%20shi%20shell%20not%20passing%20to%20new%20thread%20safely.md)|0h 33m 38s|
+|    [002 Update credit store schema for required version event id](../../../../../../lan/archived/2026-05-21_2025/microproj/001%20Rust%20Diesel%20Event%20Sourcing/tasks/2025/002%20Move%20credit_store_demo%20project%20to%20deltachives/tasks/002%20Update%20credit%20store%20schema%20for%20required%20version%20event%20id.md)|0h 26m 43s|
+|[000 Attempting to upgrade rustyline for shi](../../../../../../lan/archived/2026-05-21_2026/topic/contribute/open%20source/topic/tasks/2025/done/000%20Attempting%20to%20upgrade%20rustyline%20for%20shi/000%20Attempting%20to%20upgrade%20rustyline%20for%20shi.md)|**2h 33m 6s**|
+|    [000 Prepare new branch for shi rustyline upgrade](../../../../../../lan/archived/2026-05-21_2026/topic/contribute/open%20source/topic/tasks/2025/done/000%20Attempting%20to%20upgrade%20rustyline%20for%20shi/tasks/000%20Prepare%20new%20branch%20for%20shi%20rustyline%20upgrade.md)|0h 22m 24s|
+|[000 Wk 37 Addressing shi PR 10](../../../../../../lan/archived/2026-05-21_2025/main/task/st/done/000%20Wk%2037%20Addressing%20shi%20PR%2010/000%20Wk%2037%20Addressing%20shi%20PR%2010.md)|**2h 21m 25s**|
+|    [001 Looking into shi quotation removal](../../../../../../lan/archived/2026-05-21_2025/main/task/st/done/000%20Wk%2037%20Addressing%20shi%20PR%2010/investigations/001%20Looking%20into%20shi%20quotation%20removal.md)|1h 24m 15s|
+|    [000 Look into tarpaulin use](../../../../../../lan/archived/2026-05-21_2025/main/task/st/done/000%20Wk%2037%20Addressing%20shi%20PR%2010/investigations/000%20Look%20into%20tarpaulin%20use.md)|0h 49m 6s|
+|    [000 grep git commits by changes content for a string](../../../../../../lan/archived/2026-05-21_2025/main/task/st/done/000%20Wk%2037%20Addressing%20shi%20PR%2010/howtos/000%20grep%20git%20commits%20by%20changes%20content%20for%20a%20string.md)|0h 8m 4s|

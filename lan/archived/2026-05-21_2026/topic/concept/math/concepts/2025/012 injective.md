@@ -12,7 +12,7 @@ Distinct elements of $x$ map to distinct elements of $f(x)$. So for two values $
 
 This image from the wiki
 
-![[Pasted image 20250830114722.png]]
+![Pasted image 20250830114722.png](../../../../../../../../attachments/Pasted%20image%2020250830114722.png)
 
 Shows that even though there's an injective function from $X$ to $Y$, it still is possible that the set $Y$ to have a larger size than $X$.
 

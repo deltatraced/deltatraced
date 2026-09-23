@@ -2,15 +2,15 @@
 context_type: entry
 ---
 
-Parent: [[lan/2026/topic/concept/000 Atomic/wiki/003 Wiki Clusterline Concepts/003 Wiki Clusterline Concepts]]
+Parent: [lan/2026/topic/concept/000 Atomic/wiki/003 Wiki Clusterline Concepts/003 Wiki Clusterline Concepts](../003%20Wiki%20Clusterline%20Concepts.md)
 
-Spawned by: [[lan/2026/topic/concept/000 Atomic/wikiproc/003 Wiki Proc Clusterline Concepts/003 Wiki Proc Clusterline Concepts]]
+Spawned by: [lan/2026/topic/concept/000 Atomic/wikiproc/003 Wiki Proc Clusterline Concepts/003 Wiki Proc Clusterline Concepts](../../../wikiproc/003%20Wiki%20Proc%20Clusterline%20Concepts/003%20Wiki%20Proc%20Clusterline%20Concepts.md)
 
-Spawned in: [[lan/2026/topic/concept/000 Atomic/wikiproc/003 Wiki Proc Clusterline Concepts/003 Wiki Proc Clusterline Concepts#^spawn-entry-f0342e|^spawn-entry-f0342e]]
+Spawned in: [^spawn-entry-f0342e](../../../wikiproc/003%20Wiki%20Proc%20Clusterline%20Concepts/003%20Wiki%20Proc%20Clusterline%20Concepts.md#spawn-entry-f0342e)
 
 ---
 
-By paying [[005 Respecting the signs emitted in a context|respect]] and attending to a declared context, we attenuate unrelated writing or scope leakage.
+By paying [respect](../concept/005%20Respecting%20the%20signs%20emitted%20in%20a%20context.md) and attending to a declared context, we attenuate unrelated writing or scope leakage.
 
 This allows notes to act as a unit of attention, and attenuate noise from the outside world of considerations and distractions.
 

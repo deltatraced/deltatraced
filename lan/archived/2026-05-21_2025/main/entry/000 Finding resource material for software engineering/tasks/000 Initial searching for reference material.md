@@ -1,10 +1,8 @@
-
 # 1 Journal
 
+* [ ] 
 
-- [ ]
-
-From [[#^spawn-task-bed80d]] in [[000 Finding resource material for software engineering]]
+From [^spawn-task-bed80d](000%20Initial%20searching%20for%20reference%20material.md#spawn-task-bed80d) in [000 Finding resource material for software engineering](../000%20Finding%20resource%20material%20for%20software%20engineering.md)
 
 2025-08-14 Wk 33 Thu - 12:34
 

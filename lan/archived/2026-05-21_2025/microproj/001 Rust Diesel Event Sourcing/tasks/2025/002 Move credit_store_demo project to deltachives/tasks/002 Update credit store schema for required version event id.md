@@ -1,15 +1,15 @@
 ---
-parent: "[[002 Move credit_store_demo project to deltachives]]"
-spawned_by: "[[001 Register tables to process for event accumulator]]"
+parent: '[[002 Move credit_store_demo project to deltachives]]'
+spawned_by: '[[001 Register tables to process for event accumulator]]'
 context_type: task
 status: skipped
 ---
 
-Parent: [[002 Move credit_store_demo project to deltachives]]
+Parent: [002 Move credit_store_demo project to deltachives](../002%20Move%20credit_store_demo%20project%20to%20deltachives.md)
 
-Spawned by: [[001 Register tables to process for event accumulator]]
+Spawned by: [001 Register tables to process for event accumulator](001%20Register%20tables%20to%20process%20for%20event%20accumulator.md)
 
-Spawned in: [[001 Register tables to process for event accumulator#^spawn-task-bcd457|^spawn-task-bcd457]]
+Spawned in: [^spawn-task-bcd457](001%20Register%20tables%20to%20process%20for%20event%20accumulator.md#spawn-task-bcd457)
 
 # 1 Journal
 
@@ -17,7 +17,7 @@ Spawned in: [[001 Register tables to process for event accumulator#^spawn-task-b
 
 In models, we had to change it to not be optional:
 
-```diff
+````diff
 #[derive(Insertable, AsChangeset)]
 #[diesel(treat_none_as_null = true)]
 #[diesel(table_name = crate::autogen::schema::credit_store_version)]
@@ -25,7 +25,7 @@ pub struct NewCreditStoreVersion {
 -    pub optevent_id: Option<i32>,
 +    pub event_id: i32,
 }
-```
+````
 
 as well in CreditStoreVersion.
 
@@ -37,14 +37,14 @@ As mentioned in the README,
 
 Let's regenerate the schema:
 
-```sh
+````sh
 # in /home/lan/src/cloned/gh/deltachives/2025-002-credit-store-demo-rs
 source ./.env && rm $DATABASE_URL; diesel migration run && python3 scripts/diesel-postprocess.py
 
 # out 
 rm: cannot remove 'data/database.db': No such file or directory
 Running migration 2025-09-12-162639_create_credit_store
-```
+````
 
 Seems to have ran fine still.
 

@@ -1,32 +1,30 @@
-
 # 1 Journal
 
+* [x] 
 
-- [x]
-
-From [[#^spawn-issue-0b89]] in [[#3.8 Reconstruct labels in the tape program]]
+From [^spawn-issue-0b89](003%20Tape%20reaches%20invalid%20command%2051%20at%200x0b89.md#spawn-issue-0b89) in [3.8 Reconstruct labels in the tape program](003%20Tape%20reaches%20invalid%20command%2051%20at%200x0b89.md#38-reconstruct-labels-in-the-tape-program)
 
 2025-08-01 Wk 31 Fri - 07:18
 
 We seem to be misreading the tape here:
 
-```
+````
 0, 2, 74, 10, 0, 62, 0, 2, 132, 11, 0, 125, 0, 2, 73, 10, 24, 197, 10, 3, 8,
 1, 0, 2, 176, 51, 14, 12, 0, 36, 26, 197, 10, 36, 0, 6, 0, 2, 175, 11, 0, 253,
-```
+````
 
 Let's try to route the commands manually to see. We're seeing 51 on the next command byte in the remaining tape but this should be incorrect.
 
-```
+````
 0, [2, 74, 10,] [0, 62, 0,] [2, 132, 11,] [0, 125, 0,] [2, 73, 10,] [24, 197, 10,] [3, 8,
 1,] [0, 2, 176,] 51, 14, 12, 0, 36, 26, 197, 10, 36, 0, 6, 0, 2, 175, 11, 0, 253,
-```
+````
 
 2025-08-01 Wk 31 Fri - 08:07
 
 We can confirm through `experiments/cmd_idx_idle.csv` that we never trigger a command whose character is `51`.
 
-![[#^freq-analysis-gchr]]
+[^freq-analysis-gchr](003%20Tape%20reaches%20invalid%20command%2051%20at%200x0b89.md#freq-analysis-gchr)
 
 2025-08-01 Wk 31 Fri - 08:38
 
@@ -48,7 +46,7 @@ Another possibility is that we've left the text section and entered the data sec
 
 16 is 32. So Anything $\ge32$  is a 1-sized command.
 
-```
+````
   2, 179, 51, 
   32, 
   0, 81, 50, 
@@ -105,7 +103,7 @@ Another possibility is that we've left the text section and entered the data sec
   0, 2, 176, 
   
   51, 
-```
+````
 
 I thought a command started with 71 but I missed a 1-sized command 42...
 

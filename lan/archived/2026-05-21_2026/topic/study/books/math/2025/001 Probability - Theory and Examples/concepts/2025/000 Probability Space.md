@@ -1,14 +1,16 @@
 # 1 Definition
 
 A probability space is a 3-tuple $(\Omega, \mathcal{F}, P)$ where
-- $\Omega$ is the set of outcomes
-- $\mathcal{F}$ is set of events.
-- It is also a [[007 σ-algebra|σ-algebra]] over $\Omega$.
-- $P:\mathcal{F} \to [0,1]$ is a function assigning probabilities to events in $\mathcal{F}$
 
-Being a σ-algebra over $\Omega$, $\mathcal{F}$ includes all non-empty [[005 subset|subsets]] of $\Omega$ and satisfies the conditions:
+* $\Omega$ is the set of outcomes
+* $\mathcal{F}$ is set of events.
+* It is also a [σ-algebra](../../../../../../../concept/math/concepts/2025/007%20%CF%83-algebra.md) over $\Omega$.
+* $P:\mathcal{F} \to [0,1]$ is a function assigning probabilities to events in $\mathcal{F}$
+
+Being a σ-algebra over $\Omega$, $\mathcal{F}$ includes all non-empty [subsets](../../../../../../../concept/math/concepts/2025/005%20subset.md) of $\Omega$ and satisfies the conditions:
+
 1. if $A \in \mathcal{F}$, then $A^c \in \mathcal{F}$
-2. if $\forall i \in I, A_i \in \mathcal{F}$, then $\bigcup_{i \in \mathbb{I}} A_i \in \mathcal{F}$ where $I$ is $[1..|A_i|]$ and $|A_i|$ is the size of the sequence $A_i$.
+1. if $\forall i \in I, A_i \in \mathcal{F}$, then $\bigcup_{i \in \mathbb{I}} A_i \in \mathcal{F}$ where $I$ is $[1..|A_i|]$ and $|A_i|$ is the size of the sequence $A_i$.
 
 # 2 Consequences
 
@@ -16,7 +18,7 @@ Being a σ-algebra over $\Omega$, $\mathcal{F}$ includes all non-empty [[005 sub
 
 As a consequence of closure under union, the condition $\bigcap_{i \in \mathbb{I}} A_i \in \mathcal{F}$ can be rewritten as as a union $(\bigcup_{i \in I} A_i^c )^c \in \mathcal{F}$
 
-This is by application of [De Morgan's laws](https://en.wikipedia.org/wiki/De_Morgan%27s_laws) which is also mentioned in wiki for [[006 compliment|compliment]].
+This is by application of [De Morgan's laws](https://en.wikipedia.org/wiki/De_Morgan%27s_laws) which is also mentioned in wiki for [compliment](../../../../../../../concept/math/concepts/2025/006%20compliment.md).
 
 # 3 Theorems
 
@@ -26,7 +28,7 @@ This matches book theorem 1.1.1 on pg 2, vpg 10/490.
 
 (1)
 
-Let $\mu$ be a [[015 measure|measure]] on $(\Omega, \mathcal{F})$
+Let $\mu$ be a [measure](../../../../../../../concept/math/concepts/2025/015%20measure.md) on $(\Omega, \mathcal{F})$
 
 (2)
 
@@ -50,7 +52,7 @@ if $A_i \uparrow A$,
 
 # 4 Related Entries
 
-- [[000 Starting out Probability Theory and Examples]]
+* [000 Starting out Probability Theory and Examples](../../entries/2025/000%20Starting%20out%20Probability%20Theory%20and%20Examples.md)
 
 # 5 Notes
 
@@ -72,6 +74,6 @@ Their explanation that we can think of an event under $\mathcal{F}$ as a query w
 
 $$
 
-\newcommand{\arw}{\rightarrow}
+\\newcommand{\arw}{\rightarrow}
 
 $$

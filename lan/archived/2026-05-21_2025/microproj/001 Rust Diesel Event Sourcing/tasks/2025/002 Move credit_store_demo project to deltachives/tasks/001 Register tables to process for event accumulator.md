@@ -1,15 +1,15 @@
 ---
-parent: "[[002 Move credit_store_demo project to deltachives]]"
-spawned_by: "[[002 Move credit_store_demo project to deltachives]]"
+parent: '[[002 Move credit_store_demo project to deltachives]]'
+spawned_by: '[[002 Move credit_store_demo project to deltachives]]'
 context_type: task
 status: done
 ---
 
-Parent: [[002 Move credit_store_demo project to deltachives]]
+Parent: [002 Move credit_store_demo project to deltachives](../002%20Move%20credit_store_demo%20project%20to%20deltachives.md)
 
-Spawned by: [[002 Move credit_store_demo project to deltachives]]
+Spawned by: [002 Move credit_store_demo project to deltachives](../002%20Move%20credit_store_demo%20project%20to%20deltachives.md)
 
-Spawned in: [[002 Move credit_store_demo project to deltachives#^spawn-task-0a20b1|^spawn-task-0a20b1]]
+Spawned in: [^spawn-task-0a20b1](../002%20Move%20credit_store_demo%20project%20to%20deltachives.md#spawn-task-0a20b1)
 
 # 1 Journal
 
@@ -21,7 +21,7 @@ We need to know the `x_head`, `x_events`, `x`, and `x_version` tables.
 
 2025-09-19 Wk 38 Fri - 22:25 +03:00
 
-```rust
+````rust
 /// These capabilities allow us to manage a table head from its events
 pub trait EventSourcable: 
     ReadEventTableVersion
@@ -33,7 +33,7 @@ pub trait EventSourcable:
     + ClearHeadTable
     + SourceHeadTable
     { }
-```
+````
 
 Now we can get a hash map of event sourcable objects. Let's implement this for the credit store.
 
@@ -45,7 +45,7 @@ We really most of the time need to read just the newly appended events. `ReadEve
 
 We need to update the schema since we made it so that the event id is required for version tables
 
-Spawn [[002 Update credit store schema for required version event id]] ^spawn-task-bcd457
+Spawn [002 Update credit store schema for required version event id](002%20Update%20credit%20store%20schema%20for%20required%20version%20event%20id.md) ^spawn-task-bcd457
 
 2025-09-20 Wk 38 Sat - 02:26 +03:00
 
@@ -71,10 +71,10 @@ Now to trigger work to start, we need an ability for the user to insert an event
 
 We added this to the `EaThreadMessage`:
 
-```rust
+````rust
 /// On None, the event accumulator attempts to check out latest.
 DbCheckout { table_name: String, opt_event_id: Option<i32>, },
-```
+````
 
 This is a new message dedicated for checking out different versions of tables, so that the writing responsibility remains solely in the event accumulator's control.
 
@@ -84,17 +84,17 @@ We need to add `&self` to all the traits to access them through the event sourca
 
 2025-09-20 Wk 38 Sat - 04:16 +03:00
 
-Finally we reached the issue we [[#^recall-8017b0|anticipated]]!
+Finally we reached the issue we [anticipated](001%20Register%20tables%20to%20process%20for%20event%20accumulator.md#recall-8017b0)!
 
-```rust
+````rust
 let events = event_sourcable.read_event_table(&mut mut_conn, None)?;
 
 let (event_data, obj) = events[0];
 
 event_sourcable.update_head_table_row(&mut mut_conn, 1, obj)?;
-```
+````
 
-```
+````
 error[E0308]: mismatched types
    --> src/db/event_accumulator.rs:168:81
     |
@@ -111,28 +111,28 @@ note: method defined here
     |
 81  |     fn update_head_table_row(&self, mu_conn: &mut SqliteConnection, object_id: i32, object: Self::Object) -> Result<(), EventSourcableErr...
     |        ^^^^^^^^^^^^^^^^^^^^^                                                        ------
-```
+````
 
 2025-09-20 Wk 38 Sat - 04:25 +03:00
 
 We solved this issue by adding a `HasEventObject` trait, and setting it as a constraint for any trait that needs `Object`. So we're not repeating `Object` anywhere else, and because multiple traits satisfy this constraint, we know they refer to the same `Object`, `<EventSourcable as HasEventObject>::Object`! We also added clone to the object and debug for ease of inspection and copying.
 
-```
+````
 pub trait HasEventObject {
     /// The part of the event table that is duplicate of the base object
     type Object: Clone + Debug;
 }
-```
+````
 
 So now this works:
 
-```rust
+````rust
 let events = event_sourcable.read_event_table(&mut mut_conn, None)?;
 
 let (event_data, obj) = events[0].clone();
 
 event_sourcable.update_head_table_row(&mut mut_conn, 1, obj)?;
-```
+````
 
 Okay! Registeration seems good!
 

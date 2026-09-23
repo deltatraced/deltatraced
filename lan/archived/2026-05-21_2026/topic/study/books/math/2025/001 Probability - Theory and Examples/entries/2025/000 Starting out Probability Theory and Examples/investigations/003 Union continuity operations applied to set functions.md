@@ -1,8 +1,6 @@
-
 # 1 Journal
 
-
-- [ ]
+* [ ] 
 
 2025-09-06 Wk 36 Sat - 23:03
 
@@ -40,9 +38,9 @@ We want to know what this $\sup _{m\geq n}$ mean.
 
 I found this defined in a textbook in Prof John Hunter's website under [m125b Real Analysis](https://www.math.ucdavis.edu/~hunter/m125b/m125b.html) course.
 
-Captured in [[000 Mn 09 Resources]]
+Captured in [000 Mn 09 Resources](../../../../../../../../../../../2026-05-21-pre/entries-monthly/2025/001%20Resources/entries/000%20Mn%2009%20Resources.md)
 
-Spawn [[022 supremum and infinimum]]
+Spawn [022 supremum and infinimum](../../../../../../../../../concept/math/concepts/2025/022%20supremum%20and%20infinimum.md)
 
 2025-09-07 Wk 36 Sun - 01:31
 
@@ -68,7 +66,7 @@ In $\lim_{x \uparrow a}$ $x \uparrow a$ means "x tends to a from the left" and i
 
 In $\lim_{x \downarrow a}$, $x \downarrow a$ means "x tends to a from the right" and it can also be written as $\lim_{x \to a^+}$.
 
-Captured to [[000 Mn 09 Resources]]
+Captured to [000 Mn 09 Resources](../../../../../../../../../../../2026-05-21-pre/entries-monthly/2025/001%20Resources/entries/000%20Mn%2009%20Resources.md)
 
 We can also think "from above" for "from the left" and "from below" for "from the right".
 
@@ -116,6 +114,6 @@ Nothing right now.
 
 2025-09-07 Wk 36 Sun - 03:45
 
-Maybe we will get a textbook confirmation on this interpretation as we go through the proof. See [[#3.2 Writing Continuity from above and below theorems for probability space]]
+Maybe we will get a textbook confirmation on this interpretation as we go through the proof. See [3.2 Writing Continuity from above and below theorems for probability space](003%20Union%20continuity%20operations%20applied%20to%20set%20functions.md#32-writing-continuity-from-above-and-below-theorems-for-probability-space)
 
 ### 1.1.1 Pend

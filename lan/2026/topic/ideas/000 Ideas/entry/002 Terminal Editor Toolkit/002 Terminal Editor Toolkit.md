@@ -8,5 +8,4 @@ Then we wouldn't need a plugin system - there is nothing to plug anywhere. You j
 
 2026-08-03 Wk 32 Mon - 06:49 +03:00
 
-Spawn [[lan/2026/topic/ideas/000 Ideas/entry/002 Terminal Editor Toolkit/entry/000 Research Terminal Editor Toolkit]] ^spawn-entry-ca5988
-
+Spawn [lan/2026/topic/ideas/000 Ideas/entry/002 Terminal Editor Toolkit/entry/000 Research Terminal Editor Toolkit](entry/000%20Research%20Terminal%20Editor%20Toolkit.md) ^spawn-entry-ca5988

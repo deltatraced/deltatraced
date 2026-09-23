@@ -2,11 +2,11 @@
 context_type: entry
 ---
 
-Parent: [[lan/2026/topic/study-math/000 CQTS Intro to Cubical/wikiproc/000 Wiki Proc CQTS Intro to Cubical/000 Wiki Proc CQTS Intro to Cubical]]
+Parent: [lan/2026/topic/study-math/000 CQTS Intro to Cubical/wikiproc/000 Wiki Proc CQTS Intro to Cubical/000 Wiki Proc CQTS Intro to Cubical](../000%20Wiki%20Proc%20CQTS%20Intro%20to%20Cubical.md)
 
-Spawned by: [[lan/2026/topic/study-math/000 CQTS Intro to Cubical/wikiproc/000 Wiki Proc CQTS Intro to Cubical/000 Wiki Proc CQTS Intro to Cubical]]
+Spawned by: [lan/2026/topic/study-math/000 CQTS Intro to Cubical/wikiproc/000 Wiki Proc CQTS Intro to Cubical/000 Wiki Proc CQTS Intro to Cubical](../000%20Wiki%20Proc%20CQTS%20Intro%20to%20Cubical.md)
 
-Spawned in: [[lan/2026/topic/study-math/000 CQTS Intro to Cubical/wikiproc/000 Wiki Proc CQTS Intro to Cubical/000 Wiki Proc CQTS Intro to Cubical#^spawn-entry-c06dcc|^spawn-entry-c06dcc]]
+Spawned in: [^spawn-entry-c06dcc](../000%20Wiki%20Proc%20CQTS%20Intro%20to%20Cubical.md#spawn-entry-c06dcc)
 
 # What?
 
@@ -14,9 +14,9 @@ This includes partial attempt and interpretation for a given problem, and offers
 
 It should have one subheading 2 per problem per *attempt* as an incrementing counter, since we can try multiple times in different ways, and draw different conclusions about our attempt.
 
-Supplementary material per attempt might also be found at [[010 CQTS Problems Attempt Fragments]]
+Supplementary material per attempt might also be found at [010 CQTS Problems Attempt Fragments](010%20CQTS%20Problems%20Attempt%20Fragments.md)
 
-Commentary or explanations after a solution was found can be found at [[005 CQTS Problem Entries]].
+Commentary or explanations after a solution was found can be found at [005 CQTS Problem Entries](005%20CQTS%20Problem%20Entries.md).
 
 # Journal
 
@@ -24,11 +24,11 @@ Commentary or explanations after a solution was found can be found at [[005 CQTS
 
 2026-09-13 Wk 37 Sun - 21:03 +03:00
 
-Through [[005 CQTS Problem Entries#`+ℕ-≡ℕ-comm`]],
+Through \[\[005 CQTS Problem Entries#`+ℕ-≡ℕ-comm`\]\],
 
 In `/home/lan/src/cloned/gh/CQTS/branches/introduction-to-cubical@solve/lectures/1--Type-Theory/1-5--Propositions-as-Types.lagda.md`,
 
-```haskell
+````haskell
 +ℕ-≡ℕ-extract-suc-r : (a b : ℕ) → (a +ℕ (suc b)) ≡ℕ suc (a +ℕ b)
 +ℕ-≡ℕ-extract-suc-r zero b = ≡ℕ-refl b
 +ℕ-≡ℕ-extract-suc-r (suc a) b = +ℕ-≡ℕ-extract-suc-r a b
@@ -43,9 +43,9 @@ In `/home/lan/src/cloned/gh/CQTS/branches/introduction-to-cubical@solve/lectures
     heq_ab = {!+ℕ-≡ℕ-extract-suc-r a b!}
     heq_ab = {!≡ℕ-sym (b +ℕ (suc a)) (suc (b +ℕ a)) (+ℕ-≡ℕ-extract-suc-r a b)!}
 _ = ≡ℕ-sym
-```
+````
 
-```haskell
+````haskell
 +ℕ-≡ℕ-comm (suc a) b = {!≡ℕ-rwr _ _ _ (+ℕ-≡ℕ-comm a b)!}
 
 Goal: suc (a +ℕ b) ≡ℕ b +ℕ suc a
@@ -53,13 +53,14 @@ Have: _a_277 ≡ℕ _b_278 → _a_277 ≡ℕ _b'_279
 ———— Context ———————————————————————————————————————————————
 b : ℕ
 a : ℕ
-```
+````
 
 It seems like the choice of `+ℕ-≡ℕ-extract-suc-r` would have worked better if I defaulted to perform case analysis on `b` instead of `a`. But I've been trying to be consistent about this and always prefer the first one, unless I have to make a different choice.
 
-`+ℕ-≡ℕ-comm a (suc b)` should have the type 
-- `+ℕ-≡ℕ-comm : (a b : ℕ) → (a +ℕ (suc b)) ≡ℕ ((suc b) +ℕ a)`
-- $\to$ ``+ℕ-≡ℕ-comm : (a b : ℕ) → (a +ℕ (suc b)) ≡ℕ suc (b +ℕ a)``
+`+ℕ-≡ℕ-comm a (suc b)` should have the type
+
+* `+ℕ-≡ℕ-comm : (a b : ℕ) → (a +ℕ (suc b)) ≡ℕ ((suc b) +ℕ a)`
+* $\to$ `+ℕ-≡ℕ-comm : (a b : ℕ) → (a +ℕ (suc b)) ≡ℕ suc (b +ℕ a)`
 
 Although we'll still have to deal with `suc (b +ℕ a)` in this case.
 
@@ -69,7 +70,7 @@ Oops, should also avoid using `_` in like `heq_ab`. In Agda, `_` has special mea
 
 2026-09-13 Wk 37 Sun - 21:59 +03:00
 
-```haskell
+````haskell
 -- ℕ addition is commutative
 
 +ℕ-≡ℕ-extract-suc-r : (a b : ℕ) → (a +ℕ (suc b)) ≡ℕ suc (a +ℕ b)
@@ -89,7 +90,7 @@ Oops, should also avoid using `_` in like `heq_ab`. In Agda, `_` has special mea
     h0 = ≡ℕ-rwr (suc (a +ℕ b)) (suc (b +ℕ a)) (b +ℕ suc a) h0-heq-bb' prev
       --   `suc (a +ℕ b) ≡ℕ suc (b +ℕ     a)`
       -- → `suc (a +ℕ b) ≡ℕ      b +ℕ suc a`
-```
+````
 
 This did it! Starting from `prev`, which is the prior inductive case, resolves the flip problem for us. Then it's just a matter of using `h0` to turn `suc (b +ℕ a)` into the form yet-to-extract suc, and we're at our inductive case `+ℕ-≡ℕ-comm (suc a) b`!
 
@@ -97,7 +98,7 @@ This did it! Starting from `prev`, which is the prior inductive case, resolves t
 
 This was my previous solution from some months back:
 
-```haskell
+````haskell
 +ℕ-≡ℕ-a+Sb : (a b : ℕ) → (a +ℕ (suc b)) ≡ℕ suc (a +ℕ b)
 +ℕ-≡ℕ-a+Sb zero b = ≡ℕ-refl b
 +ℕ-≡ℕ-a+Sb (suc a) b = +ℕ-≡ℕ-a+Sb a b
@@ -113,7 +114,7 @@ This was my previous solution from some months back:
     ←H₁ H₀ H₁ = ≡ℕ-rwr (m +ℕ suc n) (suc (m +ℕ n)) (suc (n +ℕ m)) (≡ℕ-sym (n +ℕ m) (m +ℕ n) H₀) H₁
     ←H₀ : (suc (n +ℕ m) ≡ℕ suc (m +ℕ n)) → (suc (n +ℕ m) ≡ℕ m +ℕ suc n)
     ←H₀ H₀ = ≡ℕ-sym (m +ℕ suc n) (suc (n +ℕ m)) (←H₁ H₀ (+ℕ-≡ℕ-a+Sb m n))
-```
+````
 
 More involved machinery, and multiple `≡ℕ-sym`. My current route is cleaner.
 
@@ -121,34 +122,34 @@ More involved machinery, and multiple `≡ℕ-sym`. My current route is cleaner.
 
 2026-09-18 Wk 38 Fri - 08:28 +03:00
 
-Pushed attempt to `/home/lan/src/cloned/cb/lan22h-experiments/note-files/paste/cc8a4d38`. 
+Pushed attempt to `/home/lan/src/cloned/cb/lan22h-experiments/note-files/paste/cc8a4d38`.
 (Name is originally based on `sha1sum | head -c8`, but content can change afterwards. We can also just use `cat /dev/random | head -n10 | sha1sum | head -c8`.)
 
 Expanding `fro-to` doesn't seem to help much here. Resetting back to doing `fro-to` without trying to expand the type out.
 
 2026-09-18 Wk 38 Fri - 08:36 +03:00
 
-```haskell
+````haskell
 fro-to : to hasRetract ret
 fro-to = {!!}
-```
+````
 
-```
+````
 Goal: (b : B → C) →
       (λ a →
          ecd .proof .retract .map
          (ecd .map (b (eab .map (eab .proof .retract .map a)))))
       ≡ b
-```
+````
 
 2026-09-18 Wk 38 Fri - 09:19 +03:00
 
-```haskell
+````haskell
 fro-to : to hasRetract ret
 fro-to mbc i b = (ecd .proof .retract .proof (mbc (eab .proof .section .proof b i))) i
-```
+````
 
-```
+````
 /home/lan/src/idea/cb/lan22h-experiments/problems-mkn/proj/gh/cqts/introduction-to-cubical/cqts-lect2/src/lect-2-2-equivalences-and-path-algebra.agda:566.9-23: error: [UnequalTerms]
 The terms
   eab .proof .retract .map b
@@ -165,16 +166,16 @@ and
 must be equal, since fro-to eab ecd mbc i0 b could reduce to
 either.
 
-```
+````
 
 It gives a similar goal, but actually uses `eab .proof .section` instead of `eab .proof .retract`:
 
-```haskell
+````haskell
 fro-to : to hasRetract ret
 fro-to mbc i b = {!(ecd .proof .retract .proof (mbc (eab .proof .section .proof b i))) i!}
-```
+````
 
-```
+````
 Goal: C
 ———— Boundary (wanted) —————————————————————————————————————
 i = i0 ⊢ ecd .proof .retract .map
@@ -186,24 +187,24 @@ i = i0 ⊢ ecd .proof .retract .map
          (ecd .map (mbc (eab .map (eab .proof .section .map b))))
 i = i1 ⊢ mbc b
 ———— Context ———————————————————————————————————————————————
-```
+````
 
 So this can be an issue with how we wrote `ret`:
 
-```haskell
+````haskell
 ret : (A → D) → (B → C)
 ret mad = (ecd .proof .retract .map) ∘ mad ∘ (eab .proof .retract .map)
-```
+````
 
 This works:
 
-```haskell
+````haskell
 ret : (A → D) → (B → C)
 ret mad = (ecd .proof .retract .map) ∘ mad ∘ (eab .proof .section .map)
 
 fro-to : to hasRetract ret
 fro-to mbc i b = (ecd .proof .retract .proof (mbc (eab .proof .section .proof b i))) i
-```
+````
 
 ## `subst`
 
@@ -211,7 +212,7 @@ fro-to mbc i b = (ecd .proof .retract .proof (mbc (eab .proof .section .proof b 
 
 In `/home/lan/src/idea/cb/lan22h-experiments/problems-mkn/proj/gh/cqts/introduction-to-cubical/cqts-lect2/src/lect-2-3-substitution-and-J.agda`,
 
-```haskell
+````haskell
 module _
   {ℓ₁ ℓ₂ : Level}
   {A : Type ℓ₁}
@@ -223,11 +224,11 @@ module _
       → B a
       → B a'
     subst B p b = {!transport (λ (i : I) → B (p i)) b!}
-```
+````
 
 This fails to be resolved. `C-c C-.` gives
 
-```
+````
 error: [UnequalTypes]
 The type
   (i : I) → Type ℓ₂
@@ -235,26 +236,26 @@ is not a subtype of
   _A_20 ≡ _B_21
 when checking that the expression λ (i : I) → B (p i) has type
 _A_20 ≡ _B_21
-```
+````
 
-```haskell
+````haskell
 subst B p b = {!transport (λ (i) → B (p i)) b!}
-```
+````
 
 yields
 
-```
+````
 error: [PatternInPathLambda]
 Patterns are not allowed in Path-lambdas
 when checking that the expression λ (i) → B (p i) has type
 _A_20 ≡ _B_21
-```
+````
 
 Finally
 
-```haskell
+````haskell
 subst B p b = {!transport (λ i → B (p i)) b!}
-```
+````
 
 yields `Have: B a'`.
 
@@ -262,7 +263,7 @@ It seems that paths from `i` are treated specially here.
 
 Though sometimes I can get away with specifying `(_ : I)`. for example like here:
 
-```haskell
+````haskell
 module _
   {ℓ : Level}
   {A B : Type ℓ}
@@ -270,13 +271,13 @@ module _
     -- transport is derived through the more general transport-fixing
     transport : A ≡ B → A → B
     transport p a = transport-fixing (λ (i : I) → p i) i0 a
-```
+````
 
 Here too
 
-```haskell
+````haskell
 subst B p b = {!(λ (i : I) → p i) i1!}
-```
+````
 
 giving `Have: A`
 
@@ -286,7 +287,7 @@ giving `Have: A`
 
 In `/home/lan/src/idea/cb/lan22h-experiments/problems-mkn/proj/gh/cqts/introduction-to-cubical/cqts-lect2/src/lect-2-3-substitution-and-J.agda`,
 
-```haskell
+````haskell
 module _
   {ℓ : Level}
   {A : Type ℓ}
@@ -297,20 +298,20 @@ module _
       → (p : a ≡ â)
       → Q a refl ≡ Q â p
     J-line Q p i = {!!}
-```
+````
 
-```
+````
 Goal: Type ℓ
 ———— Boundary (wanted) —————————————————————————————————————
 i = i0 ⊢ Q a refl
 i = i1 ⊢ Q â p
-```
+````
 
 We want to show what the square for this is.
 
 So far we have a square that is at least
 
-```
+````
 --                ?
 --         a₀₁ — — — > a₁₁       
 --          ^           ^          ^
@@ -319,11 +320,11 @@ So far we have a square that is at least
 --         a₀₀ — — — > a₁₀           i
 --                ?    
 --   a₀₀ a₀₁ a₁₀ a₁₁ = ?
-```
+````
 
 This looks like it can derive from a square by construction via application of `Q a`:
 
-```
+````
 --                ?
 --         a₀₁ — — — > a₁₁       
 --          ^           ^          ^
@@ -332,16 +333,16 @@ This looks like it can derive from a square by construction via application of `
 --         a₀₀ — — — > a₁₀           i
 --                ?    
 --   a₀₀ a₀₁ a₁₀ a₁₁ = ?
-```
+````
 
 Treating this as the goal, we want to create a square that gives us `refl` at `i=i0` and `p` at `i=i1`.
 
-Recall that `refl` indicates that the endpoints are constant with regard to some path. And `∧ ∨` short circuit to constant paths for some endpoints. 
+Recall that `refl` indicates that the endpoints are constant with regard to some path. And `∧ ∨` short circuit to constant paths for some endpoints.
 i0 for `∧` and i1 for `∨`.
 
 We know one of the constant paths is at `i=i0`, so we expect `∧`:
 
-```haskell
+````haskell
 module _
   {ℓ : Level}
   {A : Type ℓ}
@@ -352,9 +353,9 @@ module _
         (p : a ≡ â)
       → Square A refl p refl p
     target-square p i j = p (i ∧ j)
-```
+````
 
-```
+````
 --                p
 --         a₀₁ — — — > a₁₁       
 --          ^           ^          ^
@@ -362,11 +363,11 @@ module _
 --          |           |          . — >
 --         a₀₀ — — — > a₁₀           i
 --              refl    
-```
+````
 
 This choices turns out to be `connection∧`:
 
-```haskell
+````haskell
 module _
   {ℓ : Level}
   {A : Type ℓ}
@@ -383,7 +384,7 @@ module _
       (p : a ≡ b)
       → Square A refl p refl p
     connection∧ p i j = p (i ∧ j)
-```
+````
 
 A square allows us to construct a path of paths of interest, like from refl to p.
 
@@ -395,7 +396,7 @@ In `/home/lan/src/idea/cb/lan22h-experiments/problems-mkn/proj/gh/cqts/introduct
 
 ncf gave me a hint before on this some months back, but let's try to solve it again before we check that again, I might remember.
 
-```haskell
+````haskell
 module _
   {ℓ : Level}
   {A : Type ℓ}
@@ -423,9 +424,9 @@ module _
           where
             r : Q a̬ refl
             r = f a̬ refl
-```
+````
 
-```haskell
+````haskell
 fro-to f i a p = {! !}
 
 -- goal
@@ -440,13 +441,13 @@ Goal: Q a p
 i = i0 ⊢ transport-fixing (λ i₁ → Q (p i₁) (λ j → p (i₁ ∧ j))) i0
          (f a̬ (λ i₁ → a̬))
 i = i1 ⊢ f a p
-```
+````
 
 The idea is we can design a `Q` that simplifies this retract proof.
 
 From the above goal, we can see that `transport-fixing (λ i₁ → Q (p i₁) (λ j → p (i₁ ∧ j))) i0` is our definition of `J`. We want:
 
-```haskell
+````haskell
 fro-to : to hasRetract ret
 fro-to f i a p = h0 i
   where
@@ -454,21 +455,21 @@ fro-to f i a p = h0 i
 	r = f a̬ refl
 	h0 : J Q r p ≡ f a p
 	h0 = {!!}
-```
+````
 
 Now we want to use `J` to solve this. Having `J` as the path induction has it so it suffices to solve a simpler version, with `refl` instead of `p`.
 
 2026-09-20 Wk 38 Sun - 21:19 +03:00
 
-- [[010 CQTS Problems Attempt Fragments#`J-ump-≃` - Side Notes]]
-- [[010 CQTS Problems Attempt Fragments#`J-ump-≃` - Tried to extend the type of Q]]
-- [[010 CQTS Problems Attempt Fragments#`J-ump-≃` - Q might already take into account path and refl variance]]
+* \[\[010 CQTS Problems Attempt Fragments#`J-ump-≃` - Side Notes\]\]
+* \[\[010 CQTS Problems Attempt Fragments#`J-ump-≃` - Tried to extend the type of Q\]\]
+* \[\[010 CQTS Problems Attempt Fragments#`J-ump-≃` - Q might already take into account path and refl variance\]\]
 
 2026-09-21 Wk 39 Mon - 02:32 +03:00
 
 Yup, just choosing a `Q` that that can resolve to the path of `h1` or `h0` via `J` solves this:
 
-```haskell
+````haskell
 module _
   {ℓ : Level}
   {A : Type ℓ}
@@ -499,7 +500,7 @@ module _
             Q₁ a' p' = Path (Q a' p') (J Q r p') (f a' p')
             h0 : Path (Q a p) (J Q r p) (f a p)
             h0 = J Q₁ h1 p
-```
+````
 
 Now let's check out our prior solution and what the hint we got was.
 
@@ -507,15 +508,15 @@ Creating a random file name: `cat /dev/random | head -n1 | sha1sum | head -c8`
 
 The previous attempt is in `/home/lan/src/cloned/cb/lan22h-experiments/note-files/paste/5ced8d7f`.
 
-```haskell
+````haskell
 --  Exercise: (Hint: this is an instance of `J-refl`)
     to-fro : isSection to fro
     to-fro q = J-refl Q q
-```
+````
 
 We got this.
 
-```haskell
+````haskell
 --  Exercise: (Hint: use `J` again!)
     fro-to : isRetract to fro
     fro-to f i y p = P₀ i
@@ -524,7 +525,7 @@ We got this.
         P₁ = J-refl Q (f x refl)
         P₀ : Path (Q y p) (J Q (f x refl) p) (f y p) -- hint
         P₀ = J (λ y₁ p₁ → Path (Q y₁ p₁) (J Q (f x refl) p₁) (f y₁ p₁)) P₁ p
-```
+````
 
 Pretty much the same solution, although I've done more abstractions in my case, while here I did it more inline.
 
@@ -536,7 +537,7 @@ This should be the encode-decode method template, replace ⊤ for some other ind
 
 I made a modification to what the CQTS authors did, which is to declare the code at the same level as the equivalence, so that we can refer to it more uniformly.
 
-```haskell
+````haskell
 ≡code-⊤ : ⊤ → ⊤ → Type ℓ-zero
 ≡code-⊤ a̬ â = {!!}
 
@@ -560,11 +561,11 @@ I made a modification to what the CQTS authors did, which is to declare the code
 
     fro-to : (a̬ â : ⊤) → (encode a̬ â) hasRetract (decode a̬ â)
     fro-to a̬ â = J (λ a p → (decode a̬ a) (encode a̬ a p) ≡ p) (fro-to-refl a̬)
-```
+````
 
 Type formers can look a little different:
 
-```haskell
+````haskell
 module _
   {ℓ₁ ℓ₂ : Level}
   {A : Type ℓ₁}
@@ -593,7 +594,7 @@ module _
     
         fro-to : (a̬ â : A ⊎ B) → (encode a̬ â) hasRetract (decode a̬ â)
         fro-to a̬ â = J (λ a p → (decode a̬ a) (encode a̬ a p) ≡ p) (fro-to-refl a̬)
-```
+````
 
 You'll also have to decide whether `encode` defined through `encode-refl` is necessary or whether to do it directly. Same for `fro-to`.
 
@@ -605,7 +606,7 @@ in `/home/lan/src/idea/cb/lan22h-experiments/problems-mkn/proj/gh/cqts/introduct
 
 in `/home/lan/src/cloned/gh/CQTS/branches/introduction-to-cubical@solve/lectures/2--Paths-and-Identifications/2-4--Composition-and-Filling.lagda.md`,
 
-```haskell
+````haskell
  _∙∙_∙∙_ :
      (r : a ≡ b)
    → (p : b ≡ c)
@@ -614,13 +615,13 @@ in `/home/lan/src/cloned/gh/CQTS/branches/introduction-to-cubical@solve/lectures
  (r ∙∙ p ∙∙ q) i = hcomp (∂ i) ((double-comp-box r p q i))    diamond-tube-alt p q i j k (i = i0) = {!!}
     diamond-tube-alt p q i j k (i = i1) = {!!}
 
-```
+````
 
 Why is it that hcomp for this only takes an interval formula that is i1 at (i=i0) and (i=i1), when the open box also has (j=i0) as a side?
 
 CQTS Authors explain:
 
-```
+````
 Writing more formally, ``hcomp`` takes in two arguments:
 
 * A formula `φ : I`, specifying which sides of the box are going to be
@@ -641,17 +642,16 @@ Writing more formally, ``hcomp`` takes in two arguments:
   similarly when `i = i1` and we are on the right side of the square.
   Otherwise, we only know for sure that `box j` is defined when `j =
   i0`, in which case we are on the bottom of the square.
-```
-
+````
 
 Well box is `box : (i j : I) → Partial (open-box i j) A`, it seems they mean this when evaluated at `i` to the first argument of hcomp `∂ a`:
 
-- `box : (i j : I) → Partial ((~ i) ∨ i ∨ (~ j)) A`
-- $\to$ `box : (j : I) → Partial (∂ i ∨ (~ j)) A`
+* `box : (i j : I) → Partial ((~ i) ∨ i ∨ (~ j)) A`
+* $\to$ `box : (j : I) → Partial (∂ i ∨ (~ j)) A`
 
-The other thing is that ` _∙∙_∙∙_` is a 1-cube path. In its very definition, it could not supply us with more than one interval. 
+The other thing is that ` _∙∙_∙∙_` is a 1-cube path. In its very definition, it could not supply us with more than one interval.
 
-```
+````
 --                  
 --         a  .......  d        
 --         ^           ^              ^
@@ -659,7 +659,7 @@ The other thing is that ` _∙∙_∙∙_` is a 1-cube path. In its very definit
 --         |           |              . — >
 --         b  — — — >  c                i
 --              p   
-```
+````
 
 So maybe we should interpret the the first argument of `hcomp` as specifying the endpoints of the lid 1-cube to fill in, which runs from the face (i = i0) to the face (i = i1).
 
@@ -669,13 +669,13 @@ At `i = i0` `box j` should resolve to `(sym r) j`, and at `i = i1` `box j` shoul
 
 So it seems for any partial n-cube open box, in order to perform hcomp on it (close the lid), we need to specify as the first argument of hcomp a formula for an (n-1) cube face sliding in the direction of the open (n-1) cube face.
 
-In our case this is a formula of 1-cube faces, sliding in the direction of the open lid (i = i0 $\to$ i = i1). So one variable is always left unspecified in the first argumen: the one that is defined as the upper surface of the sweep. 
+In our case this is a formula of 1-cube faces, sliding in the direction of the open lid (i = i0 $\to$ i = i1). So one variable is always left unspecified in the first argumen: the one that is defined as the upper surface of the sweep.
 
-Then because only one missing variable remains in `box j` (no matter the n-dimension of the subcube), its formula should always be `(φ ∨ ~ j)`, the second argument expects our third defined case already as the only remaining pattern `(j = i0)` we need to define to close the lid and perform the sweep. 
+Then because only one missing variable remains in `box j` (no matter the n-dimension of the subcube), its formula should always be `(φ ∨ ~ j)`, the second argument expects our third defined case already as the only remaining pattern `(j = i0)` we need to define to close the lid and perform the sweep.
 
 If we omit the j case with this bad `double-comp-box'`, it will complain about it:
 
-```haskell
+````haskell
     double-comp-box' :
         (r : a ≡ b)
       → (p : b ≡ c)
@@ -695,9 +695,9 @@ If we omit the j case with this bad `double-comp-box'`, it will complain about i
       → (a ≡ d)
     (r ∙∙ p ∙∙ q) i = hcomp (∂ i) ((double-comp-box' r p q i))
 							--      ~~~~~~~~~~~~~~~~~~~~~~~~ problem
-```
+````
 
-```
+````
 The terms
   (i ∨ ~ i) ∨ ~ j
 and
@@ -705,7 +705,7 @@ and
 are not equal at type I
 when checking that the expression double-comp-box' r p q i has type
 (j : I) → Partial (∂ i ∨ ~ j) _A_301
-```
+````
 
 Another way to state it is that the formula φ specifies the boundaries of the lid subcube. For a line, those are the endpoints, but for a square it would require 2 interval variables to get its boundaries within the cube.
 
@@ -725,7 +725,7 @@ https://mzhang.io/posts/2024-09-18-hcomp/indexlagda/
 
 In `/home/lan/src/idea/cb/lan22h-experiments/problems-mkn/proj/gh/cqts/introduction-to-cubical/cqts-lect2/src/lect-2-5-transport.agda`,
 
-```haskell
+````haskell
 module _
   {ℓ : Level}
   {A B : Type ℓ}
@@ -737,11 +737,11 @@ module _
     transport-cancel p b i = 
       transport-fixing (λ j → p (i ∨ j)) i
      (transport-fixing (λ j → (sym p) (~ i ∧ j)) i b)
-```
+````
 
 As with the hints in the CQTS lecture notes, we had to design this transport of transport expression directly with uses of cubical intervals that make it reduce.
 
-```haskell
+````haskell
     transport-cancel p b i = {!
       transport-fixing (λ j → p (i ∨ j)) i
      (transport-fixing (λ j → (sym p) (~ i ∧ j)) i b)!}
@@ -756,9 +756,9 @@ Have: B
 i = i0 ⊢ transport-fixing (λ j → p j) i0
          (transport-fixing (λ j → sym p j) i0 b)
 i = i1 ⊢ b
-```
+````
 
-One key to this is that since we want it to be constant at `i = i1`, we specified the subcube formula `i`. And in the first transport, to make it only reduce to a constant at `i = i1`, an `∨ ` connective does this. 
+One key to this is that since we want it to be constant at `i = i1`, we specified the subcube formula `i`. And in the first transport, to make it only reduce to a constant at `i = i1`, an `∨ ` connective does this.
 
 This wouldn't compile if we don't handle the second choice of intervals right at `(transport-fixing (λ j → (sym p) (~ i ∧ j))`. We were already expecting just `(sym p) j`, but we allow it to short at `i = i1` with `~ i ∧ _`.
 

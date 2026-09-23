@@ -1,14 +1,14 @@
 ---
-parent: "[[001 Proc Math Problems]]"
-spawned_by: "[[001 Proc Math Problems]]"
+parent: '[[001 Proc Math Problems]]'
+spawned_by: '[[001 Proc Math Problems]]'
 context_type: entry
 ---
 
-Parent: [[001 Proc Math Problems]]
+Parent: [001 Proc Math Problems](../001%20Proc%20Math%20Problems.md)
 
-Spawned by: [[001 Proc Math Problems]]
+Spawned by: [001 Proc Math Problems](../001%20Proc%20Math%20Problems.md)
 
-Spawned in: [[001 Proc Math Problems#^spawn-entry-735cc2|^spawn-entry-735cc2]]
+Spawned in: [^spawn-entry-735cc2](../001%20Proc%20Math%20Problems.md#spawn-entry-735cc2)
 
 # 1 Journal
 
@@ -16,8 +16,8 @@ Spawned in: [[001 Proc Math Problems#^spawn-entry-735cc2|^spawn-entry-735cc2]]
 
 While solving `000 NW Alg Top S1 Mult 1 (ea2c1a)` ,
 
-$\text{Prop}_1 : \forall (h_1\ h_2 : \mathbb{Q}) \to (e\ h_1) * (e\ h_2) \equiv (e\ h_3)$ 
-$\text{Prop}_1\ h_1\ h_2 =$ 
+$\text{Prop}_1 : \forall (h_1\ h_2 : \mathbb{Q}) \to (e\ h_1) * (e\ h_2) \equiv (e\ h_3)$
+$\text{Prop}_1\ h_1\ h_2 =$
 (...)
 
 $$1.3.\ 
@@ -65,15 +65,15 @@ $$1.5.\
 $$
 $$
 ,
-\frac {
-	((2^2 \cdot h_1 \cdot h_2)) \cdot
-	(1 + (\frac{h_1 + h_2}{1 - h_1 \cdot h_2})^2) -
-	(1 + h_2^2 + h_1^2 + h_1^2 \cdot h_2^2) \cdot
-	(2 \cdot  (\frac{h_1 + h_2}{1 - h_1 \cdot h_2})
+\\frac {
+((2^2 \cdot h_1 \cdot h_2)) \cdot
+(1 + (\frac{h_1 + h_2}{1 - h_1 \cdot h_2})^2) -
+(1 + h_2^2 + h_1^2 + h_1^2 \cdot h_2^2) \cdot
+(2 \cdot  (\frac{h_1 + h_2}{1 - h_1 \cdot h_2})
 } {
-	(1 + h_2^2 + h_1^2 + h_1^2 \cdot h_2^2) \cdot 
-	(1 + (\frac{h_1 + h_2}{1 - h_1 \cdot h_2})^2)
+(1 + h_2^2 + h_1^2 + h_1^2 \cdot h_2^2) \cdot
+(1 + (\frac{h_1 + h_2}{1 - h_1 \cdot h_2})^2)
 }
 
-\equiv 0 , 0
+\\equiv 0 , 0
 $$

@@ -1,9 +1,8 @@
+Process Notes: [000 Proc Wiki obsidian-sourced-website](../process/000%20Proc%20Wiki%20obsidian-sourced-website/000%20Proc%20Wiki%20obsidian-sourced-website.md)
 
-Process Notes: [[000 Proc Wiki obsidian-sourced-website]]
-
-Homepage Wiki: [[001 Wiki Categories]]
+Homepage Wiki: [001 Wiki Categories](../../../../../../2026-05-21_2026/main/wiki/001%20Wiki%20Categories/001%20Wiki%20Categories.md)
 
 ---
 
-- Check out [[000 Goals for obsidian-sourced-website|Goals]] for reports on milestones and progress.
-- Check out [[001 Investigations for obsidian-sourced-website|investigations]] for related project research and problem solving.
+* Check out [Goals](entries/000%20Goals%20for%20obsidian-sourced-website.md) for reports on milestones and progress.
+* Check out [investigations](entries/001%20Investigations%20for%20obsidian-sourced-website.md) for related project research and problem solving.

@@ -1,13 +1,12 @@
-
 # Journal
 
 2026-06-13 Wk 24 Sat - 08:56 +03:00
 
 https://github.com/wasm-bindgen/wasm-bindgen/issues/5182#issuecomment-4694258106
 
-It seems they are unable to reproduce the issue I submitted with async. This originated from [[lan/2026/proj/003-clusterline-md/entry/000-clusterline-md-getting-started/task/004 File an issue for improving documentation for async js rust integration with wasm-pack]]
+It seems they are unable to reproduce the issue I submitted with async. This originated from [lan/2026/proj/003-clusterline-md/entry/000-clusterline-md-getting-started/task/004 File an issue for improving documentation for async js rust integration with wasm-pack](../../../../../proj/003-clusterline-md/entry/000-clusterline-md-getting-started/task/004%20File%20an%20issue%20for%20improving%20documentation%20for%20async%20js%20rust%20integration%20with%20wasm-pack.md)
 
-We need to provide a full replication of this to pass on, and to also verify it ourselves using a new docker container system before doing so. 
+We need to provide a full replication of this to pass on, and to also verify it ourselves using a new docker container system before doing so.
 
 Let's move deltachives to codeberg and create a repro to share with them. Let's just call the organization `lan22h-experiments` for maximum clarity.
 
@@ -31,23 +30,23 @@ Using similar setup to what I had in `~/src/cloned/gh/deltatraced/delta-box/box/
 
 So we have the system building in docker, but the issue is that it takes a long time (some recorded at 2 minutes) when running the build, due to this step through `wasm-pack build --target web`:
 
-```
+````
 [INFO]: Installing wasm-bindgen...
-```
+````
 
 2026-06-13 Wk 24 Sat - 19:54 +03:00
 
 Hmm. Seems faster now that I have it run non-root, I think.
 
-```sh
+````sh
 # in /home/lan/src/cloned/cb/lan22h-experiments/repro-wasm-bindgen-5182
 git commit -m "added docker support with ubuntu image"
 
 # out
 [main 40e6fcf] added docker support with ubuntu i
-```
+````
 
-Now let's try to reproduce this under alpine instead of ubuntu: https://www.alpinelinux.org/, https://hub.docker.com/_/alpine/
+Now let's try to reproduce this under alpine instead of ubuntu: https://www.alpinelinux.org/, https://hub.docker.com/\_/alpine/
 
 2026-06-13 Wk 24 Sat - 21:05 +03:00
 

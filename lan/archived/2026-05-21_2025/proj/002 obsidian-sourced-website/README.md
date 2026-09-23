@@ -13,12 +13,13 @@ We need to make standards for how the content is created, how websites can be ge
 We need to also configure a data directory for content generated through the website rather. Think for example user comments, or website database content. This is part of the website implementation and does not interact back with the obsidian vault, but it can be good for analytics or any future feature that requires them.
 
 For a functioning demo, we need to provide six working items:
+
 1. An obsidian plugin that can power the website-generation process
-2. An obsidian vault with example content
-3. A standard defining how website implementations source content from obsidian vaults
-4. Two website implementation skeletons using different web technologies that generate a final website using the obsidian plugin and the example content.
-5. Configuration source for obsidian vault conventions to be used by the obsidian plugin
+1. An obsidian vault with example content
+1. A standard defining how website implementations source content from obsidian vaults
+1. Two website implementation skeletons using different web technologies that generate a final website using the obsidian plugin and the example content.
+1. Configuration source for obsidian vault conventions to be used by the obsidian plugin
 
 # 3 Goals
 
-- [ ] [[000 First prototype of a publicly hosted obsidian-sourced website]]
+* [ ] [000 First prototype of a publicly hosted obsidian-sourced website](archived/goals/2025/000%20First%20prototype%20of%20a%20publicly%20hosted%20obsidian-sourced%20website.md)

@@ -1,16 +1,16 @@
 ---
-parent: "[[005 Pain Points]]"
-spawned_by: "[[005 Pain Points]]"
+parent: '[[005 Pain Points]]'
+spawned_by: '[[005 Pain Points]]'
 context_type: entry
 ---
 
-Parent: [[005 Pain Points]]
+Parent: [005 Pain Points](../005%20Pain%20Points.md)
 
-Spawned by: [[005 Pain Points]]
+Spawned by: [005 Pain Points](../005%20Pain%20Points.md)
 
-Spawned in: [[005 Pain Points#^spawn-entry-e1e280|^spawn-entry-e1e280]]
+Spawned in: [^spawn-entry-e1e280](../005%20Pain%20Points.md#spawn-entry-e1e280)
 
-[[Mn 09 September]]
+[Mn 09 September](../../../../../2026-05-21_2025/main/overview/monthly/2025/Mn%2009%20September.md)
 
 # 1 Purpose
 
@@ -22,7 +22,7 @@ Throughout daily life we encounter things that are inconvenient or could be bett
 
 2025-09-04 Wk 36 Thu - 12:20
 
-![[Pasted image 20250904122045.png]]
+![Pasted image 20250904122045.png](../../../../../../../attachments/Pasted%20image%2020250904122045.png)
 
 Need more work in obsidian-export possibly? Some titled links won't work.
 
@@ -33,15 +33,16 @@ This is easily fixed though, by just removing the code `blocks`.
 2025-09-04 Wk 36 Thu - 23:33
 
 Obsidian vim mode has marks you can set like with
-```
+
+````
 m A
-```
+````
 
 and go to with
 
-```
+````
 `A
-```
+````
 
 But these seem to be forgotten once you leave the file! And they do not transfer between files.
 

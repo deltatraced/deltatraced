@@ -1,14 +1,14 @@
 ---
-parent: "[[000 Proc Analysis I Terrance Tao Proofs]]"
-spawned_by: "[[000 Proc Analysis I Terrance Tao Proofs]]"
+parent: '[[000 Proc Analysis I Terrance Tao Proofs]]'
+spawned_by: '[[000 Proc Analysis I Terrance Tao Proofs]]'
 context_type: entry
 ---
 
-Parent: [[000 Proc Analysis I Terrance Tao Proofs]]
+Parent: [000 Proc Analysis I Terrance Tao Proofs](../000%20Proc%20Analysis%20I%20Terrance%20Tao%20Proofs.md)
 
-Spawned by: [[000 Proc Analysis I Terrance Tao Proofs]]
+Spawned by: [000 Proc Analysis I Terrance Tao Proofs](../000%20Proc%20Analysis%20I%20Terrance%20Tao%20Proofs.md)
 
-Spawned in: [[000 Proc Analysis I Terrance Tao Proofs#^spawn-entry-a451b5|^spawn-entry-a451b5]]
+Spawned in: [^spawn-entry-a451b5](../000%20Proc%20Analysis%20I%20Terrance%20Tao%20Proofs.md#spawn-entry-a451b5)
 
 # 1 Journal
 

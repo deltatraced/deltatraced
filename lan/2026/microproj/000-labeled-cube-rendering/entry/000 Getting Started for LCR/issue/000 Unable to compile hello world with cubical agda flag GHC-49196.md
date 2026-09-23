@@ -1,23 +1,23 @@
 ---
-parent: "[[000 Getting Started for LCR]]"
-spawned_by: "[[000 Compile cubical agda to an executable using ctqs sources]]"
+parent: '[[000 Getting Started for LCR]]'
+spawned_by: '[[000 Compile cubical agda to an executable using ctqs sources]]'
 context_type: issue
 status: done
 ---
 
-Parent: [[000 Getting Started for LCR]]
+Parent: [000 Getting Started for LCR](../000%20Getting%20Started%20for%20LCR.md)
 
-Spawned by: [[000 Compile cubical agda to an executable using ctqs sources]]
+Spawned by: [000 Compile cubical agda to an executable using ctqs sources](../task/000%20Compile%20cubical%20agda%20to%20an%20executable%20using%20ctqs%20sources.md)
 
-Spawned in: [[000 Compile cubical agda to an executable using ctqs sources#^spawn-issue-0fbdb6|^spawn-issue-0fbdb6]]
+Spawned in: [^spawn-issue-0fbdb6](../task/000%20Compile%20cubical%20agda%20to%20an%20executable%20using%20ctqs%20sources.md#spawn-issue-0fbdb6)
 
 # 1 Journal
 
 2026-05-10 Wk 19 Sun - 11:51 +03:00
 
-Spawn [[002 Updates for Unable to compile hello world with cubical agda flag GHC-49196]] ^spawn-entry-626ecf
+Spawn [002 Updates for Unable to compile hello world with cubical agda flag GHC-49196](../entry/002%20Updates%20for%20Unable%20to%20compile%20hello%20world%20with%20cubical%20agda%20flag%20GHC-49196.md) ^spawn-entry-626ecf
 
-```haskell
+````haskell
 -- in ./src/main.agda
 open import Agda.Builtin.IO using (IO)
 open import Agda.Builtin.Unit using (⊤)
@@ -29,11 +29,11 @@ postulate putStrLn : String → IO ⊤
 
 main : IO ⊤
 main = putStrLn "We wanna compile with --cubical!"
-```
+````
 
 In `repro.agda-lib`:
 
-```
+````
 name: repro
 include:
   src
@@ -47,37 +47,37 @@ flags:
   -W noUnsupportedIndexedMatch
 
   --cubical
-```
+````
 
-We need to install the latest version of Agda. 
+We need to install the latest version of Agda.
 
-```sh
+````sh
 # in ~/Downloads
 wget https://github.com/agda/agda/releases/download/nightly/Agda-92b09bb-linux.tar.xz
-```
+````
 
 [How to Extract tar.xz Files in Linux](https://linuxize.com/post/how-to-extract-unzip-tar-xz-file/)
 
-```sh
+````sh
 tar --help | grep one-top-level
 
 # out
       --one-top-level[=DIR]  create a subdirectory to avoid having loose files
-```
+````
 
-```sh
+````sh
 # in ~/Downloads
 tar -xf ./Agda-92b09bb-linux.tar.xz --one-top-level
-```
+````
 
 Update the path I am using in `~/.shellrc.local`:
 
-```diff
+````diff
 -export PATH=$PATH:/home/lan/Downloads/Agda-v2.8.0-linux/
 +export PATH=$PATH:/home/lan/Downloads/Agda-92b09bb-linux/
-```
+````
 
-```sh
+````sh
 agda --version
 
 # out
@@ -85,11 +85,11 @@ Agda version 2.9.0
 Built with flags (cabal -f)
  - optimise-heavily: extra optimisations
  - use-xdg-data-home: install and locate data files under $XDG_DATA_HOME/agda/$AGDA_VERSION by default instead of the location defined by Cabal
-```
+````
 
 The error we get is different now:
 
-```sh
+````sh
 # in /home/lan/src/tmp/repro
 rm -rf src/MAlonzo _build && agda --compile ./src/main.agda
 
@@ -97,13 +97,13 @@ rm -rf src/MAlonzo _build && agda --compile ./src/main.agda
 /home/lan/.local/share/agda/2.9.0/lib/prim/Agda/Primitive/Cubical.agda:60.65-66: error: [VariableIsErased]
 Variable ℓ is declared erased, so it cannot be used here
 when checking that the expression ℓ has type Agda.Primitive.Level
-```
+````
 
 2026-05-10 Wk 19 Sun - 23:29 +03:00
 
 So the cubical agda v2.9.0 [library](https://github.com/agda/cubical) only supports up to Agda v2.8.0. We have to revert back to Agda v2.8.0.
 
-```haskell
+````haskell
 -- ./src/main.agda
 open import Agda.Builtin.IO using (IO)
 open import Agda.Builtin.Unit using (⊤)
@@ -115,11 +115,11 @@ postulate putStrLn : String → IO ⊤
 
 main : IO ⊤
 main = putStrLn "We wanna compile with --cubical!"
-```
+````
 
 `repro.agda-lib`:
 
-```
+````
 name: repro
 include:
   src
@@ -129,9 +129,9 @@ flags:
   --guardedness
 
   --cubical
-```
+````
 
-```
+````
 # in /home/lan/src/tmp/repro
 
 # while including --cubical in repro.agda-lib:
@@ -241,19 +241,19 @@ tree -a .
 
 11 directories, 18 files
 # /out
-```
+````
 
 2026-05-10 Wk 19 Sun - 23:55 +03:00
 
 Actually, if you include the `--cubical` flag explicitly in the CLI, it says this:
 
-```sh
+````sh
 # in /home/lan/src/tmp/repro/src
 rm -rf src/MAlonzo _build && agda --compile --cubical ./src/main.agda
 Checking main (/home/lan/src/tmp/repro/src/main.agda).
 error: [CubicalCompilationNotSupported]
 Compilation of code that uses --cubical is not supported.
-```
+````
 
 I found communication logs around this not being supported pointing to [gh agda/agda #3753](https://github.com/agda/agda/issues/3753) which is still open. Seems it will take research for cubical agda to compile, so this is not feasible at this time.
 
@@ -261,10 +261,10 @@ I found communication logs around this not being supported pointing to [gh agda/
 
 There is actually an `--erased-cubical` flag.
 
-```sh
+````sh
 rm -rf src/MAlonzo _build && agda --compile --erased-cubical ./src/main.agda
-```
+````
 
 This works!
 
-Though the diagnostics could be improved. Ideally we should be pointed to `--erased-cubical`, and the `*.agda-lib` should be warning that `--cubical` with `--compile` is not supported: [[000 agda-lib incl cubical should warn]]
+Though the diagnostics could be improved. Ideally we should be pointed to `--erased-cubical`, and the `*.agda-lib` should be warning that `--cubical` with `--compile` is not supported: [000 agda-lib incl cubical should warn](../../../../../../archived/2026-05-21_2026/topic/contribute/open%20source/possibly/gh%20agda%20agda/issues/2026/000%20cubical%20agda%20diagnostics%20agda-lib/000%20agda-lib%20incl%20cubical%20should%20warn.md)

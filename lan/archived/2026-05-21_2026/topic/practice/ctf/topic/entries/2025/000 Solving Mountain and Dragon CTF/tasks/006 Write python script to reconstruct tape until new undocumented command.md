@@ -1,10 +1,8 @@
-
 # 1 Journal
 
+* [x] 
 
-- [x]
-
-From [[#^spawn-task-34592a]] in [[#3.11 Reconstructing tape content]]
+From [^spawn-task-34592a](006%20Write%20python%20script%20to%20reconstruct%20tape%20until%20new%20undocumented%20command.md#spawn-task-34592a) in [3.11 Reconstructing tape content](006%20Write%20python%20script%20to%20reconstruct%20tape%20until%20new%20undocumented%20command.md#311-reconstructing-tape-content)
 
 The script for this is [here](https://github.com/LanHikari22/lan-exp-scripts/blob/main/files/2025/persistent/000-mountain-n-dragon-ctf/data/tape.py).
 
@@ -12,7 +10,7 @@ The script for this is [here](https://github.com/LanHikari22/lan-exp-scripts/blo
 
 We will write this in `data/tape.py`. We used that script to give us the checksum and length, but we can use it to generate this function for us given the currently known commands:
 
-```ts
+````ts
 function reconstruct_tape(): number[] {
   var tape: number[] = []; 
 
@@ -38,7 +36,7 @@ function reconstruct_tape(): number[] {
 
   return tape;
 }
-```
+````
 
 Let's start by adding some argparse stuff in there for the reconstruction or reporting. See [template](https://github.com/LanHikari22/lan-exp-scripts/blob/main/templates/2025/topics/py3/persistant/000-argparse/template_with_subcommands.py).
 
@@ -46,7 +44,7 @@ Let's start by adding some argparse stuff in there for the reconstruction or rep
 
 Now we should be able to see where the next undocumented command is!
 
-```ts
+````ts
 python3 data/tape.py reconstruct-tape
 
 // out
@@ -80,11 +78,11 @@ function reconstruct_tape(): number[] {
 
   return tape;
 }
-```
+````
 
 So far the commands we have documented are
 
-```py
+````py
 commands = [
     CommandData("cmd00", 0, "cmd00_write_param_to_reg(/*param16*/ {PARAM0})", [16]),
     CommandData(
@@ -100,7 +98,7 @@ commands = [
     ),
     CommandData("cmd23", 46, "cmd23_noop()", []),
 ]
-```
+````
 
 This script will reconstruct `remaining_tape.ts` such that the first bytes there are of a new command that we have not registered yet.
 
@@ -110,7 +108,7 @@ To make this more seamless, I'm extracting also the reconstructed commands and r
 
 So `reconstructed_tape.ts` contents should look like this:
 
-```ts
+````ts
 import * as c from "../reconstructed_commands.ts"
 import * as remaining_tape from "./remaining_tape.ts";
 
@@ -144,25 +142,25 @@ export function reconstruct_tape(): number[] {
 
   return tape;
 }
-```
+````
 
 where `reconstructed_commands.ts` is written manually.
 
 2025-08-01 Wk 31 Fri - 02:49
 
-```sh
+````sh
 python3 data/tape.py reconstruct-tape
 
 # out
 Created autogen/remaining_tape.ts
 Created autogen/reconstructed_tape.ts
-```
+````
 
-```sh
+````sh
 ./build.sh
-```
+````
 
-```ts
+````ts
 function verify_tape_integrity() {
   const expected_simple_checksum = 287251;
   const expected_num_elements = 13229;
@@ -188,4 +186,4 @@ verify_tape_integrity()
 
 # out
 tape OK
-```
+````

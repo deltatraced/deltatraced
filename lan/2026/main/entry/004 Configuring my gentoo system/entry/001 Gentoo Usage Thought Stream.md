@@ -2,11 +2,11 @@
 context_type: entry
 ---
 
-Parent: [[lan/2026/main/entry/004 Configuring my gentoo system/004 Configuring my gentoo system]]
+Parent: [lan/2026/main/entry/004 Configuring my gentoo system/004 Configuring my gentoo system](../004%20Configuring%20my%20gentoo%20system.md)
 
-Spawned by: [[lan/2026/main/entry/004 Configuring my gentoo system/entry/000 Spawns for Configuring my gentoo system]]
+Spawned by: [lan/2026/main/entry/004 Configuring my gentoo system/entry/000 Spawns for Configuring my gentoo system](000%20Spawns%20for%20Configuring%20my%20gentoo%20system.md)
 
-Spawned in: [[lan/2026/main/entry/004 Configuring my gentoo system/entry/000 Spawns for Configuring my gentoo system#^spawn-entry-078816|^spawn-entry-078816]]
+Spawned in: [^spawn-entry-078816](000%20Spawns%20for%20Configuring%20my%20gentoo%20system.md#spawn-entry-078816)
 
 # Journal
 
@@ -20,22 +20,23 @@ One possible way to deal with this is to have it automatically full screen but o
 
 In general personally I prefer not to cycle through more than 3 tabs max, since it ends up being a noticable search.
 
-Spawn [[lan/2026/main/entry/004 Configuring my gentoo system/task/000 Modify sway switcher to automatically fullscreen on swap if in tab layout]] ^spawn-task-5511da
+Spawn [lan/2026/main/entry/004 Configuring my gentoo system/task/000 Modify sway switcher to automatically fullscreen on swap if in tab layout](../task/000%20Modify%20sway%20switcher%20to%20automatically%20fullscreen%20on%20swap%20if%20in%20tab%20layout.md) ^spawn-task-5511da
 
 2026-07-27 Wk 31 Mon - 11:02 +03:00
 
-I kind of like just using `./start_sway.sh` at boot instead of automating it. The login can remain purely at the TTY1 level. 
+I kind of like just using `./start_sway.sh` at boot instead of automating it. The login can remain purely at the TTY1 level.
 
 2026-08-04 Wk 32 Tue - 18:04 +03:00
 
-Related to idea [[001 Cubical Tabs]],
+Related to idea [001 Cubical Tabs](../../../../topic/ideas/000%20Ideas/entry/001%20Cubical%20Tabs/001%20Cubical%20Tabs.md),
 
-Currently I'm using tmux with nvim, with the rule that every transition must be a toggle. So 
-- only two horizontal tmux panes per window,
-- only 2 tmux windows per tmux session,
-- only 2 vertical splits per neovim session in a given tmux pane.
-	- Typically, I open at max two files from the start and use `:bn` to switch between them.
-- only 2 tabs per neovim session
+Currently I'm using tmux with nvim, with the rule that every transition must be a toggle. So
+
+* only two horizontal tmux panes per window,
+* only 2 tmux windows per tmux session,
+* only 2 vertical splits per neovim session in a given tmux pane.
+  * Typically, I open at max two files from the start and use `:bn` to switch between them.
+* only 2 tabs per neovim session
 
 This makes everything a toggle. `C-a p` between tmux windows, `C-a k` between tmux panes, `C-w w` between vim splits, and currently `:tabp` between tabs.
 
@@ -43,7 +44,7 @@ It is not exactly like cubical tabs, the idea there is every node is connected t
 
 But it doesn't require any additional configuration work, and satisfies the property that all navigation is either fuzzy by name (`C-g` to change to tmux session by name, `Win+s` to change to sway application by name) or by toggle so that we do not have to remember any cycling, there's always one "other" we have to remember and assign meaning.
 
-So for example for a given neovim session, I can give the split other the meaning of a reference file or a file I am simultaneously editing. 
+So for example for a given neovim session, I can give the split other the meaning of a reference file or a file I am simultaneously editing.
 
 The tab other can be for reference sections in the of the same file or edit the file in two simultaneous places (for example reading the impl of a function and writing tests for it).
 
@@ -57,28 +58,28 @@ The monitor other can be more flexible, since I may want to switch to other work
 
 I should have wrote this for the raw journals so they can have consistent timestamp cards, but oh well:
 
-```vimscript
+````vimscript
 command! Tims call FnTims()
 
 function FnTims()
         let l:timestamp=system("date \"+%Y-%m-%d\ Wk\ %V\ %a\ -\ %R\ %:z\"")
         execute "normal! i" . l:timestamp . "\<Esc>"
 endfunction
-```
+````
 
 2026-08-29 Wk 35 Sat - 12:19 +03:00
 
 Could be nice to have more workspace numbers with sway
 
-- https://www.reddit.com/r/swaywm/comments/163nrn1/deleted_by_user/
-- $\to$ https://github.com/EllaTheCat/dopamine-2020/blob/master/i3-config.d/cfg03
+* https://www.reddit.com/r/swaywm/comments/163nrn1/deleted_by_user/
+* $\to$ https://github.com/EllaTheCat/dopamine-2020/blob/master/i3-config.d/cfg03
 
 This person does double digits.
 
 --/ 2026-08-30 Wk 35 Sun - 04:50 +03:00
-Disabling this configuration in favor of fuzzy searchable named workspaces as implemented in [[001 Add switch by name for sway workspaces]]
+Disabling this configuration in favor of fuzzy searchable named workspaces as implemented in [001 Add switch by name for sway workspaces](../task/001%20Add%20switch%20by%20name%20for%20sway%20workspaces.md)
 --/
 
 2026-08-30 Wk 35 Sun - 01:30 +03:00
 
-Spawn [[lan/2026/main/entry/004 Configuring my gentoo system/task/001 Add switch by name for sway workspaces]] ^spawn-task-2dd401
+Spawn [lan/2026/main/entry/004 Configuring my gentoo system/task/001 Add switch by name for sway workspaces](../task/001%20Add%20switch%20by%20name%20for%20sway%20workspaces.md) ^spawn-task-2dd401

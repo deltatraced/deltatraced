@@ -1,15 +1,15 @@
 ---
-parent: "[[000 Implement the Event Accumulator]]"
-spawned_by: "[[005 Model coin_store_hist and related in diesel]]"
+parent: '[[000 Implement the Event Accumulator]]'
+spawned_by: '[[005 Model coin_store_hist and related in diesel]]'
 context_type: task
 status: done
 ---
 
-Parent: [[000 Implement the Event Accumulator]]
+Parent: [000 Implement the Event Accumulator](../000%20Implement%20the%20Event%20Accumulator.md)
 
-Spawned by: [[005 Model coin_store_hist and related in diesel]]
+Spawned by: [005 Model coin_store_hist and related in diesel](005%20Model%20coin_store_hist%20and%20related%20in%20diesel.md)
 
-Spawned in: [[005 Model coin_store_hist and related in diesel#^spawn-task-6cd569|^spawn-task-6cd569]]
+Spawned in: [^spawn-task-6cd569](005%20Model%20coin_store_hist%20and%20related%20in%20diesel.md#spawn-task-6cd569)
 
 # 1 Journal
 
@@ -19,10 +19,9 @@ Spawned in: [[005 Model coin_store_hist and related in diesel#^spawn-task-6cd569
 
 [lukaswirth.dev decl-macros](https://lukaswirth.dev/tlborm/decl-macros.html).
 
-
 2025-10-16 Wk 42 Thu - 09:24 +03:00
 
-Spawn [[001 Reading through lukaswirth.dev decl-macros]] ^spawn-entry-4ac46d
+Spawn [001 Reading through lukaswirth.dev decl-macros](../entries/001%20Reading%20through%20lukaswirth.dev%20decl-macros.md) ^spawn-entry-4ac46d
 
 2025-10-16 Wk 42 Thu - 20:51 +03:00
 
@@ -36,17 +35,17 @@ But it cannot know our model. Our types may be different from `i32`, etc for mai
 
 We need to modify `diesel-postprocess.py` to also have a `schema.rs.replace` where we specify the rules, instead of specifying them in the source code itself.
 
-```python
+````python
 Rule("credit_store_events (id)", "event_action -> Text", "event_action -> crate::autogen::schema::EventActionMapping")
-```
+````
 
-Should be 
+Should be
 
-```
+````
 credit_store_events (id)
 event_action -> Text
 event_action -> crate::autogen::schema::EventActionMapping
-```
+````
 
 Process triplets, ignore empty lines and lines starting with `//` (comments).
 
@@ -54,7 +53,7 @@ Process triplets, ignore empty lines and lines starting with `//` (comments).
 
 Now for coin_store, these need to be modified:
 
-```
+````
 // in /home/lan/src/cloned/gh/deltachives/2025-002-credit-store-demo-rs/scripts/schema.rs.replace
 coin_store_events (id)
 ev_action -> Text
@@ -67,17 +66,17 @@ ev_action -> crate::autogen::schema::EventActionMapping
 coin_store_events_grouped_partial (id)
 ev_action -> Text
 ev_action -> crate::autogen::schema::EventActionMapping
-```
+````
 
 In each triplet there's an activator to say at which line the replacement will take effect once.
 
 Then as in the README,
 
-```sh
+````sh
 # in /home/lan/src/cloned/gh/deltachives/2025-002-credit-store-demo-rs
 
 source ./.env && rm $DATABASE_URL; diesel migration run && python3 scripts/diesel-postprocess.py
-```
+````
 
 2025-10-17 Wk 42 Fri - 12:38 +03:00
 
@@ -85,7 +84,7 @@ We also added a check for `diesel-postprocess.py` to throw an error if not all r
 
 Some were not spent because of this bug:
 
-```diff
+````diff
     for i in range(len(lines_filtered) // 3):
 -        activator = lines_filtered[i].strip()
 -        target = lines_filtered[i + 1].strip()
@@ -95,7 +94,7 @@ Some were not spent because of this bug:
 +        replacement = lines_filtered[3*i + 2].strip()
 
         mut_results.append(Rule(activator, target, replacement))
-```
+````
 
 2025-10-17 Wk 42 Fri - 12:52 +03:00
 
@@ -103,7 +102,7 @@ We also need to add an `ObjState` enum and replace it for the hist tables.
 
 2025-10-17 Wk 42 Fri - 18:00 +03:00
 
-This automation with macro_rules is not ideal. I had to separate the writes from the reads for example, and have the user specify how many lifetimes are used, which right now I implement with one. I can't seem to be able to have multiple repeats to allow this to generalize, nor a way to say can specify no lifetimes, which is possible. 
+This automation with macro_rules is not ideal. I had to separate the writes from the reads for example, and have the user specify how many lifetimes are used, which right now I implement with one. I can't seem to be able to have multiple repeats to allow this to generalize, nor a way to say can specify no lifetimes, which is possible.
 
 2025-10-17 Wk 42 Fri - 18:09 +03:00
 
@@ -115,7 +114,7 @@ There is a way to do this without chrono, but this seems short for getting the c
 
 2025-10-17 Wk 42 Fri - 19:56 +03:00
 
-```rust
+````rust
 mod coin_store {
     use diesel::prelude::*;
 
@@ -150,7 +149,7 @@ mod coin_store {
         },
     }
 }
-```
+````
 
 Seems I had to pay the cost of `fields_write` and `fields_write_ref` because I was trying to convert between read and write values and I just have to know syntactically when I can add `&`.  This means the ordering will be different... but they should still have the same fields...
 
@@ -158,7 +157,7 @@ A lot of limitations with this `macro_rules!` approach. I had to pass all these 
 
 2025-10-17 Wk 42 Fri - 20:28 +03:00
 
-```
+````
 error: this function has too many arguments (13/7)
    --> src/macros/diesel_hist_models.rs:286:9
     |
@@ -168,7 +167,7 @@ error: this function has too many arguments (13/7)
 289 | |             created_on_ts: f32, new_common: &NewCommon<'a>, ev_desc: &'a str
 290 | |         ) -> NewEventGroupedPartial<'a> {
     | |_______________________________________^
-```
+````
 
 Clippy lint error
 
@@ -176,7 +175,7 @@ Inlined creating `NewEventGroupPartial` in `set_events_grouped_partial`
 
 2025-10-17 Wk 42 Fri - 20:32 +03:00
 
-```sh
+````sh
 # in /home/lan/src/cloned/gh/deltachives/2025-002-credit-store-demo-rs
 git commit -m "added some macro_rules automation for event sourcing"
 
@@ -193,4 +192,4 @@ Check clippy lints.......................................................Passed
  create mode 100644 scripts/schema.rs.replace
  create mode 100644 src/macros/diesel_hist_models.rs
  create mode 100644 src/macros/mod.rs
-```
+````

@@ -1,16 +1,17 @@
 ---
 context_type: entry
 ---
+
 لألأ
-Parent: [[lan/2026/main/task/001 Install a new Gentoo system/001 Install a new Gentoo system]]
+Parent: [lan/2026/main/task/001 Install a new Gentoo system/001 Install a new Gentoo system](../001%20Install%20a%20new%20Gentoo%20system.md)
 
-Spawned by: [[lan/2026/main/task/001 Install a new Gentoo system/001 Install a new Gentoo system]]
+Spawned by: [lan/2026/main/task/001 Install a new Gentoo system/001 Install a new Gentoo system](../001%20Install%20a%20new%20Gentoo%20system.md)
 
-Spawned in: [[lan/2026/main/task/001 Install a new Gentoo system/001 Install a new Gentoo system#^spawn-entry-232dbc|^spawn-entry-232dbc]]
+Spawned in: [^spawn-entry-232dbc](../001%20Install%20a%20new%20Gentoo%20system.md#spawn-entry-232dbc)
 
 # What?
 
-One timestamp journal per service installed under `# Journal`. May also have subheaders `## Service`. 
+One timestamp journal per service installed under `# Journal`. May also have subheaders `## Service`.
 
 # Journal
 
@@ -20,11 +21,11 @@ One timestamp journal per service installed under `# Journal`. May also have sub
 
 Link obsidian over to `/usr/local/bin`:
 
-```sh
+````sh
 # in /home/lan/data/releases/gh/obsidianmd/obsidian-releases/obsidian-1.12.7
 su
 ln -s /home/lan/data/releases/gh/obsidianmd/obsidian-releases/obsidian-1.12.7/obsidian /usr/local/bin
-```
+````
 
 If you mess up like I did and do `ln -s obsidian /usr/local/bin` and do ls on that it is in red bg and white/gray flashing like a siren that it's a bad link!
 
@@ -36,7 +37,7 @@ But now we can just do win+d obsidian.
 
 https://wiki.gentoo.org/wiki/Discord
 
-```sh
+````sh
 # in /etc/portage/package.accept_keywords/net-im/discord {
 	net-im/discord ~amd64
 # }
@@ -47,7 +48,7 @@ https://wiki.gentoo.org/wiki/Discord
 
 su
 emerge --ask net-im/discord
-```
+````
 
 OK
 
@@ -57,31 +58,31 @@ OK
 
 Installing `ripgrep`,
 
-```sh
+````sh
 cargo install ripgrep
-```
+````
 
 We need `/home/lan/.cargo/bin` in `$PATH`.
 
-```sh
+````sh
 # in /home/lan/.bashrc
 source $HOME/.path
 
 # in /home/lan/.path
 PATH=$PATH:/home/lan/.cargo/bin
-```
+````
 
 before/after starting a new terminal pane:
 
-```diff
+````diff
 echo $PATH
 
 # out
 -/usr/local/sbin:/usr/local/bin:/usr/bin:/opt/bin:/usr/lib/llvm/22/bin
 +/usr/local/sbin:/usr/local/bin:/usr/bin:/opt/bin:/usr/lib/llvm/22/bin:/home/lan/.cargo/bin
-```
+````
 
-```sh
+````sh
 rg --version
 
 # out
@@ -92,7 +93,7 @@ simd(compile):+SSE2,-SSSE3,-AVX2
 simd(runtime):+SSE2,+SSSE3,+AVX2
 
 PCRE2 is not available in this build of ripgrep.
-```
+````
 
 OK
 
@@ -104,21 +105,22 @@ Installing `tree`,
 
 https://packages.gentoo.org/packages/app-text/tree
 
-```sh
+````sh
 su
 emerge --ask app-text/tree
-```
+````
 
-```
+````
 2026-07-28 22:50:03 (165 KB/s) - ‘/var/cache/distfiles/unix-tree-2.2.1.tar.bz2.__download__’ saved [56345/56345]
 
  * unix-tree-2.2.1.tar.bz2 BLAKE2B SHA512 size ;-) ...                                                                                                                                                                                   [ ok ]
-```
+````
 
 Interesting wink.
 
 OK
 it will even tr
+
 ## mgba
 
 2026-07-30 Wk 31 Thu - 09:34 +03:00
@@ -127,7 +129,7 @@ Installing `mgba`,
 
 https://packages.gentoo.org/packages/games-emulation/mgba
 
-```sh
+````sh
 equery uses games-emulation/mgba
 
 # out
@@ -151,14 +153,14 @@ equery uses games-emulation/mgba
  + + sdl                      : Add support for Simple Direct Layer (media library)
  + - sqlite                   : Add support for sqlite - embedded sql database
  - - test                     : Enable dependencies and/or preparations necessary to run tests (usually controlled by FEATURES=test but can be toggled independently)
-```
+````
 
-```
+````
 The above constraints are a subset of the following complete expression:
     gui? ( any-of ( gles2 gles3 opengl ) sqlite gles3? ( any-of ( gles2 opengl ) ) ) lua? ( exactly-one-of ( lua_single_target_lua5-3 lua_single_target_lua5-4 ) )
-```
+````
 
-```sh
+````sh
 # in /etc/portage/package.use/games-emulation/mgba {
 	games-emulation/mgba elf debug lua lua_single_target_lua5-4
 	
@@ -170,7 +172,7 @@ The above constraints are a subset of the following complete expression:
 
 su
 emerge --ask games-emulation/mgba
-```
+````
 
 OK
 
@@ -180,7 +182,7 @@ Installing gdb,
 
 https://wiki.gentoo.org/wiki/GDB
 
-```sh
+````sh
 equery uses dev-debug/gdb
 
 # out
@@ -211,16 +213,16 @@ equery uses dev-debug/gdb
  + + xml                             : Support parsing XML data files needed (at least) for cpu features, memory maps, and syscall tracing
  - - xxhash                          : Use dev-libs/xxhash to speed up internal hashing.
  - - zstd                            : Enable support for ZSTD compression
-```
+````
 
-```sh
+````sh
 # in /etc/portage/package.use/dev-debug/gdb {
 	dev-debug/gdb multitarget
 # }
 
 su
 emerge --ask dev-debug/gdb
-```
+````
 
 OK
 
@@ -232,16 +234,16 @@ Installing ctags,
 
 https://packages.gentoo.org/packages/dev-util/ctags
 
-```sh
+````sh
 su
 emerge --ask dev-util/ctags
-```
+````
 
 2026-07-31 Wk 31 Fri - 06:07 +03:00
 
 Getting `python3-pip` and `checkpipe`,
 
-```sh
+````sh
 python3 -m ensurepip
 
 # out (error)
@@ -251,31 +253,31 @@ error: externally-managed-environment
 ╰─>
     The system-wide Python installation in Gentoo should be maintained
     using the system package manager (e.g. emerge).
-```
+````
 
 https://wiki.gentoo.org/wiki/Pip
 
-```
+````
 Warning
 
 pip should not be used for package installation outside of a _virtual environment_. Doing so can break parts of the local Python installation. Even using pip install with the `--user` parameter can break things, as packages installed in this way will still be included in sys.path. Accordingly, pip will print an error message if called outside of a virtual environment. See [PEP 668](https://peps.python.org/pep-0668/) and [externally managed environments](https://packaging.python.org/en/latest/specifications/externally-managed-environments/) for details.
-```
+````
 
 So use venv:
 
-```sh
+````sh
 mkdir -p ~/.venv/venv_main
 python3 -m venv ~/.venv/venv_main
 source ~/.venv/venv_main/bin/activate # must use with source
-```
+````
 
 Now we can install:
 
-```sh
+````sh
 # in venv_main
 pip install checkpipe
 pip install --upgrade pip
-```
+````
 
 OK
 
@@ -287,38 +289,38 @@ Installing helix,
 
 https://wiki.gentoo.org/wiki/Helix
 
-```sh
+````sh
 su
 emerge --ask app-editors/helix
-```
+````
 
 ebuild is at `/var/db/repos/gentoo/app-editors/helix/helix-25.07.1.ebuild`
 
-Now you can open files with `hx`. This editor also supports LSP natively. We just need the corresponding language server in `$PATH`. 
+Now you can open files with `hx`. This editor also supports LSP natively. We just need the corresponding language server in `$PATH`.
 
-```sh
+````sh
 ln -s /usr/share/helix/runtime ~/.config/helix/runtime
-```
+````
 
 --/ 2026-08-02 Wk 31 Sun - 13:04 +03:00 | Disabled
 
 Plugin support is still uncertain, and seems planned towards using a lisp runtime (steel). Project mentions they take a more integrated approach versus katsoune's modular and minimal design philosophy to give more out of the box. This is fine, although so far I've seen it seems easier to write rust plugins for katsoune, so will try that instead for now. I might want to do a clusterline plugin here so it's important I can write it in rust.
 
-Some research at [[004 Setup a new code editor for new gentoo]]
+Some research at [004 Setup a new code editor for new gentoo](../task/004%20Setup%20a%20new%20code%20editor%20for%20new%20gentoo.md)
 
 From https://wiki.gentoo.org/wiki/Gentoo_Cheat_Sheet,
 
-```
+````
 Warning
 
 There is an `--unmerge` option (`-C`), but this is not recommended and can break the system if not used with caution. This should only ever be used _**if necessary**_, and once properly informed of what it does. This _will_ **break the system**, or other software, if used on some packages. The correct way to remove packages in Gentoo is virtually always with the `--depclean` option, as described above. This may sometimes be useful to temporarily remove a hard block though.
-```
+````
 
-```sh
+````sh
 su
 emerge --deselect app-editors/helix
 emerge --ask --depclean
-```
+````
 
 --/
 
@@ -330,30 +332,30 @@ Installing Kakoune,
 
 https://wiki.gentoo.org/wiki/Kakoune
 
-```sh
+````sh
 # in /etc/portage/package.accept_keywords/app-editors/kakoune {
 	app-editors/kakoune ~amd64
 # }
 
 su
 emerge --ask app-editors/kakoune
-```
+````
 
-Spawn [[lan/2026/main/task/001 Install a new Gentoo system/entry/005 Configuring kakoune on new gentoo install]] ^spawn-entry-58a03e
+Spawn [lan/2026/main/task/001 Install a new Gentoo system/entry/005 Configuring kakoune on new gentoo install](005%20Configuring%20kakoune%20on%20new%20gentoo%20install.md) ^spawn-entry-58a03e
 
 2026-08-02 Wk 31 Sun - 15:40 +03:00
 
 Installing
 
-```sh
+````sh
 go install -v github.com/theimpostor/osc@latest
-```
+````
 
 Also disabling go telemetry (which they say is opt-in: https://go.dev/doc/telemetry but this disables completely)
 
-```sh
+````sh
 go telemetry off
-```
+````
 
 2026-08-02 Wk 31 Sun - 15:28 +03:00
 
@@ -361,17 +363,17 @@ Installing nvim,
 
 https://wiki.gentoo.org/wiki/Neovim
 
-```sh
+````sh
 emerge --ask app-editors/neovim
-```
+````
 
-Spawn [[lan/2026/main/task/001 Install a new Gentoo system/entry/006 Configuring nvim on new gentoo install]] ^spawn-entry-3fc3d7
+Spawn [lan/2026/main/task/001 Install a new Gentoo system/entry/006 Configuring nvim on new gentoo install](006%20Configuring%20nvim%20on%20new%20gentoo%20install.md) ^spawn-entry-3fc3d7
 
 --/ 2026-08-03 Wk 32 Mon - 19:56 +03:00
 
 We want to upgrade this so that we get `vim.pack`.
 
-```sh
+````sh
 equery keywords app-editors/neovim
 
 # out
@@ -390,11 +392,11 @@ Keywords for app-editors/neovim:
    0.12.2    | ~ ~ ~ ~ ~ ~ o o o o ~ o o o | 8 #   | gentoo
    0.12.3    | ~ ~ ~ ~ ~ ~ o o o o ~ o o o | 8 o   | gentoo
      9999    | o o o o o o o o o o o o o o | 8 o   | gentoo
-```
+````
 
 ~~Set to `9999` so it updates with the upstream directory.~~ Oops we should read this column-first. We need the keyword `amd64`, which is set as unstable for versions higher than `0.11.7`:
 
-```sh
+````sh
 # in /etc/portage/package.accept_keywords/app-editors/neovim {
 	app-editors/neovim ~amd64
 # }
@@ -405,9 +407,9 @@ Keywords for app-editors/neovim:
 
 su
 emerge --ask app-editors/neovim
-```
+````
 
-```sh
+````sh
 equery keywords app-editors/neovim
 
 # out (relevant)
@@ -420,21 +422,21 @@ Keywords for app-editors/neovim:
              | 4 m 4 c 4 6 a a g s v 0 c k | i d t | o
 -------------+-----------------------------+-------+-------
 [I]0.12.3    | ~ ~ ~ ~ ~ ~ o o o o ~ o o o | 8 o   | gentoo
-```
+````
 
---/ 
+--/
 
 ## rust-analyzer
 
 2026-08-03 Wk 32 Mon - 21:44 +03:00
 
-Needed in [[006 Configuring nvim on new gentoo install]].
+Needed in [006 Configuring nvim on new gentoo install](006%20Configuring%20nvim%20on%20new%20gentoo%20install.md).
 
 Installing `rust-analyzer`,
 
 https://wiki.gentoo.org/wiki/Rust
 
-```sh
+````sh
 equery uses dev-lang/rust
 
 # out (relevant)
@@ -452,18 +454,18 @@ equery uses dev-lang/rust
  - - rust-src                 : Install rust-src, needed by developer tools and for build-std (cross)
  + - rustfmt                  : Install rustfmt, Rust code formatter
  + - system-llvm              : Use the system LLVM installation
-```
+````
 
 `rust-analyzer` requires `rust-src`. We will also need web assembly support for some projects we have.
 
-```sh
+````sh
 # in /etc/portage/package.use/dev-lang/rust {
 	dev-lang/rust rust-analyzer rust-src llvm_targets_WebAssembly
 # }
 
 su
 emerge --ask dev-lang/rust
-```
+````
 
 `rust-analyzer --version # out { rust-analyzer 1.95.0 }`
 
@@ -475,17 +477,17 @@ Needed in `dism-exe-notes > c72093 002 Impl struct layout parsing from bn6f inc 
 
 https://github.com/RangerMauve/lsp-query
 
-```sh
+````sh
 su
 npm install -g @rangermauve/lsp-query
-```
+````
 
 Doesn't seem to work. Created an issue: https://github.com/RangerMauve/lsp-query/issues/1
 
-```sh
+````sh
 su
 npm uninstall -g @rangermauve/lsp-query
-```
+````
 
 ## nmap
 
@@ -495,10 +497,10 @@ Installing nmap,
 
 https://wiki.gentoo.org/wiki/Nmap
 
-```sh
+````sh
 su
 emerge --ask net-analyzer/nmap
-```
+````
 
 ## strace
 
@@ -508,10 +510,10 @@ Installing strace,
 
 https://packages.gentoo.org/packages/dev-debug/strace
 
-```sh
+````sh
 su
 emerge --ask dev-debug/strace
-```
+````
 
 ## segoon/lsp-cli
 
@@ -521,32 +523,32 @@ Installing lsp-cli,
 
 https://github.com/segoon/lsp-cli
 
-```sh
+````sh
 cargo install lsp-cli
-```
+````
 
 ## Fonts
 
 2026-08-06 Wk 32 Thu - 16:41 +03:00
 
-[[006 Install fonts for new gentoo system]]
+[006 Install fonts for new gentoo system](../task/006%20Install%20fonts%20for%20new%20gentoo%20system.md)
 
 ## Sway Screenshot using slurpshot
 
 2026-08-06 Wk 32 Thu - 16:56 +03:00
 
-https://wiki.gentoo.org/wiki/Sway#Simple_approach:_use_slurpshot
+https://wiki.gentoo.org/wiki/Sway#Simple_approach:\_use_slurpshot
 
-```sh
+````sh
 su
 emerge --ask gui-apps/grim gui-apps/wl-clipboard app-misc/jq dev-libs/bemenu gui-apps/slurp
-```
+````
 
 Might not need `bemenu` in manual approach?
 
 Configuration:
 
-```sh
+````sh
 # in /home/lan/src/cloned/cb/lan22h/dotfiles/etc/sway/.config.d/gui-apps/grim/config {
 	set $ps1 Print
 	set $ps2 Control+Print
@@ -559,7 +561,7 @@ Configuration:
 	bindsym $ps3 exec grim $psf
 	bindsym $ps4 exec grim -g "$(slurp)" $psf
 # }
-```
+````
 
 This can also be reached as its own command: `slurp`, where you can select a region, and it outputs dimensions
 
@@ -567,8 +569,7 @@ This can also be reached as its own command: `slurp`, where you can select a reg
 
 2026-08-06 Wk 32 Thu - 18:26 +03:00
 
-Spawn [[lan/2026/main/task/001 Install a new Gentoo system/entry/010 Configuring keyboard layouts and languages for new gentoo]] ^spawn-entry-72fffc
-
+Spawn [lan/2026/main/task/001 Install a new Gentoo system/entry/010 Configuring keyboard layouts and languages for new gentoo](010%20Configuring%20keyboard%20layouts%20and%20languages%20for%20new%20gentoo.md) ^spawn-entry-72fffc
 
 https://wiki.gentoo.org/wiki/Sway#Switching_Keyboard_Layouts
 
@@ -578,36 +579,36 @@ https://wiki.gentoo.org/wiki/Localization/Guide
 
 Find codes with `find /usr/share/keymaps/i386/ | grep 'fr-'`
 
-```sh
+````sh
 # in /home/lan/src/cloned/cb/lan22h/dotfiles/etc/sway/config {
 	input type:keyboard {
 		xkb_layout "us,ar"
 		xkb_options "grp:alt_shift_toggle"
 	}
 # }
-```
+````
 
 ## Cabal
 
 2026-08-11 Wk 33 Tue - 03:24 +03:00
 
-- https://www.haskell.org/cabal/download.html
-- $\to$ https://www.haskell.org/ghcup/
+* https://www.haskell.org/cabal/download.html
+* $\to$ https://www.haskell.org/ghcup/
 
-```sh
+````sh
 curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
-```
+````
 
 Installs to `~/.ghcup`.
 
-```sh
+````sh
 # in /home/lan/src/cloned/cb/lan22h/dotfiles/etc/bash/.config.d/path.sh {
 	$(has_keyword "$MOD_USE" "path-ghcup") && export PATH="$PATH:$HOME/.ghcup/bin"
 	$(has_keyword "$MOD_USE" "path-ghcup") && export PATH="$PATH:$HOME/.cabal/bin"
 # }
 
 # Add `path-ghcup` to MOD_USE in /home/lan/src/cloned/cb/lan22h/dotfiles/etc/bash/.bashrc
-```
+````
 
 ## Glirc
 
@@ -615,9 +616,9 @@ Installs to `~/.ghcup`.
 
 https://hackage.haskell.org/package/glirc#readme
 
-```sh
+````sh
 cabal install glirc
-```
+````
 
 This one you can exit with `/exit`!
 
@@ -627,18 +628,19 @@ Basics of IRC: https://libera.chat/guides/basics
 
 For TLS, it seems you require `ca-certificates` ([explanation1](https://www.herongyang.com/PKI-Certificate/Linux-ca-certificates-Package-What-Is.html)): https://packages.gentoo.org/packages/app-misc/ca-certificates
 
-```sh
+````sh
 su
 emerge --ask app-misc/ca-certificates
-```
+````
 
 Generates `/etc/ca-certificates.conf`.
 
-Can be updated with `/usr/sbin/update-ca-certificates`.`
+Can be updated with `/usr/sbin/update-ca-certificates`.\`
 
 See also:
-- https://github.com/glguy/irc-core/wiki/Automatically-authenticating-to-NickServ
-- https://modern.ircdocs.horse/ `IRC Protocol Standard`
+
+* https://github.com/glguy/irc-core/wiki/Automatically-authenticating-to-NickServ
+* https://modern.ircdocs.horse/ `IRC Protocol Standard`
 
 ## 1lab/Mikan
 
@@ -646,19 +648,19 @@ See also:
 
 https://codeberg.org/1lab/mikan
 
-```sh
+````sh
 REPO=1lab/mikan && git clone git@codeberg.org:$REPO ~/src/cloned/cb/$REPO
 cabal update
 cabal install -foptimise-heavily exe:mikan
 mikan --setup
-```
+````
 
-The recommended use of this is with its agda-mode in emacs. See [[#Emacs]] for installation.
+The recommended use of this is with its agda-mode in emacs. See [Emacs](002%20Quick%20new%20Installs%20for%20Gentoo%20System.md#emacs) for installation.
 
 This is probably similar to Agda, although emacs is primary, other modes are possible such as `agda-vim` to try: https://agda.readthedocs.io/en/v2.6.2.2/tools/emacs-mode.html. But as agda-mode is the most supported, we should compare against it.
 
-- https://github.com/derekelkins/agda-vim
-- https://github.com/msuperdock/vim-agda
+* https://github.com/derekelkins/agda-vim
+* https://github.com/msuperdock/vim-agda
 
 ## Emacs
 
@@ -666,7 +668,7 @@ This is probably similar to Agda, although emacs is primary, other modes are pos
 
 https://wiki.gentoo.org/wiki/GNU_Emacs
 
-```sh
+````sh
 # in /etc/portage/package.use/app-editors/emacs {
 	app-editors/emacs gui gtk -X
 # }
@@ -674,9 +676,9 @@ https://wiki.gentoo.org/wiki/GNU_Emacs
 su
 emerge --ask app-editors/emacs
 emerge --ask --update --changed-use @world
-```
+````
 
-Spawn [[011 Configuring emacs in main gentoo system]] ^spawn-entry-caaa8f
+Spawn [011 Configuring emacs in main gentoo system](011%20Configuring%20emacs%20in%20main%20gentoo%20system.md) ^spawn-entry-caaa8f
 
 ## Agda
 
@@ -684,7 +686,7 @@ Spawn [[011 Configuring emacs in main gentoo system]] ^spawn-entry-caaa8f
 
 https://agda.readthedocs.io/en/v2.6.2.2/getting-started/installation.html#installing-the-agda-and-the-agda-mode-programs
 
-```sh
+````sh
 cabal update
 cabal install Agda
 
@@ -693,10 +695,9 @@ Installing   Agda-2.8.0 (exe:agda)
 Completed    Agda-2.8.0 (exe:agda)
 Symlinking 'agda' to '/home/lan/.cabal/bin/agda'
 Symlinking 'agda-mode' to '/home/lan/.cabal/bin/agda-mode'
-```
+````
 
-
-Spawn [[lan/2026/main/task/001 Install a new Gentoo system/entry/012 Configuring Agda]] ^spawn-entry-9b07ea
+Spawn [lan/2026/main/task/001 Install a new Gentoo system/entry/012 Configuring Agda](012%20Configuring%20Agda.md) ^spawn-entry-9b07ea
 
 ## Fcitx
 
@@ -706,26 +707,26 @@ Needing this to be able to type in pinyin or other IME keyboard systems.
 
 https://wiki.gentoo.org/wiki/Fcitx
 
-```sh
+````sh
 su
 emerge --ask app-i18n/fcitx
-```
+````
 
 We also want wubi:
 
-```sh
+````sh
 su
 emerge --ask app-i18n/fcitx-chinese-addons
-```
+````
 
 2026-08-23 Wk 34 Sun01:34 +03:00
 
 https://wiki.gentoo.org/wiki/Equery
 
-```sh
+````sh
 equery check gtk # out (relevant) { * Checking gui-libs/gtk-4.20.4 ... }
 equery check qt # out { !!! No installed packages matching 'qt' }
-```
+````
 
 Configure fcitx environmental variables accordingly. In my case: https://fcitx-im.org/wiki/Using_Fcitx_5_on_Wayland#Sway
 
@@ -733,10 +734,10 @@ Let's also get `fcitx-configtool`:
 
 https://packages.gentoo.org/packages/app-i18n/fcitx-configtool
 
-```sh
+````sh
 su
 emerge app-i18n/fcitx-configtool
-```
+````
 
 ## Wofi
 
@@ -744,7 +745,7 @@ emerge app-i18n/fcitx-configtool
 
 https://github.com/SimplyCEO/wofi
 
-```sh
+````sh
 REPO=SimplyCEO/wofi && git clone --depth 1 git@github.com:$REPO ~/src/cloned/gh/$REPO
 
 # in /home/lan/src/cloned/gh/SimplyCEO/wofi
@@ -754,9 +755,9 @@ cmake -S . -B build \
   -DENABLE_DRUN=1 \
   -DENABLE_DMENU=1
 cmake --build build
-```
+````
 
-```sh
+````sh
 # in /home/lan/src/cloned/gh/SimplyCEO/wofi
 su
 
@@ -779,21 +780,21 @@ cmake --install build
 -- Installing: /usr/local/include/wofi/widget_builder_api.h
 -- Installing: /usr/local/include/wofi/wofi_api.h
 -- Installing: /usr/local/bin/wofi
-```
+````
 
 ## Idris 2
 
 2026-09-04 Wk 36 Fri - 06:06 +03:00
 
-Through [[000 idris-community idris2-tutorial]]
+Through [000 idris-community idris2-tutorial](../../../../topic/tutorials/000%20Tutorials/entry/000%20idris-community%20idris2-tutorial/000%20idris-community%20idris2-tutorial.md)
 
-- https://idris-lang.org/pages/download.html
-	- .$\to$ https://github.com/stefan-hoeck/idris2-pack
-	- .$\to$ https://cisco.github.io/ChezScheme/
-		- $\to$ https://github.com/cisco/ChezScheme
-		- $\to$ https://github.com/cisco/ChezScheme/blob/main/BUILDING
+* https://idris-lang.org/pages/download.html
+  * .$\to$ https://github.com/stefan-hoeck/idris2-pack
+  * .$\to$ https://cisco.github.io/ChezScheme/
+    * $\to$ https://github.com/cisco/ChezScheme
+    * $\to$ https://github.com/cisco/ChezScheme/blob/main/BUILDING
 
-Spawn [[lan/2026/main/task/001 Install a new Gentoo system/issue/004 Error linking ChezScheme cur_term]] ^spawn-issue-838600
+Spawn [lan/2026/main/task/001 Install a new Gentoo system/issue/004 Error linking ChezScheme cur_term](../issue/004%20Error%20linking%20ChezScheme%20cur_term.md) ^spawn-issue-838600
 
 We need to get Chez Scheme first.
 
@@ -801,31 +802,33 @@ https://packages.gentoo.org/packages/dev-scheme/chez
 
 Doesn't seem to allow us to specify `-ncurses`, as it calculates that the use flag is included anyway.
 
-```sh
+````sh
 # in /etc/portage/package.use/dev-scheme/chez {
 	-X
 # }
 
 su
 emerge --ask dev-scheme/chez
-```
+````
 
-Spawn [[lan/2026/main/task/001 Install a new Gentoo system/issue/005 Error installing idris2-pack unable to read tree]] ^spawn-issue-1fedcc
+Spawn [lan/2026/main/task/001 Install a new Gentoo system/issue/005 Error installing idris2-pack unable to read tree](../issue/005%20Error%20installing%20idris2-pack%20unable%20to%20read%20tree.md) ^spawn-issue-1fedcc
 
 Installed it temporarily from
 
-```sh
+````sh
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/stefan-hoeck/idris2-pack/refs/heads/full_clone/install.bash)"
-```
+````
 
 due to the above issue.
 
-For `idris2-lsp`, 
+For `idris2-lsp`,
 
 https://github.com/idris-community/idris2-lsp
 
- at askthe ```sh
+at askthe \```sh
 pack install-app idris2-lsp
-```
+
+````
 
 Then for nvim: https://github.com/idris-community/idris2-nvim
+````

@@ -1,10 +1,5 @@
-
-
-
-
-
 # 1 Time Logs
 
-```simple-time-tracker
+````simple-time-tracker
 {"entries":[{"name":"[[002 Writing for Atomic contexts and respect]]","startTime":"2025-10-01T22:48:34.259Z","endTime":"2025-10-02T02:07:35.126Z"},{"name":"[[001 Create coin table events to experiment with aggregation being in views]]","startTime":"2025-10-02T07:22:36.762Z","endTime":"2025-10-02T07:57:15.990Z"},{"name":"[[002 Add event accumulation events through diesel]]","startTime":"2025-10-02T08:34:00.000Z","endTime":"2025-10-02T09:37:36.000Z"},{"name":"[[002 Add event accumulation events through diesel]]","startTime":"2025-10-02T10:04:20.000Z","endTime":"2025-10-02T10:45:26.000Z"},{"name":"[[000 To materialize grouped events and accumulated objects into tables via software]]","startTime":"2025-10-03T00:46:13.000Z","endTime":"2025-10-03T01:29:45.000Z"},{"name":"[[004 Choosing accumulations or events as keys in events]]","startTime":"2025-10-03T01:34:15.116Z","endTime":"2025-10-03T02:32:10.074Z"},{"name":"[[004 Investigate options for materializing views into tables using SQL]]","startTime":"2025-10-03T05:49:22.450Z","endTime":"2025-10-03T10:56:34.184Z"}]}
-```
+````

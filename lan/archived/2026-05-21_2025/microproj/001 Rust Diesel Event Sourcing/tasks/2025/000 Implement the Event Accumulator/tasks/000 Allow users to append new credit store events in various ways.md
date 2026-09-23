@@ -1,21 +1,21 @@
 ---
-parent: "[[000 Implement the Event Accumulator]]"
-spawned_by: "[[000 Implement the Event Accumulator]]"
+parent: '[[000 Implement the Event Accumulator]]'
+spawned_by: '[[000 Implement the Event Accumulator]]'
 context_type: task
 status: todo
 ---
 
-Parent: [[000 Implement the Event Accumulator]]
+Parent: [000 Implement the Event Accumulator](../000%20Implement%20the%20Event%20Accumulator.md)
 
-Spawned by: [[000 Implement the Event Accumulator]]
+Spawned by: [000 Implement the Event Accumulator](../000%20Implement%20the%20Event%20Accumulator.md)
 
-Spawned in: [[000 Implement the Event Accumulator#^spawn-task-b96c13|^spawn-task-b96c13]]
+Spawned in: [^spawn-task-b96c13](../000%20Implement%20the%20Event%20Accumulator.md#spawn-task-b96c13)
 
 # 1 Journal
 
 2025-09-20 Wk 38 Sat - 20:47 +03:00
 
-```sh
+````sh
 # in /home/lan/src/cloned/gh/deltachives/2025-002-credit-store-demo-rs
 cargo add chrono
 
@@ -44,19 +44,19 @@ cargo add chrono
  - rkyv-validation
  - serde
  - unstable-locales
-```
+````
 
 We can use this to add a current time string for `created_on` field for events with
 
-```rust
+````rust
 format!("{:?}", chrono::offset::Local::now())
-```
+````
 
 2025-09-20 Wk 38 Sat - 21:04 +03:00
 
 We also need some random numbers for cheap allocation of object ids
 
-```sh
+````sh
 # in /home/lan/src/cloned/gh/deltachives/2025-002-credit-store-demo-rs
 cargo add rand
 
@@ -73,7 +73,7 @@ cargo add rand
  - serde
  - simd_support
  - unbiased
-```
+````
 
 2025-09-20 Wk 38 Sat - 21:32 +03:00
 

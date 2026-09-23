@@ -3,11 +3,11 @@ context_type: task
 status: done
 ---
 
-Parent: [[lan/2026/topic/tutorials/000 Tutorials/entry/000 idris-community idris2-tutorial/000 idris-community idris2-tutorial]]
+Parent: [lan/2026/topic/tutorials/000 Tutorials/entry/000 idris-community idris2-tutorial/000 idris-community idris2-tutorial](../000%20idris-community%20idris2-tutorial.md)
 
-Spawned by: [[lan/2026/topic/tutorials/000 Tutorials/entry/000 idris-community idris2-tutorial/000 idris-community idris2-tutorial]]
+Spawned by: [lan/2026/topic/tutorials/000 Tutorials/entry/000 idris-community idris2-tutorial/000 idris-community idris2-tutorial](../000%20idris-community%20idris2-tutorial.md)
 
-Spawned in: [[lan/2026/topic/tutorials/000 Tutorials/entry/000 idris-community idris2-tutorial/000 idris-community idris2-tutorial#^spawn-task-6928b0|^spawn-task-6928b0]]
+Spawned in: [^spawn-task-6928b0](../000%20idris-community%20idris2-tutorial.md#spawn-task-6928b0)
 
 # Journal
 
@@ -15,7 +15,7 @@ Spawned in: [[lan/2026/topic/tutorials/000 Tutorials/entry/000 idris-community i
 
 [gh idris2-lsp](https://github.com/idris-community/idris2-lsp) recommends using `idris2 --init` to start a new project.
 
-```sh
+````sh
 # in /home/lan/src/cloned/cb/lan22h-experiments/note-files/proj/9e3cf2l-idris2-community-tut/tut
 idris2 --init
 
@@ -23,7 +23,7 @@ idris2 --init
 	package tut
 	sourcedir = "src"
 # }
-```
+````
 
 https://github.com/idris-community/idris2-lsp/blob/main/idris2-lsp.ipkg could be good reference.
 
@@ -35,23 +35,23 @@ In a bunch of projects in Idrs-community, the convention is capitalized file nam
 
 2026-09-05 Wk 36 Sat - 20:57 +03:00
 
-```sh
+````sh
 # in /home/lan/src/cloned/cb/lan22h-experiments/note-files/proj/9e3cf2l-idris2-community-tut/tut/tut.ipkg {
 	executable = tut
 # }
-```
+````
 
 We need to set this or we get an error from `pack run`:
 
-```
+````
 [ fatal ] Package /home/lan/src/cloned/cb/lan22h-experiments/note-files/proj/9e3cf2l-idris2-community-tut/tut/tut.ipkg is not an application
-```
+````
 
 https://idris2.readthedocs.io/en/latest/tutorial/packages.html
 
 2026-09-05 Wk 36 Sat - 21:09 +03:00
 
-```sh
+````sh
 # in /home/lan/src/cloned/cb/lan22h-experiments/note-files/proj/9e3cf2l-idris2-community-tut/tut/tut.ipkg {
 	package tut
 	main = Main
@@ -69,7 +69,7 @@ pack run
 
 # out
 Hello World!
-```
+````
 
 Though we're having issues with `src/App/Main.idr` instead.
 
@@ -77,7 +77,7 @@ Let's try to organize it like https://github.com/idris-community/katla
 
 2026-09-05 Wk 36 Sat - 21:46 +03:00
 
-```sh
+````sh
 # in /home/lan/src/cloned/cb/lan22h-experiments/note-files/proj/9e3cf2l-idris2-community-tut/tut
 tree .
 
@@ -104,9 +104,9 @@ tree .
 │   │   └── Comm.idr
 │   └── App.idr
 └── tut.ipkg
-```
+````
 
-```sh
+````sh
 # in /home/lan/src/cloned/cb/lan22h-experiments/note-files/proj/9e3cf2l-idris2-community-tut/tut/tut.ipkg {
 	package tut
 	modules = App
@@ -146,7 +146,7 @@ pack run
 
 # out
 Hello World!
-```
+````
 
 This makes a project with an executable, specifies main, and demonstrates a minimal exported function across modules.
 
@@ -156,7 +156,7 @@ https://github.com/stefan-hoeck/idris2-pack recommends to use `pack new lib {lib
 
 The main difference with this approach is the `pack.toml`, and an additional `test` inner project:
 
-```sh
+````sh
 # in pack.toml {
 	[custom.all.tut]
 	type = "local"
@@ -169,9 +169,9 @@ The main difference with this approach is the `pack.toml`, and an additional `te
 	path = "test"
 	ipkg = "test.ipkg"
 # }
-```
+````
 
-```sh
+````sh
 # output of tree
 .
 ├── pack.toml
@@ -182,7 +182,7 @@ The main difference with this approach is the `pack.toml`, and an additional `te
 │   │   └── Main.idr
 │   └── test.ipkg
 └── tut.ipkg
-```
+````
 
 We can also new `pack new bin {libname}`
 
@@ -190,16 +190,16 @@ Rewrote our example app in terms of this.
 
 2026-09-07 Wk 37 Mon - 09:33 +03:00
 
-```sh
+````sh
 # in /home/lan/src/cloned/cb/lan22h-experiments/note-files/
 git commit # out { [main 8ef1dee] 9e3cf2: hello world proj for idris 2 }
-```
+````
 
 OK
 
 # References
 
 1. [gh idris2-lsp](https://github.com/idris-community/idris2-lsp)
-2.  [gh idris2-nvim](https://github.com/idris-community/idris2-nvim)
-3. [gh idris2-tut](https://github.com/idris-community/idris2-tutorial)
-4. [idris2-tut](https://idris-community.github.io/idris2-tutorial/Tutorial/Intro.html)
+1. [gh idris2-nvim](https://github.com/idris-community/idris2-nvim)
+1. [gh idris2-tut](https://github.com/idris-community/idris2-tutorial)
+1. [idris2-tut](https://idris-community.github.io/idris2-tutorial/Tutorial/Intro.html)

@@ -1,14 +1,14 @@
 ---
-parent: "[[000 Getting Started for LCR]]"
-spawned_by: "[[000 Unable to compile hello world with cubical agda flag GHC-49196]]"
+parent: '[[000 Getting Started for LCR]]'
+spawned_by: '[[000 Unable to compile hello world with cubical agda flag GHC-49196]]'
 context_type: entry
 ---
 
-Parent: [[000 Getting Started for LCR]]
+Parent: [000 Getting Started for LCR](../000%20Getting%20Started%20for%20LCR.md)
 
-Spawned by: [[000 Unable to compile hello world with cubical agda flag GHC-49196]]
+Spawned by: [000 Unable to compile hello world with cubical agda flag GHC-49196](../issue/000%20Unable%20to%20compile%20hello%20world%20with%20cubical%20agda%20flag%20GHC-49196.md)
 
-Spawned in: [[000 Unable to compile hello world with cubical agda flag GHC-49196#^spawn-entry-626ecf|^spawn-entry-626ecf]]
+Spawned in: [^spawn-entry-626ecf](../issue/000%20Unable%20to%20compile%20hello%20world%20with%20cubical%20agda%20flag%20GHC-49196.md#spawn-entry-626ecf)
 
 # 1 Journal
 
@@ -18,7 +18,7 @@ Spawned in: [[000 Unable to compile hello world with cubical agda flag GHC-49196
 
 (updating)
 
-```
+````
 # in /home/lan/src/tmp/repro
 tree -a .
 
@@ -99,7 +99,7 @@ The Glorious Glasgow Haskell Compilation System, version 9.6.7
 # /out
 
 
-```
+````
 
 (/updating)
 

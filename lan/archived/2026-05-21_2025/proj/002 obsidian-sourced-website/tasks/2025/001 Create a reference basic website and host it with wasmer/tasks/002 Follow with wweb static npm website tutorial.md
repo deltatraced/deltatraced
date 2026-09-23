@@ -1,8 +1,6 @@
-
 # 1 Journal
 
-
-- [ ]
+* [ ] 
 
 2025-09-01 Wk 36 Mon - 21:08
 
@@ -10,34 +8,34 @@ The tutorial is [here](https://wweb.dev/blog/how-to-create-static-website-npm-sc
 
 There is a finished template in [gh wwebdev/static-website-template](https://github.com/wwebdev/static-website-template).
 
-```sh
+````sh
 # in /tmp/del/tut
 
 npm version
 
 # out
 11.3.0
-```
+````
 
 From `npm init` we get:
 
-```
+````
 npm notice
 npm notice New minor version of npm available! 11.3.0 -> 11.5.2
 npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.5.2
 npm notice To update run: npm install -g npm@11.5.2
 npm notice
-```
+````
 
-```sh
+````sh
 npm install -g npm@11.5.2
-```
+````
 
-```sh
+````sh
 # in /tmp/del/tut
 
 npm init
-```
+````
 
 This gives us some choices to go through and creates a `package.json`. The schema documentation is [here](https://docs.npmjs.com/cli/v10/configuring-npm/package-json?v=true). But I can't find `type` there...
 
@@ -45,7 +43,7 @@ This gives us some choices to go through and creates a `package.json`. The schem
 
 2025-09-01 Wk 36 Mon - 22:15
 
-```json
+````json
 // in /tmp/del/tut
 cat package.json
 
@@ -62,11 +60,11 @@ cat package.json
     "test": "echo \"Error: no test specified\" && exit 1"
   }
 }
-```
+````
 
 Then we include a similar `index.html` in the tut:
 
-```html
+````html
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -79,7 +77,7 @@ Then we include a similar `index.html` in the tut:
 		<h1>Hi! I am a heading</h1>
 	</body>
 </html>
-```
+````
 
 For some reason `open index.html` is not able to find the existing file at `file:///tmp/del/tut/index.html`... But we can open it in `~/tmp/del/tut`
 2025-09-01 Wk 36 Mon - 22:25
@@ -88,7 +86,7 @@ Right now the content says `<body></body>` despite us having some content...
 
 But we do see a body with the following content:
 
-```html
+````html
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -97,13 +95,13 @@ But we do see a body with the following content:
 		<h1>Hi! I am a heading</h1>
 	</body>
 </html>
-```
+````
 
 Even including `<title>Some website!</tite>` inside `<head></head>` would break this...
 
 Oh oops, `</title>` not `</tite>`!
 
-```html
+````html
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -116,17 +114,17 @@ Oh oops, `</title>` not `</tite>`!
 		<h1>Hi! I am a heading</h1>
 	</body>
 </html>
-```
+````
 
 You can use `view-source:` before a url in firefox to also view it in the browser, or right click and do `View Page Source`.
 
 2025-09-01 Wk 36 Mon - 22:39
 
-Spawn [[#7.2 SASS language extension inspiration for dbmt]] ^spawn-idea-3f98c7
+Spawn [7.2 SASS language extension inspiration for dbmt](002%20Follow%20with%20wweb%20static%20npm%20website%20tutorial.md#72-sass-language-extension-inspiration-for-dbmt) ^spawn-idea-3f98c7
 
 2025-09-01 Wk 36 Mon - 22:57
 
-```diff
+````diff
 {
   "name": "static-website",
   "version": "1.0.0",
@@ -140,15 +138,15 @@ Spawn [[#7.2 SASS language extension inspiration for dbmt]] ^spawn-idea-3f98c7
 +    "css:scss": "node-sass --output-style compressed -o dist src/scss"
   }
 }
-```
+````
 
 Let's get [Sass](https://sass-lang.com/) for CSS:
 
-```sh
+````sh
 npm i -D node-sass
-```
+````
 
-```diff
+````diff
 {
   "name": "static-website",
   "version": "1.0.0",
@@ -165,25 +163,25 @@ npm i -D node-sass
 +  }
 }
 
-```
+````
 
 2025-09-01 Wk 36 Mon - 23:30
 
-```sh
+````sh
 # in ~/tmp/del/tut
 mkdir -p src/scss
 touch src/scss/index.scss
-```
+````
 
-```diff
+````diff
 	<head>
 +		<link rel="stylesheet", type="text/css", href="dist/index.css">
 	</head>
-```
+````
 
 2025-09-01 Wk 36 Mon - 23:36
 
-```scss
+````scss
 // in src/scss/_variables.scss
 $primary: #16a085;
 
@@ -193,13 +191,13 @@ $primary: #16a085;
 body {
 	color: $primary;
 }
-```
+````
 
 Seems even though it's called `_variables.scss`, we can import it as `variables.scss`, maybe related to it being a compilation flag to ignore the file...
 
-```sh
+````sh
 npm run css:scss
-```
+````
 
 2025-09-01 Wk 36 Mon - 23:50
 
@@ -207,7 +205,7 @@ Had to fix a missing semicolon to `@import 'variables.scss'` , but otherwise we'
 
 It's green!
 
-![[Pasted image 20250901235009.png]]
+![Pasted image 20250901235009.png](../../../../../../../../../attachments/Pasted%20image%2020250901235009.png)
 
 2025-09-01 Wk 36 Mon - 23:54
 
@@ -215,14 +213,14 @@ Now we're using [npmjs autoprefixer](https://www.npmjs.com/package/autoprefixer)
 
 Install:
 
-```sh
+````sh
 # in ~/tmp/del/tut
 npm i -D autoprefixer postcss-cli
-```
+````
 
 And also include the new scripts.
 
-```diff
+````diff
 # in ~/tmp/del/tut/package.json
   "scripts": {
 -    "css:scss": "node-sass --output-style compressed -o dist src/scss"
@@ -235,7 +233,7 @@ And also include the new scripts.
     "node-sass": "^9.0.0",
 +    "postcss-cli": "^11.0.1"
   }
-```
+````
 
 2025-09-02 Wk 36 Tue - 00:16
 
@@ -247,15 +245,15 @@ For linting, get [npmjs stylelint](https://www.npmjs.com/package/stylelint) ([li
 
 Also getting [npmjs postcss-scss](https://www.npmjs.com/package/postcss-scss)
 
-```sh
+````sh
 npm i -D stylelint postcss-scss
-```
+````
 
 2025-09-02 Wk 36 Tue - 05:23
 
 This [post](https://www.sitepoint.com/postcss-sass-configurable-alternative/) explores using postcss-scss for automated configuration.
 
-```diff
+````diff
 # in ~/tmp/del/tut/package.json
   "scripts": {
 -	 "build:css": "npm run css:scss && npm run css:autoprefixer"
@@ -266,11 +264,11 @@ This [post](https://www.sitepoint.com/postcss-sass-configurable-alternative/) ex
 +    "postcss-scss": "^4.0.9",
 +    "stylelint": "^16.23.1"
   }
-```
+````
 
 Create a `.stylelintrc`,
 
-```json
+````json
 // in ~/tmp/del/tut/.stylelintrc
 
 "rules": {
@@ -281,17 +279,17 @@ Create a `.stylelintrc`,
     "declaration-colon-space-after": "always",
     "max-empty-lines": 2
 }
-```
+````
 
 2025-09-02 Wk 36 Tue - 05:33
 
 Adding rebuild automation on file change with [npmjs onchange](https://www.npmjs.com/package/onchange).
 
-```sh
+````sh
 npm i -D onchange
-```
+````
 
-```diff
+````diff
 # in ~/tmp/del/tut/package.json
   "scripts": {
 -    "build:css": "npm run css:lint && npm run css:scss && npm run css:autoprefixer"
@@ -301,15 +299,15 @@ npm i -D onchange
   "devDependencies": {
 +    "onchange": "^7.1.0",
   }
-```
+````
 
 Automate away browser refresh with [npmjs browser-sync](https://www.npmjs.com/package/browser-sync),
 
-```sh
+````sh
 npm i -D browser-sync
-```
+````
 
-```diff
+````diff
 # in ~/tmp/del/tut/package.json
   "scripts": {
 -    "watch:css": "onchange \"src/scss\" -- npm run build:css"
@@ -320,14 +318,14 @@ npm i -D browser-sync
   "devDependencies": {
 +    "browser-sync": "^3.0.4",
   }
-```
+````
 
 For now, moving `index.html` to `dist` as it is being watched for changes, and make the change
 
-```diff
+````diff
 -		<link rel="stylesheet", type="text/css", href="dist/index.css">
 +		<link rel="stylesheet", type="text/css", href="/index.css">
-```
+````
 
 2025-09-02 Wk 36 Tue - 05:46
 
@@ -335,7 +333,7 @@ Following some configuration update recommendations,
 
 Use `npm i -D sass` instead of `npm i -D node-sass`
 
-```diff
+````diff
 # in ~/tmp/del/tut/package.json
   "scripts": {
 -    "css:scss": "node-sass --output-style compressed -o dist src/scss",
@@ -355,26 +353,26 @@ body {
 -  color: $primary;
 +  color: variables.$primary;
 }
-```
+````
 
-Spawn [[#7.3 Post Comment integration via utterance.es]] ^spawn-idea-bb2c9a
+Spawn [7.3 Post Comment integration via utterance.es](002%20Follow%20with%20wweb%20static%20npm%20website%20tutorial.md#73-post-comment-integration-via-utterancees) ^spawn-idea-bb2c9a
 
 2025-09-02 Wk 36 Tue - 06:07
 
 Also we'll use [npmjs concurrently](https://www.npmjs.com/package/concurrently) instead of [npmjs npm-run-all](https://www.npmjs.com/package/npm-run-all)
 
-```sh
+````sh
 npm i -D concurrently
-```
+````
 
 And the script
 
-```diff
+````diff
 -"watch": "run-p serve watch:css"
 +"watch": "concurrently 'npm run serve' 'npm run watch:css'"
-```
+````
 
-```diff
+````diff
 # in ~/tmp/del/tut/package.json
   "scripts": {
 -    "serve": "browser-sync start --server \"dist\" --files \"dist\""
@@ -385,35 +383,37 @@ And the script
 +    "concurrently": "^9.2.1",
   }
 
-```
+````
 
 2025-09-02 Wk 36 Tue - 06:27
 
 We run into some lint errors when updating scss:
 
-```
+````
 [1] src/scss/_variables.scss
 [1]   1:1  ✖  Unknown rule color-hex-case. Did you mean color-hex-alpha, color-hex-length?  color-hex-case
 [1]   1:1  ✖  Unknown rule declaration-colon-space-after                                    declaration-colon-space-after
 [1]   1:1  ✖  Unknown rule max-empty-lines                                                  max-empty-lines
-```
+````
 
 Relevant:
-- [stylelint #7400: 4 Rule color-hex-case unexpectedly removed](https://github.com/stylelint/stylelint/issues/7400)
+
+* [stylelint #7400: 4 Rule color-hex-case unexpectedly removed](https://github.com/stylelint/stylelint/issues/7400)
 
 They added migration guides for deprecated rules: [to-16](https://stylelint.io/migration-guide/to-16/#removed-deprecated-stylistic-rules), [to-15](https://stylelint.io/migration-guide/to-15/#deprecated-stylistic-rules)
 
 For deprecation of rules like `color-hex-case`, `declaration-colon-space-after`, `max-empty-lines`  they write:
 
-> When we created these rules, pretty printers (like [Prettier](https://prettier.io/)) didn't exist. They now offer a better way to consistently format code, especially whitespace. Linters and pretty printers are complementary tools that work together to help you write consistent and error-free code.
+ > 
+ > When we created these rules, pretty printers (like [Prettier](https://prettier.io/)) didn't exist. They now offer a better way to consistently format code, especially whitespace. Linters and pretty printers are complementary tools that work together to help you write consistent and error-free code.
 
 We need to add formatting automation instead. Remove these lints.
 
-```sh
+````sh
 npm install --save-dev --save-exact prettier
-```
+````
 
-```diff
+````diff
 # in ~/tmp/del/tut/package.json
 
 
@@ -425,7 +425,7 @@ npm install --save-dev --save-exact prettier
   "devDependencies": {
 +    "prettier": "^3.6.2",
   }
-```
+````
 
 2025-09-02 Wk 36 Tue - 08:37
 
@@ -433,19 +433,19 @@ Let's use this with pre-commit hooks
 
 Install it if you haven't:
 
-```sh
+````sh
 uv tool install pre-commit
-```
+````
 
 Hmm, this [post](https://medium.com/@danielangelesangelestoribio/configure-pre-commit-for-nextjs-project-d511aa6a1f7b) with a recommended pre-commit configuration recommends [biome](https://biomejs.dev/) which integrates formatting and linting
 
 This provides full code linting.  Let's replace prettier with it
 
-```sh
+````sh
 npm i -D --save-exact @biomejs/biome
-```
+````
 
-```diff
+````diff
 # in ~/tmp/del/tut/package.json
 
   "scripts": {
@@ -458,19 +458,19 @@ npm i -D --save-exact @biomejs/biome
 +    "@biomejs/biome": "2.2.2",
 -    "prettier": "3.6.2",
   }
-```
+````
 
 `css:lint` with `stylelint` seems necessary still because it doesn't seem biome handles scss.
 
 2025-09-02 Wk 36 Tue - 09:20
 
-```sh
+````sh
 pre-commit sample-config > .pre-commit-config.yaml
-```
+````
 
 Add some extra config
 
-```yaml
+````yaml
 # See https://pre-commit.com for more information
 # See https://pre-commit.com/hooks.html for more hooks
 repos:
@@ -494,7 +494,7 @@ repos:
 	rev: v2.4.1
 	hooks:
       - id: codespell
-```
+````
 
 The biome check config is as recommended in [gh biomejs/pre-commit](https://github.com/biomejs/pre-commit).
 
@@ -506,7 +506,7 @@ Needed to make sure that `-id: check-json` is not too indented, or `pre-commit r
 
 Currently the compression done to css is overridden by biome making the css file pretty. Let's remove `css` from the files to format.
 
-```
+````
 codespell................................................................Failed
 - hook id: codespell
 - exit code: 65
@@ -514,7 +514,7 @@ codespell................................................................Failed
 package-lock.json:229: COo ==> coup
 package-lock.json:3061: vEw ==> view, vow, vex
 package-lock.json:3989: Nd ==> And, 2nd
-```
+````
 
 Why is it failing on urls... I guess we need `args: [--skip, package-lock.json]` as recommended by the [post](https://medium.com/@danielangelesangelestoribio/configure-pre-commit-for-nextjs-project-d511aa6a1f7b).
 
@@ -524,28 +524,28 @@ Back to the [tutorial](https://wweb.dev/blog/how-to-create-static-website-npm-sc
 
 Getting [npmjs imagemin-cli](https://www.npmjs.com/package/imagemin-cli) to minify images
 
-```sh
+````sh
 npm i -D imagemin-cli
-```
+````
 
-```diff
+````diff
 # in ~/tmp/del/tut/package.json
 	"scripts": {
 +		"build:images": "imagemin src/images/**/* --out-dir=dist/images",
 +		"watch:images": "onchange \"src/images\" -- npm run build:images",
 	},
 
-```
+````
 
 2025-09-02 Wk 36 Tue - 10:04
 
-Spawn [[#4.1 npm audit reports security vulnerabilities for tutorial template project]] ^spawn-issue-e23534
+Spawn [4.1 npm audit reports security vulnerabilities for tutorial template project](002%20Follow%20with%20wweb%20static%20npm%20website%20tutorial.md#41-npm-audit-reports-security-vulnerabilities-for-tutorial-template-project) ^spawn-issue-e23534
 
 2025-09-02 Wk 36 Tue - 10:15
 
 We ran some audit fixes to reduce vulnerablities. This is what we have so far:
 
-```json
+````json
 	"scripts": {
 		"css:scss": "sass --style compressed src/scss:dist",
 		"css:autoprefixer": "postcss -u autoprefixer -r dist/*.css",
@@ -573,34 +573,34 @@ We ran some audit fixes to reduce vulnerablities. This is what we have so far:
 		"sass": "^1.91.0",
 		"stylelint": "^16.23.1"
 	}
-```
+````
 
 2025-09-02 Wk 36 Tue - 11:00
 
 We can use [webpack](https://webpack.js.org/) for bundling and resolving dependencies, and [babeljs](https://babeljs.io/) for writing latest javascript and yet being browser-compatible.
 
-```sh
+````sh
 npm i -D webpack webpack-cli babel-loader @babel/preset-env
-```
+````
 
-```
+````
 added 224 packages, and audited 865 packages in 33s
-```
+````
 
 That's a lot of dependencies.
 
 Let's create the `webpack.config.js` config file in the project root like the [tutorial](https://wweb.dev/blog/how-to-create-static-website-npm-scripts) and add
 
-```json
+````json
 "build:js": "webpack --mode=production",
 "watch:js": "onchange \"src/js\" -- webpack --mode=development",
-```
+````
 
 and include the script into the html at the end of the `<body>`:
 
-```html
+````html
 <script src="./bundle.js"></script>
-```
+````
 
 The tutorial uses [eslint](https://www.npmjs.com/package/eslint) but we're already using biome.
 
@@ -610,28 +610,28 @@ Make sure to also have `src/js/main.js`.
 
 Now let's add the rest of the configuration for building html pages into dist and minifying.
 
-```sh
+````sh
 npm i -D posthtml posthtml-cli posthtml-modules htmlnano
-```
+````
 
 Add `posthtml.json` as in the tutorial.
 
 Add build and watch for html:
 
-```json
+````json
 "build:html": "posthtml -c posthtml.json",
 "watch:html": "onchange \"src/views\" -- npm run build:html",
-```
+````
 
 Move `dist/index.html` into `src/views/index.html` and split the head into its own file, `src/views/components/head.html` then import it with
 
-```html
+````html
 <module href="/components/head.html"></module>
-```
+````
 
 2025-09-02 Wk 36 Tue - 11:35
 
-```sh
+````sh
 npm run build:html
 > static-website@1.0.0 build:html
 > posthtml -c posthtml.json
@@ -639,7 +639,7 @@ npm run build:html
 You have to install "cssnano" in order to use htmlnano's "minifyCss" module
 You have to install "svgo" in order to use htmlnano's "minifySvg" module
 The file /home/lan/tmp/del/tut/src/views/index.html has been saved!
-```
+````
 
 2025-09-02 Wk 36 Tue - 11:39
 
@@ -649,7 +649,7 @@ One last thing! Let's add to this tutorial by deploying with wasmer!
 
 Let's move this template somewhere more permanent. You can view it in [gh lan-exp-scripts tut](https://github.com/LanHikari22/lan-exp-scripts/tree/main/tutorials/2025/topics/frontend/wwebdev/tut).
 
-Spawn [[#3.4 Deploy wwebdev tutorial project with wasmer]] ^spawn-task-7ad6e5
+Spawn [3.4 Deploy wwebdev tutorial project with wasmer](002%20Follow%20with%20wweb%20static%20npm%20website%20tutorial.md#34-deploy-wwebdev-tutorial-project-with-wasmer) ^spawn-task-7ad6e5
 
 2025-09-02 Wk 36 Tue - 12:19
 
@@ -658,9 +658,10 @@ It's all deployed now!
 Let's make add a comment to the tutorial with the process we went through here.
 
 There are a few differences:
-- We use [biome](https://biomejs.dev/) instead of eslint for linting and non-scss formatting
-- Following [stylelint migration-guide to-15](https://stylelint.io/migration-guide/to-15/#deprecated-stylistic-rules), we removed deprecated rules `color-hex-case`, `declaration-colon-space-after`, `max-empty-lines` since they recommend to just run auto-formatting like with prettifier. We use biome.
-- Added pre-commit hooks for formatting and linting
-- Added configuration for wasmer deployment
+
+* We use [biome](https://biomejs.dev/) instead of eslint for linting and non-scss formatting
+* Following [stylelint migration-guide to-15](https://stylelint.io/migration-guide/to-15/#deprecated-stylistic-rules), we removed deprecated rules `color-hex-case`, `declaration-colon-space-after`, `max-empty-lines` since they recommend to just run auto-formatting like with prettifier. We use biome.
+* Added pre-commit hooks for formatting and linting
+* Added configuration for wasmer deployment
 
 The comment ended up being routed to [Vincenius/wwebdev-comments #3](https://github.com/Vincenius/wwebdev-comments/issues/3).

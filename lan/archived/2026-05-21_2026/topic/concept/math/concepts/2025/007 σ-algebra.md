@@ -4,9 +4,10 @@
 
 See the wiki: [σ-algebra](https://en.wikipedia.org/wiki/%CE%A3-algebra)
 
-A σ-algebra on a set $X$ is a non-empty collection $\Sigma$ of [[005 subset|subsets]] of $X$ closed under [[006 compliment|compliment]], [[010 Countable set|countable]] [[008 union|union]], and [[010 Countable set|countable]] [[014 intersection|intersections]].
+A σ-algebra on a set $X$ is a non-empty collection $\Sigma$ of [subsets](005%20subset.md) of $X$ closed under [compliment](006%20compliment.md), [countable](010%20Countable%20set.md) [union](008%20union.md), and [countable](010%20Countable%20set.md) [intersections](014%20intersection.md).
 
 Being closed under compliment means that
+
 1. if $A \in \Sigma$, then $A^c \in \Sigma$ .
 
 Being closed under countable union gives us

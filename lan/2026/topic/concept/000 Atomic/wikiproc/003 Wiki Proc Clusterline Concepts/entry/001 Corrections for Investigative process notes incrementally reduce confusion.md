@@ -2,11 +2,11 @@
 context_type: entry
 ---
 
-Parent: [[lan/2026/topic/concept/000 Atomic/wikiproc/003 Wiki Proc Clusterline Concepts/003 Wiki Proc Clusterline Concepts]]
+Parent: [lan/2026/topic/concept/000 Atomic/wikiproc/003 Wiki Proc Clusterline Concepts/003 Wiki Proc Clusterline Concepts](../003%20Wiki%20Proc%20Clusterline%20Concepts.md)
 
-Spawned by: [[lan/2026/topic/concept/000 Atomic/wikiproc/003 Wiki Proc Clusterline Concepts/entry/000 Proc Investigative process notes incrementally reduce confusion]]
+Spawned by: [lan/2026/topic/concept/000 Atomic/wikiproc/003 Wiki Proc Clusterline Concepts/entry/000 Proc Investigative process notes incrementally reduce confusion](000%20Proc%20Investigative%20process%20notes%20incrementally%20reduce%20confusion.md)
 
-Spawned in: [[lan/2026/topic/concept/000 Atomic/wikiproc/003 Wiki Proc Clusterline Concepts/entry/000 Proc Investigative process notes incrementally reduce confusion#^spawn-entry-a99c8f|^spawn-entry-a99c8f]]
+Spawned in: [^spawn-entry-a99c8f](000%20Proc%20Investigative%20process%20notes%20incrementally%20reduce%20confusion.md#spawn-entry-a99c8f)
 
 # Journal
 

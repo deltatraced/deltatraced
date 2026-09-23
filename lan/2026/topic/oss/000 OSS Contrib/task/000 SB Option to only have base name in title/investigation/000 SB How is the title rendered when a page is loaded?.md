@@ -3,15 +3,15 @@ context_type: investigation
 status: done
 ---
 
-Parent: [[000 SB Option to only have base name in title]]
+Parent: [000 SB Option to only have base name in title](../000%20SB%20Option%20to%20only%20have%20base%20name%20in%20title.md)
 
-Spawned by: [[000 SB Option to only have base name in title]]
+Spawned by: [000 SB Option to only have base name in title](../000%20SB%20Option%20to%20only%20have%20base%20name%20in%20title.md)
 
-Spawned in: [[000 SB Option to only have base name in title#^spawn-invst-797814|^spawn-invst-797814]]
+Spawned in: [^spawn-invst-797814](../000%20SB%20Option%20to%20only%20have%20base%20name%20in%20title.md#spawn-invst-797814)
 
-Resources: [[000 Silverbullet Source Resources]]
+Resources: [000 Silverbullet Source Resources](../entry/000%20Silverbullet%20Source%20Resources.md)
 
-Overview: [[001 Overview SB Option to only have base name in title]]
+Overview: [001 Overview SB Option to only have base name in title](../entry/001%20Overview%20SB%20Option%20to%20only%20have%20base%20name%20in%20title.md)
 
 ---
 
@@ -19,24 +19,24 @@ Overview: [[001 Overview SB Option to only have base name in title]]
 
 Silverbullet, `5911ee1e`
 
-In `top_bar.tsx`, 
+In `top_bar.tsx`,
 
-```tsx
+````tsx
 <MiniEditor
 // text={pageName ?? ""}
 text="beep"
-```
+````
 
 Gets us to always see `beep` in the title bar.
 
 Then in `editor_ui.tsx`,
 
-```tsx
+````tsx
 <TopBar
   pageName={
 	!viewState.current ? "" : getNameFromPath(viewState.current.path)
   }
-```
+````
 
 We are able to modify the content of `pageName` that would have rendered.
 
@@ -54,18 +54,18 @@ Setting `--editor-width` in theme.scss does correspond to the entire page gettin
 
 `client > content_manager.ts > ContentManager > loadPage`
 
-- `editor_ui.tsx`
-	- `import { TopBar } from "./components/top_bar.tsx";`
+* `editor_ui.tsx`
+  * `import { TopBar } from "./components/top_bar.tsx";`
 
 2026-06-10 Wk 24 Wed - 14:03 +03:00
 
 In `top_bar.tsx`, `5911ee1e`
 
-```tsx
+````tsx
 <MiniEditor
 // text={pageName ?? ""}
 text="beep"
-```
+````
 
 Gets us to always see `beep` in the title bar.
 
@@ -75,12 +75,12 @@ Gets us to always see `beep` in the title bar.
 
 In `editor_ui.tsx`,
 
-```tsx
+````tsx
 <TopBar
   pageName={
 	!viewState.current ? "" : getNameFromPath(viewState.current.path)
   }
-```
+````
 
 2026-06-10 Wk 24 Wed - 14:50 +03:00
 
@@ -88,7 +88,7 @@ We're able to make it just the base name.
 
 In `ref.ts`, add:
 
-```ts
+````ts
 /**
  * Converts a path to just the basename and the extension
  */
@@ -107,11 +107,11 @@ export function pathToBasename(path: Path): Path {
 
   return `${base_no_ext}.${ext}`;
 }
-```
+````
 
 In `editor_ui.tsx`, add:
 
-```tsx
+````tsx
 import {
   pathToBasename,
 } from "@silverbulletmd/silverbullet/lib/ref";
@@ -123,11 +123,11 @@ import {
 	// !viewState.current ? "" : getNameFromPath(viewState.current.path)
 	!viewState.current ? "" : getNameFromPath(pathToBasename(viewState.current.path))
   }
-```
+````
 
 This allows to just render the base name now.
 
-Check [[002 SB How do mentions render the page names and strip the path?]].
+Check [002 SB How do mentions render the page names and strip the path?](002%20SB%20How%20do%20mentions%20render%20the%20page%20names%20and%20strip%20the%20path%3F.md).
 
 It can give us reference as to the solution used there to generate base names.
 
@@ -135,32 +135,32 @@ It can give us reference as to the solution used there to generate base names.
 
 2026-06-10 Wk 24 Wed - 16:41 +03:00
 
-`TopBar` $\to$ 
+`TopBar` $\to$
 
-```tsx
+````tsx
 <div
   id="sb-top"
-```
+````
 
 In `top.scss`, under `sb-top > .main > .inner`,
 
-```tsx
+````tsx
 // Hack to not have SCSS precompile this value but use proper CSS variables
 max-width: var(--#{"editor-width"});
-```
+````
 
 Setting this to `100px` has the title text very small fitting only `000-;`, and the index loading icon takes away from it when present:
 
-```scss
+````scss
 // Hack to not have SCSS precompile this value but use proper CSS variables
 // max-width: var(--#{"editor-width"});
 max-width: 100px;
-```
+````
 
 `website/Space Style.md` mentions that `editor-width` can be modified.
 
-Otherwise it is currently defined in `theme.scss`, 
+Otherwise it is currently defined in `theme.scss`,
 
-```scss
+````scss
 --editor-width: 800px;
-```
+````

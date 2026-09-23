@@ -3,13 +3,13 @@ context_type: issue
 status: todo
 ---
 
-Parent: [[lan/2026/main/task/001 Install a new Gentoo system/001 Install a new Gentoo system]]
+Parent: [lan/2026/main/task/001 Install a new Gentoo system/001 Install a new Gentoo system](../001%20Install%20a%20new%20Gentoo%20system.md)
 
-Spawned by: [[lan/2026/main/task/001 Install a new Gentoo system/001 Install a new Gentoo system]]
+Spawned by: [lan/2026/main/task/001 Install a new Gentoo system/001 Install a new Gentoo system](../001%20Install%20a%20new%20Gentoo%20system.md)
 
-Spawned in: [[lan/2026/main/task/001 Install a new Gentoo system/001 Install a new Gentoo system#^spawn-issue-285bb1|^spawn-issue-285bb1]]
+Spawned in: [^spawn-issue-285bb1](../001%20Install%20a%20new%20Gentoo%20system.md#spawn-issue-285bb1)
 
-Issues: [[003 Issues for Install a new Gentoo system]]
+Issues: [003 Issues for Install a new Gentoo system](../entry/003%20Issues%20for%20Install%20a%20new%20Gentoo%20system.md)
 
 # Journal
 
@@ -19,7 +19,7 @@ We select the thing to switch to then get an error in the sway logs. This does n
 
 Do `tail -f ~/sway_logs.logs`. Usually we get
 
-```json
+````json
 [
   {
     "success": false,
@@ -27,13 +27,13 @@ Do `tail -f ~/sway_logs.logs`. Usually we get
     "error": "Unknown\/invalid command 'c'"
   }
 ]
-```
+````
 
 *error (1)*
 
 But we can initially get
 
-```json
+````json
 [
   {
     "success": false,
@@ -41,7 +41,7 @@ But we can initially get
     "error": "The value for 'con_id' should be '__focused__' or numeric"
   }
 ]
-```
+````
 
 *error (2)*
 
@@ -57,33 +57,33 @@ No this persists even with reboot now. Did something in the system change?
 
 Actually, *now* `sws` broke in the terminal too! `sws` is short for
 
-```sh
+````sh
 # in /usr/local/bin/sws
 /home/lan/src/cloned/gh/AdrienLeGuillou/sway_window_swithcher_dmenu/sws.sh --dmenu-cmd wmenu
-```
+````
 
 It works from when run from the project directory
 
-Also we should add this to a system update script, since I maintain anything under `~/src/`.  We can probably do this when we [[005 Setup a cron job to update system weekly for new gentoo system]]
+Also we should add this to a system update script, since I maintain anything under `~/src/`.  We can probably do this when we [005 Setup a cron job to update system weekly for new gentoo system](../task/005%20Setup%20a%20cron%20job%20to%20update%20system%20weekly%20for%20new%20gentoo%20system.md)
 
 Maybe these errors are coming from `jq`.
 
 Actually it's from `swaymsg`, this possibly bogus command I am trying out emits it:
 
-```sh
+````sh
 swaymsg [cond_id=#20] focus
 
 # out
 Error: Unknown/invalid command 'c'
-```
+````
 
-```sh
+````sh
 # in /home/lan/src/cloned/gh/AdrienLeGuillou/sway_window_swithcher_dmenu/sws.sh
 CON_ID=${CON_ID##*(}
 CON_ID=${CON_ID%)}
 
 echo id: $CON_ID
-```
+````
 
 This gives us something like `id: 20`.
 
@@ -97,12 +97,12 @@ https://linuxjunkies.org/guides/linux-globbing-and-extended-glob
 
 It is otherwise a glob pattern:
 
-```sh
+````sh
 ls [ab]
 
 # out
 a  b
-```
+````
 
 My a and b temporary files...
 
@@ -112,7 +112,7 @@ It hasn't been updated in 6 years. Let's fork it and do a PR.
 
 https://github.com/AdrienLeGuillou/sway_window_swithcher_dmenu/issues/2
 
-```sh
+````sh
 git clone git@github.com:LanHikari22/sway_window_swithcher_dmenu.git ~/src/forked/gh/LanHikari22/AdrienLeGuillou/sway_window_swithcher_dmenu
 
 12 in /home/lan/src/forked/gh/LanHikari22/AdrienLeGuillou/sway_window_swithcher_dmenu/.git/config {
@@ -123,19 +123,19 @@ git clone git@github.com:LanHikari22/sway_window_swithcher_dmenu.git ~/src/forke
 git checkout -b fix-swaymsg-unescaped-glob
 
 
-```
+````
 
-```sh
+````sh
 # in /home/lan/src/forked/gh/LanHikari22/AdrienLeGuillou/sway_window_swithcher_dmenu > br fix-swaymsg-unescaped-glob
 git commit
 
 # out
 [fix-swaymsg-unescaped-glob d7aca67] quote-escape cond_id to prevent treated as glob
-```
+````
 
-Also get it in my own `fork-main` branch. 
+Also get it in my own `fork-main` branch.
 
-Here's the PR: 
+Here's the PR:
 
 https://github.com/AdrienLeGuillou/sway_window_swithcher_dmenu/pull/3
 

@@ -1,8 +1,6 @@
-
 # 1 Journal
 
-
-- [ ]
+* [ ] 
 
 2025-09-02 Wk 36 Tue - 13:05
 
@@ -14,9 +12,9 @@ Tutorial is [here](https://turbocloud.dev/book/deploying-node.js-under-one-domai
 
 Let's make a temporary tutorial project.
 
-```sh
+````sh
 mkdir -p ~/src/tmp/del/tut
-```
+````
 
 2025-09-02 Wk 36 Tue - 13:44
 
@@ -38,7 +36,7 @@ In [cowsay wasmer.toml](https://github.com/wapm-packages/cowsay/blob/master/wasm
 
 2025-09-02 Wk 36 Tue - 16:55
 
-Spawn [[#4.2 Open an issue to Wasmer docs for broken links]] ^spawn-issue-fe8e6b
+Spawn [4.2 Open an issue to Wasmer docs for broken links](004%20Find%20and%20follow%20process%20to%20deploy%20multiple%20npm%20projects%20under%20wasmer.md#42-open-an-issue-to-wasmer-docs-for-broken-links) ^spawn-issue-fe8e6b
 
 2025-09-02 Wk 36 Tue - 17:18
 

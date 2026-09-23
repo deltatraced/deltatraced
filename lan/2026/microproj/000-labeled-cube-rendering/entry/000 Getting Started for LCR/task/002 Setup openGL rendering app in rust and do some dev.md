@@ -1,15 +1,15 @@
 ---
-parent: "[[000 Getting Started for LCR]]"
-spawned_by: "[[000 Getting Started for LCR]]"
+parent: '[[000 Getting Started for LCR]]'
+spawned_by: '[[000 Getting Started for LCR]]'
 context_type: task
 status: todo
 ---
 
-Parent: [[000 Getting Started for LCR]]
+Parent: [000 Getting Started for LCR](../000%20Getting%20Started%20for%20LCR.md)
 
-Spawned by: [[000 Getting Started for LCR]]
+Spawned by: [000 Getting Started for LCR](../000%20Getting%20Started%20for%20LCR.md)
 
-Spawned in: [[000 Getting Started for LCR#^spawn-task-69c8c6|^spawn-task-69c8c6]]
+Spawned in: [^spawn-task-69c8c6](../000%20Getting%20Started%20for%20LCR.md#spawn-task-69c8c6)
 
 # 1 Journal
 
@@ -17,20 +17,20 @@ Spawned in: [[000 Getting Started for LCR#^spawn-task-69c8c6|^spawn-task-69c8c6]
 
 Copy the template rust project from `~/src/cloned/gh/deltachives/2025-003-tmpl-lan-rs/`:
 
-```sh
+````sh
 # in /home/lan/src/cloned/gh/LanHikari22/lan-exp-scripts/microproj/2026/000-LabeledCubeRendering/rs
 mv 2025-003-tmpl-lan-rs/* .
 mv 2025-003-tmpl-lan-rs/.gitignore .
 mv 2025-003-tmpl-lan-rs/.pre-commit-config.yaml .
-```
+````
 
-Modify copyright in README to 2026. 
+Modify copyright in README to 2026.
 
 This could be useful: https://rust-tutorials.github.io/learn-opengl/
 
 Let's try to use the same dependencies:
 
-```toml
+````toml
 [dependencies]
 bytemuck = "1"
 ogl33 = { version = "0.2.0", features = ["debug_error_checks"]}
@@ -38,13 +38,14 @@ ogl33 = { version = "0.2.0", features = ["debug_error_checks"]}
 [dev-dependencies]
 beryllium = "0.2.0-alpha.4"
 imagine = "0.0.5"
-```
-2025-21-pre
-Building `imagine` requires `SDL2` ([SDL](https://www.libsdl.org/)). 
+````
 
-```sh
+2025-21-pre
+Building `imagine` requires `SDL2` ([SDL](https://www.libsdl.org/)).
+
+````sh
 sudo apt-get install libsdl2-dev
-```
+````
 
 `beryllium = "0.2.0-alpha.4"` asks for sdl 2.0, but I have `sdl2-config --version` as `2.32.2`.
 
@@ -52,9 +53,9 @@ sudo apt-get install libsdl2-dev
 
 They did mention static linking too but the issue persists:
 
-```
+````
 beryllium = { version = "0.2.0-alpha.1", default-features = false, features = ["link_static"] }
-```
+````
 
 2026-05-13 Wk 20 Wed - 02:58 +03:00
 
@@ -64,7 +65,7 @@ We can also try
 
 They are using the depenencies:
 
-```
+````
 cgmath = "0.16.1"
 gl = "0.10.0"
 glfw = "0.23.0"
@@ -73,13 +74,13 @@ image = "0.19.0"
 tobj = "0.1.6"
 num = "0.2.0"
 rand = "0.5.5"
-```
+````
 
-```
+````
 warning: the following packages contain code that will be rejected by a future version of Rust: nom v1.2.4
-```
+````
 
-```sh
+````sh
 # in /home/lan/src/cloned/gh/LanHikari22/lan-exp-scripts/microproj/2026/000-LabeledCubeRendering/rs
 cargo run
 
@@ -94,7 +95,7 @@ error: linking with `cc` failed: exit status: 1
 
 
 error: could not compile `lcr` (bin "lcr") due to 1 previous error
-```
+````
 
 [stackoverflow](https://stackoverflow.com/a/12187682/6944447)  $\to$ `sudo apt-get install libxxf86vm-d2025-21-pre2025-21-pre2025-21-preev`
 
@@ -108,14 +109,14 @@ With some shared global state, we're now able to sync the shell exiting with bre
 
 2026-05-13 Wk 20 Wed - 19:51 +03:00
 
-```rust
+````rust
 let vertices: [f32; 12] = [
 	0.5, 0.5, 0.0, // top right
 	0.5, -0.5, 0.0, // bottom right
 	-0.5, -0.5, 0.0, // bottom left
 	-0.5, 0.5, 0.0, // top left
 ];
-```
+````
 
 We can generalize this as a 2D lattice with length 1, and spread 0.5, meaning that from its far reach left to right, it should be able to cover three points: `. -0.5-> . -0.5-> .`.
 
@@ -123,24 +124,23 @@ The resolution is also the length over the spread. In this case, it is 2.
 
 Right now we create vertices only for
 
-```
+````
   0  1  2
 0 .     .
 1
 2 .     .
-```
+````
 
 But we can also just have the entire lattice, and then work with the indices of interest.
 
-```
+````
   0  1  2
 0 .  .  .
 1 .  .  .
 2 .  .  .
-```
+````
 
-
-```
+````
   0  1  2
 0 0     1
 1
@@ -150,23 +150,24 @@ But we can also just have the entire lattice, and then work with the indices of 
 0 0  1  2
 1 3  4  5
 2 6  7  8
-```
+````
+
 2025-21-pre2025-21-pre
 2026-05-13 Wk 20 Wed - 20:40 +03:00
 
 Hmm. We ended up drawing a triangle
 
-```
+````
   0  1  2
 0        
 1    .   
 2 .  .   
 
-```
+````
 
 For indices `0, 1, 4`.
 
-```rust
+````rust
 pub fn create_2d_lattice_vertices(length: u32, resolution: u32) -> Vec<f32> {
     let mut mut_out = vec![];
 
@@ -189,44 +190,43 @@ pub fn create_2d_lattice_vertices(length: u32, resolution: u32) -> Vec<f32> {
 
     mut_out
 }
-```
-
+````
 
 I assumed we had the axis like this:
 
-```
+````
 .--> x
 |
 v
 y
-```
+````
 
 So that the least on both should correspond to the topleft corner.
 
 It seems we instead have
 
-```
+````
   0  1  2
 2 6  7  8
 1 3  4  5
 0 0  1  2
-```
+````
 
 Drawing the following triangles `0` and `1` also match.
-    let r = 2usize.pow(m.try_into().expect("unreachable"));
+let r = 2usize.pow(m.try_into().expect("unreachable"));
 
-```
+````
   0  1  2
 2 1     1
 1 0     1
 0 0     0
-```
+````
 
 2026-05-13 Wk 20 Wed - 22:30 +03:00
 
 Switching to `gl::LINE` instead of `gl::TRIANGLES` makes nothing render.
 
-```rust
+````rust
 ShaderProgramData {
 	shader_program,
 	vao,
@@ -242,7 +242,7 @@ gl::DrawElements(
 	gl::UNSIGNED_INT,
 	ptr::null(),
 );
-```
+````
 
 2025-21-pre2025-21-preBut we're still able to draw lines with `gl::TRIANGLES`, just by setting two indices to be the same.
 
@@ -252,23 +252,23 @@ With `get_connected_neighbors`, we're now able to apply a filter on the lattice 
 
 2026-05-15 Wk 20 Fri - 04:14 +03:00
 
-Spawn [[001 Getting a segfault when using CreateShader again]] ^spawn-issue-423b4f
+Spawn [001 Getting a segfault when using CreateShader again](../issue/001%20Getting%20a%20segfault%20when%20using%20CreateShader%20again.md) ^spawn-issue-423b4f
 
 2026-05-15 Wk 20 Fri - 06:36 +03:00
 
-So we can also switch the lattice solution for a solution that generates only the needed vertices of the shape directly. Then for the indices, we can simply connect them by lines in terms of the order they appear in. 
+So we can also switch the lattice solution for a solution that generates only the needed vertices of the shape directly. Then for the indices, we can simply connect them by lines in terms of the order they appear in.
 
-We also want points on a line segment with configurable resolution and length to map to the shape we want, in this case the circle using [[003 Archived Rational Parameterization of the circle]]:
+We also want points on a line segment with configurable resolution and length to map to the shape we want, in this case the circle using [003 Archived Rational Parameterization of the circle](../../../../../../archived/2026-05-21_2026/topic/study/math/wiki/2026/001%20Math%20Problems/tasks/003%20Archived%20Rational%20Parameterization%20of%20the%20circle.md):
 
-```haskell
+````haskell
 e : (h : ℚ) → Vect2
 e h .x = (1 - h²) / (1 + h²)
 e h .y = 2h / (1 + h²)
-```
+````
 
 2026-05-16 Wk 20 Sat - 20:02 +03:00
 
-We also need a notion of layers. Some shapes we want to draw are multipart. 
+We also need a notion of layers. Some shapes we want to draw are multipart.
 
 For example a square is just one horizontal and one vertical line segments, with 2 more copies that are translations alongside the length of each one.
 
@@ -280,10 +280,10 @@ Layers should also be mergable into a full object to be rendered. Since our rend
 
 So increasing the resolution by 1, through defining the spread as length over resolution meant for example to add 1 more edge to the vertical line
 
-```
+````
 .---.---. (resolution 2)
 .---.---.---. (resolution 3)
-```
+````
 
 With resolution 2, a spread is 0.5 the length, hence there will only be 2 edges.
 
@@ -291,19 +291,19 @@ With resolution 2, a spread is 0.5 the length, hence there will only be 2 edges.
 
 We can hypothesize that the logical length from the bottom to the top of the rendering area is `2` from this:
 
-```rust
+````rust
 let LineConnectedShape { vertices, indices } =
 	line_connect_vertical_line_segment(1.98, resolution).unwrap();
-```
+````
 
 which visibly almost cuts the screen in half at the center, but not quite (0.02 still leaves some visible gap)
 
 Updating that function to a more general form:
 
-```rust
+````rust
 let LineConnectedShape { vertices, indices } =
 	line_connect_line_segment(1.98, resolution, Orientation::J).unwrap();
-```
+````
 
 Note also with length `1`, a vertical line is 0.5 above and below from the center.
 
@@ -315,22 +315,22 @@ Writing `line_connect_terminals_cut_line_segment`,
 
 Cutting both the starting and ending vertices (and also indices) results in an unevenly looking cut line from left to right, where left seems to be cut more.
 
-```
+````
 .---.---.---.---.
 
-```
+````
 
 It might also have to do with the indices now being out of sync after the vertices have been cut, we will end up having fewer larger values, and end up creating less reduced triangles to the right than to the left. Might be best to regenerate the indices for the new reduced vertices.
 
 2026-05-20 Wk 21 Wed - 08:43 +03:002025-21-pre2025-21-pre2025-21-pre
 
-Spawn [[003 Render an array of shapes onto a grid]] ^spawn-task-16a003
+Spawn [003 Render an array of shapes onto a grid](003%20Render%20an%20array%20of%20shapes%20onto%20a%20grid.md) ^spawn-task-16a003
 
 2026-05-20 Wk 21 Wed - 09:05 +03:00
 
 We can use the quadrant encoding for centers to get some logical points of reference for our cube. For example within a 4x4, we can draw the two squared like so:
 
-```
+````
 C D_E_F
   |   |
 8_9_A B
@@ -338,13 +338,13 @@ C D_E_F
 4 5_6_7
 |   |
 0_1_2 3
-```
+````
 
-Since we know the location of any point here via quadrant indexing (or just using a lattice), we can draw any line on the cube using the select two vertices of an interest, and a single triangle index `[0 0 1]`. 
+Since we know the location of any point here via quadrant indexing (or just using a lattice), we can draw any line on the cube using the select two vertices of an interest, and a single triangle index `[0 0 1]`.
 
 Lines on the cube can be uniquely identified by a directed ~~2 choose 3~~:
 
-```rust
+````rust
 pub enum Directed2Choose3 {
     FFX,
     FTX,
@@ -361,20 +361,19 @@ pub enum Directed2Choose3 {
     XTF,
     XTT,
 }
-```
-
+````
 
 `X` is the direction of extension, and the position `ijk` that isn't `X` identifies two faces sharing a line. Note that it is impossible to select two opposite faces here, because one entry must always be a don't-care or `X`.
 
 More generally,
 
-```rust
+````rust
 pub enum TwoChooseThree<T> {
     TTX(T, T),
     TXT(T, T),
     XTT(T, T),
 }
-```
+````
 
 It's a `TwoChooseThree<IntervalEnd>`.
 
@@ -382,19 +381,19 @@ Oops, I meant `ThreeChooseTwo<IntervalEnd>`.
 2025-21-pre2025-21-pre
 2026-05-20 Wk 21 Wed - 21:39 +03:00
 
-```python
+````python
   for i in range(15, -1, -1):
       for j in range(0, 16):
           n = 16*i + j
           print(f'{n: 4} ', end='')
       print('')
-```
+````
 
 to get the data for the 16x16 grid which we will try to use to draw a cube through its indices. We need enough room on the left and right to be able to have our angles for the directed arrows.
 
 With some styling:
 
-```
+````
             0    1    2    3    4    5    6    7    8    9    10   11   12   13   14   15
             ------------------------------------------------------------------------------
        15 | 240  241  242  243  244  245  246  247  248  249  250  251  252  253  254  255
@@ -413,7 +412,7 @@ With some styling:
        2  |  32   33   34   35   36   37   38   39   40   41   42   43   44   45   46   47
        1  |  16   17   18   19   20   21   22   23   24   25   26   27   28   29   30   31
        0  |   0    1    2    3    4    5    6    7    8    9   10   11   12   13   14   15
-```
+````
 
 2026-05-20 Wk 21 Wed - 22:51 +03:00
 
@@ -421,30 +420,30 @@ With some styling:
 
 It would be good to have context on where this occurs:
 
-```
+````
 thread 'main' panicked at examples/expt000_hello_circle.rs:360:74:
 called `Result::unwrap()` on an `Err` value: FinUsizeGridNPowErrorHigherThanMax { data: 17, n: 2, m: 2, max: 16 }
 note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
-```
+````
 
 Though seems we'd have to use a `.map_err` to make this work with `eros::Result`:
 
-```rust
+````rust
         let c_str_frag = CString::new(fragment_shader_source.as_bytes()).map_err(Into::<LcrError>::into).into_traced()?;
-```
+````
 
-Oh the error is because of this `<2>`: 
+Oh the error is because of this `<2>`:
 
-```rust
+````rust
 // in fn line_connect_directed_line_on_2d_projected_cube(
 let turns1 = grid_index_to_turns_for_2pow_cell::<2>(FinUsizeGridNPow::create(index1)?)?;
-```
+````
 
 We're working in a 16x16 now, so `m = 4`
 
 2026-05-20 Wk 21 Wed - 23:23 +03:00
 
-```rust
+````rust
 let LineConnectedShape { vertices, indices } =
 	render_line_connected_shape_on_grid::<2>(
 		&PowNSquareGridVec::create(vec![
@@ -524,28 +523,28 @@ let LineConnectedShape { vertices, indices } =
 				]
 			)?,
 		])?, IntervalF32::create(0.05)?)?;
-```
+````
 
-![[Pasted image 20260520231552.png]]
+![Pasted image 20260520231552.png](../../../../../../../attachments/Pasted%20image%2020260520231552.png)
 
 Hmm. Something went wrong with the vertical line to the botright. with an angle `>`.
 
 That line should be `TTX((i1, i1))`. Might also be good to half the vertex for the angles so they look a bit smaller.
 
-![[Pasted image 20260520234040.png]]
+![Pasted image 20260520234040.png](../../../../../../../attachments/Pasted%20image%2020260520234040.png)
 
 Next to figure out annotated vertices and edges. It should be similar to the ascii art
 
-![[Pasted image 20260521000335.png]]
+![Pasted image 20260521000335.png](../../../../../../../attachments/Pasted%20image%2020260521000335.png)
 
-![[Pasted image 20260521011021.png]]
+![Pasted image 20260521011021.png](../../../../../../../attachments/Pasted%20image%2020260521011021.png)
 
 Hmm the diagonal arrows don't look right. They should be directly left and down:
 
-![[Pasted image 20260521011708.png]]
+![Pasted image 20260521011708.png](../../../../../../../attachments/Pasted%20image%2020260521011708.png)
 
 2026-05-21 Wk 21 Thu - 02:01 +03:00
 
 Okay we need to figure out rendering text now.
 
-Spawn [[004 Installing and rendering fonts with GLFW and OpenGL]] ^spawn-task-1eea12
+Spawn [004 Installing and rendering fonts with GLFW and OpenGL](004%20Installing%20and%20rendering%20fonts%20with%20GLFW%20and%20OpenGL.md) ^spawn-task-1eea12

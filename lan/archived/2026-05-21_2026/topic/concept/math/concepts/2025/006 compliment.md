@@ -4,7 +4,7 @@
 
 See the wiki: [Complement (set theory)](https://en.wikipedia.org/wiki/Complement_(set_theory))
 
-A Universe $U$ is said to be the [[001 Set|set]] of all elements under consideration. ^term-universe
+A Universe $U$ is said to be the [set](001%20Set.md) of all elements under consideration. ^term-universe
 
 The compliment of a set $A$ is written as $A^c$ and is defined as
 

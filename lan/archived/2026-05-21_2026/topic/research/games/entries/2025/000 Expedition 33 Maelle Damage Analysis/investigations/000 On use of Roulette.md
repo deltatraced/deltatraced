@@ -1,16 +1,15 @@
-
 # 1 Journal
-
 
 2025-07-26 Wk 30 Sat - 23:30
 
 We currently use the `Roulette` lumina, which is as described:
 
-> Every hit has a 50% chance to deal either 50% or 200% of its damage
+ > 
+ > Every hit has a 50% chance to deal either 50% or 200% of its damage
 
-
-> [!NOTE] Problem
-Assuming every hit deals 100 damage, what's the expected amount of damage done after 50 attacks (a) with Roulette  and (b) without Roulette?
+ > 
+ > \[!NOTE\] Problem
+ > Assuming every hit deals 100 damage, what's the expected amount of damage done after 50 attacks (a) with Roulette  and (b) without Roulette?
 
 (a)
 

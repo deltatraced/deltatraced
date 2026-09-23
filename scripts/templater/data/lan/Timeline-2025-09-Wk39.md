@@ -1,8 +1,5 @@
-
-
-
 # 1 Time Logs
 
-```simple-time-tracker
+````simple-time-tracker
 {"entries":[{"name":"[[001 Create coin table events to experiment with aggregation being in views]]","startTime":"2025-09-25T22:12:53.000Z","endTime":"2025-09-26T01:10:00.000Z"},{"name":"[[002 Investigate group by logic for frame and span to include up to span]]","startTime":"2025-09-26T01:41:29.000Z","endTime":"2025-09-26T03:00:00.000Z"},{"name":"[[002 Investigate group by logic for frame and span to include up to span]]","startTime":"2025-09-26T04:16:12.767Z","endTime":"2025-09-26T04:38:51.193Z"},{"name":"[[000 Create sqlite3 dbs from sql script]]","startTime":"2025-09-26T04:58:01.000Z","endTime":"2025-09-26T05:09:29.000Z"},{"name":"[[003 Create a natural numbers table and group by divisibility up to N]]","startTime":"2025-09-26T08:20:50.952Z","endTime":"2025-09-26T09:00:14.510Z"},{"name":"[[001 Creating a basic counter with a recursive CTE in sqlite3]]","startTime":"2025-09-26T17:07:38.000Z","endTime":"2025-09-26T17:30:00.000Z"},{"name":"[[001 Creating a basic counter with a recursive CTE in sqlite3]]","startTime":"2025-09-26T19:45:00.000Z","endTime":"2025-09-26T20:08:59.640Z"},{"name":"[[002 Creating a basic table duplicator with recursive CTE in sqlite3]]","startTime":"2025-09-26T20:09:01.466Z","endTime":"2025-09-26T20:47:19.496Z"},{"name":"[[002 Creating a basic table duplicator with recursive CTE in sqlite3]]","startTime":"2025-09-26T22:30:00.000Z","endTime":"2025-09-26T23:22:24.051Z"},{"name":"[[002 Investigate group by logic for frame and span to include up to span]]","startTime":"2025-09-27T00:57:42.000Z","endTime":"2025-09-27T01:30:00.000Z"},{"name":"[[002 Investigate group by logic for frame and span to include up to span]]","startTime":"2025-09-27T02:49:33.000Z","endTime":"2025-09-27T04:30:00.000Z"}]}
-```
+````

@@ -1,4 +1,4 @@
-#math/approximationn
+\#math/approximationn
 
 Below are notes I got when I worked on this
 
@@ -22,7 +22,8 @@ but just like that, I should be able to calculate sqrt myself! just by using his
 and it should generalize for other scary looking functions that we might not be able to inverse easily
 
 I did it!
-```
+
+````
 Iteration 0
 rn 3/2
 
@@ -39,7 +40,7 @@ Iteration 4
 rn 886731088897/627013566048
 approximations of sqrt(2) after just 5 iterations
 and they're all exact rationals!
-```
+````
 
 the last one gives 1.4142135623730951
 

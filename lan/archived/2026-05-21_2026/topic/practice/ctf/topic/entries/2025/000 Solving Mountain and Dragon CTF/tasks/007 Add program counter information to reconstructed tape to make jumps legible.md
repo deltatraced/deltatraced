@@ -1,8 +1,6 @@
-
 # 1 Journal
 
-
-- [x]
+* [x] 
 
 The script for this is [here](https://github.com/LanHikari22/lan-exp-scripts/blob/main/files/2025/persistent/000-mountain-n-dragon-ctf/data/tape.py).
 
@@ -12,19 +10,19 @@ The program counter is mostly the sum of the prior bytes read, make it a 4-digit
 
 Instead of
 
-```ts
+````ts
 tape.push(...c.cmd00_write_param16_to_reg16(/*param16*/ 0x0000));
-```
+````
 
 do
 
-```ts
+````ts
 /*0x0000*/ tape.push(...c.cmd00_write_param16_to_reg16(/*param16*/ 0x0000));
-```
+````
 
 2025-08-01 Wk 31 Fri - 04:16
 
-```ts
+````ts
 export function reconstruct_tape(): number[] {
   var tape: number[] = [];
 
@@ -44,6 +42,6 @@ export function reconstruct_tape(): number[] {
   /*0x0023*/ tape.push(...c.cmd13_beq(/*tape_addr16*/ 0x038a));
 
   // ...
-```
+````
 
 OK

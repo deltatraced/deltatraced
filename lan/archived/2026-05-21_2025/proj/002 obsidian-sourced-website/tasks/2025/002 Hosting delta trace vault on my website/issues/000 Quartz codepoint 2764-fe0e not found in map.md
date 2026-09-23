@@ -1,16 +1,14 @@
-
 # 1 Journal
 
+* [ ] 
 
-- [ ]
+From [^spawn-issue-14d6dc](000%20Quartz%20codepoint%202764-fe0e%20not%20found%20in%20map.md#spawn-issue-14d6dc) in [3.1 Host Obsidian vault with Quartz](000%20Quartz%20codepoint%202764-fe0e%20not%20found%20in%20map.md#31-host-obsidian-vault-with-quartz)
 
-From [[#^spawn-issue-14d6dc]] in [[#3.1 Host Obsidian vault with Quartz]]
-
-```sh
+````sh
 npx quartz build
-```
+````
 
-```
+````
  ⠙ Emitting files: ContentPage -> public/lan/topics/practice/ctf/2025/google-ctf-2025/during/entries/000-overall.html
 
  ERROR 
@@ -23,15 +21,14 @@ npx quartz build
      at generateSocialImage (../plugins/emitters/ogImage.tsx:52:15)
      at processOgImage (../plugins/emitters/ogImage.tsx:84:18)
      at Object.emit (../plugins/emitters/ogImage.tsx:120:9)
-```
+````
 
 2025-09-02 Wk 36 Tue - 18:31
 
-It's this note: [[lan/archived/2026-05-21_2026/topic/practice/ctf/2025/google-ctf-2025/during/entries/000 overall|000 overall]]
+It's this note: *000 overall*
 
 2025-09-02 Wk 36 Tue - 18:56
 
 I opened an issue: [gh jackyzha0/quartz #2110](https://github.com/jackyzha0/quartz/issues/2110).
 
 For now, removing the bad files during generation to move forward with this.
-

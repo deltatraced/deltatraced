@@ -26,11 +26,11 @@ In [wiki Probability space](https://en.wikipedia.org/wiki/Probability_space), th
 
 2025-08-30 Wk 35 Sat - 08:45
 
-Putting probability space definition in [[000 Probability Space]]
+Putting probability space definition in [000 Probability Space](../../concepts/2025/000%20Probability%20Space.md)
 
 2025-09-06 Wk 36 Sat - 22:53
 
-Last we reached is defining the properties continuity from below and continuity from above for [[000 Probability Space]]
+Last we reached is defining the properties continuity from below and continuity from above for [000 Probability Space](../../concepts/2025/000%20Probability%20Space.md)
 
 # 3 Tasks
 
@@ -46,19 +46,21 @@ What did we learn last week?
 
 I will try to recall here without revisiting the definitions or the book.
 
-The [book](https://sites.math.duke.edu/~rtd/PTE/PTE5_011119.pdf) started in page 1 with a definition of [[000 Probability Space|Probability Space]].
+The [book](https://sites.math.duke.edu/~rtd/PTE/PTE5_011119.pdf) started in page 1 with a definition of [Probability Space](../../concepts/2025/000%20Probability%20Space.md).
 
 A probability space is a 3-tuple $(\Omega, \mathcal{F}, P)$ where
-- $\Omega$ is a set of outcomes.
-- ([[#^check-3-1-1|check]]) Example: A dice has the set of outcomes $\Omega = \lbrace 1, 2, 3, 4, 5, 6 \rbrace$. ^checked-3-1-1954
-- $\mathcal{F}$ is a family of sets including sets up to the power set of outcomes: $\mathcal{F} \subseteq \wp({\Omega})$. This denotes our set of events.
-- For our dice,  $\mathcal{F}$ can have at a maximum $2^{6} = 64$ events as per the powerset maximum count.
-- This includes individual outcomes as well any combination of unique outcomes.
-- ([[#^check-3-1-2|false]]) If we're modeling a problem about tossing a single dice, we may only want to consider 6 possible events. $\mathcal{F} = \lbrace \lbrace 1 \rbrace, \lbrace 2 \rbrace, \lbrace 3 \rbrace, \lbrace 4 \rbrace, \lbrace 5 \rbrace, \lbrace 6 \rbrace  \rbrace$. ^checked-3-1-2012
-- ([[#^check-3-1-1|false]]) $P: \mathcal{F} \times [0,1] \to \mathbb{R}^{\pm \infty}$ ^checked-3-1-1
+
+* $\Omega$ is a set of outcomes.
+* ([check](000%20Starting%20out%20Probability%20Theory%20and%20Examples.md#check-3-1-1)) Example: A dice has the set of outcomes $\Omega = \lbrace 1, 2, 3, 4, 5, 6 \rbrace$. ^checked-3-1-1954
+* $\mathcal{F}$ is a family of sets including sets up to the power set of outcomes: $\mathcal{F} \subseteq \wp({\Omega})$. This denotes our set of events.
+* For our dice,  $\mathcal{F}$ can have at a maximum $2^{6} = 64$ events as per the powerset maximum count.
+* This includes individual outcomes as well any combination of unique outcomes.
+* ([false](000%20Starting%20out%20Probability%20Theory%20and%20Examples.md#check-3-1-2)) If we're modeling a problem about tossing a single dice, we may only want to consider 6 possible events. $\mathcal{F} = \lbrace \lbrace 1 \rbrace, \lbrace 2 \rbrace, \lbrace 3 \rbrace, \lbrace 4 \rbrace, \lbrace 5 \rbrace, \lbrace 6 \rbrace  \rbrace$. ^checked-3-1-2012
+* ([false](000%20Starting%20out%20Probability%20Theory%20and%20Examples.md#check-3-1-1)) $P: \mathcal{F} \times [0,1] \to \mathbb{R}^{\pm \infty}$ ^checked-3-1-1
 
 What we know about $P$:
-- It is a [[019 set function|set function]]. This means that it provides a [[015 measure|measure]] for our events. It satisfies [[018 σ-additive|σ-additivity]], which means that for the corresponding set, when you take the measure of the union of two sets, it corresponds to adding the measures of each:
+
+* It is a [set function](../../../../../../../concept/math/concepts/2025/019%20set%20function.md). This means that it provides a [measure](../../../../../../../concept/math/concepts/2025/015%20measure.md) for our events. It satisfies [σ-additivity](../../../../../../../concept/math/concepts/2025/018%20%CF%83-additive.md), which means that for the corresponding set, when you take the measure of the union of two sets, it corresponds to adding the measures of each:
 
 $$
 P(\mathcal{F}_1 \cup \mathcal{F}_2) \equiv P(\mathcal{F}_1) + P(\mathcal{F}_2)
@@ -70,11 +72,12 @@ $$
 P(\bigcup_i A_i) \equiv \sum_i P(A_i)
 $$
 
-([[#^check-3-1-2|false]]) $(\mathcal{F}, P)$ together form a measure space. ^checked-3-1-2003
+([false](000%20Starting%20out%20Probability%20Theory%20and%20Examples.md#check-3-1-2)) $(\mathcal{F}, P)$ together form a measure space. ^checked-3-1-2003
 
-For any [[019 set function|set function]] $\mu$,
-- $\mu(\varnothing) = 0$
-- $\mu$'s range yields non-negative values
+For any [set function](../../../../../../../concept/math/concepts/2025/019%20set%20function.md) $\mu$,
+
+* $\mu(\varnothing) = 0$
+* $\mu$'s range yields non-negative values
 
 **proofs**
 
@@ -109,7 +112,7 @@ $$
 \mu(\bigcup_i A_i) = \sum_i \mu(A_i)
 $$
 
-for some $A_i \in \mathcal{F}$ to express [[018 σ-additive|σ-additivity]].
+for some $A_i \in \mathcal{F}$ to express [σ-additivity](../../../../../../../concept/math/concepts/2025/018%20%CF%83-additive.md).
 
 $\mathcal{F}$ is a set of sets, and I thought $A_i$ here meant it was a particular set of those. But actually, it is short hand for writing
 
@@ -120,11 +123,11 @@ $\forall i \in I, a_i \in \mathcal{F}$  where $I$ is $\{1,\dots,n\}$.
 
 (1)
 
-Definition of $P$. I know that we can have a [[019 set function|set function]] $\mu$, but I seem to recall $P$ assigning [0,1] to events in $\mathcal{F}$. If this is the case, then the domain of $P$ should be $[0, 1]$ and not $\mathbb{R}^{\pm \infty}$.
+Definition of $P$. I know that we can have a [set function](../../../../../../../concept/math/concepts/2025/019%20set%20function.md) $\mu$, but I seem to recall $P$ assigning \[0,1\] to events in $\mathcal{F}$. If this is the case, then the domain of $P$ should be $[0, 1]$ and not $\mathbb{R}^{\pm \infty}$.
 
-$P: \mathcal{F} \times [0, 1] \to \mathbb{R}^+$ would mean that P does not operate on the events directly, but on their probability density, and is a [[019 set function|set function]] over that density $\mathcal{F} \times [0, 1]$.
+$P: \mathcal{F} \times [0, 1] \to \mathbb{R}^+$ would mean that P does not operate on the events directly, but on their probability density, and is a [set function](../../../../../../../concept/math/concepts/2025/019%20set%20function.md) over that density $\mathcal{F} \times [0, 1]$.
 
-([[#^check-3-1-1|check]]) ^checked-3-1-2
+([check](000%20Starting%20out%20Probability%20Theory%20and%20Examples.md#check-3-1-1)) ^checked-3-1-2
 
 (2)
 
@@ -132,7 +135,7 @@ I had the idea that *outcome* and *event* are separate... That our dice events w
 
 (3)
 
-I'm using $\mathbb{R}^+$ to denote the [[017 RealExt|extended real number set]]. But some other symbol may be more standardly used. But this could also be used to mean the positive real numbers, so it's not good... Let's use $\mathbb{R}^{\pm \infty}$.  ([[#^check-3-1-3|true]]) It might have just been a line on top of $\mathbb{R}$... ^checked-3-1-2256
+I'm using $\mathbb{R}^+$ to denote the [extended real number set](../../../../../../../concept/math/concepts/2025/017%20RealExt.md). But some other symbol may be more standardly used. But this could also be used to mean the positive real numbers, so it's not good... Let's use $\mathbb{R}^{\pm \infty}$.  ([true](000%20Starting%20out%20Probability%20Theory%20and%20Examples.md#check-3-1-3)) It might have just been a line on top of $\mathbb{R}$... ^checked-3-1-2256
 
 ### 3.1.2 Check
 
@@ -150,14 +153,15 @@ It also specifies that $\mu$ is a probability measure in the case that $\mu(\Ome
 
 So the definition $P: \mathcal{F} \times [0, 1] \to \mathbb{R}^{\pm \infty}$ is not correct. A value in $[0,1]$ would be the assigned measure.
 
-But it seems correct to say that $P$ *is* a [[019 set function|set function]], its range is just more restricted than $\mathbb{R}^{\pm \infty}$ .
+But it seems correct to say that $P$ *is* a [set function](../../../../../../../concept/math/concepts/2025/019%20set%20function.md), its range is just more restricted than $\mathbb{R}^{\pm \infty}$ .
 
 Because $\mu(\Omega) = 1$ for a probability measure, this is supporting evidence that the dice example is correct. By definition of $\mathcal{F}$, its sets cannot include any element outside of $\Omega$, and so there are no other elements to union with it, and so it gives us the highest measure of 1.
 
 Checks:
-- [x]  [[#^checked-3-1-1]], (false) definition of $P$
-- [x]  [[#^checked-3-1-2]], unsure (1): definition of $P$
-- [x] [[#^checked-3-1-1954]], Dice example for $\Omega$
+
+* [x] [^checked-3-1-1](000%20Starting%20out%20Probability%20Theory%20and%20Examples.md#checked-3-1-1), (false) definition of $P$
+* [x] [^checked-3-1-2](000%20Starting%20out%20Probability%20Theory%20and%20Examples.md#checked-3-1-2), unsure (1): definition of $P$
+* [x] [^checked-3-1-1954](000%20Starting%20out%20Probability%20Theory%20and%20Examples.md#checked-3-1-1954), Dice example for $\Omega$
 
 ^check-3-1-1
 
@@ -165,11 +169,11 @@ Checks:
 
 2025-09-06 Wk 36 Sat - 19:51
 
-The book specifies in (pg 1, vpg 9/490) that $\mathcal{F}$ is a [[007 σ-algebra|σ-algebra]] over $\Omega$ and clarifies that this means means that
+The book specifies in (pg 1, vpg 9/490) that $\mathcal{F}$ is a [σ-algebra](../../../../../../../concept/math/concepts/2025/007%20%CF%83-algebra.md) over $\Omega$ and clarifies that this means means that
 
 1. $\mathcal{F}$ is a non-empty collection
-2. if $A \in \mathcal{F}$ then $A^c \in \mathcal{F}$.
-3. Sample some sequence $A_i \in \mathcal{F}$, then $\bigcup_i A_i \in \mathcal{F}$.
+1. if $A \in \mathcal{F}$ then $A^c \in \mathcal{F}$.
+1. Sample some sequence $A_i \in \mathcal{F}$, then $\bigcup_i A_i \in \mathcal{F}$.
 
 The book specifies that $(\Omega, \mathcal{F})$ form a measure space. This is the space we can *put* a measure on. It's not correct to say it's $(\mathcal{F}, P)$.
 
@@ -177,7 +181,8 @@ The book specifies that $(\Omega, \mathcal{F})$ form a measure space. This is th
 
 I wrote:
 
->If we're modeling a problem about tossing a single dice, we may only want to consider 6 possible events. $\mathcal{F} = \lbrace \lbrace 1 \rbrace, \lbrace 2 \rbrace, \lbrace 3 \rbrace, \lbrace 4 \rbrace, \lbrace 5 \rbrace, \lbrace 6 \rbrace  \rbrace$.
+ > 
+ > If we're modeling a problem about tossing a single dice, we may only want to consider 6 possible events. $\mathcal{F} = \lbrace \lbrace 1 \rbrace, \lbrace 2 \rbrace, \lbrace 3 \rbrace, \lbrace 4 \rbrace, \lbrace 5 \rbrace, \lbrace 6 \rbrace  \rbrace$.
 
 But does this satisfy the properties of $\mathcal{F}$?
 
@@ -211,13 +216,14 @@ A valid (and almost always used) example would be $\mathcal{F} = \wp(\mathcal{F}
 
 2025-09-06 Wk 36 Sat - 21:38
 
-Spawn [[Drawing 2025-09-06 21.19.50.excalidraw]]
+Spawn [Drawing 2025-09-06 21.19.50.excalidraw](../../drawings/Drawing%202025-09-06%2021.19.50.excalidraw.md)
 
-Spawn [[#6.3 How do we deal with the empty set in compliments of the sigma algebra?]] ^spawn-invst-7b43a3
+Spawn [6.3 How do we deal with the empty set in compliments of the sigma algebra?](000%20Starting%20out%20Probability%20Theory%20and%20Examples.md#63-how-do-we-deal-with-the-empty-set-in-compliments-of-the-sigma-algebra) ^spawn-invst-7b43a3
 
 Checks:
-- [x] [[#^checked-3-1-2003]], (false) $(\mathcal{F}, P)$  denoting a measure space
-- [x]  [[#^checked-3-1-2012]], (false) example of $\mathcal{F}$
+
+* [x] [^checked-3-1-2003](000%20Starting%20out%20Probability%20Theory%20and%20Examples.md#checked-3-1-2003), (false) $(\mathcal{F}, P)$  denoting a measure space
+* [x] [^checked-3-1-2012](000%20Starting%20out%20Probability%20Theory%20and%20Examples.md#checked-3-1-2012), (false) example of $\mathcal{F}$
 
 ^check-3-1-2
 
@@ -228,26 +234,27 @@ Checks:
 Yes it's written with a line above: $\overline{\mathbb{R}}$
 
 Checks:
-- [x] [[#^checked-3-1-2256]], on notation of extended reals having a line on top
+
+* [x] [^checked-3-1-2256](000%20Starting%20out%20Probability%20Theory%20and%20Examples.md#checked-3-1-2256), on notation of extended reals having a line on top
 
 ^check-3-1-3
 
 ## 3.2 Writing Continuity from above and below theorems for probability space
 
-- [ ]
+* [ ] 
 
 2025-09-07 Wk 36 Sun - 03:42
 
 So in page 2 they're trying to write a proof for continuity from above and from below.
 
-We investigated the meaning of the notation in [[#6.4 Union continuity operations applied to set functions]].
+We investigated the meaning of the notation in [6.4 Union continuity operations applied to set functions](000%20Starting%20out%20Probability%20Theory%20and%20Examples.md#64-union-continuity-operations-applied-to-set-functions).
 
 2025-09-07 Wk 36 Sun - 03:46
 
 So this is our interpretation:
 
-- $\mu(A_i) \uparrow \mu(A)$ means the value of $\mu(A_i)$ approaches $\mu(A)$ from the left.
--$\mu(A_i) \downarrow \mu(A)$ means the value of $\mu(A_i)$ approaches $\mu(A)$ from the right (edited)
+* $\mu(A_i) \uparrow \mu(A)$ means the value of $\mu(A_i)$ approaches $\mu(A)$ from the left.
+  -$\mu(A_i) \downarrow \mu(A)$ means the value of $\mu(A_i)$ approaches $\mu(A)$ from the right (edited)
 
 Let's write and attempt to explain the proof.
 
@@ -280,10 +287,11 @@ $$
 $$
 
 Given
+
 1. A and B are non-empty subsets of $\Omega$. This means $\mu(A)$ and $\mu(B)$ are not $0$.
-2. There exists a probability measure $P$ that assigns a value in $[0, 1]$ for all subsets of $\Omega$.
-3. So $\mu(B - A)$ is not equal to values in $\{\infty, -\infty\}$.
-$\therefore$  $\mu(A) + C \ge \mu(A)$ follows since $C = \mu(B - A)$ is a finite non-negative constant.
+1. There exists a probability measure $P$ that assigns a value in $[0, 1]$ for all subsets of $\Omega$.
+1. So $\mu(B - A)$ is not equal to values in $\{\infty, -\infty\}$.
+   $\therefore$  $\mu(A) + C \ge \mu(A)$ follows since $C = \mu(B - A)$ is a finite non-negative constant.
 
 (4)
 
@@ -321,7 +329,7 @@ Pending...
 
 How do you write this in LaTeX?
 
-![[Pasted image 20250830084751.png]]
+![Pasted image 20250830084751.png](../../../../../../../../../../../attachments/Pasted%20image%2020250830084751.png)
 
 I know the omega is just `\Omega`: $\Omega$.
 
@@ -333,19 +341,21 @@ But what about the F? that's not $F$.
 
 ## 6.1 What does pairwise mean in pairwise disjoint sets?
 
-- [x]
+* [x] 
 
 2025-08-30 Wk 35 Sat - 15:18
 
 I know disjoin sets share no elements, but pairwise? The context is the description of sigma additivity in the [wiki](https://en.wikipedia.org/wiki/Sigma-additive_set_function):
 
-> Suppose that A ![{\displaystyle \scriptstyle {\mathcal {A}}}](https://wikimedia.org/api/rest_v1/media/math/render/svg/0d586ece9308bf4ef901494079b434c71aac7d41) is a [σ-algebra](https://en.wikipedia.org/wiki/Sigma_algebra "Sigma algebra"). If for every [sequence](https://en.wikipedia.org/wiki/Sequence "Sequence") A 1 , A 2 , … , A n , … ![{\displaystyle A_{1},A_{2},\ldots ,A_{n},\ldots }](https://wikimedia.org/api/rest_v1/media/math/render/svg/7a121200e0c558612beb99e748a738814d788c3f) of pairwise disjoint sets in A ,
+ > 
+ > Suppose that A ![{\displaystyle \scriptstyle {\mathcal {A}}}](https://wikimedia.org/api/rest_v1/media/math/render/svg/0d586ece9308bf4ef901494079b434c71aac7d41) is a [σ-algebra](https://en.wikipedia.org/wiki/Sigma_algebra "Sigma algebra"). If for every [sequence](https://en.wikipedia.org/wiki/Sequence "Sequence") A 1 , A 2 , … , A n , … ![{\displaystyle A\_{1},A\_{2},\ldots ,A\_{n},\ldots }](https://wikimedia.org/api/rest_v1/media/math/render/svg/7a121200e0c558612beb99e748a738814d788c3f) of pairwise disjoint sets in A ,
 
 [statisticshowto pairwise-disjoint](https://www.statisticshowto.com/pairwise-disjoint/) talks about this, but they keep mentioning "pairwise disjoint" together, without decomposing them into individual concepts!
 
 But in [What is Pairwise?](https://www.statisticshowto.com/pairwise-independent-mutually/#PW) they explain:
 
-> Pairwise means to **form all possible pairs** — two items at a time — from a set. For example, in the set {1,2,3} all possible pairs are (1,2), (2,3), (1,3).
+ > 
+ > Pairwise means to **form all possible pairs** — two items at a time — from a set. For example, in the set {1,2,3} all possible pairs are (1,2), (2,3), (1,3).
 
 Okay, that's intuitive.
 
@@ -353,13 +363,14 @@ So I think pairwise + disjoint then would mean, if you take all possible pairs f
 
 ## 6.2 Why F contains all unions of its underlying elements
 
-- [x]
+* [x] 
 
 So in pg1 (vpg 9/490) of the [book](https://sites.math.duke.edu/~rtd/PTE/PTE5_011119.pdf),
 
 They say
 
-> if $A_i \in \mathcal{F}$ is a countable sequence of sets then $\bigcup_iA_i \in \mathcal{F}$
+ > 
+ > if $A_i \in \mathcal{F}$ is a countable sequence of sets then $\bigcup_iA_i \in \mathcal{F}$
 
 Why would this be true?
 
@@ -367,13 +378,13 @@ Why would this be true?
 
 (1)
 
-$\mathcal{F}$ is a [[007 σ-algebra|σ-algebra]] over $\Omega$, so it can hold elements up to $\wp(\Omega)$ where $\wp$ denotes the powerset.
+$\mathcal{F}$ is a [σ-algebra](../../../../../../../concept/math/concepts/2025/007%20%CF%83-algebra.md) over $\Omega$, so it can hold elements up to $\wp(\Omega)$ where $\wp$ denotes the powerset.
 
 ^errata-e14827
 
 2025-08-30 Wk 35 Sat - 18:22
 
-Spawn [[Drawing 2025-08-30 18.25.14.excalidraw]] (sketch)
+Spawn [Drawing 2025-08-30 18.25.14.excalidraw](../../drawings/Drawing%202025-08-30%2018.25.14.excalidraw.md) (sketch)
 
 $\mathcal{F}$'s elements are possible *subsets* of $\Omega$, yet here the book says that an element $A_i$ is a countable *sequence*?
 
@@ -381,19 +392,21 @@ An element $A$ of $\mathcal{F}$ should be a subset of $\Omega$. An element $A_i$
 
 2025-08-30 Wk 35 Sat - 18:58
 
-In [[018 σ-additive#^199261-premise-3|σ-additive defn premise 3]],
+In [σ-additive defn premise 3](../../../../../../../concept/math/concepts/2025/018%20%CF%83-additive.md#199261-premise-3),
 
 We also mention sequences, and this might be where this comes from.
 
-> Let $S$ be the set of all [[020 Seq|sequences]] of pairwise disjoint [^1] sets in $\mathcal{F}$
+ > 
+ > Let $S$ be the set of all [sequences](../../../../../../../concept/math/concepts/2025/020%20Seq.md) of pairwise disjoint \[^1\] sets in $\mathcal{F}$
 
 What motivated this is the writing in the [σ-additive set function wiki](https://en.wikipedia.org/wiki/Sigma-additive_set_function),
 
-> Suppose that A ![{\displaystyle \scriptstyle {\mathcal {A}}}](https://wikimedia.org/api/rest_v1/media/math/render/svg/0d586ece9308bf4ef901494079b434c71aac7d41) is a [σ-algebra](https://en.wikipedia.org/wiki/Sigma_algebra "Sigma algebra"). If for every [sequence](https://en.wikipedia.org/wiki/Sequence "Sequence") A 1 , A 2 , … , A n , … ![{\displaystyle A_{1},A_{2},\ldots ,A_{n},\ldots }](https://wikimedia.org/api/rest_v1/media/math/render/svg/7a121200e0c558612beb99e748a738814d788c3f) of pairwise disjoint sets in A ,
+ > 
+ > Suppose that A ![{\displaystyle \scriptstyle {\mathcal {A}}}](https://wikimedia.org/api/rest_v1/media/math/render/svg/0d586ece9308bf4ef901494079b434c71aac7d41) is a [σ-algebra](https://en.wikipedia.org/wiki/Sigma_algebra "Sigma algebra"). If for every [sequence](https://en.wikipedia.org/wiki/Sequence "Sequence") A 1 , A 2 , … , A n , … ![{\displaystyle A\_{1},A\_{2},\ldots ,A\_{n},\ldots }](https://wikimedia.org/api/rest_v1/media/math/render/svg/7a121200e0c558612beb99e748a738814d788c3f) of pairwise disjoint sets in A ,
 
 I think the point here is because you could take the union of any number of subsets, and the result will hold, not just 2. If you pick two subsets at random and form a pair, you find that they are disjoint, so it follows any randomly sampled sequence too will be disjoint.
 
-The mentioning of sequence here is likely to relax the constraints of repetition and order of [[001 Set|sets]], and these are relaxed because the property holds with or without them.
+The mentioning of sequence here is likely to relax the constraints of repetition and order of [sets](../../../../../../../concept/math/concepts/2025/001%20Set.md), and these are relaxed because the property holds with or without them.
 
 But notice here that the sequence is of the *sets* in $\mathcal{F}$, we are still not saying as we interpret the book to say that $\mathcal{F}$ has within it anywhere some sequence!
 
@@ -413,32 +426,33 @@ I also thought $A_i \subseteq \mathcal{F}$, but this also doesn't make sense sin
 
 Anyway going back to the proposition
 
-> if $A_i \in \mathcal{F}$ is a countable sequence of sets then $\bigcup_iA_i \in \mathcal{F}$
+ > 
+ > if $A_i \in \mathcal{F}$ is a countable sequence of sets then $\bigcup_iA_i \in \mathcal{F}$
 
 Why should this be true?
 
 2025-08-30 Wk 35 Sat - 21:36
 
-I think it is just a restatement of the requirement that [[007 σ-algebra|σ-algebra]] is closed under [[010 Countable set|countable]] [[008 union|unions]].
+I think it is just a restatement of the requirement that [σ-algebra](../../../../../../../concept/math/concepts/2025/007%20%CF%83-algebra.md) is closed under [countable](../../../../../../../concept/math/concepts/2025/010%20Countable%20set.md) [unions](../../../../../../../concept/math/concepts/2025/008%20union.md).
 
 ## 6.3 How do we deal with the empty set in compliments of the sigma algebra?
 
-- [x]
+* [x] 
 
-From [[#^spawn-invst-7b43a3]] in [[#3.1 Wk 36 Last Week Recap]]
+From [^spawn-invst-7b43a3](000%20Starting%20out%20Probability%20Theory%20and%20Examples.md#spawn-invst-7b43a3) in [3.1 Wk 36 Last Week Recap](000%20Starting%20out%20Probability%20Theory%20and%20Examples.md#31-wk-36-last-week-recap)
 
 2025-09-06 Wk 36 Sat - 21:40
 
 Let's say we have some Polyhedral d3 Dice:
 
-![[Pasted image 20250906214311.png]]
+![Pasted image 20250906214311.png](../../../../../../../../../../../attachments/Pasted%20image%2020250906214311.png)
 ([image source](https://brycesdice.com/collections/polyhedral-d3-dice-3-sided-dice-numbered-1-2-3/products/translucent-polyhedral-teal-white-d3-pt0315-3-sided-dice))
 
 We're interested in just rolling this dice once. Now we have $\Omega = \{1, 2, 3\}$ .
 
-We want to check that the powerset $\wp(\Omega) \equiv \{\varnothing, \{1\}, \{2\}, \{3\}, \{1, 2\}, \{1, 3\}, \{2, 3\}, \{1, 2, 3\} \}$ with $|\wp(\Omega)| = 2^{|\Omega|} = 2^3 = 8$  is a valid [[007 σ-algebra|σ-algebra]] over $\Omega$.
+We want to check that the powerset $\wp(\Omega) \equiv \{\varnothing, \{1\}, \{2\}, \{3\}, \{1, 2\}, \{1, 3\}, \{2, 3\}, \{1, 2, 3\} \}$ with $|\wp(\Omega)| = 2^{|\Omega|} = 2^3 = 8$  is a valid [σ-algebra](../../../../../../../concept/math/concepts/2025/007%20%CF%83-algebra.md) over $\Omega$.
 
-Let's check closure under [[006 compliment|compliment]], this must satisfy:
+Let's check closure under [compliment](../../../../../../../concept/math/concepts/2025/006%20compliment.md), this must satisfy:
 
 (p1)
 
@@ -466,13 +480,13 @@ but with $\varnothing$, $A \cup \varnothing = A$.
 
 2025-09-06 Wk 36 Sat - 22:19
 
-Other than that $\varnothing$ should satisfy compliment under [[010 Countable set|countable]] [[008 union|union]]:
+Other than that $\varnothing$ should satisfy compliment under [countable](../../../../../../../concept/math/concepts/2025/010%20Countable%20set.md) [union](../../../../../../../concept/math/concepts/2025/008%20union.md):
 
 if $A, \varnothing \in \wp(\Omega)$, then $A \cup \varnothing \in \wp(\Omega)$.
 
 ## 6.4 Union continuity operations applied to set functions
 
-- [ ]
+* [ ] 
 
 2025-09-06 Wk 36 Sat - 23:03
 
@@ -510,9 +524,9 @@ We want to know what this $\sup _{m\geq n}$ mean.
 
 I found this defined in a textbook in Prof John Hunter's website under [m125b Real Analysis](https://www.math.ucdavis.edu/~hunter/m125b/m125b.html) course.
 
-Captured in [[000 Mn 09 Resources]]
+Captured in [000 Mn 09 Resources](../../../../../../../../../2026-05-21-pre/entries-monthly/2025/001%20Resources/entries/000%20Mn%2009%20Resources.md)
 
-Spawn [[022 supremum and infinimum]]
+Spawn [022 supremum and infinimum](../../../../../../../concept/math/concepts/2025/022%20supremum%20and%20infinimum.md)
 
 2025-09-07 Wk 36 Sun - 01:31
 
@@ -538,7 +552,7 @@ In $\lim_{x \uparrow a}$ $x \uparrow a$ means "x tends to a from the left" and i
 
 In $\lim_{x \downarrow a}$, $x \downarrow a$ means "x tends to a from the right" and it can also be written as $\lim_{x \to a^+}$.
 
-Captured to [[000 Mn 09 Resources]]
+Captured to [000 Mn 09 Resources](../../../../../../../../../2026-05-21-pre/entries-monthly/2025/001%20Resources/entries/000%20Mn%2009%20Resources.md)
 
 We can also think "from above" for "from the left" and "from below" for "from the right".
 
@@ -586,7 +600,7 @@ Nothing right now.
 
 2025-09-07 Wk 36 Sun - 03:45
 
-Maybe we will get a textbook confirmation on this interpretation as we go through the proof. See [[#3.2 Writing Continuity from above and below theorems for probability space]]
+Maybe we will get a textbook confirmation on this interpretation as we go through the proof. See [3.2 Writing Continuity from above and below theorems for probability space](000%20Starting%20out%20Probability%20Theory%20and%20Examples.md#32-writing-continuity-from-above-and-below-theorems-for-probability-space)
 
 ### 6.4.1 Pend
 
@@ -594,21 +608,23 @@ Maybe we will get a textbook confirmation on this interpretation as we go throug
 
 ## 7.1 non-empty collection not missing empty subset
 
-In [[#^errata-e14827]]
+In [^errata-e14827](000%20Starting%20out%20Probability%20Theory%20and%20Examples.md#errata-e14827)
 
 I wrote
 
-> $\mathcal{F}$ is a [[007 σ-algebra|σ-algebra]] over $\Omega$, so it can holds elements up to $\wp(\Omega) - \lbrace \varnothing \rbrace$ where $\wp$ denotes the powerset.
+ > 
+ > $\mathcal{F}$ is a [σ-algebra](../../../../../../../concept/math/concepts/2025/007%20%CF%83-algebra.md) over $\Omega$, so it can holds elements up to $\wp(\Omega) - \lbrace \varnothing \rbrace$ where $\wp$ denotes the powerset.
 
 but this is not true. This is because I misinterpreted the definition of σ-algebra. It reads:
 
-> A σ-algebra on a set $X$ is a non-empty collection $\Sigma$ of [[005 subset|subsets]] of $X$ closed under [[006 compliment|compliment]], [[010 Countable set|countable]] [[008 union|union]], and [[010 Countable set|countable]] [[014 intersection|intersections]].
+ > 
+ > A σ-algebra on a set $X$ is a non-empty collection $\Sigma$ of [subsets](../../../../../../../concept/math/concepts/2025/005%20subset.md) of $X$ closed under [compliment](../../../../../../../concept/math/concepts/2025/006%20compliment.md), [countable](../../../../../../../concept/math/concepts/2025/010%20Countable%20set.md) [union](../../../../../../../concept/math/concepts/2025/008%20union.md), and [countable](../../../../../../../concept/math/concepts/2025/010%20Countable%20set.md) [intersections](../../../../../../../concept/math/concepts/2025/014%20intersection.md).
 
 The algebra itself must be a *non-empty collection*. I interpreted it as *not having the empty set*.
 
 So as correction,
 
-$\mathcal{F}$ is a [[007 σ-algebra|σ-algebra]] over $\Omega$, so it can hold elements up to $\wp(\Omega)$ where $\wp$ denotes the powerset.
+$\mathcal{F}$ is a [σ-algebra](../../../../../../../concept/math/concepts/2025/007%20%CF%83-algebra.md) over $\Omega$, so it can hold elements up to $\wp(\Omega)$ where $\wp$ denotes the powerset.
 
 # 8 LaTeX Config
 

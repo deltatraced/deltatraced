@@ -2,11 +2,11 @@
 context_type: entry
 ---
 
-Parent: [[lan/2026/topic/game-notes/000 Bandai Namco Entertainment Franchise/wikiproc/000 Wiki Proc Tekken 8 by BNEF/000 Wiki Proc Tekken 8 by BNEF]]
+Parent: [lan/2026/topic/game-notes/000 Bandai Namco Entertainment Franchise/wikiproc/000 Wiki Proc Tekken 8 by BNEF/000 Wiki Proc Tekken 8 by BNEF](../000%20Wiki%20Proc%20Tekken%208%20by%20BNEF.md)
 
-Spawned by: [[lan/2026/topic/game-notes/000 Bandai Namco Entertainment Franchise/wikiproc/000 Wiki Proc Tekken 8 by BNEF/entry/000 Spawns from Wiki Proc Tekken 8 by Bandai Namco Entertainment Franchise]]
+Spawned by: [lan/2026/topic/game-notes/000 Bandai Namco Entertainment Franchise/wikiproc/000 Wiki Proc Tekken 8 by BNEF/entry/000 Spawns from Wiki Proc Tekken 8 by Bandai Namco Entertainment Franchise](000%20Spawns%20from%20Wiki%20Proc%20Tekken%208%20by%20Bandai%20Namco%20Entertainment%20Franchise.md)
 
-Spawned in: [[lan/2026/topic/game-notes/000 Bandai Namco Entertainment Franchise/wikiproc/000 Wiki Proc Tekken 8 by BNEF/entry/000 Spawns from Wiki Proc Tekken 8 by Bandai Namco Entertainment Franchise#^spawn-entry-e0a4a5|^spawn-entry-e0a4a5]]
+Spawned in: [^spawn-entry-e0a4a5](000%20Spawns%20from%20Wiki%20Proc%20Tekken%208%20by%20Bandai%20Namco%20Entertainment%20Franchise.md#spawn-entry-e0a4a5)
 
 # What?
 
@@ -14,8 +14,8 @@ A thought stream note is a note where I just write whatever comes to mind. Can b
 
 # See also
 
-- [[000 Tekken 8 Explorations]]
-- [[003 Tekken 8 Per Character Thought Stream]]
+* [000 Tekken 8 Explorations](../../../entry/000%20Tekken%208%20Explorations/000%20Tekken%208%20Explorations.md)
+* [003 Tekken 8 Per Character Thought Stream](003%20Tekken%208%20Per%20Character%20Thought%20Stream.md)
 
 # Journal
 
@@ -33,7 +33,7 @@ Also need to practice my 72 damage xiaoyu combo more since I drop it a lot.
 
 There is an extension that is harder that does 83 damage, although the game cuts the combo after the first 2 steps, and it's just to add an extra `b1+2` in the beginning.
 
-After `hyp(bd1+2) 3+4` I used to activate heat then do `ff4` but it's not necessary. Though I was initially happy I had a heat-extended combo, it turns out I could simply just extend it further and still do more damage. 
+After `hyp(bd1+2) 3+4` I used to activate heat then do `ff4` but it's not necessary. Though I was initially happy I had a heat-extended combo, it turns out I could simply just extend it further and still do more damage.
 
 Also for `ff4`, I find that holding `f` in the end with 4 seems to make me more consistent at doing that attack string and not another (hover attack with `f4`. And also make sure not to press `ff` too fast, since they may blend into one. There might be other factors contributing to how I miss it sometimes.
 
@@ -60,7 +60,7 @@ Note that you need to step forward a little after `df4`.
 
 2026-07-06 Wk 28 Mon - 03:08 +03:00
 
-There is also a combo from a grab: 
+There is also a combo from a grab:
 
 `f2+3 > f3.1.4 > 3+4`.  5 hits, 47 damage.
 
@@ -91,9 +91,9 @@ Ooh I found a new combo! `8 hits64 damage` off of `df3` (my current is `7 hits 5
 
 I did not realize that when you do the snake `df3` and you hold down you transition to aoe.
 
-This allows us to do the combo `df3 > aoe uf3 > ff4 > 3`. Though the timing is tighter with the `ff4` follow up.  
+This allows us to do the combo `df3 > aoe uf3 > ff4 > 3`. Though the timing is tighter with the `ff4` follow up.
 
-Spawn [[lan/2026/topic/game-notes/000 Bandai Namco Entertainment Franchise/wikiproc/000 Wiki Proc Tekken 8 by BNEF/entry/003 Tekken 8 Per Character Thought Stream]] ^spawn-entry-a4cfa3
+Spawn [lan/2026/topic/game-notes/000 Bandai Namco Entertainment Franchise/wikiproc/000 Wiki Proc Tekken 8 by BNEF/entry/003 Tekken 8 Per Character Thought Stream](003%20Tekken%208%20Per%20Character%20Thought%20Stream.md) ^spawn-entry-a4cfa3
 
 2026-07-27 Wk 31 Mon - 18:36 +03:00
 
@@ -102,12 +102,12 @@ I need to use aop + down more since it can avoid highs, mids, ~~and lows.~~
 --/ 2026-07-28 Wk 31 Tue - 07:26 +03:00
 Not lows. Contradicted with the following:
 
-```
+````
 sha1sum f99d724c28fe056f51f6953c4a2c2981ceea205f
 (Using Xiaoyu) (Against Xiaoyu) (Training-mode Offense)
 (Opponent-actions Standing block)
 (Action-after-a-hit-or-block Punish) (Standing-punishment-1 `df3`), 
-```
+````
 
 `1` > `Standing-punishment-1` > `(aop d1+2) > d` will still get us punished by the snake attack `df3`.
 --/
@@ -120,20 +120,20 @@ Also, when in hyp, you can do just 1+2 to do a parry. You can plan this right aw
 
 2026-07-28 Wk 31 Tue - 08:03 +03:00
 
-```
+````
 sha1sum f99d724c28fe056f51f6953c4a2c2981ceea205f
 (Using Xiaoyu) (Against Xiaoyu) (Training-mode Offense)
 (Opponent-actions Standing block
 (Action-after-a-hit-or-block Punish) (Standing-punishment-1 `df3`), 
-```
+````
 
-- `1` > `Standing-punishment-1`
+* `1` > `Standing-punishment-1`
 
 We can dodge `df3` with `b > uu`.
 
-```
+````
 sha1sum e3322f777c316834b8b63b30000e1f7a6e186b21
 (Using Xiaoyu) (Against Xiaoyu) (Training-mode Offense)
 (Opponent-actions Standing block)
 (Action-after-a-hit-or-block Punish) (Standing-punishment-1 `df1`), 
-```
+````

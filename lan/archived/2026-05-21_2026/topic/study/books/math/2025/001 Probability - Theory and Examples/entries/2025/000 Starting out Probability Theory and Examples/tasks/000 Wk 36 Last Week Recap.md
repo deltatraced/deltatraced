@@ -1,6 +1,4 @@
-
 # 1 Journal
-
 
 2025-09-06 Wk 36 Sat - 18:00
 
@@ -12,19 +10,21 @@ What did we learn last week?
 
 I will try to recall here without revisiting the definitions or the book.
 
-The [book](https://sites.math.duke.edu/~rtd/PTE/PTE5_011119.pdf) started in page 1 with a definition of [[000 Probability Space|Probability Space]].
+The [book](https://sites.math.duke.edu/~rtd/PTE/PTE5_011119.pdf) started in page 1 with a definition of [Probability Space](../../../../concepts/2025/000%20Probability%20Space.md).
 
 A probability space is a 3-tuple $(\Omega, \mathcal{F}, P)$ where
-- $\Omega$ is a set of outcomes.
-- ([[#^check-3-1-1|check]]) Example: A dice has the set of outcomes $\Omega = \lbrace 1, 2, 3, 4, 5, 6 \rbrace$. ^checked-3-1-1954
-- $\mathcal{F}$ is a family of sets including sets up to the power set of outcomes: $\mathcal{F} \subseteq \wp({\Omega})$. This denotes our set of events.
-- For our dice,  $\mathcal{F}$ can have at a maximum $2^{6} = 64$ events as per the powerset maximum count.
-- This includes individual outcomes as well any combination of unique outcomes.
-- ([[#^check-3-1-2|false]]) If we're modeling a problem about tossing a single dice, we may only want to consider 6 possible events. $\mathcal{F} = \lbrace \lbrace 1 \rbrace, \lbrace 2 \rbrace, \lbrace 3 \rbrace, \lbrace 4 \rbrace, \lbrace 5 \rbrace, \lbrace 6 \rbrace  \rbrace$. ^checked-3-1-2012
-- ([[#^check-3-1-1|false]]) $P: \mathcal{F} \times [0,1] \to \mathbb{R}^{\pm \infty}$ ^checked-3-1-1
+
+* $\Omega$ is a set of outcomes.
+* ([check](000%20Wk%2036%20Last%20Week%20Recap.md#check-3-1-1)) Example: A dice has the set of outcomes $\Omega = \lbrace 1, 2, 3, 4, 5, 6 \rbrace$. ^checked-3-1-1954
+* $\mathcal{F}$ is a family of sets including sets up to the power set of outcomes: $\mathcal{F} \subseteq \wp({\Omega})$. This denotes our set of events.
+* For our dice,  $\mathcal{F}$ can have at a maximum $2^{6} = 64$ events as per the powerset maximum count.
+* This includes individual outcomes as well any combination of unique outcomes.
+* ([false](000%20Wk%2036%20Last%20Week%20Recap.md#check-3-1-2)) If we're modeling a problem about tossing a single dice, we may only want to consider 6 possible events. $\mathcal{F} = \lbrace \lbrace 1 \rbrace, \lbrace 2 \rbrace, \lbrace 3 \rbrace, \lbrace 4 \rbrace, \lbrace 5 \rbrace, \lbrace 6 \rbrace  \rbrace$. ^checked-3-1-2012
+* ([false](000%20Wk%2036%20Last%20Week%20Recap.md#check-3-1-1)) $P: \mathcal{F} \times [0,1] \to \mathbb{R}^{\pm \infty}$ ^checked-3-1-1
 
 What we know about $P$:
-- It is a [[019 set function|set function]]. This means that it provides a [[015 measure|measure]] for our events. It satisfies [[018 σ-additive|σ-additivity]], which means that for the corresponding set, when you take the measure of the union of two sets, it corresponds to adding the measures of each:
+
+* It is a [set function](../../../../../../../../../concept/math/concepts/2025/019%20set%20function.md). This means that it provides a [measure](../../../../../../../../../concept/math/concepts/2025/015%20measure.md) for our events. It satisfies [σ-additivity](../../../../../../../../../concept/math/concepts/2025/018%20%CF%83-additive.md), which means that for the corresponding set, when you take the measure of the union of two sets, it corresponds to adding the measures of each:
 
 $$
 P(\mathcal{F}_1 \cup \mathcal{F}_2) \equiv P(\mathcal{F}_1) + P(\mathcal{F}_2)
@@ -36,11 +36,12 @@ $$
 P(\bigcup_i A_i) \equiv \sum_i P(A_i)
 $$
 
-([[#^check-3-1-2|false]]) $(\mathcal{F}, P)$ together form a measure space. ^checked-3-1-2003
+([false](000%20Wk%2036%20Last%20Week%20Recap.md#check-3-1-2)) $(\mathcal{F}, P)$ together form a measure space. ^checked-3-1-2003
 
-For any [[019 set function|set function]] $\mu$,
-- $\mu(\varnothing) = 0$
-- $\mu$'s range yields non-negative values
+For any [set function](../../../../../../../../../concept/math/concepts/2025/019%20set%20function.md) $\mu$,
+
+* $\mu(\varnothing) = 0$
+* $\mu$'s range yields non-negative values
 
 **proofs**
 
@@ -75,7 +76,7 @@ $$
 \mu(\bigcup_i A_i) = \sum_i \mu(A_i)
 $$
 
-for some $A_i \in \mathcal{F}$ to express [[018 σ-additive|σ-additivity]].
+for some $A_i \in \mathcal{F}$ to express [σ-additivity](../../../../../../../../../concept/math/concepts/2025/018%20%CF%83-additive.md).
 
 $\mathcal{F}$ is a set of sets, and I thought $A_i$ here meant it was a particular set of those. But actually, it is short hand for writing
 
@@ -86,11 +87,11 @@ $\forall i \in I, a_i \in \mathcal{F}$  where $I$ is $\{1,\dots,n\}$.
 
 (1)
 
-Definition of $P$. I know that we can have a [[019 set function|set function]] $\mu$, but I seem to recall $P$ assigning [0,1] to events in $\mathcal{F}$. If this is the case, then the domain of $P$ should be $[0, 1]$ and not $\mathbb{R}^{\pm \infty}$.
+Definition of $P$. I know that we can have a [set function](../../../../../../../../../concept/math/concepts/2025/019%20set%20function.md) $\mu$, but I seem to recall $P$ assigning \[0,1\] to events in $\mathcal{F}$. If this is the case, then the domain of $P$ should be $[0, 1]$ and not $\mathbb{R}^{\pm \infty}$.
 
-$P: \mathcal{F} \times [0, 1] \to \mathbb{R}^+$ would mean that P does not operate on the events directly, but on their probability density, and is a [[019 set function|set function]] over that density $\mathcal{F} \times [0, 1]$.
+$P: \mathcal{F} \times [0, 1] \to \mathbb{R}^+$ would mean that P does not operate on the events directly, but on their probability density, and is a [set function](../../../../../../../../../concept/math/concepts/2025/019%20set%20function.md) over that density $\mathcal{F} \times [0, 1]$.
 
-([[#^check-3-1-1|check]]) ^checked-3-1-2
+([check](000%20Wk%2036%20Last%20Week%20Recap.md#check-3-1-1)) ^checked-3-1-2
 
 (2)
 
@@ -98,7 +99,7 @@ I had the idea that *outcome* and *event* are separate... That our dice events w
 
 (3)
 
-I'm using $\mathbb{R}^+$ to denote the [[017 RealExt|extended real number set]]. But some other symbol may be more standardly used. But this could also be used to mean the positive real numbers, so it's not good... Let's use $\mathbb{R}^{\pm \infty}$.  ([[#^check-3-1-3|true]]) It might have just been a line on top of $\mathbb{R}$... ^checked-3-1-2256
+I'm using $\mathbb{R}^+$ to denote the [extended real number set](../../../../../../../../../concept/math/concepts/2025/017%20RealExt.md). But some other symbol may be more standardly used. But this could also be used to mean the positive real numbers, so it's not good... Let's use $\mathbb{R}^{\pm \infty}$.  ([true](000%20Wk%2036%20Last%20Week%20Recap.md#check-3-1-3)) It might have just been a line on top of $\mathbb{R}$... ^checked-3-1-2256
 
 ### 1.1.2 Check
 
@@ -116,14 +117,15 @@ It also specifies that $\mu$ is a probability measure in the case that $\mu(\Ome
 
 So the definition $P: \mathcal{F} \times [0, 1] \to \mathbb{R}^{\pm \infty}$ is not correct. A value in $[0,1]$ would be the assigned measure.
 
-But it seems correct to say that $P$ *is* a [[019 set function|set function]], its range is just more restricted than $\mathbb{R}^{\pm \infty}$ .
+But it seems correct to say that $P$ *is* a [set function](../../../../../../../../../concept/math/concepts/2025/019%20set%20function.md), its range is just more restricted than $\mathbb{R}^{\pm \infty}$ .
 
 Because $\mu(\Omega) = 1$ for a probability measure, this is supporting evidence that the dice example is correct. By definition of $\mathcal{F}$, its sets cannot include any element outside of $\Omega$, and so there are no other elements to union with it, and so it gives us the highest measure of 1.
 
 Checks:
-- [x]  [[#^checked-3-1-1]], (false) definition of $P$
-- [x]  [[#^checked-3-1-2]], unsure (1): definition of $P$
-- [x] [[#^checked-3-1-1954]], Dice example for $\Omega$
+
+* [x] [^checked-3-1-1](000%20Wk%2036%20Last%20Week%20Recap.md#checked-3-1-1), (false) definition of $P$
+* [x] [^checked-3-1-2](000%20Wk%2036%20Last%20Week%20Recap.md#checked-3-1-2), unsure (1): definition of $P$
+* [x] [^checked-3-1-1954](000%20Wk%2036%20Last%20Week%20Recap.md#checked-3-1-1954), Dice example for $\Omega$
 
 ^check-3-1-1
 
@@ -131,11 +133,11 @@ Checks:
 
 2025-09-06 Wk 36 Sat - 19:51
 
-The book specifies in (pg 1, vpg 9/490) that $\mathcal{F}$ is a [[007 σ-algebra|σ-algebra]] over $\Omega$ and clarifies that this means means that
+The book specifies in (pg 1, vpg 9/490) that $\mathcal{F}$ is a [σ-algebra](../../../../../../../../../concept/math/concepts/2025/007%20%CF%83-algebra.md) over $\Omega$ and clarifies that this means means that
 
 1. $\mathcal{F}$ is a non-empty collection
-2. if $A \in \mathcal{F}$ then $A^c \in \mathcal{F}$.
-3. Sample some sequence $A_i \in \mathcal{F}$, then $\bigcup_i A_i \in \mathcal{F}$.
+1. if $A \in \mathcal{F}$ then $A^c \in \mathcal{F}$.
+1. Sample some sequence $A_i \in \mathcal{F}$, then $\bigcup_i A_i \in \mathcal{F}$.
 
 The book specifies that $(\Omega, \mathcal{F})$ form a measure space. This is the space we can *put* a measure on. It's not correct to say it's $(\mathcal{F}, P)$.
 
@@ -143,7 +145,8 @@ The book specifies that $(\Omega, \mathcal{F})$ form a measure space. This is th
 
 I wrote:
 
->If we're modeling a problem about tossing a single dice, we may only want to consider 6 possible events. $\mathcal{F} = \lbrace \lbrace 1 \rbrace, \lbrace 2 \rbrace, \lbrace 3 \rbrace, \lbrace 4 \rbrace, \lbrace 5 \rbrace, \lbrace 6 \rbrace  \rbrace$.
+ > 
+ > If we're modeling a problem about tossing a single dice, we may only want to consider 6 possible events. $\mathcal{F} = \lbrace \lbrace 1 \rbrace, \lbrace 2 \rbrace, \lbrace 3 \rbrace, \lbrace 4 \rbrace, \lbrace 5 \rbrace, \lbrace 6 \rbrace  \rbrace$.
 
 But does this satisfy the properties of $\mathcal{F}$?
 
@@ -177,13 +180,14 @@ A valid (and almost always used) example would be $\mathcal{F} = \wp(\mathcal{F}
 
 2025-09-06 Wk 36 Sat - 21:38
 
-Spawn [[Drawing 2025-09-06 21.19.50.excalidraw]]
+Spawn [Drawing 2025-09-06 21.19.50.excalidraw](../../../../drawings/Drawing%202025-09-06%2021.19.50.excalidraw.md)
 
-Spawn [[#6.3 How do we deal with the empty set in compliments of the sigma algebra?]] ^spawn-invst-7b43a3
+Spawn [6.3 How do we deal with the empty set in compliments of the sigma algebra?](000%20Wk%2036%20Last%20Week%20Recap.md#63-how-do-we-deal-with-the-empty-set-in-compliments-of-the-sigma-algebra) ^spawn-invst-7b43a3
 
 Checks:
-- [x] [[#^checked-3-1-2003]], (false) $(\mathcal{F}, P)$  denoting a measure space
-- [x]  [[#^checked-3-1-2012]], (false) example of $\mathcal{F}$
+
+* [x] [^checked-3-1-2003](000%20Wk%2036%20Last%20Week%20Recap.md#checked-3-1-2003), (false) $(\mathcal{F}, P)$  denoting a measure space
+* [x] [^checked-3-1-2012](000%20Wk%2036%20Last%20Week%20Recap.md#checked-3-1-2012), (false) example of $\mathcal{F}$
 
 ^check-3-1-2
 
@@ -194,6 +198,7 @@ Checks:
 Yes it's written with a line above: $\overline{\mathbb{R}}$
 
 Checks:
-- [x] [[#^checked-3-1-2256]], on notation of extended reals having a line on top
+
+* [x] [^checked-3-1-2256](000%20Wk%2036%20Last%20Week%20Recap.md#checked-3-1-2256), on notation of extended reals having a line on top
 
 ^check-3-1-3

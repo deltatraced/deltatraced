@@ -2,11 +2,11 @@
 context_type: entry
 ---
 
-Parent: [[lan/2026/main/task/001 Install a new Gentoo system/001 Install a new Gentoo system]]
+Parent: [lan/2026/main/task/001 Install a new Gentoo system/001 Install a new Gentoo system](../001%20Install%20a%20new%20Gentoo%20system.md)
 
-Spawned by: [[lan/2026/main/task/001 Install a new Gentoo system/001 Install a new Gentoo system]]
+Spawned by: [lan/2026/main/task/001 Install a new Gentoo system/001 Install a new Gentoo system](../001%20Install%20a%20new%20Gentoo%20system.md)
 
-Spawned in: [[lan/2026/main/task/001 Install a new Gentoo system/001 Install a new Gentoo system#^spawn-entry-e9868c|^spawn-entry-e9868c]]
+Spawned in: [^spawn-entry-e9868c](../001%20Install%20a%20new%20Gentoo%20system.md#spawn-entry-e9868c)
 
 # What?
 
@@ -20,12 +20,12 @@ A raw journal in this case is one where I take notes outside of the clusterline 
 
 Wk 30 Tue 10:47
 
-```sh
+````sh
 date
 
 # out
 Tue Jul 21 10:47:34 UTC 2026
-```
+````
 
 Time via C-t is a bit off, My time is 2h55min ahead. 15:00 -> 17:55
 
@@ -35,13 +35,14 @@ We are UTC+03:00.
 
 ### Grammatical errors I end up finding in the handbook
 
-todo[t:rem t:status=todo] Contribute these
+todo\[t:rem t:status=todo\] Contribute these
 
 (1)
 
 In https://wiki.gentoo.org/wiki/Handbook:AMD64/Installation/Disks,
 
-> That said, MBR and legacy BIOS boot may still used in virtualized cloud environments such as AWS.
+ > 
+ > That said, MBR and legacy BIOS boot may still used in virtualized cloud environments such as AWS.
 
 Should be "may still **be** used"
 
@@ -49,7 +50,8 @@ Should be "may still **be** used"
 
 In https://wiki.gentoo.org/wiki/Handbook:AMD64/Installation/Disks,
 
->    The official Gentoo boot media provides support for many advanced filesystem and tool setups, which offer more flexible changes, snapshots and some cases more caching abitles
+ > 
+ > The official Gentoo boot media provides support for many advanced filesystem and tool setups, which offer more flexible changes, snapshots and some cases more caching abitles
 
 Should be "and **in** some cases, more caching **abilities.**"
 
@@ -57,7 +59,8 @@ Should be "and **in** some cases, more caching **abilities.**"
 
 In https://wiki.gentoo.org/wiki/Handbook:AMD64/Installation/Disks,
 
->    Although usage is not covered in the handbook, below is a list helpful guides to get the system running:
+ > 
+ > Although usage is not covered in the handbook, below is a list helpful guides to get the system running:
 
 Should be "list **of** helpful guides"
 
@@ -65,7 +68,9 @@ Should be "list **of** helpful guides"
 
 In https://wiki.gentoo.org/wiki/Handbook:AMD64/Installation/Base,
 
->      * /dev/ is a regular file system which contains all device. It is partially managed by the Linux device manager (usually udev)
+ > 
+ >      * /dev/ is a regular file system which contains all device. It is partially managed by the Linux device manager (usually udev)
+ >     
 
 Should be "which contains all **devices**."
 
@@ -73,7 +78,8 @@ Should be "which contains all **devices**."
 
 In https://wiki.gentoo.org/wiki/Handbook:AMD64/Installation/Base,
 
->    Optionally system administrators can also define accepted licenses per-package as shown in the following directory of files example. Note that the package.license directory will need created if it does not already exist:
+ > 
+ > Optionally system administrators can also define accepted licenses per-package as shown in the following directory of files example. Note that the package.license directory will need created if it does not already exist:
 
 Should be "directory will need **to be** created if"
 
@@ -81,10 +87,11 @@ Should be "directory will need **to be** created if"
 
 In https://wiki.gentoo.org/wiki/Handbook:AMD64/Installation/Kernel,
 
->      * Running file system consistency check fsck, a tool to check and repair consistency of a file system in such events of uncleanly shutdown a system.
+ > 
+ >      * Running file system consistency check fsck, a tool to check and repair consistency of a file system in such events of uncleanly shutdown a system.
+ >     
 
 Should be "of a file system **in events such as unclean system shutdown**"
-
 
 ## Done
 
@@ -94,20 +101,20 @@ Wk 30 Tue 09:56
 
 Temporary file. Writing notes on my phone.
 
-Currently doing the gentoo installation on my PC, so access to notes are limited. I have setup syncthing previously with my phone for my notes, 
+Currently doing the gentoo installation on my PC, so access to notes are limited. I have setup syncthing previously with my phone for my notes,
 so now I am SSH'd into my phone (thanks to termux), and I can find my notes under /storage/emulated/0.
 
 Using Gentoo vim alongside tmux. I figured by experimentation (no man files in this installation environment) and memory that I can create a new session with
 
-```sh
+````sh
 tmux new -t {session_id}
-```
+````
 
 and switch with
 
-```sh
+````sh
 tmux switch -t {session_id}
-```
+````
 
 So I can have a session for notes/terminal browsering of the handbook with links. And another for operations done.
 
@@ -117,42 +124,41 @@ For some reason I'm getting a bunch of segfaults with (termux) vi. But note this
 
 We could try to install another editor:
 
-```sh
+````sh
 # in phone
 pkg install vim
-```
+````
 
 Hopefully no segfaults with vim now.
 
-
 Wk 30 Tue 10:02
 
-Alright so. Not sure how to copy and paste stuff around here. Ctrl+Ins and stuff isn't helping. 
+Alright so. Not sure how to copy and paste stuff around here. Ctrl+Ins and stuff isn't helping.
 
 Let's check links and see if we get how default tmux handles copy mode, because it's different than what I configured.
 
-```sh
+````sh
 # in user lan
 links https://www.duckduckgo.com/
-```
+````
 
 --/ Wk 30 Tue 12:04
 
 https://wiki.gentoo.org/wiki/Handbook:AMD64/Installation/Media#Extra_hardware_configuration
- recommends not using `links` in root following https://en.wikipedia.org/wiki/Principle_of_least_privilege. Make sure to first create a user:
+recommends not using `links` in root following https://en.wikipedia.org/wiki/Principle_of_least_privilege. Make sure to first create a user:
 
- ```sh
+````sh
 
- # set a password for root
- passwd
+# set a password for root
+passwd
 
- # create a new user
- useradd -m -G users,wheel myuser
- passwd myuser
+# create a new user
+useradd -m -G users,wheel myuser
+passwd myuser
 
- # switch to myuser
- su - myuser
- ```
+# switch to myuser
+su - myuser
+````
 
 Updating my links commands to reflect that we are in my user shell.
 
@@ -169,16 +175,16 @@ Wk 30 Tue 10:28
 
 Article recommends setting vim mode keybindings for tmux:
 
-```sh
+````sh
 tmux setw -g mode-keys vi
-```
+````
 
-```sh
+````sh
 tmux show-option -gw mode-keys
 
 # out
 mode-keys vi
-```
+````
 
 Ooh! That's all it took. Now it's much more familiar to the copy mode I know. I guess the primary issue was that it defaults to emacs mode.
 
@@ -188,10 +194,10 @@ The article is in https://www.terminal.guide/tools/multiplexer/tmux/copy-mode-gu
 
 They also recommend to persist the settings. It shouldn't matter much for us right now, but it would still be annoying if I exit tmux that I have to redo it. Let's just do it:
 
-```sh
+````sh
 # in /root/.tmux.conf
 setw -g mode-keys vi
-```
+````
 
 Now just update this settings, and apply with `tmux source /root/.tmux.conf`.
 
@@ -212,7 +218,7 @@ These guys helped: Just use `C-b s up Enter` to switch!
 
 Actually you can also use `/` to search the sessions; this makes it so we can actually go to session by label, just as I did with my customized tmux!
 
-So for example: `C-b s /notes Enter Enter`. 
+So for example: `C-b s /notes Enter Enter`.
 
 Remember to use C-b d to detach in order to create new sessions with `tmux new -tsession_name`
 
@@ -226,27 +232,28 @@ Though note on my live USB environment, I can also toggle between different term
 
 Wk 30 Tue 10:47
 
-- https://wiki.gentoo.org/wiki/Handbook
-- -> https://wiki.gentoo.org/wiki/Handbook:AMD64
-- -> Last we reached is the Booting section of https://wiki.gentoo.org/wiki/Handbook:AMD64/Installation/Media
+* https://wiki.gentoo.org/wiki/Handbook
+* -> https://wiki.gentoo.org/wiki/Handbook:AMD64
+* -> Last we reached is the Booting section of https://wiki.gentoo.org/wiki/Handbook:AMD64/Installation/Media
 
-```sh
+````sh
 # in user lan
 links https://wiki.gentoo.org/wiki/Handbook:AMD64/Installation/Media
-```
+````
 
 Hmm. Let me try to reboot and see the option that was selected. It should've defaulted to some first option, but they are talking about a progress bar, and I'm not sure what they're referring to.
 
 Wk 30 Tue 11:10
 
 Ok I rebooted. Basically it has me select the kernel from four options, and I have 15 seconds to respond:
-- Boot LiveCD (kernel: gentoo)
-- Boot LiveCD (kernel: gentoo) (cached)
-- Boot LiveCD (kernel: gentoo) (acessibility)
-- Memtest86+ 64bit UEFI
 
+* Boot LiveCD (kernel: gentoo)
+* Boot LiveCD (kernel: gentoo) (cached)
+* Boot LiveCD (kernel: gentoo) (acessibility)
+* Memtest86+ 64bit UEFI
 
-> At the boot prompt, users get the option of displaying the available kernels (F1) and boot options (F2).
+ > 
+ > At the boot prompt, users get the option of displaying the available kernels (F1) and boot options (F2).
 
 Maybe we should try to press F1 and F2 and see what happens. We haven't tried that.
 
@@ -260,7 +267,7 @@ https://wiki.gentoo.org/wiki/Handbook:AMD64/Installation/Networking
 
 Let's do some network testing. Though everything works fine over eithernet by default:
 
-```sh
+````sh
 ip route
 
 ping -c 3 1.1.1.1
@@ -285,31 +292,31 @@ curl --location gentoo.org --output /dev/null
 	100  24052 100  24052   0      0   9106      0   00:02   00:02              0
 # }
 
-```
+````
 
 Wk 30 Tue 17:31
 
 https://wiki.gentoo.org/wiki/Handbook:AMD64/Installation/Disks
 
-- Block devices are handles for an abstract disk (interface). They can be used independently of their implementation details as storage devices, and can be treated as a contriguous block of random-access bytes, 
-despite how they may be physically represented.
+* Block devices are handles for an abstract disk (interface). They can be used independently of their implementation details as storage devices, and can be treated as a contriguous block of random-access bytes,
+  despite how they may be physically represented.
 
 Wk 30 Wed 03:00
 
 Let's check the block devices we have on our system to prepare for partitioning:
 
-```sh
+````sh
 lsblk
-```
+````
 
 To see information about the type system of your device blocks:
 
-```sh
+````sh
 lsblk --help
 
 # out (relevant)
  -f, --fs             output info about filesystems
-```
+````
 
 Use `lsblk --fs`.
 
@@ -321,11 +328,11 @@ Wk 30 Wed 04:25
 
 Creating an EFI System Partition (ESP),
 
-```sh
+````sh
 fdisk /dev/{diskpri}
-```
+````
 
-I deleted my EFI partition from my ubuntu system. We'll recreate this. For the Swap partition, let's aim for half the size as RAM amount we have. 
+I deleted my EFI partition from my ubuntu system. We'll recreate this. For the Swap partition, let's aim for half the size as RAM amount we have.
 It doesn't seem like it needs to be this much, but in my case this is neglegable and also
 there were cases like hibernation that make use of full size, but likely do not apply to me.
 
@@ -337,14 +344,14 @@ Let's recreate partition 4 with 1 gig.
 
 It still recognizes the partition has a vfat signature, but let's reset this ourselves:
 
-```
+````
 Created a new partition 4 of type 'Linux filesystem' and of size 1 GiB.
 Partition #4 contains a vfat signature.
 
 Do you want to remove the signature? [Y]es/[N]o:
-```
+````
 
-So selecting [Y]es.
+So selecting \[Y\]es.
 
 Then change the type explicitly (I did after saving with w) to EFI System (1).
 
@@ -390,9 +397,9 @@ Reached Section 'Creating file systems' in https://wiki.gentoo.org/wiki/Handbook
 
 They suggest to use `smartctl` to check if we need to update the firmware of our SSD storage devices.
 
-```sh
+````sh
 smartctl -a /dev/{diskpri}
-```
+````
 
 I've been using ext4, but gentoo recommends xfs, which has features it does not. This includes reflinks and copy on write operations which the handbook says benefits gentoo high compiling load operations.
 
@@ -400,7 +407,8 @@ Its notable downside is no partition shrinking; but I can accept this for my use
 
 https://www.starwindsoftware.com/blog/xfs-vs-ext4/
 
-> * [for ext4] Robust volume size support: Manages filesystems up to 1 Exabyte and files up to 16 Terabytes, more than enough for almost any desktop or small server task.
+ > 
+ > * \[for ext4\] Robust volume size support: Manages filesystems up to 1 Exabyte and files up to 16 Terabytes, more than enough for almost any desktop or small server task.
 
 Did not know about this max limit. Not that I have ever even gotten close to creating a 16Tb file!
 
@@ -412,7 +420,7 @@ This kind of copy on write reminds me of immutable data structures that come wit
 
 (aside)
 
-```
+````
 vi --help
 
 # out
@@ -426,7 +434,7 @@ Edit FILE
         -R      Read-only
         -H      List available features
 
-```
+````
 
 Interestingly when I used `V` it said it's not implemented for this.
 
@@ -437,23 +445,24 @@ Wk 30 Wed 12:48
 At this point we should have a fully partitioned system and we should know the paths for each device block. We need /dev/{blkesp} (EFI System Partition (ESP), /dev/{blkswap}, /dev/{blkroot},
 and in my case /dev/{blkextra} for a final partition that takes the remaining of the space. Let's initialize a filesystem for each one (and hence; format them):
 
-```sh
+````sh
 mkfs.vfat -F 32 /dev/{blkesp}
 mkswap /dev/{blkswap}
 mkfs.xfs -c options=/usr/share/xfsprogs/mkfs/lts_6.18.conf /dev/{blkroot}
 mkfs.xfs -c options=/usr/share/xfsprogs/mkfs/lts_6.18.conf /dev/{blkextra}
-```
+````
 
 Make sure to enable swap during the live image environment:
 
-```sh
+````sh
 swapon /dev/{blkswap}
-```
-```
+````
+
+````
 # in /usr/share/xfsprogs/mkfs/lts_6.18.conf
 # V5 features that were the mkfs defaults when the upstream Linux 6.18 LTS
 # kernel was released at the end of 2025.
-```
+````
 
 Noteably, it has the option `reflink=1`.
 
@@ -461,22 +470,22 @@ Wk 30 Wed 14:45
 
 Mount the partitions,
 
-```sh
+````sh
 mkdir -p /mnt/gentoo/efi
 mount /dev/{blkroot} /mnt/gentoo
 mount /dev/{blkesp} /mnt/gentoo/efi
-```
+````
 
 We will also need this:
 
-```sh
+````sh
 mkdir -p /mnt/gentoo/tmp
 chmod 1777 /mnt/gentoo/tmp
-```
+````
 
 From https://www.man7.org/linux/man-pages/man2/chmod.2.html,
 
-```
+````
 1777 Has the bits
 
 1000
@@ -512,7 +521,7 @@ From https://www.man7.org/linux/man-pages/man2/chmod.2.html,
 0004
         S_IROTH  (00004)
                read by others
-```
+````
 
 Wk 30 Wed 15:00
 
@@ -524,12 +533,12 @@ I guess ideally I want only 64-bit, but fallback is fine as a last resort.
 
 So far my choices:
 
-- OpenRC for init system; I wanna try something other than systemd! From what I read, this is one point that comes up a lot that people appreciate Gentoo for.
-- Multilib; Seems to be the safer and more inclusive option for later choices.
+* OpenRC for init system; I wanna try something other than systemd! From what I read, this is one point that comes up a lot that people appreciate Gentoo for.
+* Multilib; Seems to be the safer and more inclusive option for later choices.
 
 We need to update our time, apparently it can interfere with download speeds or cause unpredictable errors.
 
-```sh
+````sh
 chronyd -q
 
 # out
@@ -539,37 +548,38 @@ chronyd -q
 2026-07-22T15:21:24Z Running with root privileges
 2026-07-22T15:21:29Z System clock wrong by -296.990122 seconds (step)
 2026-07-22T15:16:33Z chronyd exiting
-```
+````
 
 Ouch what an offset. Though still says 15:17 and it's 18:17 here. But this is probably a locale problem instead.
 
->    UTC time is recommended for all Linux systems. Later, a system timezone is defined, which changes the offset when the date is displayed.
+ > 
+ > UTC time is recommended for all Linux systems. Later, a system timezone is defined, which changes the offset when the date is displayed.
 
 That is interesting. I guess this is more consistent, and if you know UTC, you can derive all others, so they can be treated as derivative.
 
 Wk 30 Wed 15:19
 
-```sh
+````sh
 date
 
 # out
 Wed Jul 22 15:19:46 UTC 2026
-```
+````
 
 I guess the drift happens fast:
 
-```
+````
 2026-07-22T15:22:40Z System clock wrong by -0.101484 seconds (step)
 2026-07-22T15:22:50Z System clock wrong by 0.022495 seconds (step)
-```
+````
 
-```sh
+````sh
 links https://www.gentoo.org/downloads/mirrors/
-```
+````
 
 ->
 
-```sh
+````sh
 # in /mnt/gentoo
 rsync rsync://mirror.aarnet.edu.au/pub/gentoo/
 
@@ -579,13 +589,13 @@ rsync rsync://mirror.aarnet.edu.au/pub/gentoo/
    Directories under the `pub` module are now generally provided as top-level rsync modules.
 
    For example, rsync://mirror.aarnet.edu.au/pub/debian/ is now available as rsync://mirror.aarnet.edu.au/debian/.
-```
+````
 
-todo[t:rem t:status=todo]: We need to probably update this for the Gentoo mirrors website.
+todo\[t:rem t:status=todo\]: We need to probably update this for the Gentoo mirrors website.
 
 ->
 
-```sh
+````sh
 # in /mnt/gentoo
 rsync rsync://mirror.aarnet.edu.au/gentoo/
 
@@ -596,7 +606,7 @@ drwxr-xr-x             23 2026/07/22 10:35:00 experimental
 drwxrwxr-x              6 2026/03/10 15:59:40 pub
 drwxr-xr-x             22 2023/10/09 04:48:40 releases
 drwxrwxr-x            110 2026/07/22 00:51:52 snapshots
-```
+````
 
 Wk 30 Thu 02:55
 
@@ -608,9 +618,9 @@ The handbook says to see the files under `releases/amd64/autobuilds/`. View the 
 
 We can grep for the features we're interested in:
 
-```sh
+````sh
 rsync rsync://mirror.aarnet.edu.au/gentoo/releases/amd64/autobuilds/ | grep 'desktop\|openrc' | grep -v 'systemd\|nomultilib' | less
-```
+````
 
 https://wiki.gentoo.org/wiki/Stage_file explains that we should seek stage3. stage4 is more specialized for extra things configured on top of stage3.
 
@@ -618,9 +628,9 @@ https://wiki.gentoo.org/wiki/Hardened_Gentoo explained the hardened keyword
 
 On ABIs:
 
-- https://wiki.gentoo.org/wiki/Musl
-- post https://superuser.com/questions/1716835/on-which-systems-should-i-prefer-musl-or-gnu-binaries
-    - User mentions that musl may be slower for some rust applications
+* https://wiki.gentoo.org/wiki/Musl
+* post https://superuser.com/questions/1716835/on-which-systems-should-i-prefer-musl-or-gnu-binaries
+  * User mentions that musl may be slower for some rust applications
 
 For now will go with mainstream glibc.
 
@@ -628,47 +638,47 @@ This leaves us with this choice: `current-stage3-amd64-desktop-openrc`
 
 (issue)
 
-```sh
+````sh
 # in /mnt/gentoo
 mkdir stage
 cd stage
 rsync -auz rsync://mirror.aarnet.edu.au/gentoo/releases/amd64/autobuilds/current-stage3-amd64-desktop-openrc .
-```
+````
 
 These only give us links:
 
-```sh
+````sh
 lrwxrwxrwx 1  300  300   75 Jun 10 23:01 stage3-amd64-desktop-openrc-20260610T214636Z.tar.xz.asc -> ../20260610T214636Z/stage3-amd64-desktop-openrc-20260610T214636Z.tar.xz.asc
 lrwxrwxrwx 1  300  300   75 Jun 14 20:01 stage3-amd64-desktop-openrc-20260614T170130Z.tar.xz.asc -> ../20260614T170130Z/stage3-amd64-desktop-openrc-20260614T170130Z.tar.xz.asc
 lrwxrwxrwx 1  300  300   75 Jun 21 18:21 stage3-amd64-desktop-openrc-20260621T164603Z.tar.xz.asc -> ../20260621T164603Z/stage3-amd64-desktop-openrc-20260621T164603Z.tar.xz.asc
-```
+````
 
 Add the `-L` flag to `rsync` so that we can transform the links to files:
 
-```sh
+````sh
 # in /mnt/gentoo
 mkdir stage
 cd stage
 rsync -auzL rsync://mirror.aarnet.edu.au/gentoo/releases/amd64/autobuilds/current-stage3-amd64-desktop-openrc .
-```
+````
 
 I thought these were links due to the red color, but they're actual content:
 
-```
+````
 -rw-r--r-- 1  300  300 827372140 Jul 19 17:55 stage3-amd64-desktop-openrc-20260719T170103Z.tar.xz
 -rw-r--r-- 1  300  300   1485586 Jul 19 17:55 stage3-amd64-desktop-openrc-20260719T170103Z.tar.xz.CONTENTS.gz
-```
+````
 
 (/issue)
 
-```sh
+````sh
 # in /mnt/gentoo
 mkdir stage
 cd stage
 rsync -auzL rsync://mirror.aarnet.edu.au/gentoo/releases/amd64/autobuilds/current-stage3-amd64-desktop-openrc .
-```
+````
 
-```sh
+````sh
 # in /mnt/gentoo/stage/current-stage3-amd64-desktop-openrc
 tree -a .
 
@@ -686,7 +696,7 @@ tree -a .
 ├── stage3-amd64-desktop-openrc-20260719T170103Z.tar.xz.DIGESTS
 ├── stage3-amd64-desktop-openrc-20260719T170103Z.tar.xz.asc
 └── stage3-amd64-desktop-openrc-20260719T170103Z.tar.xz.sha256
-```
+````
 
 Wk 30 Thu 05:11
 
@@ -694,9 +704,9 @@ Let's verify the files.
 
 From "Verifying and validating" section of https://wiki.gentoo.org/wiki/Handbook:AMD64/Installation/Stage,
 
-- I had to pass a `*.asc` for `gpg --verify`, but the handbook specified a `*.tar.xz`.
+* I had to pass a `*.asc` for `gpg --verify`, but the handbook specified a `*.tar.xz`.
 
-```sh
+````sh
 gpg --import /usr/share/openpgp-keys/gentoo-release.asc
 
 # out {
@@ -836,7 +846,7 @@ sha256sum --check stage3-amd64-desktop-openrc-20260719T170103Z.tar.xz.sha256.ver
 # out {
     stage3-amd64-desktop-openrc-20260719T170103Z.tar.xz: OK
 # }
-```
+````
 
 OK
 
@@ -848,7 +858,7 @@ Let's install the verified stage file.
 
 From "Installing a stage file" section of https://wiki.gentoo.org/wiki/Handbook:AMD64/Installation/Stage,
 
-```
+````
    root #tar xpvf stage3-*.tar.xz --xattrs-include='*.*' --numeric-owner -C /mnt/gentoo
 
    Before extracting verify the options:
@@ -861,26 +871,26 @@ From "Installing a stage file" section of https://wiki.gentoo.org/wiki/Handbook:
      * --numeric-owner Ensure that the user and group IDs of files being extracted from the tarball remain the same as Gentoo's release engineering team intended (even if adventurous users are not using official Gentoo live environments
        for the installation process).
      * -C /mnt/gentoo Extract files to the root partition regardless of the current directory.
-```
+````
 
 (/quote)
 
-```sh
+````sh
 tar xpvf stage3-amd64-desktop-openrc-20260719T170103Z.tar.xz --xattrs-include='*.*' --numeric-owner -C /mnt/gentoo
-```
+````
 
 Why does this add `/mnt/gentoo/opt/rust-bin-1.95.0/`? I am intending for a fully source-based installation.
 
-- https://forums.gentoo.org/viewtopic.php?t=1171787
-- https://serverfault.com/questions/1034576/install-gentoo-do-you-need-internet-stage-3
-- https://forums.gentoo.org/viewtopic.php?t=1033802
-  - Claims that the precompiled tools in stage3 are a minimal set of tools of the install and compiling them yourself will not change the optimizations done in the post stage 3 builds
-- https://www.reddit.com/r/Gentoo/comments/wcdu7r/deciding_on_stage3/
-	- Some discussion on musl use and security
+* https://forums.gentoo.org/viewtopic.php?t=1171787
+* https://serverfault.com/questions/1034576/install-gentoo-do-you-need-internet-stage-3
+* https://forums.gentoo.org/viewtopic.php?t=1033802
+  * Claims that the precompiled tools in stage3 are a minimal set of tools of the install and compiling them yourself will not change the optimizations done in the post stage 3 builds
+* https://www.reddit.com/r/Gentoo/comments/wcdu7r/deciding_on_stage3/
+  * Some discussion on musl use and security
 
-so it is a precompiled seed/toolchain to continue the installation from. particularing including things that need bootstrapping like gcc. 
+so it is a precompiled seed/toolchain to continue the installation from. particularing including things that need bootstrapping like gcc.
 
-it is the standard route for installing however, so we can look further later for replacing any binaries when we have a working system. 
+it is the standard route for installing however, so we can look further later for replacing any binaries when we have a working system.
 
 Wk 30 Thu 08:33
 
@@ -888,35 +898,35 @@ Check /mnt/gentoo/usr/share/portage/config/make.conf.example for examples. We ed
 
 https://dev.gentoo.org/~zmedico/portage/doc/man/make.conf.5.html
 
-```diff
+````diff
 # in /mnt/gentoo/etc/portage/make.conf
 
 -COMMON_FLAGS="-O2 -pipe"
 +COMMON_FLAGS="-march=native -O2 -pipe"
 
 +RUSTFLAGS="${RUSTFLAGS} -C target-cpu=native"
-```
+````
 
 (quote)
 
 From "Configuring compile options" section of https://wiki.gentoo.org/wiki/Handbook:AMD64/Installation/Stage,
 
-```
+````
   MAKEOPTS
    [...]
    A good choice is the smaller of: the number of threads the CPU has, or the total amount of system RAM divided by 2 GiB.
    [...]
    A good recommendation is to have at least 2 GiB of RAM for every job specified (so, e.g. -j6 requires at least 12 GiB).
-```
+````
 
 (/quote)
 
-```sh
+````sh
 lsmem | grep "Total online" | rev | cut -d' ' -f1 | rev # out { 66G }
 nproc                                                   # out { 24 }
-```
+````
 
-nproc is smaller for me: (#_ nproc 24) < (#_ halfram 33). Since it will default to nproc, I will not modify.
+nproc is smaller for me: (#\_ nproc 24) \< (#\_ halfram 33). Since it will default to nproc, I will not modify.
 
 Wk 30 Thu 10:40
 
@@ -924,18 +934,18 @@ Reached https://wiki.gentoo.org/wiki/Handbook:AMD64/Installation/Base
 
 Copy over DNS info,
 
-```sh
+````sh
 cp --dereference /etc/resolv.conf /mnt/gentoo/etc/
-```
+````
 
 Let's chroot in!
 
-```sh
+````sh
 arch-chroot /mnt/gentoo
 
 # in chroot /mnt/gentoo
 export PS1="(chroot) ${PS1}"
-```
+````
 
 Note since I am still using tmux in the live image environment, this needs to be done on a per-pane basis.
 
@@ -947,18 +957,18 @@ Wk 30 Thu 11:10
 
 Getting the esbuild repository snapshot,
 
-```sh
+````sh
 # in chroot /mnt/gentoo
 emerge-webrsync
 
 # out (relevant)
  * IMPORTANT: 22 news items need reading for repository 'gentoo'.
  * Use eselect news read to view new items.
-```
+````
 
 `idea[t:status=none t:tags="+config +network +gentoo"]` The handbook mentions that we can configure a mirror here for faster snapshot updates.
 
-```sh
+````sh
 # in chroot /mnt/gentoo
 
 eselect profile show
@@ -990,20 +1000,21 @@ emerge --info | grep ^USE
 
     ABI_X86="64" ADA_TARGET="gcc_15" APACHE2_MODULES="authn_core authz_core socache_shmcb unixd actions alias auth_basic authn_anon authn_dbm authn_file authz_dbm authz_groupfile authz_host authz_owner authz_user autoindex cache cgi cgid dav dav_fs dav_lock deflate dir env expires ext_filter file_cache filter headers include info log_config logio mime mime_magic negotiation rewrite setenvif speling status unique_id userdir usertrack vhost_alias" CALLIGRA_FEATURES="karbon sheets words" COLLECTD_PLUGINS="df interface irq load memory rrdtool swap syslog" CPU_FLAGS_X86="mmx mmxext sse sse2" ELIBC="glibc" GPSD_PROTOCOLS="ashtech aivdm earthmate evermore fv18 garmin garmintxt gpsclock greis isync itrax navcom oncore skytraq superstar2 tsip tripmate tnt" GUILE_SINGLE_TARGET="3-0" GUILE_TARGETS="3-0" INPUT_DEVICES="libinput" KERNEL="linux" LCD_DEVICES="bayrad cfontz glk hd44780 lb216 lcdm001 mtxorb text" LLVM_TARGETS="X86" LUA_SINGLE_TARGET="lua5-1" LUA_TARGETS="lua5-1" OFFICE_IMPLEMENTATION="libreoffice" PHP_TARGETS="php8-3" POSTGRES_TARGETS="postgres17" PYTHON_SINGLE_TARGET="python3_14" PYTHON_TARGETS="python3_14" QEMU_SOFTMMU_TARGETS="x86_64" RUBY_TARGETS="ruby33" VIDEO_CARDS="amdgpu fbdev intel nouveau radeon radeonsi vesa dummy" XTABLES_ADDONS="quota2 psd pknock lscan length2 ipv4options ipp2p iface geoip fuzzy condition tarpit sysrq proto logmark ipmark dhcpmac delude chaos account"
 # }
-```
+````
 
 Find the USE values that can be used at `/var/db/repos/gentoo/profiles/use.desc`.
 
 I have an nvidia GPU. https://wiki.gentoo.org/wiki/NVIDIA
 
-> For best performance in heavy 3D workloads and games, the proprietary driver is usually preferred, especially on newer hardware.
+ > 
+ > For best performance in heavy 3D workloads and games, the proprietary driver is usually preferred, especially on newer hardware.
 
 Sad. I am a gamer; so I will default to properiety for now.
 
-```sh
+````sh
 # in /mnt/gentoo/etc/portage/package.use/00video_cards
 */* VIDEO_CARDS: -* nvidia
-```
+````
 
 --/ Wk 30 Sun 09:02 +03:00
 We need to also install firmware drivers here. In my case following https://wiki.gentoo.org/wiki/NVIDIA/nvidia-drivers
@@ -1011,31 +1022,33 @@ We need to also install firmware drivers here. In my case following https://wiki
 
 Gentoo Linux Enhancement Proposal 23 (GLEP 23) gives us a concept of `license groups`. Let's set it to OSI-approved FOSS and similar. This should be the default. Any exceptions should be made explicit:
 
-```diff
+````diff
 # in /mnt/gentoo/etc/portage/make.conf
 ACCEPT_LICENSE="-* @FREE"
-```
+````
 
 --/ Wk 30 Thu 13:05
 
-idea[t:topic-contrib t:subtopic=clarify t:status=mightdo] Handbook refers to unspecified env variable. Maybe we can suggest clarification here.
+idea\[t:topic-contrib t:subtopic=clarify t:status=mightdo\] Handbook refers to unspecified env variable. Maybe we can suggest clarification here.
 
 in https://wiki.gentoo.org/wiki/Handbook:AMD64/Installation/Base,
 
-> user $portageq envvar ACCEPT_LICENSE
+ > 
+ > user $portageq envvar ACCEPT_LICENSE
 
 See https://wiki.gentoo.org/wiki/Portageq.
 
 --/
 
->    Readers who are performing an 'install Gentoo speed run' may safely skip @world set updates until after their system has rebooted into the new Gentoo environment.
+ > 
+ > Readers who are performing an 'install Gentoo speed run' may safely skip @world set updates until after their system has rebooted into the new Gentoo environment.
 
 A speed run! I'm more doing the slow run route.
 
-```sh
+````sh
 # in chroot /mnt/gento
 emerge --ask --verbose --update --deep --changed-use @world
-```
+````
 
 Hmm. We're installing some X11 stuff while planning to go to wayland right now. Something to look into later.
 
@@ -1043,17 +1056,17 @@ Wk 30 Thu 15:55
 
 Next is to check the dependency cleaning, and see if we need to keep anything with `emerge --noreplace foo`:
 
-```sh
+````sh
 # in chroot /mnt/gentoo
 emerge --ask --pretend --depclean
-```
+````
 
 This removes obsolete packages apparently, I do not need to keep anything after review.
 
-```sh
+````sh
 # in chroot /mnt/gentoo
 emerge --ask --depclean
-```
+````
 
 Setting up timezone. Need to choose location, but will be like `ln -sf ../usr/share/zoneinfo/Europe/Brussels /etc/localtime`.
 
@@ -1065,11 +1078,11 @@ Then generate with `locale-gen` and verify with `locale -a`.
 
 Note that you can include more than one locale in /etc/locale.gen.
 
-```sh
+````sh
 # in shroot /mnt/gentoo
 eselect locale list
 eselect locale set {n}
-```
+````
 
 Reload the environment: `env-update && source /etc/profile && export PS1="(chroot) ${PS1}"`
 
@@ -1077,7 +1090,7 @@ Wk 30 Thu 16:32
 
 Reached https://wiki.gentoo.org/wiki/Handbook:AMD64/Installation/Kernel
 
-```sh
+````sh
 # in shroot /mnt/gentoo
 emerge --ask sys-kernel/linux-firmware
 
@@ -1100,13 +1113,13 @@ A copy of the 'linux-fw-redistributable' license is located at '/var/db/repos/ge
 
 For more information, see the MASKED PACKAGES section in the emerge
 man page or refer to the Gentoo Handbook.
-```
+````
 
 Our first licensing-based obstacle! Seems like a lot of these firmware images are non-foss (but distributable).
 
 From https://wiki.gentoo.org/wiki/Handbook:AMD64/Working/Portage#Licenses,
 
-```sh
+````sh
 # in /mnt/gentoo/etc/portage/package.license
 
 # Accepting the license for linux-firmware
@@ -1115,13 +1128,13 @@ sys-kernel/linux-firmware linux-fw-redistributable
 # Not sure if we need this, prefer to build still:
 # Accepting any license that permits redistribution
 #sys-kernel/linux-firmware @BINARY-REDISTRIBUTABLE
-```
+````
 
 This adds an exception for linux-firmware.
 
 Now we get something. Let's approve this:
 
-```sh
+````sh
 # in chroot /mnt/gentoo
 emerge --ask sys-kernel/linux-firmware
 
@@ -1136,9 +1149,9 @@ Dependency resolution took 2.27 s (backtrack: 0/20).
 [ebuild  N     ] sys-kernel/linux-firmware-20260519  USE="initramfs redistributable -bindist -compress-xz -compress-zstd -deduplicate -dist-kernel -savedconfig (-unknown-license)"
 
 Would you like to merge these packages? [Yes/No]
-```
+````
 
-```sh
+````sh
 # in chroot /mnt/gentoo
 emerge --ask sys-firmware/sof-firmware
 
@@ -1151,14 +1164,14 @@ Dependency resolution took 2.16 s (backtrack: 0/20).
 [ebuild  N     ] sys-firmware/sof-firmware-2025.12.2  USE="-tools"
 
 Would you like to merge these packages? [Yes/No]
-```
+````
 
 Approve
 
-- https://packages.gentoo.org/packages/sys-firmware/intel-microcode
-- -> https://gitweb.gentoo.org/repo/gentoo.git/tree/sys-firmware/intel-microcode/intel-microcode-20260512_p20260513.ebuild
+* https://packages.gentoo.org/packages/sys-firmware/intel-microcode
+* -> https://gitweb.gentoo.org/repo/gentoo.git/tree/sys-firmware/intel-microcode/intel-microcode-20260512_p20260513.ebuild
 
-```sh
+````sh
 # in chroot /mnt/gentoo
 emerge --ask sys-firmware/intel-microcode
 
@@ -1173,20 +1186,20 @@ A copy of the 'intel-ucode' license is located at '/var/db/repos/gentoo/licenses
 
 For more information, see the MASKED PACKAGES section in the emerge
 man page or refer to the Gentoo Handbook.
-```
+````
 
 Another license obstacle. This time to update CPU firmware. We should add an excemption for sys-firmware/intel-microcode:
 
-```sh
+````sh
 # in /mnt/gentoo/etc/portage/package.license
 
 # Accepting the license for sys-firmware/intel-microcode
 sys-firmware/intel-microcode intel-ucode
-```
+````
 
 Note it needs `intel-ucode` exemption, and not `linux-fw-redistributable`.
 
-```sh
+````sh
 # in chroot /mnt/gentoo
 emerge --ask sys-firmware/intel-microcode
 
@@ -1200,7 +1213,7 @@ Dependency resolution took 2.18 s (backtrack: 0/20).
 [ebuild  N     ] sys-firmware/intel-microcode-20260512_p20260513  USE="initramfs split-ucode -dist-kernel -hostonly -vanilla"
 
 Would you like to merge these packages? [Yes/No]
-```
+````
 
 Yup.
 
@@ -1208,7 +1221,7 @@ For now we will use GRUB for bootloader and it's time to install `sys-kernel/ins
 
 (issue)
 
-```sh
+````sh
 # in chroot /mnt/gentoo
 emerge --ask sys-kernel/installkernel
 
@@ -1218,20 +1231,20 @@ Dependency resolution took 2.20 s (backtrack: 0/20).
 [ebuild  N     ] sys-kernel/installkernel-68-r1  USE="-dracut -efistub -grub -refind -systemd -systemd-boot -ugrd -uki -ukify"
 
 Would you like to merge these packages? [Yes/No]
-```
+````
 
 Yup.
 
 I'll try to do this again but with explicit grub use flag. Observe it built with `-grub`.
 
-```sh
+````sh
 # in /mnt/gentoo/etc/portage/package.use/installkernel
 sys-kernel/installkernel grub
-```
+````
 
 Luck
 
-```sh
+````sh
 # in chroot /mnt/gentoo
 emerge --ask sys-kernel/installkernel
 
@@ -1247,7 +1260,7 @@ Dependency resolution took 6.52 s (backtrack: 0/20).
 [ebuild   R    ] sys-kernel/installkernel-68-r1  USE="grub*"
 
 Would you like to merge these packages? [Yes/No]
-```
+````
 
 Yup. That's much more now that we have a grub dependency.
 
@@ -1257,13 +1270,13 @@ Adding also the USE flag of dracut to installkernel so that it initializes initr
 
 (/issue)
 
-```sh
+````sh
 # in /mnt/gentoo/etc/portage/package.use/installkernel
 sys-kernel/installkernel grub dracut
 
 # in chroot /mnt/gentoo
 emerge --ask sys-kernel/installkernel
-```
+````
 
 We're currently going for automation with https://wiki.gentoo.org/wiki/Handbook:AMD64/Installation/Kernel#Distribution_kernels, so that updating the kernel is relatively easier than manual maintenance.
 
@@ -1271,11 +1284,11 @@ We're currently going for automation with https://wiki.gentoo.org/wiki/Handbook:
 
 And so we are adding this USE flag so we can update the kernel periodically:
 
-```sh
+````sh
 # in /mnt/gentoo/etc/portage/make.conf
 
 USE="${USE} dist-kernel"
-```
+````
 
 --/
 
@@ -1283,36 +1296,36 @@ Wk 30 Thu 17:57
 
 Setting the `modules-sign` USE flag so that we can sign the kernel we'll build:
 
-```sh
+````sh
 # in /mnt/gentoo/etc/portage/make.conf
 USE="modules-sign"
-```
+````
 
 Let's generate a key for use with this
 
-```sh
+````sh
 # in chroot /mnt/gentoo
 openssl req -new -noenc -utf8 -sha256 -x509 -outform PEM -out kernel_key.pem -keyout kernel_key.pem
-```
+````
 
 Put that file somewhere only accessible to root. We will refer to it as `/path/to/kernel_key.pem`.
 
 Now we can add
 
-```sh
+````sh
 # in /mnt/gentoo/etc/portage/make.conf
 MODULES_SIGN_KEY="/path/to/kernel_key.pem"
 MODULES_SIGN_CERT="/path/to/kernel_key.pem" # Only required if the MODULES_SIGN_KEY does not also contain the certificate.
 MODULES_SIGN_HASH="sha512" # Defaults to sha512.
-```
+````
 
 The file also is rw for me. Make sure to chown and chmod it accordingly:
 
-```sh
+````sh
 # in chroot /mnt/gentoo
 chown root:root /path/to/kernel_key.pem
 chmod 400 /path/to/kernel_key.pem
-```
+````
 
 Wk 30 Thu 18:20
 
@@ -1320,22 +1333,22 @@ Time to build the kernel from source!
 
 `sys-kernel/gentoo-kernel` should be run after a correctly configured `sys-kernel/installkernel`
 
-```sh
+````sh
 # in chroot /mnt/gentoo
 emerge --ask sys-kernel/gentoo-kernel
-```
+````
 
 Big build! The next step when it's done should be https://wiki.gentoo.org/wiki/Handbook:AMD64/Installation/System
 
 Wk 30 Thu 19:15
 
-```sh
+````sh
 # in chroot /mnt/gentoo
 ls -al usr/src/linux
 
 # out
 lrwxrwxrwx 1 root root 25 Jul 23 22:02 usr/src/linux -> linux-6.18.39-gentoo-dist
-```
+````
 
 Reached https://wiki.gentoo.org/wiki/Handbook:AMD64/Installation/System
 
@@ -1347,7 +1360,7 @@ We need to create /etc/fstab. This is used to configure the mount points of the 
 
 The handbook explains the columns to insert:
 
-```
+````
     1. The first field shows the block special device or remote filesystem to be mounted. Several kinds of device identifiers are available for block special device nodes, including paths to device files, filesystem labels and UUIDs, and
        partition labels and UUIDs.
     2. The second field shows the mount point at which the partition should be mounted.
@@ -1369,17 +1382,18 @@ The handbook explains the columns to insert:
  /dev/sda2   none         swap    sw                   0 0
  /dev/sda3   /            xfs    defaults,noatime              0 1
 
-```
+````
 
-We should specify for all partitions previously created: 
-- /dev/{blkesp} goes to /efi. It uses the filesystem vfat.
-- /dev/{blkswap} goes to "none" -- it isn't mounted anywhere.
-- /dev/{blkroot} goes to /, it is xfs
-- /dev/{blkextra} goes to /mnt/extra, it is xfs.
+We should specify for all partitions previously created:
+
+* /dev/{blkesp} goes to /efi. It uses the filesystem vfat.
+* /dev/{blkswap} goes to "none" -- it isn't mounted anywhere.
+* /dev/{blkroot} goes to /, it is xfs
+* /dev/{blkextra} goes to /mnt/extra, it is xfs.
 
 We are going to refer to UUID variables like {partuuid blkesp}. Find this out using `blkid` as necessary.
 
-```sh
+````sh
 # in chroot /mnt/gentoo
 mkdir /mnt/extra
 
@@ -1388,7 +1402,7 @@ PARTUUID={partuuid blkesp}      /efi            vfat    defaults             0  
 PARTUUID={partuuid blkswap}     none            swap    sw                   0   0
 PARTUUID={partuuid blkroot}     /               xfs     defaults,noatime     0   1
 PARTUUID={partuuid blkextra}    /mnt/extra      xfs     defaults,noatime     0   2
-```
+````
 
 (errata)
 
@@ -1398,7 +1412,7 @@ WARN: The following is wrong.
 
 I forgot to add the typesystem column field here. Also prefer to make PARTUUID= explicit.
 
-```sh
+````sh
 # in chroot /mnt/gentoo
 mkdir /mnt/extra
 
@@ -1407,11 +1421,11 @@ mkdir /mnt/extra
 {partuuid blkswap}     none            sw                   0   0
 {partuuid blkroot}     /               defaults,noatime     0   1
 {partuuid blkextra}    /mnt/extra      defaults,noatime     0   2
-```
+````
 
 Correction:
 
-```sh
+````sh
 # in chroot /mnt/gentoo
 mkdir /mnt/extra
 
@@ -1420,37 +1434,38 @@ PARTUUID={partuuid blkesp}      /efi            vfat    defaults             0  
 PARTUUID={partuuid blkswap}     none            swap    sw                   0   0
 PARTUUID={partuuid blkroot}     /               xfs     defaults,noatime     0   1
 PARTUUID={partuuid blkextra}    /mnt/extra      xfs     defaults,noatime     0   2
-```
+````
 
 (/errata)
 
 Name your machine. Rename {machinename} as needed.
 
-```sh
+````sh
 # in chroot /mnt/gentoo
 echo {machinename} > /etc/hostname
-```
+````
 
 --/ Wk 30 Sat 10:38
 /etc/hosts already contained configuration for 127.0.0.1 and ::1 for me, so we do not have to configure it.
 
 Otherwise, this is what I've done before for the record:
 
-```sh
+````sh
 # in /mnt/gentoo/etc/hosts
 127.0.0.1     {machinename}.homenetwork {machinename} localhost
 ::1           {machinename}.homenetwork {machinename} localhost
-```
+````
+
 --/
 
 Wk 30 Fri 08:37
 
 Set a password for root:
 
-```sh
+````sh
 # in chroot /mnt/gentoo
 passwd
-```
+````
 
 Review OpenRC Serivces: /etc/rc.conf
 
@@ -1458,10 +1473,10 @@ There are other services that can be configured in the handbook here in the sect
 
 Since we're on a stage 3 desktop profile,
 
-```sh
+````sh
 # in chroot /mnt/gentoo
 dbus-uuidgen --ensure=/etc/machine-id
-```
+````
 
 It went from empty to having some 32-character UUID.
 
@@ -1469,7 +1484,8 @@ Wk 30 Fri 08:58
 
 Reached https://wiki.gentoo.org/wiki/Handbook:AMD64/Installation/Tools
 
-> if needed, everything that happens on the system can be logged in a log file.
+ > 
+ > if needed, everything that happens on the system can be logged in a log file.
 
 It could be good to log system changes. New packages installed, packages removed. Maybe even be able to do something like a `git commit` but for the world state of the PC,
 which would allow me to revert back to prior snapshots, branch, export patches, import patches, diff, and so on.
@@ -1478,21 +1494,22 @@ But that's something to look into later. This is more about handling system logs
 
 In https://packages.gentoo.org/packages/app-admin/metalog it mentions also we need to chose only one system logger here.
 
-- https://forums.gentoo.org/viewtopic.php?t=818267
-    - Post about logger choices people made
-    - One Mentions that metalog is able to do rotation logs out of the box so you don't run into system crashes due to logs filling up your system, while others do it by also emerging logrotate in addition
+* https://forums.gentoo.org/viewtopic.php?t=818267
+  * Post about logger choices people made
+  * One Mentions that metalog is able to do rotation logs out of the box so you don't run into system crashes due to logs filling up your system, while others do it by also emerging logrotate in addition
 
 https://github.com/hvisage/metalog Seems fairly simple with its configuration syntax, and it supports automatic log file rotation. Let's use it. It requires zlib for compression with rotated logs.
 
-```sh
+````sh
 # in /mnt/gentoo/etc/portage/package.use/installkernel
 sys-kernel/installkernel grub
-```
+````
 
 --/ Wk 30 Fri 09:38
-ques[t:topic-gentoo t:status=pend] Why am I not able to remove (unicode) use from app-admin/metalog?
+ques\[t:topic-gentoo t:status=pend\] Why am I not able to remove (unicode) use from app-admin/metalog?
 
-> [ebuild  N     ] app-admin/metalog-20260221  USE="(unicode) -zlib"
+ > 
+ > \[ebuild  N     \] app-admin/metalog-20260221  USE="(unicode) -zlib"
 
 --/ Wk 30 Sun 13:20 +03:00
 
@@ -1500,52 +1517,53 @@ I suspected it was that it was required. this ebuild example seems to further co
 
 https://gpo.zugaina.org/AJAX/Ebuild/56369776/View
 
-```sh
+````sh
 IUSE="appindicator wayland +X"
 REQUIRED_USE="|| ( wayland X )"
-```
+````
 
 --/
 
-```sh
+````sh
 # in /mnt/gentoo/etc/portage/package.use/app-admin/metalog
 app-admin/metalog zlib
 
 # in chroot /mnt/gentoo
 emerge --ask app-admin/metalog
-```
+````
 
 Refer to https://packages.gentoo.org/packages/app-admin/metalog for configuration. Check /etc/conf.d/metalog.
 
 Add the service to run on system boot via OpenRC in runlevel default:
 
-```sh
+````sh
 # in chroot /mnt/gentoo
 rc-update add metalog default
 
 # out
 * service metalog added to runlevel default
-```
+````
 
 Adding a cron daemon, will stick with the default recommended by the handbook for now:
 
-```sh
+````sh
 emerge --ask sys-process/cronie
 rc-update add cronie default
-```
+````
 
 Add a cron job to check for new hardware periodically (every 6 hours):
 
-```sh
+````sh
 # in /mnt/gentoo/etc/crontab
 0 */6 * * *     /usr/bin/modprobed-db store &> /dev/null
- ```
+````
 
 --/ Wk 30 Fri 12:50
 
-todo[t:status=todo t:rem] Complete cron job setup later
+todo\[t:status=todo t:rem\] Complete cron job setup later
 
-> At a later date of at least a week, please visit the kernel build section of the modprobed-db article to complete the setup.
+ > 
+ > At a later date of at least a week, please visit the kernel build section of the modprobed-db article to complete the setup.
 
 https://wiki.gentoo.org/wiki/Modprobed-db#Building_kernels
 
@@ -1553,7 +1571,7 @@ https://wiki.gentoo.org/wiki/Modprobed-db#Building_kernels
 
 File system indexing:
 
-```sh
+````sh
 # in chroot /mnt/gentoo
 emerge --ask sys-apps/mlocate
 
@@ -1564,47 +1582,47 @@ emerge --ask sys-apps/mlocate
  * if you install for the first time you can run the updatedb command manually now.
  * Note that the /etc/updatedb.conf file is generic,
  * please customize it to your system requirements.
-```
+````
 
-Add a new user to be able to ssh into this system: 
+Add a new user to be able to ssh into this system:
 
 https://wiki.gentoo.org/wiki/FAQ#How_do_I_add_a_normal_user.3F
 
-```sh
+````sh
 # in chroot /mnt/gentoo
 useradd -m -G users,audio,wheel {youruser}
 passwd {youruser}
-```
+````
 
 Now you can switch to user user with `su {youruser}`.
 
 Configure sshd service to run on boot:
 
-```sh
+````sh
 # in chroot /mnt/gentoo
 rc-update add sshd default
-```
+````
 
 Getting some nice completions:
 
-```sh
+````sh
 # in chroot /mnt/gentoo
 emerge --ask app-shells/bash-completion
-```
+````
 
 A daemon for periodic time synchronization setup with OpenRC,
 
-```sh
+````sh
 # in chroot /mnt/gentoo
 emerge --ask net-misc/chrony
 rc-update add chronyd default
-```
+````
 
 Tools for the filesystems we're using and rules for nvme devices since I use them:
 
 Currently on the live image environment we have for example `mkfs.xfs` but not on the chrooted stage 3.
 
-```sh
+````sh
 # xfs
 emerge --ask sys-fs/xfsprogs
 
@@ -1612,53 +1630,52 @@ emerge --ask sys-fs/xfsprogs
 emerge --ask sys-fs/dosfstools
 
 emerge --ask sys-block/io-scheduler-udev-rules
-```
+````
 
 After emerging `sys-fs/xfsprogs` now we have `mkfs.xfs` for `chroot /mnt/gentoo`.
-
 
 Wk 30 Fri 16:30
 
 Now in https://wiki.gentoo.org/wiki/Handbook:AMD64/Installation/Bootloader
 
-```
+````
 quote https://wiki.gentoo.org/wiki/Handbook:AMD64/Installation/Bootloader
 
 If GRUB was somehow emerged without enabling GRUB_PLATFORMS="efi-64", the line (as shown above) can be added to make.conf and then dependencies for the world package set can be re-calculated by passing the --update --newuse options to
    emerge:
 
    root #emerge --ask --update --newuse --verbose sys-boot/grub
-```
+````
 
 Hmm. I did run emerge before twice, just changing USE flags without --update --newuse. My expectation though was to install it again anew, rather than reconfigure. This was before for sys-kernel/installkernel
 which I installed multiple times.
 
 Ok we're going with grub for the bootloader. We are on a UEFI system:
 
-```sh
+````sh
 # in /mnt/gentoo/etc/portage/make.conf
 GRUB_PLATFORMS="efi-64"
 
 # in chroot /mnt/gentoo
 emerge --ask sys-boot/grub
-```
+````
 
 Make sure that `/mnt/gentoo/efi` is mounted (use lsblk in chroot, it shows mount points per device blocks), then:
 
-```sh
+````sh
 # in chroot /mnt/gentoo
 grub-install --efi-directory=/efi
 
 # out
 Installing for x86_64-efi platform.
 Installation finished. No error reported.
-```
+````
 
 There's grub config at /etc/default/grub and /etc/grub.d used to generate /boot/grub/grub.cfg
 
 Default config should suffice for us. Review then configure:
 
-```sh
+````sh
 # in chroot /mnt/gentoo
 grub-mkconfig -o /boot/grub/grub.cfg
 
@@ -1672,14 +1689,13 @@ Systems on them will not be added to the GRUB boot configuration.
 Check GRUB_DISABLE_OS_PROBER documentation entry.
 Adding boot menu entry for UEFI Firmware Settings ...
 done
-```
+````
 
 Wk 30 Fri 17:19
 
 Time for a reboot! First unmount all partitions in and outside chroot, exit chroot, then `reboot`! You can unmount with `umount /dev/{blkdev}` and check with `lsblk`.
 
 OK So we are able to reboot! I'm now on the gentoo installation system itself!
-
 
 Some issues:
 
@@ -1689,7 +1705,7 @@ init script errors
 
 Transcribing from image:
 
-```
+````
 * ERROR: bootmisc failed to start
 
 * ERROR: sshd failed to start
@@ -1702,7 +1718,7 @@ Failed to create directory or subvolume "/tmp/portage": Read-only file sy [ !! ]
 
 * failed to start user.lan
 * ERROR: user.lan failed to start
-```
+````
 
 (2)
 
@@ -1710,52 +1726,52 @@ extra partitions are not mounted. I had /dev/{blkextra} and /dev/{blkesp} specif
 
 For now, let's install some necessary software. We need to return to the handbook and be able to browse the internet still. Let's use elinks instead of links:
 
-```sh
+````sh
 emerge --ask www-client/elinks
-```
+````
 
 We can't even install new packages now. We get some
 
-```
+````
 portage.exception.ReadOnlyFileSystem: [Errno 30] Read-only file system: '/var/db/.pkg.portage_lockfile'
-```
+````
 
 So let's go back to the live image enviornment and look into this.
 
-```
+````
 [ebuild  N     ] www-client/elinks-0.19.1  USE="X bzip2 doc gpm mouse nls ssl unicode xml zlib -bittorrent -brotli -curl -debug -finger -ftp -gemini -gnutls -gopher -guile -idn -javascript -libcss -lua -lzma -nntp -perl -python -samba -sftp -test -tre -zstd" GUILE_SINGLE_TARGET="3-0 -2-2" LUA_SINGLE_TARGET="lua5-1 -lua5-3 -lua5-4 -luajit" PYTHON_SINGLE_TARGET="python3_14 -python3_12 -python3_13"
-```
+````
 
-```sh
+````sh
 # in /mnt/gentoo/etc/portage/package.use/www-client/elinks
 www-client/elinks libcss
 
 # in chroot /mnt/gentoo
 emerge --ask www-client/elinks
-```
+````
 
 --/ Wk 30 Sat 01:18
 
 elinks can be pretty bright. Something to look into. If it gets too much, we need to have links to fall back to:
 
-```sh
+````sh
 emerge --ask www-client/links
-```
+````
 
 --/
 
-```sh
+````sh
 # in /mnt/gentoo/etc/portage/package.use/app-misc/tmux
 app-misc/tmux vim-syntax
 
 # in chroot /mnt/gentoo
 emerge --ask app-misc/tmux
-```
+````
 
-```sh
+````sh
 # in chroot /mnt/gentoo
 emrege --ask app-editors/vim
-```
+````
 
 Wk 30 Fri 21:10
 
@@ -1766,15 +1782,15 @@ elinks uses C-n and C-p instead of links' p and l for scrolling. links also supp
 
 In the boot logs dracut attempts to mount /dev/{blkroot} with -o 0,r0. Then we get an xfs error via fsconfig: Unknown parameter '0'.
 
-So I was going off of the handbook example, I should add clear PARTUUID=* in my /etc/fstab
+So I was going off of the handbook example, I should add clear PARTUUID=\* in my /etc/fstab
 
-```
+````
 PARTUUID=4f68bce3-e8cd-4db1-96e7-fbcaf984b709   /           xfs     defaults,noatime             0 1
-```
+````
 
 And I should also figure out what that `defaults` mean.
 
-```sh
+````sh
 man fstab
 
 # out (relevant) {
@@ -1790,18 +1806,18 @@ defaults
 
    Note that the real set of all default mount options depends on the kernel and filesystem type. See the beginning of this section for more details.
 # }
-```
+````
 
 Yikes. I skipped the filesystem type column in /etc/fstab! Correcting
 
-ok, the read-only filesystem issue was fixed once I fixed the missing filesystem column problem with /etc/fstab. `dracut` remounting with readonly still occurs and is normal: 
+ok, the read-only filesystem issue was fixed once I fixed the missing filesystem column problem with /etc/fstab. `dracut` remounting with readonly still occurs and is normal:
 
 It is likely a read-only bind mount. Read about that in https://www.man7.org/linux/man-pages/man8/mount.8.html.
 
-```
+````
 The alternative (classic) way to create a read-only bind mount is
         to use the remount operation, for example:
-```
+````
 
 We're able to do `emerge sync` and compile stuff during a normal boot now!
 
@@ -1829,32 +1845,32 @@ My current `LanHikari22/tmux-sessionist` plug is out of date from upstream. We n
 
 If you need a new ssh identity, generate with `ssh-keygen` and configure code forges with it.
 
-```sh
+````sh
 mkdir -p ~/src/cloned/gh/LanHikari22
 cd ~/src/cloned/gh/LanHikari22
 git clone git@github.com:LanHikari22/tmux-sessionist
-```
+````
 
 Configure upstream
 
-```sh
+````sh
 # in /home/lan/src/cloned/gh/LanHikari22/tmux-sessionist/.git/config
 [remote "upstream"]
         url = git@github.com:tmux-plugins/tmux-sessionist
         fetch = +refs/heads/*:refs/remotes/origin/*
-```
+````
 
 Update:
 
-```sh
+````sh
 # in /home/lan/src/cloned/gh/LanHikari22/tmux-sessionist/
 git config pull.rebase false
 git pull upstream master
-```
+````
 
 Hmm a conflict.
 
-```sh
+````sh
 # in /home/lan/src/cloned/gh/LanHikari22/tmux-sessionist/scripts/goto_session.sh
 #!/usr/bin/env bash
 
@@ -1871,18 +1887,18 @@ main() {
 >>>>>>> a315c423328d9bdf5cf796435ce7075fa5e1bffb
 }
 main
-```
+````
 
 Let's keep the HEAD version. That was the point of my fork to integrate fzf tmux pane switching.
 
-```sh
+````sh
 # in /home/lan/src/cloned/gh/LanHikari22/tmux-sessionist/
 git commit
 
 # out
 [master 0a8e89d] merge with upstream but keep my fzf switching
  Date: Sat Jul 25 11:16:04 2026 +0300
-```
+````
 
 Also this is a fork, move from `/home/lan/src/cloned/gh/LanHikari22/` to `/home/lan/src/forked/LanHikari22/tmux-plugs/tmux-sessionist/`.
 
@@ -1892,10 +1908,10 @@ We likely require installation of `fzf` for it to work.
 
 https://packages.gentoo.org/packages/app-shells/fzf
 
-```sh
+````sh
 su
 emerge --ask app-shells/fzf
-```
+````
 
 Fetch logs for current emerge are in /var/log/emerge-fetch.log.
 
@@ -1903,23 +1919,21 @@ Now with `fzf` in our system, prefix-g works for fuzzy selecting a session to sw
 
 It still is the case that we no longer have prefix-t, now it just does nothing. Why?
 
-
 Wk 30 Sat 10:05 +03:00
 
 This configuration we had before has bad UX. It undoes the pane maximizing if the user presses arrows immediately after:
 
-```
+````
 # for switching panes in zoomed state. Use prefix-e and prefix-E.
 bind -r e select-pane -t .+1 \; resize-pane -Z
 bind -r E select-pane -t .-1 \; resize-pane -Z
-```
+````
 
 Wk 30 Sat 10:04 +03:00
 
 Changing `~/.tmux.conf` to:
 
-
-```sh
+````sh
 # to install tpm, run
 # git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 # You can run tmux source ~/.tmux.conf to load settings first time in-session.
@@ -1966,14 +1980,14 @@ set -g set-clipboard on
 # for switching panes in zoomed state. Use prefix-e and prefix-E.
 bind -r e select-pane -t .+1 \; resize-pane -Z
 bind -r E select-pane -t .-1 \; resize-pane -Z
-```
+````
 
 Then configure it:
 
-```sh
+````sh
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 # Run C-a I
-```
+````
 
 ### Setting up Gentoo After Boot
 
@@ -1985,10 +1999,10 @@ There's mostly advice here for later maintenance. Compiled files are stored as t
 
 If this becomes an issue, there are utilities to clear these caches. Let's isntall them.
 
-```sh
+````sh
 su
 emerge --ask app-portage/gentoolkit
-```
+````
 
 Now we can clean cached source code tarballs with `eclean-dist` and binary packages with `eclean-pkg`.
 
@@ -2000,7 +2014,7 @@ It was a wayland kioske of the name of cage I have used before. Anyway let's loo
 
 https://wiki.gentoo.org/wiki/Sway
 
-```sh
+````sh
 # in /etc/portage/package.use/gui-wm/sway {
     gui-wm/sway -X wallpapers
 # }
@@ -2015,54 +2029,53 @@ https://wiki.gentoo.org/wiki/Sway
 
 su
 emerge --ask gui-wm/sway
-```
+````
 
 Ended up having to include `X`, and it wanted the dk-pixbuf USE flag specified too. Complaining with a message `The following USE changes are necessary to proceed`
 
 Added `-X` as a global USE flag. We should try to avoid this until we run into trouble. I want to run just wayland if I can.
 
-```
+````
 man emerge
 
 # out (relevant)
 CONFIGURATION FILES UPDATE TOOLS
        Tools such as dispatch-conf, cfg-update, and etc-update are also available to aid in the merging of these files. They provide interactive merging and can auto-merge trivial changes.
-```
+````
 
-`dispatch-conf` lead me to find out it added some config in 
+`dispatch-conf` lead me to find out it added some config in
 
-```
+````
 /etc/portage/package.use/www-client/._cfg0002_elinks
-```
+````
 
 to be merged with that tool. Removing that file makes it no longer be considered for processing by `dispatch-conf`. `dispatch-conf` also tells us when we have some issue in our own package.use config files which is nice.
 
-
 We need a terminal emulator to use once we run sway:
 
-```sh
+````sh
 su
 emerge --ask gui-apps/foot
-```
+````
 
 Right now both sway and foot will fail to start due to invalid `XDG_RUNTIME_DIR`:
 
-```sh
+````sh
 foot
 
 # out
 error: XDG_RUNTIME_DIR is invalid or not set in the environment.
  err: wayland.c:1712: failed to connect to wayland; no compositor running?
-```
+````
 
 Wk 30 Sun 07:50 +03:00
 
-- http://jorgicio.github.io/setup-purest-openrc-in-gentoo-(and-other-unix-like-flavours).html
-    - Mentions that /etc/inittab is not used anymore? But it was recommended for configuration in the gentoo wiki, so is this right?
-        - They mention: `The file /etc/inittab is ignored as being part of SysVinit. Instead, the TTYs must be enabled manually using the agetty daemon.`
-    - Mentions that binaries like `halt` and `reboot` won't be available as they are SysVinit-based. Though I have access to reboot.
-      I do have access to openrc-shutdown.
-    - Recommends to use ConsoleKit
+* http://jorgicio.github.io/setup-purest-openrc-in-gentoo-(and-other-unix-like-flavours).html
+  * Mentions that /etc/inittab is not used anymore? But it was recommended for configuration in the gentoo wiki, so is this right?
+    * They mention: `The file /etc/inittab is ignored as being part of SysVinit. Instead, the TTYs must be enabled manually using the agetty daemon.`
+  * Mentions that binaries like `halt` and `reboot` won't be available as they are SysVinit-based. Though I have access to reboot.
+    I do have access to openrc-shutdown.
+  * Recommends to use ConsoleKit
 
 Let's look to insalling and running wayland first:
 
@@ -2074,7 +2087,7 @@ Looking at startup docs for Sway at https://wiki.gentoo.org/wiki/Sway
 
 We're expected to set XDG_RUNTIME_DIR:
 
-```sh
+````sh
 # from https://wiki.gentoo.org/wiki/Sway
  #!/bin/sh
  if test -z "${XDG_RUNTIME_DIR}"; then
@@ -2084,17 +2097,17 @@ We're expected to set XDG_RUNTIME_DIR:
          chmod 0700 "${XDG_RUNTIME_DIR}"
      fi
  fi
-```
+````
 
 For now we set it temporarily:
 
-```sh
+````sh
 export XDG_RUNTIME_DIR=/tmp/"${UID}"-runtime-dir && mkdir -p "${XDG_RUNTIME_DIR}" && chmod 0700 "${XDG_RUNTIME_DIR}"
-```
+````
 
 Now whether we run sway on its own or with `dbus-run-session` we get an error:
 
-```sh
+````sh
 su
 dbus-run-session sway
 
@@ -2106,10 +2119,9 @@ dbus-run-session sway
 00:00:00.003 [wlr] [backend/backend.c:79] Failed to start a session
 00:00:00.003 [wlr] [backend/backend.c:399] Failed to start a DRM session
 00:00:00.003 [sway/server.c:247] Unable to create backend
-```
+````
 
 That was on root, but issue persists outside as well.
-
 
 Section `4.4 No backend was able to open a seat` of https://wiki.gentoo.org/wiki/Sway indicates we missed some steps, like installing sys-auth/seatd or sys-auth/elogind.
 
@@ -2117,17 +2129,17 @@ In section `2.18.1 OpenRC`, they recommend to add elogind to runlevel boot: `rc-
 
 Let's copy sway configuration for our user:
 
-```sh
+````sh
 mkdir -p ~/.config/sway/
 cp /etc/sway/config ~/.config/sway/
-```
+````
 
-```sh
+````sh
 swaymsg -t get_outputs
 
 # out (error)
 00:00:00.017 [swaymsg/main.c:509] Unable to retrieve socket path
-```
+````
 
 https://wiki.gentoo.org/wiki/Configuring_a_system_without_elogind
 
@@ -2136,10 +2148,10 @@ or also export XDG_RUNTIME_DIR=$(mktemp -d "${UID}-runtime-dir.XXX") which would
 
 It also mentions that seatd needs to be installed if one does not want to use elogind which came from systemd tools:
 
-```sh
+````sh
 su
 emerge --ask sys-auth/seatd
-```
+````
 
 Hmm. I tried to `rc-update` add sead to default but it says no service found. We installed `sys-auth/seatd-0.9.3-r1`.
 
@@ -2153,46 +2165,46 @@ As we specified when we added groups, it's only currently wheel, audio, users.
 
 For seatd, we additionally need to be part of the video and seat groups:
 
-```
+````
 su
 gpasswd -a {youruser} video
-```
+````
 
 They mention a seat group also but we do not currently have any seat group. Nor can we add seatd to default run level via `rc-update add _ default` or start it immediately via `rc-service _ start`.
 
 Let's try to add in the `builtin` and `server` use flags for it (even though I don't see them mentioned during `emerge --ask _ )`:
 
-```sh
+````sh
 # in /etc/portage/package.use/sys-auth/seatd {
 sys-auth/seatd builtin server
 # }
-```
+````
 
-Yup it does make a difference when we rerun 
+Yup it does make a difference when we rerun
 
-```sh
+````sh
 su
 emerge --ask sys-auth/seatd
-```
+````
 
 Now we have a seat group:
 
-```sh
+````sh
 su
 gpasswd -a {youruser} seat
-```
+````
 
 Add the service to default run level and start it:
 
-```sh
+````sh
 su
 rc-update add seatd default
 rc-service seatd start
-```
+````
 
 We still get some errors
 
-```sh
+````sh
 su # don't use; run it under the user. Retained here for audit.
 export XDG_RUNTIME_DIR=/tmp/"${UID}"-runtime-dir && mkdir -p "${XDG_RUNTIME_DIR}" && chmod 0700 "${XDG_RUNTIME_DIR}"
 dbus-run-session sway
@@ -2211,25 +2223,25 @@ libEGL warning: egl: failed to create dri2 screen
 00:00:00.066 [wlr] [render/vulkan/renderer.c:2509] creating vulkan instance for renderer failed
 00:00:00.066 [wlr] [render/wlr_renderer.c:279] Could not initialize renderer
 00:00:00.066 [sway/server.c:256] Failed to create renderer
-```
+````
 
-- https://bugs.launchpad.net/ubuntu/+source/gnome-shell/+bug/2067374
-    - They recommend `libnvidia-egl-wayland1` (ubuntu), but couldn't on a quick search find a gentoo package for this.
-- https://bbs.archlinux.org/viewtopic.php?id=297596
-    - Mentions `eglinfo`: https://github.com/dv1/eglinfo
+* https://bugs.launchpad.net/ubuntu/+source/gnome-shell/+bug/2067374
+  * They recommend `libnvidia-egl-wayland1` (ubuntu), but couldn't on a quick search find a gentoo package for this.
+* https://bbs.archlinux.org/viewtopic.php?id=297596
+  * Mentions `eglinfo`: https://github.com/dv1/eglinfo
 
 Let's install dv1/eglinfo for diagnostics:
 
-```sh
+````sh
 mkdir -p ~/src/cloned/gh/dv1
 cd ~/src/cloned/gh/dv1
 git clone git@github.com:dv1/eglinfo
 
-```
+````
 
 It's unclear what our DEVICE envvar should be from the README.md. Let's leave it as generic. We can check the devices available via `ls src/platform_* `
 
-```sh
+````sh
 # in /home/lan/src/cloned/dv1/eglinfo
 mkdir bin
 ./waf configure --platform=fb --device=generic --prefix=./bin --sysroot=/
@@ -2239,7 +2251,7 @@ mkdir bin
   File "/home/lan/src/cloned/dv1/eglinfo/./waf", line 166
     #BZh91AY&SY¶ñöÿÿÿ¼¶tÿÿÿÿÿÿÿÿÿÿÿ
 SyntaxError: source code cannot contain null bytes
-```
+````
 
 Hmm. Let's not pursue this for now. `rm -rf ~/src/cloned/gh/dv1/eglinfo`.
 
@@ -2250,10 +2262,11 @@ So far it seems this might be related to my nvidia drivers.
 
 We don't yet have nvidia-smi or anything either here.
 
-- https://wiki.gentoo.org/wiki/NVidia
-- -> https://wiki.gentoo.org/wiki/NVIDIA/nvidia-drivers
+* https://wiki.gentoo.org/wiki/NVidia
+* -> https://wiki.gentoo.org/wiki/NVIDIA/nvidia-drivers
 
-> The open source driver only works on Turing GPUs and newer (i.e. GTX 1650 and newer). The kernel-open flag will need to be disabled on older cards.
+ > 
+ > The open source driver only works on Turing GPUs and newer (i.e. GTX 1650 and newer). The kernel-open flag will need to be disabled on older cards.
 
 https://www.techpowerup.com/gpu-specs/geforce-gtx-1650.c3366 -> "The GeForce GTX 1650 is a mid-range graphics card by NVIDIA, launched on April 23rd, 2019."
 
@@ -2269,7 +2282,7 @@ We will also need to make an exemption for the license of `x11-drivers/nvidia-dr
 
 We do have `dist-kernel` setup as a global use flag, as recommended.
 
-```sh
+````sh
 # in /etc/portage/portage.license {
     x11-drivers/nvidia-drivers NVIDIA-2025
 # }
@@ -2280,13 +2293,13 @@ We do have `dist-kernel` setup as a global use flag, as recommended.
 
 su
 emerge --ask x11-drivers/nvidia-drivers
-```
+````
 
 This also installs `gui-libs/egl-wayland2-1.0.1::gentoo`, related to the issues we've been having with sway.
 
 `nvidia-smi` won't detect the driver right away, but it does after a system reboot.
 
-```sh
+````sh
 nvidia-smi
 
 # out
@@ -2310,9 +2323,9 @@ Sun Jul 26 09:22:14 2026
 |=========================================================================================|
 |  No running processes found                                                             |
 +-----------------------------------------------------------------------------------------+
-```
+````
 
-```sh
+````sh
 # su - don't use; run it under the user.
 export XDG_RUNTIME_DIR=/tmp/"${UID}"-runtime-dir && mkdir -p "${XDG_RUNTIME_DIR}" && chmod 0700 "${XDG_RUNTIME_DIR}"
 dbus-run-session sway
@@ -2321,33 +2334,32 @@ dbus-run-session sway
 00:00:00.011 [sway/server.c:163] !!! Proprietary Nvidia drivers are in use !!!
 00:00:00.011 [sway/server.c:165] Use Nouveau instead
 00:00:00.011 [sway/server.c:175] Proprietary drivers are NOT supported. To launch sway anyway, launch with --unsupported-gpu and DO NOT report issues.
-```
+````
 
 Ouch. We can look into this later to compare with nouveau, but for now `--unsupported-gpu`.
 
-```sh
+````sh
 # su - don't use; run it under the user.
 export XDG_RUNTIME_DIR=/tmp/"${UID}"-runtime-dir && mkdir -p "${XDG_RUNTIME_DIR}" && chmod 0700 "${XDG_RUNTIME_DIR}"
 dbus-run-session sway --unsupported-gpu 2>&1 | tee sway_logs.log
-```
+````
 
 We also added a `hello` command that can be used for some logging tests:
 
-```sh
+````sh
 su
 echo 'echo "$(date) | helloooo"' > /usr/local/bin/hello
 chmod +x /usr/local/bin/hello
-```
-
+````
 
 Wk 30 Sun 09:39 +03:00
 
-We're in sway now! 
+We're in sway now!
 
-- https://www.reddit.com/r/linuxquestions/comments/1ivv74h/i_have_no_idea_how_to_use_swaywm/
-- We're able to start a terminal emulator with Win+Enter. Likely foot, as running it in Win+Enter opens a similar tiled window. 
-    - Apparently Ctrl+Shift+N also works for me.
-- As they recommend, sway being heavily inspired by i3 means we can find some use guidance with i3.
+* https://www.reddit.com/r/linuxquestions/comments/1ivv74h/i_have_no_idea_how_to_use_swaywm/
+* We're able to start a terminal emulator with Win+Enter. Likely foot, as running it in Win+Enter opens a similar tiled window.
+  * Apparently Ctrl+Shift+N also works for me.
+* As they recommend, sway being heavily inspired by i3 means we can find some use guidance with i3.
 
 Remember we have configuration under `~/.config/sway/config`
 
@@ -2360,12 +2372,13 @@ And win+F for full screen to remove the sway status stuff. Be aware you might cr
 i3, dmenu is supposed to be opened with win+d (or $mod+d) which seems like it would be a similar workflow to what I do with apps like rofi where I do alt+Enter and type the app name fuzzily.
 
 https://wiki.gentoo.org/wiki/Sway
-- So we have `dev-libs/bemenu` and `gui-apps/wmenu` as alternatives over at sway. It defaults to `gui-apps/wmenu`.
 
-```sh
+* So we have `dev-libs/bemenu` and `gui-apps/wmenu` as alternatives over at sway. It defaults to `gui-apps/wmenu`.
+
+````sh
 su
 emerge --ask gui-apps/wmenu
-```
+````
 
 Now Win+d lets me basically start any application, even `ssh`, which I can see in my tmux session to print usage, or echo.
 
@@ -2373,18 +2386,18 @@ So I assume it just tries to launch any application available to me in $PATH. Le
 
 If it fetches from `$PATH`, it should be able to recognize an app put there. Put this there:
 
-```sh
+````sh
 su
 echo 'echo Hiii' > /usr/local/bin/hello
 chmod +x /usr/local/bin/hello
-```
+````
 
 It works. Now we can find a `hello` application via Win+D. And in the tmux session running sway, it logs `Hiii`.
 
-```sh
+````sh
 su
 rm /usr/local/bin/hello
-```
+````
 
 Win+Shift+q to close a window.
 
@@ -2397,20 +2410,20 @@ For my workflow, I need a way to **switch** to a window by label.
 I'm able to run `wmenu-run` from a newly created terminal emulator but not from within tmux that was launched before sway was run because it gives an error `Failed to connect to display`.
 It also won't do it if we're not root, and the terminal emulators launch directly into su.
 
-```sh
+````sh
 export XDG_RUNTIME_DIR=/tmp/"${UID}"-runtime-dir && mkdir -p "${XDG_RUNTIME_DIR}" && chmod 0701 "${XDG_RUNTIME_DIR}"
 dbus-run-session sway --unsupported-gpu
-```
+````
 
 --/ Wk 30 Sun 22:47 +03:00
 Putting the above in a quick script /home/lan/start_sway.sh with some amendments:
 
-```sh
+````sh
 # in /home/lan/start_sway.sh
 #!/bin/sh
 export XDG_RUNTIME_DIR=/tmp/"${UID}"-runtime-dir && mkdir -p "${XDG_RUNTIME_DIR}" && chmod 0701 "${XDG_RUNTIME_DIR}"
 dbus-run-session sway --unsupported-gpu | tee sway_log.log
-```
+````
 
 Start this outside tmux, and start tmux from the foot terminal emulator so that tmux gets access to sway context environmental variables like `$DBUS_SESSION_BUS_ADDRESS`.
 --/
@@ -2419,47 +2432,47 @@ This confirms we can run it without su. Amending prior entries to recommend remo
 
 https://github.com/AdrienLeGuillou/sway_window_swithcher_dmenu
 
-```sh
+````sh
 export REPO=AdrienLeGuillou/sway_window_swithcher_dmenu && git clone git@github.com:$REPO /home/lan/src/cloned/gh/$REPO
-```
+````
 
 This requires jq:
 
 https://packages.gentoo.org/packages/app-misc/jq
 
-```sh
+````sh
 su
 emerge --ask app-misc/jq
-```
+````
 
 This works: `./sws.sh --dmenu-cmd wmenu`. Let's set it up:
 
-```sh
+````sh
 su
 echo '/home/lan/src/cloned/gh/AdrienLeGuillou/sway_window_swithcher_dmenu/sws.sh --dmenu-cmd wmenu' > /usr/local/bin/sws
 chmod +x /usr/local/bin/sws
-```
+````
 
 Right now we're able to run this via Win+d sws. We need a shorter path to this. I used to use Alt+Enter, I want to use Win+s, but it's tacking by the stacking layout switching in `~/.config/sway/config`.
 
 Update the stacking layout switcher to Win+shift+s so that we can reserve Win+s for switching:
 
-```diff
+````diff
 # in ~/.config/sway/config
 -bindsym $mod+s layout stacking
 +bindsym $mod+Shift+s layout stacking
-```
+````
 
 and add:
 
-```sh
+````sh
 # in ~/.config/sway/config
 # Custom config
 
 set $switcher sws
 
 bindsym $mod+s exec $switcher
-```
+````
 
 Forgot to update the binsym for layout stacking and got a warning and had to exit sway after restarting it.
 
@@ -2467,9 +2480,9 @@ But now it works! Use Win+Shift+s for stacking, Win+w for tabbed, Win+e to switc
 
 Wk 30 Sun 11:38 +03:00
 
-Okay now that we have sway, and my workflow of window switching, and an ability to open windows. It's time to get some graphical tools. 
+Okay now that we have sway, and my workflow of window switching, and an ability to open windows. It's time to get some graphical tools.
 
-Let's prioritize obsidian so that we can go back to proper note-taking on this device. 
+Let's prioritize obsidian so that we can go back to proper note-taking on this device.
 
 I've been SSHing into my phone from my PC on tmux to take notes. We need to also sync all of these notes back to my new gentoo system now.
 
@@ -2477,23 +2490,22 @@ Let's get back our syncthing data, syncthing, and get obsidian. I would like hav
 
 We also still have to make sway run automatically on boot, but we'll get to that later as we're currently installing things and testing.
 
-
-```sh
+````sh
 export REPO=syncthing/syncthing && git clone git@github.com:$REPO /home/lan/src/cloned/gh/$REPO
 
 # in ~/src/cloned/gh/syncthing/syncthing
 ./build.sh
-```
+````
 
 Though we'll need a graphical browser for this first, since it requires js (though we could try enabling js with elinks)
 
-```
+````
 # in /home/lan/src/cloned/cb/deltatraced/deltatraced
 git commit
 
 # out
 [main 692c28d] save pre-gentoo install
-```
+````
 
 For now we can sync manually. I put the mobile raw journal notes all in a `tmp.md` file which is going to be easy to copy over to my PC now.
 
@@ -2509,23 +2521,23 @@ To decompress a `*.tar.gz`, use `tar -xf`.
 
 Yup don't use that. In the README.md in that compressed tarball:
 
-```sh
+````sh
 Obsidian is not open source software and this repo _DOES NOT_ contain the source code of Obsidian. However, if you wish to contribute to Obsidian, you can easily do so with our extensive plugin system. A plugin guide can be found here: https://docs.obsidian.md
-```
+````
 
 https://github.com/obsidianmd/obsidian-releases/releases/download/v1.12.7/obsidian-1.12.7.tar.gz
 
 Can't run directly:
 
-```
+````
 ./obsidian: error while loading shared libraries: libnspr4.so: cannot open shared object file: No such file or directory
-```
+````
 
 Easiest should be the appimage:
 
 https://github.com/obsidianmd/obsidian-releases/releases/download/v1.12.7/Obsidian-1.12.7.AppImage
 
-```sh
+````sh
 mkdir -p ~/data/releases/gh/obsidianmd/obsidian-releases
 
 # in /home/lan/data/releases/gh/obsidianmd/obsidian-releases
@@ -2543,16 +2555,16 @@ You might still be able to extract the contents of this AppImage
 if you run it with the --appimage-extract option.
 See https://github.com/AppImage/AppImageKit/wiki/FUSE
 for more information
-```
+````
 
 https://wiki.gentoo.org/wiki/Appimage
 
 There are different slots for this. Verion 2 of fuse in slot 0 and version 3 in slot 3.
 
-```sh
+````sh
 su
 emerge --ask sys-fs/fuse:0
-```
+````
 
 Same issue anyway: `/tmp/.mount_ObsidiRAAcr3/obsidian: error while loading shared libraries: libnspr4.so: cannot open shared object file: No such file or directory`.
 
@@ -2560,7 +2572,7 @@ Which makes sense, it's a dynamic dependency.
 
 Let's go fix this with the prior compressed tarball.
 
-```sh
+````sh
 # in /home/lan/data/releases/gh/obsidianmd/obsidian-releases
 wget https://github.com/obsidianmd/obsidian-releases/releases/download/v1.12.7/obsidian-1.12.7.tar.gz
 tar -xf obsidian-1.12.7.tar.gz
@@ -2570,20 +2582,20 @@ tar -xf obsidian-1.12.7.tar.gz
 
 # out (error)
 ./obsidian: error while loading shared libraries: libnspr4.so: cannot open shared object file: No such file or directory
-```
+````
 
 https://packages.gentoo.org/packages/dev-libs/nspr | Netscape Portable Runtime
 
-```sh
+````sh
 su
 emerge --ask dev-libs/nspr
-```
+````
 
 Now we get
 
-```
+````
 ./obsidian: error while loading shared libraries: libnss3.so: cannot open shared object file: No such file or directory
-```
+````
 
 There's some portage overlay that references obsidian, but it isn't in an official package. https://gpo.zugaina.org/app-text/obsidian
 
@@ -2597,13 +2609,13 @@ https://packages.gentoo.org/packages/dev-libs/nss | Mozilla's Network Security S
 
 This is starting to look like it might be heavy.
 
-```sh
+````sh
 su
 emerge --ask dev-libs/nss
-```
+````
 
-```
+````
 [120297:0726/133223.802914:ERROR:dbus/bus.cc:408] Failed to connect to the bus: Failed to connect to socket /run/dbus/system_bus_socket: No such file or directory
-```
+````
 
 Alright once in a terminal emulator directly obsidian does start now.

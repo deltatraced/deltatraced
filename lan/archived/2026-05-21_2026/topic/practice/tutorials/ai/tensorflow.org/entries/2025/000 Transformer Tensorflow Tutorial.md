@@ -1,11 +1,11 @@
 ---
 status: todo
-has_prereq: "[[001 Text Generation Tensorflow Tutorial]]"
+has_prereq: '[[001 Text Generation Tensorflow Tutorial]]'
 ---
 
 # 1 Objective
 
-- [ ] Go through the tutorial in [here](https://www.tensorflow.org/text/tutorials/transformer) [[#^1]].
+* [ ] Go through the tutorial in [here](https://www.tensorflow.org/text/tutorials/transformer) [^1](000%20Transformer%20Tensorflow%20Tutorial.md#1).
 
 Prereqs:
 
@@ -22,6 +22,7 @@ Prereqs:
 # 7 Ideas
 
 # 8 Side Notes
+
 # 9 External Links
 
 # 10 References

@@ -1,16 +1,5 @@
-
-
-
-
-
-
-
-
-
-
-
 # 1 Time Logs
 
-```simple-time-tracker
+````simple-time-tracker
 {"entries":[{"name":"[[005 Model coin_store_hist and related in diesel]]","startTime":"2025-10-14T15:34:38.204Z","endTime":"2025-10-14T16:57:46.291Z"},{"name":"[[006 Using macro_rules to automate event and hist creation]]","startTime":"2025-10-14T16:57:47.000Z","endTime":"2025-10-14T17:05:00.000Z"},{"name":"[[006 Using macro_rules to automate event and hist creation]]","startTime":"2025-10-16T06:24:08.447Z","endTime":"2025-10-16T06:24:31.972Z"},{"name":"[[001 Reading through lukaswirth.dev decl-macros]]","startTime":"2025-10-16T06:25:24.114Z","endTime":"2025-10-16T07:19:51.719Z"},{"name":"[[001 Reading through lukaswirth.dev decl-macros]]","startTime":"2025-10-16T15:59:57.225Z","endTime":"2025-10-16T17:49:52.329Z"},{"name":"[[006 Using macro_rules to automate event and hist creation]]","startTime":"2025-10-16T17:51:05.000Z","endTime":"2025-10-16T18:30:00.000Z"},{"name":"[[006 Using macro_rules to automate event and hist creation]]","startTime":"2025-10-17T08:12:11.382Z","endTime":"2025-10-17T08:15:40.243Z"},{"name":"[[001 Reading through lukaswirth.dev decl-macros]]","startTime":"2025-10-17T08:15:49.163Z","endTime":"2025-10-17T08:32:24.401Z"},{"name":"[[006 Using macro_rules to automate event and hist creation]]","startTime":"2025-10-17T08:32:29.000Z","endTime":"2025-10-17T09:00:00.000Z"},{"name":"[[006 Using macro_rules to automate event and hist creation]]","startTime":"2025-10-17T13:40:00.000Z","endTime":"2025-10-17T16:00:00.000Z"}]}
-```
+````

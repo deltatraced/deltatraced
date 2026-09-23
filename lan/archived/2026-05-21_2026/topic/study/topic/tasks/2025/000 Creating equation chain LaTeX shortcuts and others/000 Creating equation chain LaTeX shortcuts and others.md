@@ -36,7 +36,13 @@ Seems to be local to the place it's injected? And requires some safe mode thing 
 
 [this forum post](https://forum.obsidian.md/t/requires-latex-functionality/57270/7) explains that new commands can be added, but are only loaded if the page itself is being opened. I guess... we could try to reference a setting page in every note that uses its commands?
 
-![[LaTeX config#1.1 Argmin Argmax]]
+## 1.1 Argmin Argmax
+
+$$
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+$$
+^argmin-argmax
 
 They have some example
 
@@ -48,15 +54,15 @@ It seems I have to reload the app to apply changes to these commands with `Ctrl+
 
 These commands are now rendering in github
 
-![[Pasted image 20250728061104.png]]
+![Pasted image 20250728061104.png](../../../../../../../../../attachments/Pasted%20image%2020250728061104.png)
 
-I don't mind mirroring X sections from other notes for tailored inclusion of commands like this. But doing it automatically would be good. There should be an original section, and mirroring sections. See [[#3.1 On obsidian extensions for mirrored and synced text across notes]].
+I don't mind mirroring X sections from other notes for tailored inclusion of commands like this. But doing it automatically would be good. There should be an original section, and mirroring sections. See [3.1 On obsidian extensions for mirrored and synced text across notes](000%20Creating%20equation%20chain%20LaTeX%20shortcuts%20and%20others.md#31-on-obsidian-extensions-for-mirrored-and-synced-text-across-notes).
 
 2025-07-28 Wk 31 Mon - 06:59
 
 Let's try to find some of my equation commands from before and embed them for use here.
 
-```
+````
 $$
 
 % Custom commands
@@ -76,7 +82,7 @@ $$
     \endgroup
 }
 $$
-```
+````
 
 This doesn't really fit in right away, and it may be easier to just do hybrid markdown + LaTeX for long equational reasoning chains.
 
@@ -135,9 +141,9 @@ $$
 
 We can add links to the equations by doing `[ [ # ^` (without spaces, obsidian insists on interpreting) and then details of the equation content. But it doesn't yet show numbering.
 
-[[#^b5d125]]
+[^b5d125](000%20Creating%20equation%20chain%20LaTeX%20shortcuts%20and%20others.md#b5d125)
 
-[[#^6d7ec9]]
+[^6d7ec9](000%20Creating%20equation%20chain%20LaTeX%20shortcuts%20and%20others.md#6d7ec9)
 
 ### 2.2.1 Pend
 
@@ -151,11 +157,10 @@ We can add links to the equations by doing `[ [ # ^` (without spaces, obsidian i
 
 We can already copy sections this way:
 
-![[lan/topics/study/books/math/2025/000 A transition to Advanced Mathematics/README]]
+
 
 This feature is [embeds](https://help.obsidian.md/embeds) in obsidian.
 
 ### 3.1.1 Pend
-
 
 # 4 References

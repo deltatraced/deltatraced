@@ -1,21 +1,25 @@
 ---
-writing_for: "[[000 Note Taking Philosophy]]"
+writing_for: '[[000 Note Taking Philosophy]]'
 status: archived
 ---
-#lan #task #notes #writing #st/pend
+
+\#lan #task #notes #writing #st/pend
 
 # 1 Journal
 
 ## 1.1 On "Public by default"
+
 I have decided to adopt a "public by default" strategy for note taking for this project.
 
 ### 1.1.1 What does it mean?
+
 Whatever notes I take for my project, I share as part of the project by default, unless I believe it is unnecessary.
 
 Some cases where it would be unnecessary include
+
 1. time logging/schedule information which varies based on personal circumstance a lot and doesn't add much value to be seen by others.
-2. Anything too out of scope of the problems to solve in the project, like just playing around with concepts in sketches may be moved to private notes if it's not relevant for the prototype at hand.
-3. Private communications. I may include a digest on how peer critique helped me, but the conversations don't have to be shared.
+1. Anything too out of scope of the problems to solve in the project, like just playing around with concepts in sketches may be moved to private notes if it's not relevant for the prototype at hand.
+1. Private communications. I may include a digest on how peer critique helped me, but the conversations don't have to be shared.
 
 ### 1.1.2 What are the alternatives?
 
@@ -35,7 +39,7 @@ This method could mean to start private, assess on a case-by-case basis what cou
 
 ## 2.1 Gather the information recommended to me by a friend who reviewed my article
 
-- [ ]
+* [ ] 
 
 2025-08-10 Wk 32 Sun - 08:35
 

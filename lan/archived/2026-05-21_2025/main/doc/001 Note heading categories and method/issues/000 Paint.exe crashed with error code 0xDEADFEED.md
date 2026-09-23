@@ -1,10 +1,8 @@
-
 # 1 Journal
 
+* [x] Resolved, turns out I made this error up for demonstration purposes!
 
-- [x] Resolved, turns out I made this error up for demonstration purposes!
-
-From [[#^spawn-issue-252c2b]] in [[#3.1 File a bug report]]
+From [^spawn-issue-252c2b](000%20Paint.exe%20crashed%20with%20error%20code%200xDEADFEED.md#spawn-issue-252c2b) in [3.1 File a bug report](000%20Paint.exe%20crashed%20with%20error%20code%200xDEADFEED.md#31-file-a-bug-report)
 
 2025-08-12 Wk 33 Tue - 13:20
 
@@ -20,7 +18,7 @@ So you're trying to resolve this issue, but you need to figure out how to open t
 
 This is what a HowTo is for!
 
-Spawn [[#5.1 Open the Windows Registery to fix Paint.exe!]] ^spawn-howto-9f5c66
+Spawn [5.1 Open the Windows Registery to fix Paint.exe!](000%20Paint.exe%20crashed%20with%20error%20code%200xDEADFEED.md#51-open-the-windows-registery-to-fix-paintexe) ^spawn-howto-9f5c66
 
 2025-08-12 Wk 33 Tue - 13:29
 
@@ -32,7 +30,7 @@ What an open-ended conceptual task! Tasks should preferably be operative and hav
 
 If I'm exploring a concept, a system, or doing some open-ended debugging and diagnosis, it will likely end up there. Let's investigate!
 
-Spawn [[#6.1 Investigate the Windows Operating System Internals]] ^spawn-invst-eadf79
+Spawn [6.1 Investigate the Windows Operating System Internals](000%20Paint.exe%20crashed%20with%20error%20code%200xDEADFEED.md#61-investigate-the-windows-operating-system-internals) ^spawn-invst-eadf79
 
 2025-08-12 Wk 33 Tue - 13:48
 
@@ -42,8 +40,8 @@ But we got an idea! Based on what we've learned, wouldn't it be cool to open sou
 
 Spawn an idea!
 
-Spawn [[#7.1 Contribute Paint.exe research to open source]] ^spawn-idea-2caf16
+Spawn [7.1 Contribute Paint.exe research to open source](000%20Paint.exe%20crashed%20with%20error%20code%200xDEADFEED.md#71-contribute-paintexe-research-to-open-source) ^spawn-idea-2caf16
 
 2025-08-12 Wk 33 Tue - 13:54
 
-This should cover most things. Let's just keep going back through our [[#^spawn-issue-252c2b|spawners]].
+This should cover most things. Let's just keep going back through our [spawners](000%20Paint.exe%20crashed%20with%20error%20code%200xDEADFEED.md#spawn-issue-252c2b).

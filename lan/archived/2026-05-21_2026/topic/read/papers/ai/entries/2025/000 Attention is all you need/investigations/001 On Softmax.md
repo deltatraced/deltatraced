@@ -1,8 +1,6 @@
-
 # 1 Journal
 
-
-[ai faq softmax](http://www.faqs.org/faqs/ai-faq/neural-nets/part2/section-12.html) [[#^3]] shows that $\text{softmax}$ is defined as follows
+[ai faq softmax](http://www.faqs.org/faqs/ai-faq/neural-nets/part2/section-12.html) [^3](001%20On%20Softmax.md#3) shows that $\text{softmax}$ is defined as follows
 
 ### 1.1.1 Definition: Softmax
 
@@ -28,12 +26,12 @@ $$
 
 ### 1.1.2 Constraints
 
-As [ai faq softmax](http://www.faqs.org/faqs/ai-faq/neural-nets/part2/section-12.html) [[#^3]] explains,
+As [ai faq softmax](http://www.faqs.org/faqs/ai-faq/neural-nets/part2/section-12.html) [^3](001%20On%20Softmax.md#3) explains,
 
 $\text{softmax}$ allows the following properties to be satisfied for $\vec{Y}$ :
 
 1. The range of $\vec{Y}$ is $[0, 1]$.  ^softmax-constr1
-2. $\text{sum}(\vec{Y}) = 1$ ^softmax-constr2
+1. $\text{sum}(\vec{Y}) = 1$ ^softmax-constr2
 
 #### 1.1.2.1 Showing property 1 holds
 
@@ -43,7 +41,7 @@ Show that the range of $\vec{Y} = \text{softmax}(\vec{X})$  must be $[0, 1]$ .
 
 (`Prms 1.1`)
 
-The first property [[#^softmax-constr1]] will hold if and only if
+The first property [^softmax-constr1](001%20On%20Softmax.md#softmax-constr1) will hold if and only if
 
 $$
 e^{x_i} \le \sum_{j=1}^n{e^{x_j}} \ \text{for any i}
@@ -55,9 +53,9 @@ For any positive real number $a$, and any negative, zero, or positive real numbe
 
 $a^b$ is always a positive number.
 
-- When  $b \ge 1$, then $a^b \ge a$.
-- When $b \in (0, 1)$, then $a^b \in (0, a)$.
-- When $b = 0$, then $a^b = 1$.
+* When  $b \ge 1$, then $a^b \ge a$.
+* When $b \in (0, 1)$, then $a^b \in (0, a)$.
+* When $b = 0$, then $a^b = 1$.
 
 (`Prs 1.3`)
 
@@ -99,8 +97,9 @@ $$
 
 Before I have written
 
-> (`Prms 2.1`)
-> $\sum^n_{j=1}{e^{x_j}}$ can be interpreted as a weighted average of elements with weighting $e^{x_j}$.
+ > 
+ > (`Prms 2.1`)
+ > $\sum^n_{j=1}{e^{x_j}}$ can be interpreted as a weighted average of elements with weighting $e^{x_j}$.
 
 But really it's the total sum. The average (mean) of an n-sized set $A \equiv \lbrace a_1, \cdots, a_n \rbrace$ is $\frac{\sum_{i=1}^n{a_i}}{n}$.
 
@@ -108,11 +107,13 @@ I likely made this mistake because I was interpreting $\text{softmax}$  to have 
 
 But either way, none of these premises are needed to prove the property. So (`Prms 2.1`) and (`Prms 2.2`) are removed, and (`Prms 2.3`) is renamed to (`Prms 2.1`).
 
-> (`Prms 2.1`)
->$\sum^n_{j=1}{e^{x_j}}$ can be interpreted as a weighted average of elements with weighting $e^{x_j}$.
-> (`Prms 2.2`)
-> In
+ > 
+ > (`Prms 2.1`)
+ > $\sum^n_{j=1}{e^{x_j}}$ can be interpreted as a weighted average of elements with weighting $e^{x_j}$.
+ > (`Prms 2.2`)
+ > In
 
-![[#^softmax-eq]]
+[^softmax-eq](001%20On%20Softmax.md#softmax-eq)
 
->We can see that $e^{x_i}$ can  be interpreted as one weight from the elements that are taken a weighted average of in $\sum^n_{j=1}{e^{x_j}}$.
+ > 
+ > We can see that $e^{x_i}$ can  be interpreted as one weight from the elements that are taken a weighted average of in $\sum^n_{j=1}{e^{x_j}}$.

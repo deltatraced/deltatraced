@@ -3,11 +3,11 @@ context_type: task
 status: todo
 ---
 
-Parent: [[lan/2026/proj/003-clusterline-md/entry/000-clusterline-md-getting-started/000-clusterline-md-getting-started]]
+Parent: [lan/2026/proj/003-clusterline-md/entry/000-clusterline-md-getting-started/000-clusterline-md-getting-started](../000-clusterline-md-getting-started.md)
 
-Spawned by: [[lan/2026/proj/003-clusterline-md/entry/000-clusterline-md-getting-started/000-clusterline-md-getting-started]]
+Spawned by: [lan/2026/proj/003-clusterline-md/entry/000-clusterline-md-getting-started/000-clusterline-md-getting-started](../000-clusterline-md-getting-started.md)
 
-Spawned in: [[lan/2026/proj/003-clusterline-md/entry/000-clusterline-md-getting-started/000-clusterline-md-getting-started#^spawn-task-c536a0|^spawn-task-c536a0]]
+Spawned in: [^spawn-task-c536a0](../000-clusterline-md-getting-started.md#spawn-task-c536a0)
 
 # Journal
 
@@ -23,27 +23,27 @@ Getting datetime in ts: https://stackoverflow.com/a/55307111/6944447
 
 In obsidian, we had the date format in `templates` set as:
 
-```
+````
 YYYY-MM-DD \W\k \\W ddd
-```
+````
 
 and time:
 
-```
+````
 HH:mm Z
-```
+````
 
-Using `date`: 
+Using `date`:
 
-```sh
+````sh
 date +%Y-%m-%d\ Wk\ %V\ %a\ -\ %R\ %:z
-```
+````
 
 Formatting number in style of `{n:02}`: From https://www.spguides.com/typescript-number-format-2-digits/,
 
-```ts
+````ts
 `${n.toString().padStart(2, '0')}`
-```
+````
 
 Timezone offset: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getTimezoneOffset
 
@@ -57,6 +57,4 @@ Okay so now back onnn track, let’s try to write this plugin in Rust. Right now
 
 2026-05-23 Wk 21 Sat - 01:52 +03:00
 
-Spawn [[lan/2026/proj/003-clusterline-md/entry/000-clusterline-md-getting-started/task/001 create a rust silverbullet plugin]] ^spawn-task-fa5f84
-
-
+Spawn [lan/2026/proj/003-clusterline-md/entry/000-clusterline-md-getting-started/task/001 create a rust silverbullet plugin](001%20create%20a%20rust%20silverbullet%20plugin.md) ^spawn-task-fa5f84

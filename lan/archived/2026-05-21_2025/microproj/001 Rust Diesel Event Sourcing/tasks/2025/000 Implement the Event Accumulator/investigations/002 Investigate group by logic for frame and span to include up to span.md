@@ -1,19 +1,19 @@
 ---
-parent: "[[000 Implement the Event Accumulator]]"
-spawned_by: "[[001 Create coin table events to experiment with aggregation being in views]]"
+parent: '[[000 Implement the Event Accumulator]]'
+spawned_by: '[[001 Create coin table events to experiment with aggregation being in views]]'
 context_type: investigation
 status: done
 ---
 
-Parent: [[000 Implement the Event Accumulator]]
+Parent: [000 Implement the Event Accumulator](../000%20Implement%20the%20Event%20Accumulator.md)
 
-Spawned by: [[001 Create coin table events to experiment with aggregation being in views]]
+Spawned by: [001 Create coin table events to experiment with aggregation being in views](../tasks/001%20Create%20coin%20table%20events%20to%20experiment%20with%20aggregation%20being%20in%20views.md)
 
-Spawned in: [[001 Create coin table events to experiment with aggregation being in views#^spawn-invst-bd7e4d|^spawn-invst-bd7e4d]]
+Spawned in: [^spawn-invst-bd7e4d](../tasks/001%20Create%20coin%20table%20events%20to%20experiment%20with%20aggregation%20being%20in%20views.md#spawn-invst-bd7e4d)
 
 # 1 Related
 
-[[001 Use of views and CTEs with sqlite3 and diesel-rs]]
+[001 Use of views and CTEs with sqlite3 and diesel-rs](001%20Use%20of%20views%20and%20CTEs%20with%20sqlite3%20and%20diesel-rs.md)
 
 # 2 Journal
 
@@ -40,7 +40,7 @@ So for all frames, we want to group by:
 (update)
 
 1. All Items within the current frame and span; unioned with
-2. All items whose span is $\lt$ the frame span AND their timestamp $\lt$ the frame latest creation time
+1. All items whose span is $\lt$ the frame span AND their timestamp $\lt$ the frame latest creation time
 
 2025-09-28 Wk 39 Sun - 01:37 +03:00
 
@@ -56,7 +56,7 @@ This will give us the property that every frame is self-contained with its own s
 
 One problem this decomposes to is the following:
 
-Spawn [[003 Create a natural numbers table and group by divisibility up to N]] ^spawn-invst-3a334f
+Spawn [003 Create a natural numbers table and group by divisibility up to N](003%20Create%20a%20natural%20numbers%20table%20and%20group%20by%20divisibility%20up%20to%20N.md) ^spawn-invst-3a334f
 
 2025-09-27 Wk 39 Sat - 03:50 +03:00
 
@@ -74,7 +74,7 @@ Checked [sqlite.org datefunc subseq](https://sqlite.org/lang_datefunc.html#subse
 
 Creating some events for our experiment
 
-```sql
+````sql
 -- in ~/tmp/del/events.sql
 CREATE TABLE coin_store_diffs (
   id INTEGER NOT NULL PRIMARY KEY,
@@ -115,7 +115,7 @@ INSERT INTO coin_store_events (opt_diff_id, transactions, ev_action, span, frame
 ;
 
 .save "events.db"
-```
+````
 
 Here we use floating point timestamps, which can be generated via SQL itself, or by ourselves via `date +%s.+%N`
 
@@ -129,18 +129,18 @@ Checked [post](https://learnsql.com/cookbook/how-to-count-the-number-of-rows-in-
 
 We can also filter these, like with
 
-```sql
+````sql
 SELECT COUNT(*)
 	FROM coin_store_events
 	WHERE ev_action = 'update'
 ;
-```
+````
 
 2025-09-27 Wk 39 Sat - 07:29 +03:00
 
-It works! We can now group and then accumulate events! Multiple problems had to be solved to achieve this. [[001 Creating a basic counter with a recursive CTE in sqlite3|Creating a counter]], [[002 Creating a basic table duplicator with recursive CTE in sqlite3|Duplicating tables N times generically]],  [[003 Create a natural numbers table and group by divisibility up to N|Grouping by property]] as we did with divisibly-by-n groups, fitting extra information on with each duplication for property filtering, and finally putting all together to create the proper groups. And then we grouped by the `grp_id` that's now an enumerable for each unique state of affairs of interest for our objects.
+It works! We can now group and then accumulate events! Multiple problems had to be solved to achieve this. [Creating a counter](../howtos/001%20Creating%20a%20basic%20counter%20with%20a%20recursive%20CTE%20in%20sqlite3.md), [Duplicating tables N times generically](../howtos/002%20Creating%20a%20basic%20table%20duplicator%20with%20recursive%20CTE%20in%20sqlite3.md),  [Grouping by property](003%20Create%20a%20natural%20numbers%20table%20and%20group%20by%20divisibility%20up%20to%20N.md) as we did with divisibly-by-n groups, fitting extra information on with each duplication for property filtering, and finally putting all together to create the proper groups. And then we grouped by the `grp_id` that's now an enumerable for each unique state of affairs of interest for our objects.
 
-```sql
+````sql
 -- events.db
 CREATE TABLE coin_store_diffs (
   id INTEGER NOT NULL PRIMARY KEY,
@@ -230,19 +230,19 @@ CREATE VIEW v_coin_store_objects AS
 ;
 
 .save "events.db"
-```
+````
 
-```sh
+````sh
 cat events.sql | sqlite3 && vd events.db
-```
+````
 
 This is `v_coin_store_events_grouped`. We can filter this by `grp_id` to get the events that accumulate for that group. This way we can also search events by discrete states of affairs much more easily than if we had filtered the events table directly.
 
-![[Pasted image 20250927073355.png]]
+![Pasted image 20250927073355.png](../../../../../../../../../attachments/Pasted%20image%2020250927073355.png)
 
 This is `v_coin_store_objects` which accumulates all events into unique object ids per group id. `transactions` will show 0 for deleted objects, otherwise will show how many times the object has been modified. Other properties, such as `coins` now show the accumulated amount of coins the person has!
 
-![[Pasted image 20250927073411.png]]
+![Pasted image 20250927073411.png](../../../../../../../../../attachments/Pasted%20image%2020250927073411.png)
 
 2025-09-28 Wk 39 Sun - 01:29 +03:00
 
@@ -260,7 +260,7 @@ We're also changing the `frame` event. We're adding `open` and `close` global ev
 
 Here are the changes:
 
-```sql
+````sql
 CREATE TABLE coin_store_diffs (
   id INTEGER NOT NULL PRIMARY KEY,
   obj_id INTEGER NOT NULL,
@@ -351,13 +351,13 @@ CREATE VIEW v_coin_store_objects AS
 ;
 
 .save "events.db"
-```
+````
 
 2025-09-29 Wk 40 Mon - 17:51 +03:00
 
-- [x] We will need to change that `MAX(person) AS person` and things like it into getting the latest. We did transactions into a sum but also could have been just latest state. This will require a subquery.
+* [x] We will need to change that `MAX(person) AS person` and things like it into getting the latest. We did transactions into a sum but also could have been just latest state. This will require a subquery.
 
-- [ ] We also need to see how this interacts with more complex data loads that use joins. Would diesel recognize joins for views? Do we need to join against events instead?
+* [ ] We also need to see how this interacts with more complex data loads that use joins. Would diesel recognize joins for views? Do we need to join against events instead?
 
 If we need to preserve one-to-one, they may need to be created only against insert events. If it's possible relations themselves may change, we may need to get the latest.
 
@@ -365,7 +365,7 @@ If we need to preserve one-to-one, they may need to be created only against inse
 
 This is the latest experiment:
 
-```sql
+````sql
 CREATE TABLE coin_store_diffs (
   id INTEGER NOT NULL PRIMARY KEY,
   obj_id INTEGER NOT NULL,
@@ -475,10 +475,10 @@ CREATE VIEW v_coin_store_objects AS
 	ORDER BY a.grp_id;
 
 .save "events.db"
-```
+````
 
 ^recall-3909fc
 
 2025-10-03 Wk 40 Fri - 10:06 +03:00
 
-Continuing work on this due to the judgment [[000 To materialize grouped events and accumulated objects into tables via software]] is being done in [[004 Investigate options for materializing views into tables using SQL]]
+Continuing work on this due to the judgment [000 To materialize grouped events and accumulated objects into tables via software](../judgments/000%20To%20materialize%20grouped%20events%20and%20accumulated%20objects%20into%20tables%20via%20software.md) is being done in [004 Investigate options for materializing views into tables using SQL](004%20Investigate%20options%20for%20materializing%20views%20into%20tables%20using%20SQL.md)

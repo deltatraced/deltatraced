@@ -19,12 +19,12 @@
 </div>
 
 1. [What?](#what)
-2. [See also](#see-also)
-3. [Mirrors](#mirrors)
-4. [Contributing](#contributing)
-5. [Come Chat](#come-chat)
-6. [Donation](#donation)
-7. [License](#license)
+1. [See also](#see-also)
+1. [Mirrors](#mirrors)
+1. [Contributing](#contributing)
+1. [Come Chat](#come-chat)
+1. [Donation](#donation)
+1. [License](#license)
 
 # What?
 
@@ -46,13 +46,13 @@ Check out my [now](https://codeberg.org/deltatraced/deltatraced/src/branch/webvi
 **Knowledge bases I author,**
 
 1. [deltatraced](https://codeberg.org/deltatraced/deltatraced/src/branch/webview/README.md) **You are here!**
-   - My general-purpose knowledge base for researching, developing, studying, experimenting, and so much more.
+   * My general-purpose knowledge base for researching, developing, studying, experimenting, and so much more.
 1. [dism-exe-notes](https://github.com/dism-exe/dism-exe-notes/tree/webview/lan)
-   - for reverse engineering and analyzing Mega Man Battle Network games!
+   * for reverse engineering and analyzing Mega Man Battle Network games!
 1. [goldensun-notes](https://github.com/FutureFractal/goldensun-notes/tree/webview/lan)
-   - for reverse engineering and analyzing Golden Sun GBA games!
+   * for reverse engineering and analyzing Golden Sun GBA games!
 1. [dbmint-notes](https://github.com/dbmint/dbmint-notes/tree/webview)
-   - for developing intuitive and type correct database tools in Rust!
+   * for developing intuitive and type correct database tools in Rust!
 
 # Mirrors
 
@@ -76,7 +76,7 @@ Feel free to chat with me over email (mailto:lanhikarixx@gmail.com) or join the 
 
 # Donation
 
-If you believe this project or any other work I publish brings value, please consider supporting me at https://buymeacoffee.com/lan22h, 
+If you believe this project or any other work I publish brings value, please consider supporting me at https://buymeacoffee.com/lan22h,
 and let me know about how I've helped or can help you!
 
 # License

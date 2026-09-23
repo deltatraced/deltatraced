@@ -2,11 +2,11 @@
 context_type: entry
 ---
 
-Parent: [[lan/2026/topic/study-math/000 CQTS Intro to Cubical/wikiproc/000 Wiki Proc CQTS Intro to Cubical/000 Wiki Proc CQTS Intro to Cubical]]
+Parent: [lan/2026/topic/study-math/000 CQTS Intro to Cubical/wikiproc/000 Wiki Proc CQTS Intro to Cubical/000 Wiki Proc CQTS Intro to Cubical](../000%20Wiki%20Proc%20CQTS%20Intro%20to%20Cubical.md)
 
-Spawned by: [[lan/2026/topic/study-math/000 CQTS Intro to Cubical/wikiproc/000 Wiki Proc CQTS Intro to Cubical/entry/007 CQTS Solving Thought Stream]]
+Spawned by: [lan/2026/topic/study-math/000 CQTS Intro to Cubical/wikiproc/000 Wiki Proc CQTS Intro to Cubical/entry/007 CQTS Solving Thought Stream](007%20CQTS%20Solving%20Thought%20Stream.md)
 
-Spawned in: [[lan/2026/topic/study-math/000 CQTS Intro to Cubical/wikiproc/000 Wiki Proc CQTS Intro to Cubical/entry/007 CQTS Solving Thought Stream#^spawn-entry-029e13|^spawn-entry-029e13]]
+Spawned in: [^spawn-entry-029e13](007%20CQTS%20Solving%20Thought%20Stream.md#spawn-entry-029e13)
 
 # Journal
 
@@ -14,18 +14,18 @@ Spawned in: [[lan/2026/topic/study-math/000 CQTS Intro to Cubical/wikiproc/000 W
 
 2026-09-13 Wk 37 Sun - 20:08 +03:00
 
-Through [[000 TSW 26 Wk 37#000]],
+Through [000 TSW 26 Wk 37 > 000](../../../../../../main/entry/007%20Thought%20Stream%20Weeks/entry/000%20TSW%2026%20Wk%2037.md#000),
 
 While trying to solve this problem (again for review, not looking back at my solution from some months ago)
 
-```haskell
+````haskell
 +ℕ-≡ℕ-comm : (a b : ℕ) → (a +ℕ b) ≡ℕ (b +ℕ a)
 +ℕ-≡ℕ-comm zero b = ≡ℕ-sym (b +ℕ zero) b (+ℕ-≡ℕ-idr b)
 +ℕ-≡ℕ-comm (suc a) b = {!≡ℕ-rwr _ _ _ (+ℕ-≡ℕ-comm a b)!}
 _ = ≡ℕ-rwr
-```
+````
 
-I ended up writing `_ = ≡ℕ-rwr` So that I can `C-]` into that symbol. It would be nice to have something like neovim's autocomplete always ready, and for C-] to work inside of holes, but at least I can do this to jump to a definition for now.
+I ended up writing `_ = ≡ℕ-rwr` So that I can `C-]` into that symbol. It would be nice to have something like neovim's autocomplete always ready, and for C-\] to work inside of holes, but at least I can do this to jump to a definition for now.
 
 Also since I've learned `_` before it's been so useful at constructing function machinery, focusing on one part at a time, ignoring the others!
 
@@ -33,13 +33,13 @@ Also since I've learned `_` before it's been so useful at constructing function 
 
 We can use `C-.` to check the goal against what we've written in a given hole. It can also be useful to check multiple definitions as we're constructing the definition:
 
-```haskell
+````haskell
 +ℕ-≡ℕ-comm : (a b : ℕ) → (a +ℕ b) ≡ℕ (b +ℕ a)
 +ℕ-≡ℕ-comm zero b = ≡ℕ-sym (b +ℕ zero) b (+ℕ-≡ℕ-idr b)
 +ℕ-≡ℕ-comm (suc a) b = {!+ℕ-≡ℕ-comm a b!}
 +ℕ-≡ℕ-comm (suc a) b = {!≡ℕ-rwr _ _ _ (+ℕ-≡ℕ-comm a b)!}
 _ = ≡ℕ-rwr
-```
+````
 
 Agda-mode will still let us use `C-.` to inspect the duplicate definitions here, it'll just issue an unreachable clause for the last one.
 
@@ -49,7 +49,7 @@ In `/home/lan/src/cloned/gh/CQTS/branches/introduction-to-cubical@solve/lectures
 
 Authors explain:
 
-```
+````
 If $f, g : X → Y$ are two continuous functions between spaces $X$ and
 $Y$ (say, subsets of Euclidean space), then a homotopy $h$ between $f$
 and $g$ is a function $h : [0, 1] × X → Y$ of two variables $h(t, x)$
@@ -59,7 +59,7 @@ $f(x)$ to $g(x)$. By packing these paths together into a single
 function $[0, 1] × X → Y$, the idea is that $h(t, x)$ continuously
 transforms the function $f$ into the function $g$ as $t$ travels from
 $0$ to $1$.
-```
+````
 
 The intuition this wants to capture is that we have some shape `X` at `t=0`, and it is continuously deformed, until it is shape `Y` at `t=1`.
 
@@ -67,27 +67,27 @@ But does this capture the conditions sufficiently enough?
 
 For example, can we not construct a function piecewise such that:
 
-```
+````
 h(t,x) =  {
   @[t=0]:        f(x)
   @[t>0 && t<1]: 0
   @[t=1]:        g(x)
 }
-```
+````
 
 This seems as informative as just constructing
 
-```
+````
 h2(x) = (f(x), g(x))
-```
+````
 
 but I wouldn't think this would show us that the spaces share a homotopy.
 
 Also, later on, we will find that we cannot do case analysis on `i : I`, as this would mean that we can cherry pick what goes on `i0` and `i1`, similar to what I've done here. Instead, we would need to make those derivations by rule. (There are cases where we supply a subcube formula in order to fill the lid with `hcomp`, but even then, we have to be able to derive the corresponding faces.)
 
-And even proving equivalence between two types (or spaces), would require that we find three functions f, g1, g2 such that `f (g1 b) ≡ b` and `g2 (f a) ≡ a`. That is a stronger criteria for equivalence of spaces, because it would mean each space is encodable in the other, and we can prove by encoding then decoding the original message. 
+And even proving equivalence between two types (or spaces), would require that we find three functions f, g1, g2 such that `f (g1 b) ≡ b` and `g2 (f a) ≡ a`. That is a stronger criteria for equivalence of spaces, because it would mean each space is encodable in the other, and we can prove by encoding then decoding the original message.
 
-https://encyclopediaofmath.org/wiki/Homotopy also specifies that homotopy is an equivalence relation. 
+https://encyclopediaofmath.org/wiki/Homotopy also specifies that homotopy is an equivalence relation.
 
 https://aeb.win.tue.nl/at/algtop-3.html Has a similar definitions, although it instead specifies that `X,Y` are topological spaces.
 
@@ -95,7 +95,7 @@ Also note that my piecewise `h(t,x)` can fail to be continuous. h should be a co
 
 2026-09-14 Wk 38 Mon - 04:34 +03:00
 
-```haskell
+````haskell
 open import Agda.Primitive using (
   LevelUniv; 
   Level) renaming (
@@ -117,7 +117,7 @@ data ⊤ : Set where
 
 _ = Set (ℓ-suc (ℓ-suc ℓ-zero))
 _ = I → ⊤
-```
+````
 
 This checks fine with agda and mikan (minus the deprecation of `Set` in mikan).
 
@@ -125,14 +125,14 @@ In `/home/lan/src/cloned/gh/CQTS/branches/introduction-to-cubical@solve/lectures
 
 Authors explain:
 
-```
+````
 However, since we want to discuss paths in any type, there is a
 special rule that for any actual type `A : Type ℓ`, functions `I → A`
 is also an actual type in `Type ℓ`.
 
 _ : Type ℓ-zero
 _ = I → Bool
-```
+````
 
 But even though `⊤` is of `Set ℓ-zero`, that checks. So that check doesn't seem to do much?
 
@@ -140,16 +140,16 @@ But even though `⊤` is of `Set ℓ-zero`, that checks. So that check doesn't s
 
 Oh my bad I wrote
 
-```haskell
+````haskell
 _ = Set (ℓ-suc (ℓ-suc ℓ-zero))
 _ = I → ⊤
-```
+````
 
 Since both have =, I did no type check!
 
 This fails as we expect:
 
-```haskell
+````haskell
 open import Agda.Primitive using (
   LevelUniv; 
   Level) renaming (
@@ -171,9 +171,9 @@ data ⊤ : Set where
 
 _ : Set (ℓ-suc (ℓ-suc ℓ-zero))
 _ = I → ⊤
-```
+````
 
-```
+````
 error: [UnequalTypes]
 The types
   Type
@@ -181,28 +181,28 @@ and
   Type₂
 are not equal
 when checking that the expression I → ⊤ has type Type₂
-```
+````
 
 2026-09-15 Wk 38 Tue - 07:11 +03:00
 
-```haskell
+````haskell
     apⁿ-∘ :
       (f : A → B)
       → (g : B → C)
       → (p : x ≡ y)
       → (apⁿ (g ∘ f) p) ≡ apⁿ g (apⁿ f p)
     apⁿ-∘ f g p i i₁ = g (f (p i₁))
-```
+````
 
 Has issues writing this definition, turns out it is because I put `f` before`g` in the definition of `_∘_`! It should be like this, with `g` first:
 
-```haskell
+````haskell
 _∘_ :
   (g : {a : A} → (b : B a) → C a b)
   → (f : (a : A) → B a)
   → ((a : A) → C a (f a))
 _∘_ g f a = g (f a)
-```
+````
 
 I confirmed the issue when I flipped `(g ∘ f)` and saw that it accepted that.
 
@@ -210,7 +210,7 @@ I confirmed the issue when I flipped `(g ∘ f)` and saw that it accepted that.
 
 In `/home/lan/src/idea/cb/lan22h-experiments/problems-mkn/proj/gh/cqts/introduction-to-cubical/cqts-lect2/src/lect-2-1-paths.agda`,
 
-```haskell
+````haskell
 module _
   {ℓ₁ ℓ₂ : Level}
   {A : Type ℓ₁}
@@ -224,11 +224,11 @@ module _
       where
         h0 : (a : A) → (idfun ∘ f) a ≡ f a
         h0 a = refl
-```
+````
 
 If I don't explicitly mention these types `A B` like this in an anonymous module but instead have them be inferred from the private variables like so:
 
-```haskell
+````haskell
 private
   variable
     ℓ₁ : Level
@@ -244,11 +244,11 @@ private
   where
     h0 : (a : A) → (idfun ∘ f) a ≡ f a
     h0 a = refl
-```
+````
 
 I get the error
 
-```
+````
 error: [UnequalTypes]
 The type
   A
@@ -257,7 +257,7 @@ is not a subtype of
 because:
   one has de Bruijn index 1, the other 5
 when checking that the expression a has type A
-```
+````
 
 --/ 2026-09-16 Wk 38 Wed - 07:51 +03:00
 ::Aside
@@ -267,7 +267,7 @@ They quote de Bruijin for the name `telescope` here: https://agda.readthedocs.io
 
 2026-09-16 Wk 38 Wed - 06:56 +03:00
 
-```haskell
+````haskell
 data ℤˢ : Type where
   posˢ : ℕ → ℤˢ
   negˢ : ℕ → ℤˢ
@@ -278,43 +278,43 @@ sucℤˢ (posˢ a) = posˢ (suc a)
 sucℤˢ (negˢ zero) = posˢ (suc zero)
 sucℤˢ (negˢ (suc a)) = negˢ a
 sucℤˢ (zeroˢ≡ i) = posˢ (suc zero)
-```
+````
 
 --/ 2026-09-16 Wk 38 Wed - 06:57 +03:00
 
-Why is it that `zeroˢ≡` here unpacks to `(zeroˢ≡ i)`? 
+Why is it that `zeroˢ≡` here unpacks to `(zeroˢ≡ i)`?
 
 I think this might have to do with how constructors can be interpreted as denoting new objects rather than as maps. (For example, `suc a` is an object, almost like a named box that contains an `a` in it).
 
 This is different from the `s` in
 
-```haskell
+````haskell
 flip-square :
 	Square A a₀- a₁- a-₀ a-₁
   → Square A a-₀ a-₁ a₀- a₁- 
 flip-square s = {!!}
-```
+````
 
 Here `s` is just a map `I → I → Type`. It doesn't *give* us an `i j`, it's more like a mold with `i j` being like holes/negative prints, or like how a key fits in a keyhole. The map is the keyhole-to-mechanism but not the key! Maybe many keys that fit the defined characteristics can be used.
 
 So it seems we shouldn't interpret `zeroˢ≡ : posˢ zero ≡ negˢ zero` as saying we have a *path* `zeroˢ≡` because paths are maps and maps are negative (they are supplied input), while this is positive (supplying us with an `i`)
 
 PEND
---/ 
+--/
 
 2026-09-16 Wk 38 Wed - 19:28 +03:00
 
 In `/home/lan/src/cloned/gh/CQTS/branches/introduction-to-cubical@solve/lectures/2--Paths-and-Identifications/2-2--Equivalences-and-Path-Algebra.lagda.md`,
 
-```
+````
 Again, thinking of ``Bool`` as being smaller than ``ℕ``, a function is
 a retract when it is describing a way to shrink, or "retract", the
 larger type into the smaller type.
-```
+````
 
 I tried to explain this by writing
 
-```haskell
+````haskell
 -- Given two maps (f : A → B) (g : B → A) and assuming that (size A) ≤ (size B),
 -- f being a retract of g means that g shrinks the type B, or retracts it, to fit in A.
 -- f is called its retract as it undoes this operation, given us back our data in B.
@@ -324,13 +324,13 @@ I tried to explain this by writing
 -- to fit A, rather than the perspective of f curving out a section of B to fit A.
 
 -- f being a retract of g means that g has a section f means that g (f a) ≡ a. 
-```
+````
 
 But then *the* retract is the one doing the shrinking. and it is *f* being the retract, so I gotta flip that in the explanation.
 
 I wanted to show that both perspectives are symmetrical, whether we think of `B` retracting to `A` so that we get a representation or whether `A` curves out a section in `B` to get a representation. Second attempt:
 
-```haskell
+````haskell
 -- Given two maps (f : A → B) (g : B → A) and assuming that (size A) ≤ (size B),
 
 -- f being a retract of g means that g has a section f means that g (f a) ≡ a. 
@@ -340,9 +340,9 @@ I wanted to show that both perspectives are symmetrical, whether we think of `B`
 
 -- We can also describe this as f (being the section), then we would say it (f a) curves
 -- a section in B that represents A via g: g (f a) ≡ a.
-```
+````
 
-I also am renaming the `isSection`, `isRetract`, and consequent records from the CQTS lecture notes. It seems more clear to me to use `_hasSection_` and `_isRetractOf_`. Last time I worked with `isSection`, I had to keep noting that `isSection f g` means `g is a section of f`. I don't have to when I write `f hasSection g`. And I know f is the retract when I write `f isRetractOf g`. 
+I also am renaming the `isSection`, `isRetract`, and consequent records from the CQTS lecture notes. It seems more clear to me to use `_hasSection_` and `_isRetractOf_`. Last time I worked with `isSection`, I had to keep noting that `isSection f g` means `g is a section of f`. I don't have to when I write `f hasSection g`. And I know f is the retract when I write `f isRetractOf g`.
 
 --/ 2026-09-16 Wk 38 Wed - 19:38 +03:00
 
@@ -355,7 +355,7 @@ The records I chose for are also themselves close to the proofs `hasSection` and
 
 In `/home/lan/src/cloned/gh/CQTS/branches/introduction-to-cubical@solve/lectures/2--Paths-and-Identifications/2-2--Equivalences-and-Path-Algebra.lagda.md`,
 
-```
+````
 For this reversed situation, we say that `f : A → B` is a *retract*
 when it *has* a section.
 
@@ -365,7 +365,7 @@ that `f` is an *equivalence*.
 
 `g'` faithfully represents elements of `B` as elements of `A` (which we
 know because it has a section `f`, i.e. is a retract of `f`). 
-```
+````
 
 So `g'` is the retract *because* it has a section `f`.  It's not `f` that's the retract, they called the retract `f` up there, and I'm not sure if this is a mistake or they just wanted a generic map to refer to when they wrote that.
 
@@ -373,7 +373,7 @@ I'm renaming `isRetractOf` for `hasRetract`. What we want is something like `g' 
 
 Here's my `attempt 3`.
 
-```haskell
+````haskell
 -- Given three maps (f : A → B) (g : B → A) (g' : B → A),
 
 -- `g' <-hasRetract- f -hasSection-> g`
@@ -397,7 +397,7 @@ Here's my `attempt 3`.
 -- (Size B) ≥ (Size A).
 -- In this case, we say f is an equivalence. It establishes that A and B are
 -- equivalent and can be represented in one another.
-```
+````
 
 --/
 
@@ -411,22 +411,21 @@ I'm choosing a-top and a-bot because from afar, even if the exact mark is unclea
 
 The symmetry of a-bot and a-top could also help to align it with a at i0 and a at i1.
 
-```haskell
+````haskell
     J :
         (Q : (a : A) → a̭ ≡ a → Type ℓ)
       → (r : Q a̭ refl)
       → (p : a̭ ≡ â)
       → Q â p
     J Q r p = transport (J-line Q p) r
-```
+````
 
 Like in here, `(p : a̭ ≡ â)`.
 
 Though maybe let's use `a̬` instead so `a-bottom` actually has an inverted hat. I guess we can call it `a-v` too, and `a-hat` for top.
 
-`a̬a̭âǎ` So I guess we even got 4 distinctions here. `a-v`, `a-fro-hat`, `a-hat`, `a-to-v`? 
+`a̬a̭âǎ` So I guess we even got 4 distinctions here. `a-v`, `a-fro-hat`, `a-hat`, `a-to-v`?
 
 2026-09-20 Wk 38 Sun - 07:54 +03:00
 
 A telescope in agda is the list of parameters, where each following the last can be dependant on it. I think in the docs they said it's called a telescope because it's like the instrument, where each layer depends on the last being inserted.
-

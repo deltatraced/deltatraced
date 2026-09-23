@@ -1,15 +1,15 @@
 ---
-parent: "[[000 Experiment with Rocq]]"
-spawned_by: "[[002 Looking into Software Foundations tutorial]]"
+parent: '[[000 Experiment with Rocq]]'
+spawned_by: '[[002 Looking into Software Foundations tutorial]]'
 context_type: task
 status: pend
 ---
 
-Parent: [[000 Experiment with Rocq]]
+Parent: [000 Experiment with Rocq](../000%20Experiment%20with%20Rocq.md)
 
-Spawned by: [[002 Looking into Software Foundations tutorial]]
+Spawned by: [002 Looking into Software Foundations tutorial](../entries/002%20Looking%20into%20Software%20Foundations%20tutorial.md)
 
-Spawned in: [[002 Looking into Software Foundations tutorial#^spawn-task-aa36aa|^spawn-task-aa36aa]]
+Spawned in: [^spawn-task-aa36aa](../entries/002%20Looking%20into%20Software%20Foundations%20tutorial.md#spawn-task-aa36aa)
 
 # 1 Journal
 
@@ -27,9 +27,8 @@ Not sure how to prove `mult_cancel` $\forall a\ b\ c \in \mathbb{N}, a \cdot b =
 
 2026-02-06 Wk 6 Fri - 16:05 +03:00
 
-After generalizing the dependent c, `IHb'` is as we expect: `IHb' : forall c : nat, S a' * b' = S a' * c -> b' = c \/ S a' = 0`. This really should apply no matter your choice of `c`. 
+After generalizing the dependent c, `IHb'` is as we expect: `IHb' : forall c : nat, S a' * b' = S a' * c -> b' = c \/ S a' = 0`. This really should apply no matter your choice of `c`.
 
 2026-02-06 Wk 6 Fri - 16:33 +03:00
 
 The `destruct (IHb' c' H0)` then fits `c'` to the generalized $\forall c : nat$ in the inductive hypothesis, and in doing that, `H0` fits its form exactly, so then we only need to prove the right hand side of its implication.
-

@@ -1,10 +1,8 @@
-
 # 1 Journal
 
+* [x] 
 
-- [x]
-
-```sh
+````sh
 #!/bin/bash
 
 script_dir=$(dirname "$(readlink -f "$0")")
@@ -20,7 +18,7 @@ pushd $script_dir
 build mountdrag
 
 popd
-```
+````
 
 `--bundle --format=iife` puts everything inside a block, so `mainloop` is not accessible to the html file.
 
@@ -30,19 +28,19 @@ popd
 
 We could just remove the invocations.
 
-```js
+````js
 (() => {
 [...]
  })();
  
-```
+````
 
 Remove those lines for `--format=iife`.
 
-```sh
+````sh
 cat build/$basename.js | python3 -c "import sys; lines = sys.stdin.read().split('\n'); print('\n'.join(lines[1:-2]))" > build/tmp
 cat build/tmp > build/$basename.js
 rm build/tmp
-```
+````
 
 Not a pretty workaround with the tmp file, but we can't cat and then file write simultaneously here.

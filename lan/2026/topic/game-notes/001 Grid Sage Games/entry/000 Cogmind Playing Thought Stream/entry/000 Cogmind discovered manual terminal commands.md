@@ -2,11 +2,11 @@
 context_type: entry
 ---
 
-Parent: [[lan/2026/topic/game-notes/001 Grid Sage Games/entry/000 Cogmind Playing Thought Stream/000 Cogmind Playing Thought Stream]]
+Parent: [lan/2026/topic/game-notes/001 Grid Sage Games/entry/000 Cogmind Playing Thought Stream/000 Cogmind Playing Thought Stream](../000%20Cogmind%20Playing%20Thought%20Stream.md)
 
-Spawned by: [[lan/2026/topic/game-notes/001 Grid Sage Games/entry/000 Cogmind Playing Thought Stream/000 Cogmind Playing Thought Stream]]
+Spawned by: [lan/2026/topic/game-notes/001 Grid Sage Games/entry/000 Cogmind Playing Thought Stream/000 Cogmind Playing Thought Stream](../000%20Cogmind%20Playing%20Thought%20Stream.md)
 
-Spawned in: [[lan/2026/topic/game-notes/001 Grid Sage Games/entry/000 Cogmind Playing Thought Stream/000 Cogmind Playing Thought Stream#^spawn-entry-8635f9|^spawn-entry-8635f9]]
+Spawned in: [^spawn-entry-8635f9](../000%20Cogmind%20Playing%20Thought%20Stream.md#spawn-entry-8635f9)
 
 # Journal
 

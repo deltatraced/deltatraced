@@ -1,30 +1,30 @@
 ---
-parent: "[[000 introduction-to-cubical archive]]"
-spawned_by: "[[000 Spawn Logs for intro to cubical]]"
+parent: '[[000 introduction-to-cubical archive]]'
+spawned_by: '[[000 Spawn Logs for intro to cubical]]'
 context_type: entry
 ---
 
-Parent: [[000 introduction-to-cubical archive]]
+Parent: [000 introduction-to-cubical archive](../000%20introduction-to-cubical%20archive.md)
 
-Spawned by: [[000 Spawn Logs for intro to cubical]]
+Spawned by: [000 Spawn Logs for intro to cubical](000%20Spawn%20Logs%20for%20intro%20to%20cubical.md)
 
-Spawned in: [[000 Spawn Logs for intro to cubical#^spawn-entry-546a45|^spawn-entry-546a45]]
+Spawned in: [^spawn-entry-546a45](000%20Spawn%20Logs%20for%20intro%20to%20cubical.md#spawn-entry-546a45)
 
 ---
 
 # 1 Problem
 
-```haskell
+````haskell
 ×-map-≃-underlying : {A A' B B' : Type ℓ} → (f : A ≃ A') → (g : B ≃ B')
   → (×-map-≃-ua f g) .map ≡ ×-map (f .map) (g .map)
 ×-map-≃-underlying f g = {!!}
-```
+````
 
 # 2 Elaboration Note 1
 
 `(*1)`
 
-```haskell
+````haskell
 (×-map-≃-ua f g) .map                                ≡⟨ refl {- unfold ×-map-≃-ua -} ⟩
 ---                (au (×-map-≡ (ua f) (ua g))) .map ≡⟨ sym P₀ ⟩ 
 --- (transport (ua (au (×-map-≡ (ua f) (ua g)))))    ≡⟨ P₀ ⟩ 
@@ -36,11 +36,11 @@ Spawned in: [[000 Spawn Logs for intro to cubical#^spawn-entry-546a45|^spawn-ent
     P₀ : (transport (ua (au (×-map-≡ (ua f) (ua g))))) ≡
                         (au (×-map-≡ (ua f) (ua g)) .map)
     P₀ i (a , b) = ua-comp ((au (×-map-≡ (ua f) (ua g)))) (a , b) i
-```
+````
 
 Use of `ua-comp` allows us to cancel out a `transport (ua (...))`. The above will be simplified to the following in the code:
 
-```haskell
+````haskell
 (×-map-≃-ua f g) .map                                ≡⟨ refl {- unfold ×-map-≃-ua -} ⟩
                    (au (×-map-≡ (ua f) (ua g))) .map ≡⟨ refl {- elaborated thru ua-comp (*1) -} ⟩ 
     (transport         (×-map-≡ (ua f) (ua g)))      ≡⟨ ({!!})⟩ 
@@ -49,37 +49,37 @@ Use of `ua-comp` allows us to cancel out a `transport (ua (...))`. The above wil
     P₀ : (transport (ua (au (×-map-≡ (ua f) (ua g))))) ≡
                         (au (×-map-≡ (ua f) (ua g)) .map)
     P₀ i (a , b) = ua-comp ((au (×-map-≡ (ua f) (ua g)))) (a , b) i
-```
+````
 
 # 3 Closed Paths
 
 ## 3.1 Elaboration via P0 from refl
 
-```haskell
+````haskell
                (×-map-≃-ua f g)             .map            ≡⟨ refl {- unfold ×-map-≃-ua -} ⟩
                (au (×-map-≡ (ua f) (ua g))) .map            ≡⟨ refl {- elaborated thru ua-comp (*1) -} ⟩ 
     (transport     (×-map-≡ (ua f) (ua g)))                 ≡⟨ (λ i (a , b) → {!!})⟩ 
-```
+````
 
 ## 3.2 Sym P0 from refl
 
-```haskell
+````haskell
                    (×-map-≃-ua f g)               .map     ≡⟨ refl {- unfold ×-map-≃-ua -} ⟩
                    (au (×-map-≡ (ua f) (ua g)))   .map     ≡⟨ sym P₀ ⟩ 
     (transport (ua (au (×-map-≡ (ua f) (ua g)))))          ≡⟨ {!!} ⟩ 
-```
+````
 
 ## 3.3 Path from Goal
 
-```haskell
+````haskell
     ×-map (transport (ua f)) (transport (ua g))            ≡⟨ (λ i (a , b) → ×-map (λ a' → ua-comp f a' i) 
                                                                                    (λ b' → ua-comp g b' i) ((a , b))) ⟩ 
     ×-map (f .map)           (g .map)                      ∎
-```
+````
 
 # 4 Proof
 
-```haskell
+````haskell
 ×-map-≃-underlying : {ℓ₁ : Level} → {A A' B B' : Type ℓ₁} → (f : A ≃ A') → (g : B ≃ B')
   → (×-map-≃-ua f g) .map ≡ ×-map (f .map) (g .map)
 ×-map-≃-underlying {ℓ₁ = ℓ₁} {A = A} {A' = A'} {B = B} {B' = B'} f g =
@@ -164,4 +164,4 @@ Use of `ua-comp` allows us to cancel out a `transport (ua (...))`. The above wil
           (transport-fixing (λ i₁ → B ) i0 
                                                   b)))))    ≡⟨ refl {- elaborated from below -} ⟩ 
           transport (×-map-≡ (ua f) (ua g)) (a , b) .snd    ∎
-```
+````

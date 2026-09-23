@@ -1,7 +1,6 @@
-
-| Created              | Updated |
-| -------------------- | ------- |
-| 2025-10-02 Wk 40 Thu |         |
+|Created|Updated|
+|-------|-------|
+|2025-10-02 Wk 40 Thu||
 
 # 1 Objective
 
@@ -19,7 +18,7 @@ Notice that watering the plants is an activity with a clear command (go water) a
 
 Think of context types as different grammars of operation. Tasks are operative and have a clear finish line, regardless of context.
 
-I may not know how much to water the plant. This is also its own context. We need to do research, and often with research we come out with new knowledge. It can be broader than a task because by the end we may find our initial inquiry was incomplete. We call this context type an *investigation*. There are more context types which will be summarized in the appendix: [[#8.1 Current Context Types|Current Context Types]].
+I may not know how much to water the plant. This is also its own context. We need to do research, and often with research we come out with new knowledge. It can be broader than a task because by the end we may find our initial inquiry was incomplete. We call this context type an *investigation*. There are more context types which will be summarized in the appendix: [Current Context Types](002%20Atomic%20Contexts%20and%20Respect.md#81-current-context-types).
 
 ## 2.2 Atomicity
 
@@ -114,8 +113,8 @@ Using sequential reduction, I can follow a process that leads from my project fe
 We can illustrate this as follows:
 
 1. Work on feature for my project, encounter an issue. Spawn an issue context.
-2. In the issue, we learn about a limitation in one of the open source tools I am using, so we spawn a context to reproduce and report it.
-3. After reproducing and reporting, we spawn a new context of attempting to fix the problem ourselves or extend the open source tool. If successful, we issue a PR. Now that we're done, we climb back up the stack to (2) to mark out issue as temporarily resolved as we can use our fork until it is merged as a resolution, and so we climb back up to (1), where we continue feature development.
+1. In the issue, we learn about a limitation in one of the open source tools I am using, so we spawn a context to reproduce and report it.
+1. After reproducing and reporting, we spawn a new context of attempting to fix the problem ourselves or extend the open source tool. If successful, we issue a PR. Now that we're done, we climb back up the stack to (2) to mark out issue as temporarily resolved as we can use our fork until it is merged as a resolution, and so we climb back up to (1), where we continue feature development.
 
 # 7 Conclusion
 
@@ -143,14 +142,14 @@ Context types are grammars of operation for activities. They help us decompose c
 
 Below are the current types:
 
-| Context Type  | Meaning                                                                                                                                                                                     |
-| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Entry         | Broad notes on a given topic. Could capture resources or takeaways                                                                                                                          |
-| Task          | Operative activities to do, with a clear signal for completion                                                                                                                              |
-| Issue         | An issue encountered. Describe how the issue can be reproduced. Its completion is marked by the resolution of that issue.                                                                   |
-| HowTo         | A knowledge check, often performed using a search engine or consulting documentation. Checking how to do something. Completes when we've acquired that knowledge.                           |
-| Investigation | Research-oriented inquiries or finding causal relationships such as in debugging. Our understanding can evolve during an investigation, so its signal to completion may evolve as we do it. |
-| Idea          | Possibilities. Often written in the form "Could do X". These are possible things to do, inspirations, brainstorming sessions, and likewise.                                                 |
-| Inference     | Key realizations and conclusions drawn. These can source other context types and provide learnings that crystalize after-the-fact.                                                          |
-| Judgment      | Key decisions and judgments made with supporting reasons justifying them.                                                                                                                   |
-| Concept       | Definitions and related consequences and proofs. Concepts only refer to or spawn other concepts. Applications may reference them.                                                           |
+|Context Type|Meaning|
+|------------|-------|
+|Entry|Broad notes on a given topic. Could capture resources or takeaways|
+|Task|Operative activities to do, with a clear signal for completion|
+|Issue|An issue encountered. Describe how the issue can be reproduced. Its completion is marked by the resolution of that issue.|
+|HowTo|A knowledge check, often performed using a search engine or consulting documentation. Checking how to do something. Completes when we've acquired that knowledge.|
+|Investigation|Research-oriented inquiries or finding causal relationships such as in debugging. Our understanding can evolve during an investigation, so its signal to completion may evolve as we do it.|
+|Idea|Possibilities. Often written in the form "Could do X". These are possible things to do, inspirations, brainstorming sessions, and likewise.|
+|Inference|Key realizations and conclusions drawn. These can source other context types and provide learnings that crystalize after-the-fact.|
+|Judgment|Key decisions and judgments made with supporting reasons justifying them.|
+|Concept|Definitions and related consequences and proofs. Concepts only refer to or spawn other concepts. Applications may reference them.|

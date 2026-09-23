@@ -1,14 +1,14 @@
 ---
-parent: "[[000 Getting Started for LCR]]"
-spawned_by: "[[000 Getting Started for LCR]]"
+parent: '[[000 Getting Started for LCR]]'
+spawned_by: '[[000 Getting Started for LCR]]'
 context_type: entry
 ---
 
-Parent: [[000 Getting Started for LCR]]
+Parent: [000 Getting Started for LCR](../000%20Getting%20Started%20for%20LCR.md)
 
-Spawned by: [[000 Getting Started for LCR]]
+Spawned by: [000 Getting Started for LCR](../000%20Getting%20Started%20for%20LCR.md)
 
-Spawned in: [[000 Getting Started for LCR#^spawn-entry-feb170|^spawn-entry-feb170]]
+Spawned in: [^spawn-entry-feb170](../000%20Getting%20Started%20for%20LCR.md#spawn-entry-feb170)
 
 # 1 Journal
 
@@ -16,12 +16,12 @@ Spawned in: [[000 Getting Started for LCR#^spawn-entry-feb170|^spawn-entry-feb17
 
 I would like to show the current directory with a tree format. This article (https://www.geeksforgeeks.org/linux-unix/tree-command-unixlinux/) seems to have the right tool.
 
-```sh
+````sh
 sudo apt-get install tree
 tree -a .
-```
+````
 
-```sh
+````sh
 # in /home/lan/src/cloned/gh/LanHikari22/lan-exp-scripts/microproj/2026/000-LabeledCubeRendering/agda
 tree -a . | grep 'agda'
 
@@ -69,4 +69,4 @@ tree -a . | grep 'agda'
     │   ├── Primitive.lagda.md
     │   └── Univalence.agda
     └── main.agda
-```
+````

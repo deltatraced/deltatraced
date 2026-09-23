@@ -1,27 +1,29 @@
 ---
-parent: "[[000 Getting Started for LCR]]"
-spawned_by: "[[000 Compile cubical agda to an executable using ctqs sources]]"
+parent: '[[000 Getting Started for LCR]]'
+spawned_by: '[[000 Compile cubical agda to an executable using ctqs sources]]'
 context_type: entry
 ---
 
-Parent: [[000 Getting Started for LCR]]
+Parent: [000 Getting Started for LCR](../000%20Getting%20Started%20for%20LCR.md)
 
-Spawned by: [[000 Compile cubical agda to an executable using ctqs sources]]
+Spawned by: [000 Compile cubical agda to an executable using ctqs sources](../task/000%20Compile%20cubical%20agda%20to%20an%20executable%20using%20ctqs%20sources.md)
 
-Spawned in: [[000 Compile cubical agda to an executable using ctqs sources#^spawn-entry-7d7dae|^spawn-entry-7d7dae]]
+Spawned in: [^spawn-entry-7d7dae](../task/000%20Compile%20cubical%20agda%20to%20an%20executable%20using%20ctqs%20sources.md#spawn-entry-7d7dae)
 
 2026-05-10 Wk 19 Sun - 00:54 +03:00
+
 # 1 Important part
 
-```
+````
 [...]
 Compiling Relation.Nullary.Reflects in /home/lan/.config/agda/agda-stdlib-2.1/_build/2.6.4.3/agda/src/Relation/Nullary/Reflects.agdai to /home/lan/src/cloned/gh/LanHikari22/lan-exp-scripts/microproj/2026/000-LabeledCubeRendering/agda-pj/src/MAlonzo/Code/Relation/Nullary/Reflects.hs
 An internal error has occurred. Please report this as a bug.
 Location of the error: __IMPOSSIBLE_VERBOSE__, called at src/full/Agda/TypeChecking/Monad/Signature.hs:846:32 in Agda-2.6.4.3-H9LUHq9qpxB9HnxihlaGmY:Agda.TypeChecking.Monad.Signature
-```
+````
+
 # 2 Full
 
-```
+````
 Checking main (/home/lan/src/cloned/gh/LanHikari22/lan-exp-scripts/microproj/2026/000-LabeledCubeRendering/agda-pj/src/main.agda).
 Compiling Agda.Primitive in /usr/share/libghc-agda-dev/lib/prim/_build/2.6.4.3/agda/Agda/Primitive.agdai to /home/lan/src/cloned/gh/LanHikari22/lan-exp-scripts/microproj/2026/000-LabeledCubeRendering/agda-pj/src/MAlonzo/Code/Agda/Primitive.hs
 Compiling Agda.Builtin.IO in /usr/share/libghc-agda-dev/lib/prim/_build/2.6.4.3/agda/Agda/Builtin/IO.agdai to /home/lan/src/cloned/gh/LanHikari22/lan-exp-scripts/microproj/2026/000-LabeledCubeRendering/agda-pj/src/MAlonzo/Code/Agda/Builtin/IO.hs
@@ -48,4 +50,4 @@ Compiling Relation.Nullary.Recomputable in /home/lan/.config/agda/agda-stdlib-2.
 Compiling Relation.Nullary.Reflects in /home/lan/.config/agda/agda-stdlib-2.1/_build/2.6.4.3/agda/src/Relation/Nullary/Reflects.agdai to /home/lan/src/cloned/gh/LanHikari22/lan-exp-scripts/microproj/2026/000-LabeledCubeRendering/agda-pj/src/MAlonzo/Code/Relation/Nullary/Reflects.hs
 An internal error has occurred. Please report this as a bug.
 Location of the error: __IMPOSSIBLE_VERBOSE__, called at src/full/Agda/TypeChecking/Monad/Signature.hs:846:32 in Agda-2.6.4.3-H9LUHq9qpxB9HnxihlaGmY:Agda.TypeChecking.Monad.Signature
-```
+````

@@ -1,15 +1,15 @@
 ---
-parent: "[[000 Getting Started for LCR]]"
-spawned_by: "[[002 Setup openGL rendering app in rust and do some dev]]"
+parent: '[[000 Getting Started for LCR]]'
+spawned_by: '[[002 Setup openGL rendering app in rust and do some dev]]'
 context_type: task
 status: todo
 ---
 
-Parent: [[000 Getting Started for LCR]]
+Parent: [000 Getting Started for LCR](../000%20Getting%20Started%20for%20LCR.md)
 
-Spawned by: [[002 Setup openGL rendering app in rust and do some dev]]
+Spawned by: [002 Setup openGL rendering app in rust and do some dev](002%20Setup%20openGL%20rendering%20app%20in%20rust%20and%20do%20some%20dev.md)
 
-Spawned in: [[002 Setup openGL rendering app in rust and do some dev#^spawn-task-1eea12|^spawn-task-1eea12]]
+Spawned in: [^spawn-task-1eea12](002%20Setup%20openGL%20rendering%20app%20in%20rust%20and%20do%20some%20dev.md#spawn-task-1eea12)
 
 # 1 Journal
 
@@ -23,11 +23,11 @@ From https://www.wikihow.com/Install-TrueType-Fonts-on-Ubuntu,
 
 From https://askubuntu.com/a/384560,
 
-- put `*.ttf` font in ~/.fonts then run `fc-cache -fv`
+* put `*.ttf` font in ~/.fonts then run `fc-cache -fv`
 
-There is also fonts in `/usr/share/fonts/truetype/` for me. 
+There is also fonts in `/usr/share/fonts/truetype/` for me.
 
-```sh
+````sh
 lsb_release -a
 
 # out
@@ -36,24 +36,24 @@ Distributor ID: Ubuntu
 Description:    Ubuntu 25.04
 Release:        25.04
 Codename:       plucky
-```
+````
 
 2026-05-21 Wk 21 Thu - 05:09 +03:00
 
 [gh harfbuzz/ttf-parser](https://github.com/harfbuzz/ttf-parser)
 
-[fontspace.com open-source](https://www.fontspace.com/category/Open-source), 
+[fontspace.com open-source](https://www.fontspace.com/category/Open-source),
 
-Let's install `Asana-Math`. 
+Let's install `Asana-Math`.
 
 Installing via gui had it routed to `/home/lan/.local/share/fonts/Asana-Math.ttf`.
 
 But it can also be put in `~/.font` and then installed with `fc-cache -fv` like the above instructions.
 
-```sh
+````sh
 # in /home/lan/src/cloned/gh/deltachives/labeled-cube-rendering-2026-m000/rs
 cargo add ttf_parser
-```
+````
 
 2026-05-21 Wk 21 Thu - 07:22 +03:00
 
@@ -71,14 +71,14 @@ From [reddit keyvalue order](https://www.reddit.com/r/learnrust/comments/1di2eb2
 
 We can use this to get the glyph id for a given character.
 
-```rust
+````rust
 let face = ttf_parser::Face::parse(&font_data, 0)?;
 face.glyph_index('A')
-```
+````
 
 2026-05-21 Wk 21 Thu - 09:45 +03:00
 
-```rust
+````rust
 struct Builder(String);
 
 // as per `face.outline_glyph` example
@@ -125,17 +125,16 @@ fn example_render_image_of_char(face: &ttf_parser::Face) -> LcrResult<()> {
 
     Ok(())
 }
-```
+````
 
-```
+````
 font_path: /home/lan/.fonts/Asana-Math.ttf
 builder.0: M 408 700 L 650 132 Q 676 71 689.5 52 Q 703 33 722 30 L 756 27 L 756 -3 Q 702 -1 678.5 -0.5 Q 655 0 647 0 Q 639 0 629 0 Q 621 0 612.5 0 Q 604 0 578 -0.5 Q 552 -1 490 -3 L 490 27 L 537 30 Q 578 33 578 50 Q 578 57 574 70 Q 570 83 557 114 L 511 229 L 223 229 L 160 56 Q 160 34 208 30 L 245 27 L 245 -3 Q 191 -1 168 -0.5 Q 145 0 138 0 Q 131 0 124 0 Q 116 0 109 0 Q 102 0 82 -0.5 Q 62 -1 15 -3 L 15 27 L 52 30 Q 87 33 106 79 L 376 700 L 408 700 Z M 240 269 L 493 269 L 367 567 L 240 269 Z
 bbox: Rect { x_min: 15, y_min: -3, x_max: 756, y_max: 700 }
-```
+````
 
 So we're able to draw a given letter. Now we need to turn this information into a visual format.
 
-- [stackoveflow post](https://stackoverflow.com/questions/71964574/fonttools-how-to-convert-glyphcoordinates-object-into-a-list-of-linear-and-quad) 
-	- $\to$ [jdhao.github.io post on bezier curves](https://jdhao.github.io/2018/11/27/font_shape_mathematics_bezier_curves/)
-		- $\to$ [microsoft opentype spec](https://learn.microsoft.com/en-us/typography/opentype/spec/ttch01)
-
+* [stackoveflow post](https://stackoverflow.com/questions/71964574/fonttools-how-to-convert-glyphcoordinates-object-into-a-list-of-linear-and-quad)
+  * $\to$ [jdhao.github.io post on bezier curves](https://jdhao.github.io/2018/11/27/font_shape_mathematics_bezier_curves/)
+    * $\to$ [microsoft opentype spec](https://learn.microsoft.com/en-us/typography/opentype/spec/ttch01)

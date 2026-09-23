@@ -1,20 +1,19 @@
 # 1 Time Summary – 000 Implement the Event Accumulator
 
-| Note/Heading | Time Spent |
-|--------------|------------|
-| **Total** | **27h 8m 34s** |
-| [[000 Implement the Event Accumulator]] | **27h 8m 34s** |
-| &nbsp;&nbsp;&nbsp;&nbsp;[[004 Investigate options for materializing views into tables using SQL]] | 5h 7m 12s |
-| &nbsp;&nbsp;&nbsp;&nbsp;[[002 Investigate group by logic for frame and span to include up to span]] | 3h 53m 54s |
-| &nbsp;&nbsp;&nbsp;&nbsp;[[006 Using macro_rules to automate event and hist creation]] | 3h 37m 31s |
-| &nbsp;&nbsp;&nbsp;&nbsp;[[001 Create coin table events to experiment with aggregation being in views]] | 3h 31m 46s |
-| &nbsp;&nbsp;&nbsp;&nbsp;[[001 Reading through lukaswirth.dev decl-macros]] | 3h 0m 58s |
-| &nbsp;&nbsp;&nbsp;&nbsp;[[002 Add event accumulation events through diesel]] | 1h 44m 42s |
-| &nbsp;&nbsp;&nbsp;&nbsp;[[002 Creating a basic table duplicator with recursive CTE in sqlite3]] | 1h 30m 42s |
-| &nbsp;&nbsp;&nbsp;&nbsp;[[005 Model coin_store_hist and related in diesel]] | 1h 23m 8s |
-| &nbsp;&nbsp;&nbsp;&nbsp;[[004 Choosing accumulations or events as keys in events]] | 0h 57m 55s |
-| &nbsp;&nbsp;&nbsp;&nbsp;[[001 Creating a basic counter with a recursive CTE in sqlite3]] | 0h 46m 22s |
-| &nbsp;&nbsp;&nbsp;&nbsp;[[000 To materialize grouped events and accumulated objects into tables via software]] | 0h 43m 32s |
-| &nbsp;&nbsp;&nbsp;&nbsp;[[003 Create a natural numbers table and group by divisibility up to N]] | 0h 39m 24s |
-| &nbsp;&nbsp;&nbsp;&nbsp;[[000 Create sqlite3 dbs from sql script]] | 0h 11m 28s |
-
+|Note/Heading|Time Spent|
+|------------|----------|
+|**Total**|**27h 8m 34s**|
+|[000 Implement the Event Accumulator](../../../../../../lan/archived/2026-05-21_2025/microproj/001%20Rust%20Diesel%20Event%20Sourcing/tasks/2025/000%20Implement%20the%20Event%20Accumulator/000%20Implement%20the%20Event%20Accumulator.md)|**27h 8m 34s**|
+|    [004 Investigate options for materializing views into tables using SQL](../../../../../../lan/archived/2026-05-21_2025/microproj/001%20Rust%20Diesel%20Event%20Sourcing/tasks/2025/000%20Implement%20the%20Event%20Accumulator/investigations/004%20Investigate%20options%20for%20materializing%20views%20into%20tables%20using%20SQL.md)|5h 7m 12s|
+|    [002 Investigate group by logic for frame and span to include up to span](../../../../../../lan/archived/2026-05-21_2025/microproj/001%20Rust%20Diesel%20Event%20Sourcing/tasks/2025/000%20Implement%20the%20Event%20Accumulator/investigations/002%20Investigate%20group%20by%20logic%20for%20frame%20and%20span%20to%20include%20up%20to%20span.md)|3h 53m 54s|
+|    [006 Using macro_rules to automate event and hist creation](../../../../../../lan/archived/2026-05-21_2025/microproj/001%20Rust%20Diesel%20Event%20Sourcing/tasks/2025/000%20Implement%20the%20Event%20Accumulator/tasks/006%20Using%20macro_rules%20to%20automate%20event%20and%20hist%20creation.md)|3h 37m 31s|
+|    [001 Create coin table events to experiment with aggregation being in views](../../../../../../lan/archived/2026-05-21_2025/microproj/001%20Rust%20Diesel%20Event%20Sourcing/tasks/2025/000%20Implement%20the%20Event%20Accumulator/tasks/001%20Create%20coin%20table%20events%20to%20experiment%20with%20aggregation%20being%20in%20views.md)|3h 31m 46s|
+|    [001 Reading through lukaswirth.dev decl-macros](../../../../../../lan/archived/2026-05-21_2025/microproj/001%20Rust%20Diesel%20Event%20Sourcing/tasks/2025/000%20Implement%20the%20Event%20Accumulator/entries/001%20Reading%20through%20lukaswirth.dev%20decl-macros.md)|3h 0m 58s|
+|    [002 Add event accumulation events through diesel](../../../../../../lan/archived/2026-05-21_2025/microproj/001%20Rust%20Diesel%20Event%20Sourcing/tasks/2025/000%20Implement%20the%20Event%20Accumulator/tasks/002%20Add%20event%20accumulation%20events%20through%20diesel.md)|1h 44m 42s|
+|    [002 Creating a basic table duplicator with recursive CTE in sqlite3](../../../../../../lan/archived/2026-05-21_2025/microproj/001%20Rust%20Diesel%20Event%20Sourcing/tasks/2025/000%20Implement%20the%20Event%20Accumulator/howtos/002%20Creating%20a%20basic%20table%20duplicator%20with%20recursive%20CTE%20in%20sqlite3.md)|1h 30m 42s|
+|    [005 Model coin_store_hist and related in diesel](../../../../../../lan/archived/2026-05-21_2025/microproj/001%20Rust%20Diesel%20Event%20Sourcing/tasks/2025/000%20Implement%20the%20Event%20Accumulator/tasks/005%20Model%20coin_store_hist%20and%20related%20in%20diesel.md)|1h 23m 8s|
+|    [004 Choosing accumulations or events as keys in events](../../../../../../lan/archived/2026-05-21_2025/microproj/001%20Rust%20Diesel%20Event%20Sourcing/tasks/2025/000%20Implement%20the%20Event%20Accumulator/tasks/004%20Choosing%20accumulations%20or%20events%20as%20keys%20in%20events.md)|0h 57m 55s|
+|    [001 Creating a basic counter with a recursive CTE in sqlite3](../../../../../../lan/archived/2026-05-21_2025/microproj/001%20Rust%20Diesel%20Event%20Sourcing/tasks/2025/000%20Implement%20the%20Event%20Accumulator/howtos/001%20Creating%20a%20basic%20counter%20with%20a%20recursive%20CTE%20in%20sqlite3.md)|0h 46m 22s|
+|    [000 To materialize grouped events and accumulated objects into tables via software](../../../../../../lan/archived/2026-05-21_2025/microproj/001%20Rust%20Diesel%20Event%20Sourcing/tasks/2025/000%20Implement%20the%20Event%20Accumulator/judgments/000%20To%20materialize%20grouped%20events%20and%20accumulated%20objects%20into%20tables%20via%20software.md)|0h 43m 32s|
+|    [003 Create a natural numbers table and group by divisibility up to N](../../../../../../lan/archived/2026-05-21_2025/microproj/001%20Rust%20Diesel%20Event%20Sourcing/tasks/2025/000%20Implement%20the%20Event%20Accumulator/investigations/003%20Create%20a%20natural%20numbers%20table%20and%20group%20by%20divisibility%20up%20to%20N.md)|0h 39m 24s|
+|    [000 Create sqlite3 dbs from sql script](../../../../../../lan/archived/2026-05-21_2025/microproj/001%20Rust%20Diesel%20Event%20Sourcing/tasks/2025/000%20Implement%20the%20Event%20Accumulator/howtos/000%20Create%20sqlite3%20dbs%20from%20sql%20script.md)|0h 11m 28s|
