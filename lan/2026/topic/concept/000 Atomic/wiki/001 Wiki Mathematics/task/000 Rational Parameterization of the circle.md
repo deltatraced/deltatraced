@@ -32,7 +32,7 @@ record Vect2 : Type where
  -- e h .y = E₂ᵣ i1
 
 -- For proof that the above map `e` really does send an `h` to a point on the circle
-module 
+module _
 	(x₁ y₁ h : ℚ)
 	(A  : vect2 -1 0)
 	(Bₕ : vect2  0 h)
@@ -153,8 +153,7 @@ module
 
 # Explanation
 
-Starting from a point `A` on the unit circle, let it be `(-1, 0)`, we want to cast a ray to any ot
-her point on the circle, call it `B`. When we do this, we always cross the y-axis at a point, whose y-component distance from the origin we will label `h`. There is a unique point on the circle for every unique point we intersect the y-axis. Because of this, we are interested to find a map from `h` to the coordinates of the point `B`. Let's graph what we have so far:
+Starting from a point `A` on the unit circle, let it be `(-1, 0)`, we want to cast a ray to any other point on the circle, call it `B`. When we do this, we always cross the y-axis at a point, whose y-component distance from the origin we will label `h`. There is a unique point on the circle for every unique point we intersect the y-axis. Because of this, we are interested to find a map from `h` to the coordinates of the point `B`. Let's graph what we have so far:
 
 ![[Pasted image 20260430150504.png]]
 
@@ -171,7 +170,7 @@ record Vect2 : Type where
     y : ℚ
 	
 
-module 
+module _
 	(x₁ y₁ h : ℚ)
 	(A  : vect2 -1 0)
 	(Bₕ : vect2  0 h)
@@ -198,7 +197,7 @@ module
 In order to obtain an expression `y₁ ≡ ? x₁ h ` for some map `? : ℚ → ℚ → ℚ`, consider that the line segments `ABₕ` and `AB` lie on the same line, and thus share the same slope:
 
 ```haskell
-module
+module _
 	slope : Vect2 → Vect2 → ℚ
 	slope a b = (b .y - a .y) / (b .x - a .x)
 	
@@ -215,7 +214,7 @@ module
 Let's elaborate the equality of the slopes of the lines `ABₕ` and `AB`:
 
 ```haskell
-module
+module _
 	{- ... -}
 	where
 		E₀ : slope A Bₕ ≡ slope A B ↔ y₁ ≡ {! 2!}
@@ -240,7 +239,7 @@ module
 Now we can fill hole `{! 2!}` with `h (x₁ + 1)`. This gives us an expression of `y₁` in terms of `x₁` and `h`.
 
 ```haskell
-module
+module _
 	{- ... -}
 	where
 		E₀ : slope A Bₕ ≡ slope A B ↔ y₁ ≡ h (x₁ + 1)
@@ -259,7 +258,7 @@ _ x₁ h = h (x₁ + 1)
 Next we want to express `x₁` in terms of `h`. To be able to do this, we will make use of our new expression for `y₁` above and the fact that the point `B` lies on the circle.
 
 ```haskell
-module
+module _
 	{- ... -}
 	where
 		E₁ : x₁² + y₁² ≡ 1 ↔ x₁ ≡ {! 2!}
@@ -298,7 +297,7 @@ module
 Now we have an expression for `x₁` to fill in the hole `{! 2!}`:
 
 ```haskell
-module
+module _
 	{- ... -}
 	where
 			                      1 - h²
@@ -315,7 +314,7 @@ module
 Recall that we expressed `y₁` in terms of `x₁` and `h` in `E₀ᵣ`. Now that we have expressed `x₁` in terms of `h`, let's further elaborate `y₁` solely in terms of `h`:
 
 ```haskell
-module
+module _
 	{- ... -}
 	where
 		E₂ : y₁ ≡ h (x₁ + 1) ↔ y₁ ≡ {! 2!} -- eliminate x₁ and simplify
@@ -342,7 +341,7 @@ module
 Now we have the expression for `y₁` in terms of `h` to put in hole `{! 2!}:
 
 ```haskell
-module
+module _
 	{- ... -}
 	where
 									  2h
@@ -358,7 +357,7 @@ module
 Now we can finish off the original problem. We wanted a map `e` that sends a value for `h` to a point on the circle. By sweeping `h`, we should get all rational points on the circle.
 
 ```haskell
-module
+module _
 	{- ... -}
 	where
 		e : (h : ℚ) → Vect2
@@ -369,7 +368,7 @@ module
 Based on our investigation, `E₁ᵣ` shows us how we must implement `e h .x` and `E₂ᵣ` shows us how we must implement `e h .y` so that this map guarantees sending `h`  to a unique point on the circle:
 
 ```haskell
-module
+module _
 	{- ... -}
 	where
 		e : (h : ℚ) → Vect2

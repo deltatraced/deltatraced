@@ -27,4 +27,3 @@ When a detective reconstructs what must have happened from clues on the scene, t
 This indirection of explanations to interpret the seen in terms of the unseen is something we are able to do thanks to our engagement with the signs which allows us to reverse engineer massive opaque data into interrelated and relevant information.
 
 Part of building expertise is learning to recognize signs; to be able to diagnose, reconstruct, track, compose how things are; and then re-imagine how they ought to be. It may be difficult to start; we see mass amounts of data which signify very little, but with practice, we learn to be able to pick up on the decisive singular points that shifts our interpretations to align with our goals.
-re

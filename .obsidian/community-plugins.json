@@ -1,7 +1,6 @@
 [
   "templater-obsidian",
   "quickadd",
-  "obsidian-git",
   "number-headings-obsidian",
   "obsidian-plugin-toc",
   "automatic-table-of-contents",
@@ -15,5 +14,5 @@
   "vimium",
   "obsidian-excalidraw-plugin",
   "lan-obsidian-plugin",
-  "darlal-switcher-plus"
+  "lemons-search"
 ]
