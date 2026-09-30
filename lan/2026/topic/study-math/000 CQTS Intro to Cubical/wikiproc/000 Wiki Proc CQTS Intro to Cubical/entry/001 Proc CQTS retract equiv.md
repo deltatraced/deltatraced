@@ -79,3 +79,7 @@ This is the hint cube:
 
 Spawn [[000 Reproduce how far we got in cqts but in problems-mkn module format]] ^spawn-task-89aed8
 
+2026-09-29 Wk 40 Tue - 12:54 +03:00
+
+This will be continued here: [[032 CQTS Problems Attempt 0 retract-≡]]
+

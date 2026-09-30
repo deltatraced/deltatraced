@@ -12,6 +12,12 @@ Spawned in: [[000 Spawn Logs for intro to cubical#^spawn-entry-546a45|^spawn-ent
 
 ---
 
+# Note
+
+This is a very inefficient solution due to not unpacking.
+
+[[009 CQTS Problems Attempt Entries#×-map-≃-underlying]] has a much more efficient solution.
+
 # 1 Problem
 
 ```haskell

@@ -284,3 +284,7 @@ We were able to solve it by reducing these transport-fixing towers.
 Saving this to wiki `546a45` as well.
 
 This proof looks longer than it might need to be, but it does indicates that destructing the pair and consider each projection in isolation was key to producing the path.
+
+2026-09-25 Wk 39 Fri - 13:05 +03:00
+
+This is inefficient, see [[009 CQTS Problems Attempt Entries#×-map-≃-underlying]]

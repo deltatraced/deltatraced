@@ -7,7 +7,7 @@ It is a way to lower the barrier of recording an encounter with the world in som
 
 And who knows, it could lead to developing ideas elsewhere!
 
-For dev logs or something like that, see [[001 Weekly Act Log]]
+For dev logs or something like that, see [[001 End of Week Log]]
 
 # Journal
 
@@ -22,4 +22,8 @@ Spawn [[001 TSW 26 Wk 38]] ^spawn-entry-019f24
 2026-09-21 Wk 39 Mon - 08:34 +03:00
 
 Spawn [[002 TSW 26 Wk 39]] ^spawn-entry-9c08b9
+
+2026-09-28 Wk 40 Mon - 22:54 +03:00
+
+Spawn [[lan/2026/main/entry/007 Thought Stream Weeks/entry/003 TSW 26 Wk 40]] ^spawn-entry-cd5beb
 

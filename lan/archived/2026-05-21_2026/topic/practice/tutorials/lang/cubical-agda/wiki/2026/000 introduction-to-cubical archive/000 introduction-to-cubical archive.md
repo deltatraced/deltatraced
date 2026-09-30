@@ -19,5 +19,5 @@ The process notes will contain some journaling on approaches taken and leads tha
 
 # 3 Content
 
-- [[001 Elaboration Notes for x-map-eqv-underlying]]
+- [[001 Elaboration Notes for x-map-eqv-underlying - inefficient]]
 

@@ -6,7 +6,7 @@ Here I document what I am currently up to.
 
 - For my posts, see [[002 Posts]].
 - I have an inbox of tasks and investigations I work on at [[002 Inbox]]. See below for a more coarse description of what I'm up to.
-- Devlog-like logs in [[001 Weekly Act Log]].
+- Devlog-like logs in [[001 End of Week Log]].
 - Thoughts and comments can be found in [[007 Thought Stream Weeks]].
 - Notes on this repository follow the clusterline method. To learn more about its underlying concepts, see [[003 Wiki Clusterline Concepts]].
 - For a more general (but sorta outdated as-of-now oops) catalog, see [[lan/archived/2026-05-21_2026/main/wiki/001 Wiki Categories/001 Wiki Categories]].

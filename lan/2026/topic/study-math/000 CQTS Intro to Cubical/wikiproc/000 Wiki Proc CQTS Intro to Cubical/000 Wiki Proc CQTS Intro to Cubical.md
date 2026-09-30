@@ -32,7 +32,7 @@ Spawn [[lan/2026/topic/study-math/000 CQTS Intro to Cubical/wikiproc/000 Wiki Pr
 
 2026-09-13 Wk 37 Sun - 21:04 +03:00
 
-Spawn [[CQTS Problems Attempt Entries]] ^spawn-entry-c06dcc
+Spawn [[009 CQTS Problems Attempt Entries]] ^spawn-entry-c06dcc
 
 2026-09-19 Wk 38 Sat - 22:57 +03:00
 

@@ -249,3 +249,32 @@ _ = λ (p : PathP A a₀ a₁)
 
 So this is likely what they meant. a₀ and a₁, not b1 and b2. Similarly we're working with `A`, not `B` as in `B i`.
 
+2026-09-23 Wk 39 Wed - 11:51 +03:00
+
+In `/home/lan/src/cloned/gh/CQTS/branches/introduction-to-cubical@solve/lectures/2--Paths-and-Identifications/2-6--Univalence.lagda.md`,
+
+In the references,
+
+https://martinescardo.github.io/HoTT-UF-in-Agda-Lecture-Notes/index.htmlure-Notes/HoTT-UF-Agda.html gives a 404.
+
+https://martinescardo.github.io/HoTT-UF-in-Agda-Lecture-Notes/index.html is reachable.
+
+2026-09-24 Wk 39 Thu - 01:43 +03:00
+
+In `/home/lan/src/cloned/gh/CQTS/branches/introduction-to-cubical@solve/lectures/2--Paths-and-Identifications/2-6--Univalence.lagda.md`,
+
+This has an incomplete sentence
+
+```
+A ``Glue`` type enable us to "cap off" this open box of types, giving us a . That
+is, if `φ = ∂ i`, then `Glue A Te : Type` is the line of types living
+*under* `A` in the capped off version of the above square.
+```
+
+```
+A ``Glue`` type enable us to "cap off" this open box of types, giving us a [???]. That
+is, if `φ = ∂ i`, then `Glue A Te : Type` is the line of types living
+*under* `A` in the capped off version of the above square.
+```
+
+a what? a full element?

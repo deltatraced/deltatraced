@@ -14,7 +14,7 @@ Spawned in: [[000 introduction-to-cubical archive#^spawn-entry-b49346|^spawn-ent
 
 2026-04-14 Wk 16 Tue - 23:55 +03:00
 
-Spawn [[001 Elaboration Notes for x-map-eqv-underlying]] ^spawn-entry-546a45
+Spawn [[001 Elaboration Notes for x-map-eqv-underlying - inefficient]] ^spawn-entry-546a45
 
 2026-05-05 Wk 19 Tue - 17:53 +03:00
 

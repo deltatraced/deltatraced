@@ -8,7 +8,7 @@ A place for Accompanying notes I might take going through the exercises. See htt
 
 2026-04-14 Wk 16 Tue - 08:05 +03:00
 
-Spawn [[000 Proving x map equals underlying]] ^spawn-task-c926a2
+Spawn [[000 Proving x map equiv underlying - inefficient]] ^spawn-task-c926a2
 
 2026-04-18 Wk 16 Sat - 13:21 +03:00
 

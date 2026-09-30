@@ -14,7 +14,7 @@ Wiki: [[000 CQTS Intro to Cubical Templates]]
 
 2026-09-22 Wk 39 Tue - 22:05 +03:00
 
-Through [[011 CQTS Solving Thought Stream Wk 39]],
+Through [[011 CQTS Solving Thought Stream 26 Wk 39]],
 
 ```
 --                     ↓ ?
@@ -34,3 +34,7 @@ Through [[011 CQTS Solving Thought Stream Wk 39]],
 --        ? — — — — — — — — > ?
 --                ↑ ?
 ```
+
+2026-09-29 Wk 40 Tue - 08:59 +03:00
+
+In emacs, you can find out what characters are with `alt+x desc-char` and checking the `to input:` line.

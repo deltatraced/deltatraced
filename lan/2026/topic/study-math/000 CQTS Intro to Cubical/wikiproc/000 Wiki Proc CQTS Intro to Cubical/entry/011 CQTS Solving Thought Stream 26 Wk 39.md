@@ -8,6 +8,7 @@ Spawned by: [[lan/2026/topic/study-math/000 CQTS Intro to Cubical/wikiproc/000 W
 
 Spawned in: [[lan/2026/topic/study-math/000 CQTS Intro to Cubical/wikiproc/000 Wiki Proc CQTS Intro to Cubical/entry/007 CQTS Solving Thought Stream#^spawn-entry-4aff11|^spawn-entry-4aff11]]
 
+Prev: [[008 CQTS Solving Thought Stream 26 Wk 38]]
 # Journal
 
 2026-09-22 Wk 39 Tue - 10:42 +03:00
@@ -29,6 +30,7 @@ Spawned in: [[lan/2026/topic/study-math/000 CQTS Intro to Cubical/wikiproc/000 W
 --               | /                 | /
 --         [.......] — — — — — — —  [.......]
 --                     ↑ [.......]
+  
 ```
 
 I made this template before, though it's kinda noisy for cube drawings. But it is made to give some space for the names.
@@ -91,7 +93,8 @@ In `/home/lan/src/idea/cb/lan22h-experiments/problems-mkn/proj/gh/cqts/introduct
 
 ```
     -- Now let's prove that p ∙ p̃ ≡ refl, ie composition with the inverse is
-    -- refl. We also need a cube for this.
+    -- refl. W  
+e also need a cube for this.
 
     -- This time, we have the composite in (Line i̬k̂), so we will ignore
     -- (Face i̬) while verifying that (Line i̬k̂) has to be the composite of
@@ -173,3 +176,101 @@ A   : I → Type
 ```
 
 I guess `Tele` here refers to a Telescope 0, the first argument in the lambda that I pattern matched to `(âl , âr)`.
+
+2026-09-23 Wk 39 Wed - 10:36 +03:00
+
+This does not work. The last time I've done it, I've used the Path <-> PathP maps directly.
+
+```haskell
+      p₁ : transport (λ i → A i) (a₁ i0) ≡ a₁ i1
+      p₁ i = transport-fixing (λ j → A (i ∨ j)) i (a₁ i)
+      p₂ : transport (λ i → A i) (a₀ i0) ≡ transport (λ i → A i) (a₁ i0)
+      p₂ = ap (λ p' → transport (λ i → A i) p') p
+      p₃ : transport (λ i → A i) (a₀ i0) ≡ a₀ i1
+      p₃ =
+        transport (λ i → A i) (a₀ i0) ≡⟨ p₂ ⟩ -- ↓
+        transport (λ i → A i) (a₁ i0) ≡⟨ p₁ ⟩ -- ↓
+        a₁ i1                         ≡⟨ sym (transport (λ i → a₀ i ≡ a₁ i) p)  ⟩
+        a₀ i1                         ∎ -- ↑
+
+      _ = test-identical
+        (transport (λ i → a₀ i ≡ a₁ i) p)
+        ((sym p₃) ∙∙ p₂ ∙∙ p₁)
+```
+
+```
+?0 : A ≡ B → A ≃ B
+?1 : path→equiv refl ≡ idEquiv A
+_366
+  : Test-Id-Family (transport (λ i → a₀ i ≡ a₁ i) p)
+    (sym p₃ ∙∙ p₂ ∙∙
+     p₁) [ at /home/lan/src/idea/cb/lan22h-experiments/problems-mkn/proj/gh/cqts/introduction-to-cubical/cqts-lect2/src/lect-2-5-transport.agda:270.11-272.30 ]
+———— Error —————————————————————————————————————————————————
+/home/lan/src/idea/cb/lan22h-experiments/problems-mkn/proj/gh/cqts/introduction-to-cubical/cqts-lect2/src/lect-2-5-transport.agda:270.11-272.30: error: [InstanceNoCandidate]
+No instance of type
+Test-Id-Family (transport (λ i → a₀ i ≡ a₁ i) p)
+(sym p₃ ∙∙ p₂ ∙∙ p₁)
+was found in scope.
+when checking that (sym p₃ ∙∙ p₂ ∙∙ p₁) is a valid argument to a
+function of type
+(a' : a₀ i1 ≡ a₁ i1)
+⦃ _ : Test-Id-Family (transport (λ i → a₀ i ≡ a₁ i) p) a' ⦄ →
+Test-Identical
+```
+
+[[000 CQTS Intro to Cubical Templates]]
+
+But it's fine with this
+
+```haskell
+module _
+  {A : I → Type}
+  {a₀ : (j : I) → A j}
+  {a₁ : (j : I) → A j}
+  {p : a₀ i0 ≡ a₁ i0}
+  where
+    private
+      p₁ : transport (λ i → A i) (a₁ i0) ≡ a₁ i1
+      p₁ = PathP→Path (λ i → a₁ i)
+      p₂ : transport (λ i → A i) (a₀ i0) ≡ transport (λ i → A i) (a₁ i0)
+      p₂ = ap (λ p' → transport (λ i → A i) p') p
+      p₃ : transport (λ i → A i) (a₀ i0) ≡ a₀ i1
+      p₃ = PathP→Path (λ i → a₀ i)
+	  
+	  _ = test-identical (transport (λ i → a₀ i ≡ a₁ i) p)
+                         ((sym p₃) ∙∙ p₂ ∙∙ p₁)
+
+```
+
+inspired by my more compressed previous solution:
+
+```haskell
+module _ {A : I → Type}
+         {a₀ : (i : I) → A i}
+         {a₁ : (i : I) → A i}
+         {p : a₀ i0 ≡ a₁ i0}
+  where
+  _ = test-identical
+      (transport (λ i → a₀ i ≡ a₁ i) p)
+      -- Exercise:
+      ((λ i → fromPathP (λ j → a₀ j) (~ i)) 
+       ∙∙ (λ i → transport-fixing (λ j → A j) i0 (p i)) 
+       ∙∙ λ i → fromPathP (λ j → a₁ j) i)
+```
+
+Maybe it's cross talking somehow since my composition is reusing the same paths in another composition from what I tried there. It was a redundant attempt.
+
+When I solved
+
+```haskell
+p₁ i = transport-fixing (λ j → A (i ∨ j)) i (a₁ i)
+```
+
+I basically reinvented
+
+```haskell
+PathP→Path :
+    PathP A a₀ a₁
+  → Path (A i1) (transport (λ j → A j) a₀) a₁
+PathP→Path p i = transport-fixing (λ j → (A (i ∨ j))) i (p i)
+```

@@ -39,11 +39,23 @@ Some templates that I might want to use as I solve problems for CQTS lecture not
 --                ↑ ?
 ```
 
+**Square to fill**
+
+```
+--              ?  
+--        ?  — — — >  ?        
+--        ^           ^              ^
+--      ? |           | ?          j |
+--        |           |              . — >
+--        ?  — — — >  ?                i
+--              ?  
+```
+
 **Equational reasoning**
 
 ```
--- {!!} ≡⟨ {!!} ⟩
--- {!!} ≡⟨ {!!} ⟩
--- {!!} ∎
+-- {!!}
+      ≡⟨ {!!} ⟩
+-- {!!}
+      ∎
 ```
-

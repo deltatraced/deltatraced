@@ -7,7 +7,7 @@ This space will be used
 - [[000 Was in focus]]
 
 1. To also have stuff like dev logs, but it dun have to be just dev!:
-- [[001 Weekly Act Log]]
+- [[001 End of Week Log]]
 
 Alternatively, find my [[007 Thought Stream Weeks]] for whatever comes to mind during a given week, or what I check and comment on.
 
@@ -17,4 +17,4 @@ Alternatively, find my [[007 Thought Stream Weeks]] for whatever comes to mind d
 
 Spawn [[000 Was in focus]] ^spawn-entry-86242d
 
-Spawn [[001 Weekly Act Log]] ^spawn-entry-5270a7
+Spawn [[001 End of Week Log]] ^spawn-entry-5270a7
