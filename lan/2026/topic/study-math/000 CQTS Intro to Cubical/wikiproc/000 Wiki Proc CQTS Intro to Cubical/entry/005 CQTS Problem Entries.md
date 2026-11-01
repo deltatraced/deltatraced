@@ -46,3 +46,7 @@ Spawn [[lan/2026/topic/study-math/000 CQTS Intro to Cubical/wikiproc/000 Wiki Pr
 
 Spawn [[lan/2026/topic/study-math/000 CQTS Intro to Cubical/wikiproc/000 Wiki Proc CQTS Intro to Cubical/entry/030 CQTS Problem Entry connectionEx1]] ^spawn-entry-037cd2
 
+2026-10-06 Wk 41 Tue - 17:57 +03:00
+
+Spawn [[lan/2026/topic/study-math/000 CQTS Intro to Cubical/wikiproc/000 Wiki Proc CQTS Intro to Cubical/entry/036 CQTS Problem Entry isHLevel-suc]] ^spawn-entry-81da03
+

@@ -237,11 +237,12 @@ cat /dev/random | head -n1 | sha1sum | head -c8
 5a667d86
 ```
 
-It's in `/home/lan/src/cloned/cb/lan22h-experiments/note-files/paste/5a667d86`.
+It's in https://codeberg.org/lan22h-experiments/note-files/src/branch/main/paste/5a667d86
 
 2026-09-29 Wk 40 Tue - 15:35 +03:00
 
 Now let's try to close the lid on this partial cube:
+
 
 ```haskell
 -- in /home/lan/src/idea/cb/lan22h-experiments/problems-mkn/proj/gh/cqts/introduction-to-cubical/cqts-lect2/src/lect-2-7-propositions.agda
@@ -335,7 +336,7 @@ Since I omitted both `i` faces, both were taken as hcomps in faces `(i = i0)` an
 
 2026-09-29 Wk 40 Tue - 16:21 +03:00
 
-So anyway, back to the solution in `/home/lan/src/cloned/cb/lan22h-experiments/note-files/paste/5a667d86`, although we'll just rewrite it. Because we made changed with the module private variables:
+So anyway, back to the solution in https://codeberg.org/lan22h-experiments/note-files/src/branch/main/paste/5a667d86 although we'll just rewrite it. Because we made changed with the module private variables:
 
 ```haskell
 module _
@@ -619,7 +620,7 @@ It's not going to be `q`, since `q` is built off of it, and our goal in the firs
 
 We can't use `p`, of course, since then that's just `t₂`, not `t`. So either way it seems this attempt at breaking it down won't work, and we should try something else.
 
-Partial work up until now is at `/home/lan/src/cloned/cb/lan22h-experiments/note-files/paste/69fc762b`.
+Partial work up until now is at https://codeberg.org/lan22h-experiments/note-files/src/branch/main/paste/69fc762b.
 
 We save it so we can rewind and try something else.
 
@@ -806,3 +807,46 @@ type (k : I) → Partial ((∂ i ∨ ∂ j) ∨ ~ k) _A_803
 
 Yup `(k = i0)` is mandatory in the cube to fill the lid at `(k = i1)`, since it is `(k = i0)` that slides across k to make it walled by the formula for the square faces between `(k = i0)` and `(k = i1)`.
 
+2026-09-30 Wk 40 Wed - 17:03 +03:00
+
+Okay, had help from ncf again who helped me some months back. It did not cross my mind to just try `proof (p j) i` for the `(k = i0)` case.
+
+2026-10-01 Wk 40 Thu - 13:34 +03:00
+
+Let's clean up, we don't need all the one letter variables for this. I was doing it to explore and draw cubes by hand faster but it can hinder readability. It might also have had effect in me not trying that solution since I was a bit fixated on drawing cubes and trying different paths in it.
+
+```haskell
+private
+  ĝ : B → A
+  ĝ = r .map
+  f : A → B
+  f = r .section .map
+  s : (a : A) → (ĝ ∘ f) a ≡ a
+  s = r .section .proof
+  b̬ : B
+  b̬ = f a̬
+  b̂ : B
+  b̂ = f â
+  r̬ : A
+  r̬ = ĝ b̬
+  r̂ : A
+  r̂ = ĝ b̂
+  s̬ : r̬ ≡ a̬
+  s̬ = s a̬
+  ŝ : r̂ ≡ â
+  ŝ = s â
+  pB : (p : a̬ ≡ â) → b̬ ≡ b̂
+  pB p = ap f p 
+  t : (pB : b̬ ≡ b̂) → r̬ ≡ r̂
+  t pB = ap ĝ pB
+  t₂ : (p : a̬ ≡ â) → r̬ ≡ r̂
+  t₂ p = s̬ ∙∙ p ∙∙ (sym ŝ)
+  t₃ : (p : a̬ ≡ â) → r̬ ≡ r̂
+  t₃ p = ap (ĝ ∘ f) p
+  q : (pB : b̬ ≡ b̂) → a̬ ≡ â
+  q pB = (sym s̬) ∙∙ (t pB) ∙∙ ŝ
+  ĝ∘f≡idfun : ĝ ∘ f ≡ idfun
+  ĝ∘f≡idfun i a = r .section .proof a i
+  q₂ : (pB : b̬ ≡ b̂) → a̬ ≡ â
+  q₂ pB = subst (λ (f' : A → A) → f' a̬ ≡ f' â) ĝ∘f≡idfun (ap ĝ pB)
+```

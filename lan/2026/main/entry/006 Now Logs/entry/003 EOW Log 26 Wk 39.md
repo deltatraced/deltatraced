@@ -10,6 +10,8 @@ Spawned in: [[lan/2026/main/entry/006 Now Logs/entry/001 End of Week Log#^spawn-
 
 Prev: [[002 EOW Log 26 Wk 38]]
 
+Next: [[005 EOW Log 26 Wk 40]]
+
 # Journal
 
 2026-09-28 Wk 40 Mon - 23:01 +03:00

@@ -60,7 +60,8 @@ output [is] used by a particular *eliminator*.
 
 2026-09-10 Wk 37 Thu - 22:42 +03:00
 
-In `/home/lan/src/cloned/gh/CQTS/branches/introduction-to-cubical@solve/lectures/1--Type-Theory/1-5--Propositions-as-Types.lagda.md`,
+In `/home/lan/src/cloned/gh/CQTS/branches/introduction-to-cubical@solve/lectures/1--Type-Theory/1-5--Propositions-as-TyIn `/home/lan/src/cloned/gh/CQTS/introduction-to-cubical/lectures/2--Paths-and-Identifications/2-9--Contractible-Maps.lagda.md`,
+pes.lagda.md`,
 
 ```
 It would be tedious if we had to define the specific notion of
@@ -95,7 +96,8 @@ might be
 Now we [have?] paths with specified endpoints. For `x` and `y`, Agda
 provides a built-in type `x ≡ y` which is like a function `I → A`, but
 where the endpoints are known to be exactly `x` and `y`. That is,
-starting with `p : x ≡ y`, evaluating `p i0` gives *exactly* `x`, and
+starting with `p : x ≡ y`, evaluating `p i0` gives *exactly* `x`, andIn `/home/lan/src/cloned/gh/CQTS/introduction-to-cubical/lectures/2--Paths-and-Identifications/2-9--Contractible-Maps.lagda.md`,
+
 evaluating `p i1` gives *exactly* `y`, regardless of what the
 definition of the path `p` actually is.
 ```
@@ -278,3 +280,148 @@ is, if `φ = ∂ i`, then `Glue A Te : Type` is the line of types living
 ```
 
 a what? a full element?
+
+2026-10-01 Wk 40 Thu - 18:38 +03:00
+
+In `/home/lan/src/cloned/gh/CQTS/branches/introduction-to-cubical@solve/lectures/2--Paths-and-Identifications/2-7--Propositions.lagda.md`,
+
+```
+First, we have implication. If `A` and `B` are propositions then the
+type of functions `A → B` is a proposition --- namely, the proposition
+that `A` implies `B`.
+
+isProp-→ : isProp B → isProp (A → B)
+-- Exercise:
+isProp-→ p f g i a = {!!}
+```
+
+Should be
+
+```
+First, we have implication. If ~~`A` and ~~`B` [is a] proposition~~s~~ then the
+type of functions `A → B` is a proposition --- namely, the proposition
+that `A` implies `B`.
+
+isProp-→ : isProp B → isProp (A → B)
+-- Exercise:
+isProp-→ p f g i a = {!!}
+```
+
+We know this is a conceptual typo, since later they use this result for a type `A` that might not be a proposition:
+
+```
+As a special case of implication, we find that type negation `¬ A` is
+always a proposition even when `A` isn't.
+```
+
+2026-10-05 Wk 41 Mon - 13:37 +03:00
+
+In `/home/lan/src/cloned/gh/CQTS/branches/introduction-to-cubical@solve/lectures/2--Paths-and-Identifications/2-8--Sets-and-Higher-Types.lagda.md`,
+
+```
+Similarly to contractible types and propositions, any retract of a set
+is a set. This follows easily from the following general about fact
+about homotopies, which is a higher-dimensional generalisation of
+``homotopy-Path``. On its own, a homotopy lets us
+```
+
+should be
+
+```
+Similarly to contractible types and propositions, any retract of a set
+is a set. This follows easily from the following general ~~about~~ fact
+about homotopies, which is a higher-dimensional generalisation of
+``homotopy-Path``. On its own, a homotopy lets us
+```
+
+2026-10-07 Wk 41 Wed - 00:15 +03:00
+
+In `/home/lan/src/cloned/gh/CQTS/branches/introduction-to-cubical@solve/lectures/2--Paths-and-Identifications/2-8--Sets-and-Higher-Types.lagda.md`,
+
+```
+This is all well and good, but do we have concrete examples of types
+with a h-level higher than that of sets? We saw in ``¬isSet-S¹`` that
+``S¹`` is not a set, but it does have the next h-level beyond that.
+(Such types are often called "groupoids".)
+```
+
+should be
+
+```
+This is all well and good, but do we have concrete examples of types
+with [an] h-level higher than that of sets? We saw in ``¬isSet-S¹`` that
+``S¹`` is not a set, but it does have the next h-level beyond that.
+(Such types are often called "groupoids".)
+```
+
+2026-10-09 Wk 41 Fri - 01:30 +03:00
+
+In `/home/lan/src/cloned/gh/CQTS/introduction-to-cubical/lectures/2--Paths-and-Identifications/2-9--Contractible-Maps.lagda.md`,
+
+```
+  path : x₀ ≡ x₁
+  -- Exercise:
+  path₂ = {!!} ∙∙ refl ∙∙ {!!}
+```
+
+should be
+
+```
+  path₂ : x₀ ≡ x₁
+  -- Exercise:
+  path₂ = {!!} ∙∙ refl ∙∙ {!!}
+```
+
+or
+
+```
+  path : x₀ ≡ x₁
+  -- Exercise:
+  path = {!!} ∙∙ refl ∙∙ {!!}
+```
+
+They refer to `path` afterwards.
+
+2026-10-09 Wk 41 Fri - 19:45 +03:00
+
+In `/home/lan/src/cloned/gh/CQTS/introduction-to-cubical/lectures/2--Paths-and-Identifications/2-9--Contractible-Maps.lagda.md`,
+
+```
+We knew already that univalence ``ua`` has a retract ``au``. But we
+can now use ``equiv≡`` to show that ``au`` is also a section, and so
+``ua`` is an equivalence.
+
+au-ua : (e : A ≃ B) → au (ua e) ≡ e
+-- Exercise: (Hint: ``ua-comp``)
+au-ua e = {!!}
+```
+
+This seems to be a conceptual typo.
+
+`ua-au` shows us that `au` is a section. `au-ua` shows us that `au` is a retract (that is, `ua` now is its section).
+
+2026-10-13 Wk 42 Tue - 20:36 +03:00
+
+In `/home/lan/src/cloned/gh/CQTS/introduction-to-cubical/lectures/3--Topics/3-1--Structure-Identity-Principle.lagda.md`,
+
+```
+In Lecture 2-6 we saw how univalence can be used to show that paths
+between types the same as equivalences between those types. But what
+if our types have extra structure, like algebraic operations or
+axioms? In this Lecture, we extend univalence to the *Structure
+Identity Principle*, which shows that paths between structured types
+are equivalent to structure-preserving equivalences between those
+types.
+```
+
+should be 
+
+```
+In Lecture 2-6 we saw how univalence can be used to show that paths
+between types [are] the same as equivalences between those types. But what
+if our types have extra structure, like algebraic operations or
+axioms? In this Lecture, we extend univalence to the *Structure
+Identity Principle*, which shows that paths between structured types
+are equivalent to structure-preserving equivalences between those
+types.
+```

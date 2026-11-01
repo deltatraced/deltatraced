@@ -112,3 +112,30 @@ Sq i k = ŝ (i ∨ k)
 
 I can see the connection squares faster now! You can see this must be constant in the i1 for both `i` and `k`. What connection short-circuits in i1? `_∨_`!
 
+2026-10-01 Wk 40 Thu - 18:30 +03:00
+
+In `/home/lan/src/cloned/gh/CQTS/branches/introduction-to-cubical@solve/lectures/2--Paths-and-Identifications/2-7--Propositions.lagda.md`,
+
+```
+First, we have implication. If `A` and `B` are propositions then the
+type of functions `A → B` is a proposition --- namely, the proposition
+that `A` implies `B`.
+
+isProp-→ : isProp B → isProp (A → B)
+-- Exercise:
+isProp-→ p f g i a = {!!}
+```
+
+But this only mentions `isProp B`, not `isProp A`? But the text above said if both are propositions...
+
+Later they say
+
+```
+As a special case of implication, we find that type negation `¬ A` is
+always a proposition even when `A` isn't.
+```
+
+So since this is by specialization of the prior theorem, then it follows that `A` does not have to be a proposition! It's a conceptual typo.
+
+[[006 CQTS Lecture Note Typos]]
+

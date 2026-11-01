@@ -19,6 +19,8 @@ Supplementary material per attempt might also be found at [[010 CQTS Problems At
 
 Commentary or explanations after a solution was found can be found at [[005 CQTS Problem Entries]].
 
+In addition to notes, each key problem can also get its own historical dump file. See `/home/lan/src/cloned/cb/lan22h-experiments/note-files/proj/c06dcc-cqts-problem-logs/partial-dumps/`
+
 # Journal
 
 2026-09-26 Wk 39 Sat - 03:34 +03:00
@@ -68,4 +70,17 @@ Spawn [[031 CQTS Problems Attempt 0 ΩS¹≃ℤ]] ^spawn-entry-69bf37
 2026-09-29 Wk 40 Tue - 12:53 +03:00
 
 Spawn [[032 CQTS Problems Attempt 0 retract-≡]] ^spawn-entry-ed4686
+
+2026-10-02 Wk 40 Fri - 02:02 +03:00
+
+Spawn [[lan/2026/topic/study-math/000 CQTS Intro to Cubical/wikiproc/000 Wiki Proc CQTS Intro to Cubical/entry/034 CQTS Problems Attempt 0 isProp→Square]] ^spawn-entry-3c1981
+
+2026-10-03 Wk 40 Sat - 14:10 +03:00
+
+Spawn [[lan/2026/topic/study-math/000 CQTS Intro to Cubical/wikiproc/000 Wiki Proc CQTS Intro to Cubical/entry/035 CQTS Problems Attempt 0 isProp→any-SquareP]] ^spawn-entry-99effc
+
+2026-10-11 Wk 41 Sun - 19:51 +03:00
+
+Spawn [[037 CQTS Problems Attempt 0 Σ-map-fst-fib-≃]] ^spawn-entry-c27550
+
 
