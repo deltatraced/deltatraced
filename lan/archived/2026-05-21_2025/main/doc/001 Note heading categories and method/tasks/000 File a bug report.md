@@ -1,12 +1,10 @@
-
 # 1 Journal
 
+* [x] Here we specify some objectives that has to be completed
+* [x] Organized my documents
+* [ ] Find where to file the report to
 
-- [x] Here we specify some objectives that has to be completed
-- [x] Organized my documents
-- [ ] Find where to file the report to
-
-From [[#^spawn-task-c33094]] in [[#2 Journal]]
+From [^spawn-task-c33094](000%20File%20a%20bug%20report.md#spawn-task-c33094) in [2 Journal](000%20File%20a%20bug%20report.md#2-journal)
 
 2025-08-12 Wk 33 Tue - 13:14
 
@@ -18,7 +16,7 @@ Notice I added a `### Status` below. This shows the status for the Task in the o
 
 This is in the case I want to signify the task is pending:
 
-<![[Pasted image 20250812131705.png]]
+\<![Pasted image 20250812131705.png](../../../../../../../attachments/Pasted%20image%2020250812131705.png)
 
 2025-08-12 Wk 33 Tue - 13:17
 
@@ -30,10 +28,10 @@ The timestamp allows me to signify context change, correlate with other time inf
 
 Now let's spawn an issue next to move on with the tutorial!
 
-Spawn [[#4.1 Paint.exe crashed with error code 0xDEADFEED]] ^spawn-issue-252c2b
+Spawn [4.1 Paint.exe crashed with error code 0xDEADFEED](000%20File%20a%20bug%20report.md#41-paintexe-crashed-with-error-code-0xdeadfeed) ^spawn-issue-252c2b
 
 2025-08-12 Wk 33 Tue - 13:55
 
-And again! [[#^spawn-task-c33094|Spawner]]
+And again! [Spawner](000%20File%20a%20bug%20report.md#spawn-task-c33094)
 
 ### 3.1.1 Status

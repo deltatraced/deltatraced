@@ -1,21 +1,19 @@
-
 # 1 Journal
 
-
-- [ ]
+* [ ] 
 
 2025-09-07 Wk 36 Sun - 03:42
 
 So in page 2 they're trying to write a proof for continuity from above and from below.
 
-We investigated the meaning of the notation in [[#6.4 Union continuity operations applied to set functions]].
+We investigated the meaning of the notation in [6.4 Union continuity operations applied to set functions](001%20Writing%20Continuity%20from%20above%20and%20below%20theorems%20for%20probability%20space.md#64-union-continuity-operations-applied-to-set-functions).
 
 2025-09-07 Wk 36 Sun - 03:46
 
 So this is our interpretation:
 
-- $\mu(A_i) \uparrow \mu(A)$ means the value of $\mu(A_i)$ approaches $\mu(A)$ from the left.
--$\mu(A_i) \downarrow \mu(A)$ means the value of $\mu(A_i)$ approaches $\mu(A)$ from the right (edited)
+* $\mu(A_i) \uparrow \mu(A)$ means the value of $\mu(A_i)$ approaches $\mu(A)$ from the left.
+  -$\mu(A_i) \downarrow \mu(A)$ means the value of $\mu(A_i)$ approaches $\mu(A)$ from the right (edited)
 
 Let's write and attempt to explain the proof.
 
@@ -48,10 +46,11 @@ $$
 $$
 
 Given
+
 1. A and B are non-empty subsets of $\Omega$. This means $\mu(A)$ and $\mu(B)$ are not $0$.
-2. There exists a probability measure $P$ that assigns a value in $[0, 1]$ for all subsets of $\Omega$.
-3. So $\mu(B - A)$ is not equal to values in $\{\infty, -\infty\}$.
-$\therefore$  $\mu(A) + C \ge \mu(A)$ follows since $C = \mu(B - A)$ is a finite non-negative constant.
+1. There exists a probability measure $P$ that assigns a value in $[0, 1]$ for all subsets of $\Omega$.
+1. So $\mu(B - A)$ is not equal to values in $\{\infty, -\infty\}$.
+   $\therefore$  $\mu(A) + C \ge \mu(A)$ follows since $C = \mu(B - A)$ is a finite non-negative constant.
 
 (4)
 

@@ -1,5 +1,4 @@
-
-Process Notes: [[000 Wiki Proc CQTS Intro to Cubical]]
+Process Notes: [000 Wiki Proc CQTS Intro to Cubical](../../wikiproc/000%20Wiki%20Proc%20CQTS%20Intro%20to%20Cubical/000%20Wiki%20Proc%20CQTS%20Intro%20to%20Cubical.md)
 
 https://cqts.github.io/introduction-to-cubical/
 

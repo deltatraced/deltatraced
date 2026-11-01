@@ -1,51 +1,49 @@
-
 # 1 Journal
 
-
-- [x]
+* [x] 
 
 We have the following bytes:
 
-```
+````
 \x61 \x3D\x20\x6E\x65\x77 \x44\x61\x74\x65\x28\x29\x5B\x27\x67\x65\x74\x53\x65\x63\x6F\x6E\x64\x73\x27\x5D\x28\x29
-```
+````
 
 from
 
-```ts
+````ts
 Function`$${"\x61 \x3D\x20\x6E\x65\x77 \x44\x61\x74\x65\x28\x29\x5B\x27\x67\x65\x74\x53\x65\x63\x6F\x6E\x64\x73\x27\x5D\x28\x29 "}$`();
-```
+````
 
 It seems to break into three different segments
 
-```
+````
 \x61
 
 \x3D\x20\x6E\x65\x77 
 
 \x44\x61\x74\x65\x28\x29\x5B\x27\x67\x65\x74\x53\x65\x63\x6F\x6E\x64\x73\x27\x5D\x28\x29
-```
+````
 
 2025-07-30 Wk 31 Wed - 06:58
 
 From a CTF called numerology I attempted,
 
-```sh
+````sh
 echo "expand 32-byte k" | xxd -p | fold -w4 | xargs
 echo "6578 7061 6e64 2033 322d 6279 7465 206b 0a" | tr -d ' ' | xxd -r -p
 
 # out
 6578 7061 6e64 2033 322d 6279 7465 206b 0a
 expand 32-byte k
-```
+````
 
 But with `\xNN`, we can echo them directly:
 
-```sh
+````sh
 echo "\x61 \x3D\x20\x6E\x65\x77 \x44\x61\x74\x65\x28\x29\x5B\x27\x67\x65\x74\x53\x65\x63\x6F\x6E\x64\x73\x27\x5D\x28\x29"
 
 # out
 a = new Date()['getSeconds']()
-```
+````
 
 They just sometimes decided a space " " and sometimes a "\x20"...

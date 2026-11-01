@@ -2,11 +2,11 @@
 context_type: entry
 ---
 
-Parent: [[lan/2026/topic/ideas/000 Ideas/entry/002 Terminal Editor Toolkit/002 Terminal Editor Toolkit]]
+Parent: [lan/2026/topic/ideas/000 Ideas/entry/002 Terminal Editor Toolkit/002 Terminal Editor Toolkit](../002%20Terminal%20Editor%20Toolkit.md)
 
-Spawned by: [[lan/2026/topic/ideas/000 Ideas/entry/002 Terminal Editor Toolkit/002 Terminal Editor Toolkit]]
+Spawned by: [lan/2026/topic/ideas/000 Ideas/entry/002 Terminal Editor Toolkit/002 Terminal Editor Toolkit](../002%20Terminal%20Editor%20Toolkit.md)
 
-Spawned in: [[lan/2026/topic/ideas/000 Ideas/entry/002 Terminal Editor Toolkit/002 Terminal Editor Toolkit#^spawn-entry-ca5988|^spawn-entry-ca5988]]
+Spawned in: [^spawn-entry-ca5988](../002%20Terminal%20Editor%20Toolkit.md#spawn-entry-ca5988)
 
 # Journal
 

@@ -1,4 +1,3 @@
-
 # Journal
 
 2026-08-03 Wk 32 Mon - 11:26 +03:00
@@ -23,15 +22,16 @@ But I observed losing core HP even when having full attachments sometimes. So it
 
 When we're attacked by multiple enemies, we can also see multiple attachments ping status, since they are hit. Some
 
-Let's try to count frequency, counting on every enemy attack from the last time my core was hit, the number of times attachments absorbed the hit. Some flags: 
-- `d` for last attachment was destroyed and we got hit too.
-- `h` Attachments were pinged (`H` for multiple) and we still got hit.
-- `m` for multiple enemies engaged
+Let's try to count frequency, counting on every enemy attack from the last time my core was hit, the number of times attachments absorbed the hit. Some flags:
 
-```
+* `d` for last attachment was destroyed and we got hit too.
+* `h` Attachments were pinged (`H` for multiple) and we still got hit.
+* `m` for multiple enemies engaged
+
+````
 
 04 02dm 01mH 00mH 02md 01mh 00mh 01mh
-```
+````
 
 Some items describe something called `Overflow damage`, and `critical strikes` which could affect calculations of how likely the core is to be targeted with full attachments.
 
@@ -55,7 +55,7 @@ You can also use `/` for swapping. I kept removing items, then attaching others.
 
 2026-08-05 Wk 32 Wed - 18:29 +03:00
 
-Spawn [[lan/2026/topic/game-notes/001 Grid Sage Games/entry/000 Cogmind Playing Thought Stream/entry/000 Cogmind discovered manual terminal commands]] ^spawn-entry-8635f9
+Spawn [lan/2026/topic/game-notes/001 Grid Sage Games/entry/000 Cogmind Playing Thought Stream/entry/000 Cogmind discovered manual terminal commands](entry/000%20Cogmind%20discovered%20manual%20terminal%20commands.md) ^spawn-entry-8635f9
 
 2026-08-11 Wk 33 Tue - 20:47 +03:00
 

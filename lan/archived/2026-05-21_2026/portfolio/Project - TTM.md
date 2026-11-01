@@ -18,4 +18,4 @@ As I began developing and using TTM in Dematic and afterwards, my note taking st
 
 I have moved my note taking to Obsidian and markdown. While taking notes in the terminal is powerful, Obsidian allows me to have multimedia features such as images and sketched all integrated together. But I aim to replicate the strong aspects of TTM here in obsidian. My note taking methodology started with TTM, and with obsidian I have decided to make many of my open source notes public.
 
-You can learn more about this in this article: [[000 Note Taking Philosophy]].
+You can learn more about this in this article: [000 Note Taking Philosophy](../../../2025/post/000%20Note%20Taking%20Philosophy.md).

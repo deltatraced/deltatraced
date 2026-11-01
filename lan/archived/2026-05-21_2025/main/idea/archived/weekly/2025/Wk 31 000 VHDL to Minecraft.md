@@ -1,4 +1,4 @@
-#idea #project/idea
+\#idea #project/idea
 
 # 1 Idea
 

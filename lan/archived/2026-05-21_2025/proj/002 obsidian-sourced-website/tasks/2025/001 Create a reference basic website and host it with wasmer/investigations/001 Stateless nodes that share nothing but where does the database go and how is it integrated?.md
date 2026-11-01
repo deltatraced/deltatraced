@@ -1,10 +1,8 @@
-
 # 1 Journal
 
+* [ ] 
 
-- [ ]
-
-From [[#^spawn-invst-f3bfe8]] in [[#3.1 Follow along wasmer documentation]]
+From [^spawn-invst-f3bfe8](001%20Stateless%20nodes%20that%20share%20nothing%20but%20where%20does%20the%20database%20go%20and%20how%20is%20it%20integrated%3F.md#spawn-invst-f3bfe8) in [3.1 Follow along wasmer documentation](001%20Stateless%20nodes%20that%20share%20nothing%20but%20where%20does%20the%20database%20go%20and%20how%20is%20it%20integrated%3F.md#31-follow-along-wasmer-documentation)
 
 2025-08-26 Wk 35 Tue - 23:45
 
@@ -16,7 +14,8 @@ In [Wasmer Distributed Networking (DNET)](https://docs.wasmer.io/edge/architectu
 
 They mention that its principles include being fully stateless:
 
-> Control planes add complexity and create single pointers of failure thus if one is able to deliver the same functionality without a control plane then it is a better design.
+ > 
+ > Control planes add complexity and create single pointers of failure thus if one is able to deliver the same functionality without a control plane then it is a better design.
 
 So this may not apply to nodes specifically.
 
@@ -24,9 +23,9 @@ In fact each node is a distributed monolith, which is meant to include [Wasmer S
 
 2025-08-27 Wk 35 Wed - 00:10
 
-Spawn [[Drawing 2025-08-26 23.59.32.excalidraw]]
+Spawn [Drawing 2025-08-26 23.59.32.excalidraw](../../../../../../../2026-05-21_2026/main/drawings/Drawing%202025-08-26%2023.59.32.excalidraw.md)
 
-![[Pasted image 20250827001107.png]]
+![Pasted image 20250827001107.png](../../../../../../../../../attachments/Pasted%20image%2020250827001107.png)
 
 So this is one idea, where we create a cluster of nodes, each containing only one stateful db node they communicate with.
 

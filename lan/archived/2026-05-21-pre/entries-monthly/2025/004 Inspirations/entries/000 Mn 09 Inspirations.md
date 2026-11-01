@@ -1,16 +1,16 @@
 ---
-parent: "[[004 Inspirations]]"
-spawned_by: "[[004 Inspirations]]"
+parent: '[[004 Inspirations]]'
+spawned_by: '[[004 Inspirations]]'
 context_type: entry
 ---
 
-Parent: [[004 Inspirations]]
+Parent: [004 Inspirations](../004%20Inspirations.md)
 
-Spawned by: [[004 Inspirations]]
+Spawned by: [004 Inspirations](../004%20Inspirations.md)
 
-Spawned in: [[004 Inspirations#^spawn-entry-5cfa7c|^spawn-entry-5cfa7c]]
+Spawned in: [^spawn-entry-5cfa7c](../004%20Inspirations.md#spawn-entry-5cfa7c)
 
-[[Mn 09 September]]
+[Mn 09 September](../../../../../2026-05-21_2025/main/overview/monthly/2025/Mn%2009%20September.md)
 
 # 1 Purpose
 
@@ -22,7 +22,7 @@ Things that have inspired me throughout the month deserve to be highlighted and 
 
 2025-09-05 Wk 36 Fri - 12:28
 
-Spawn [[002 Inspiring OMZ CLI Graphics]] ^spawn-entry-a58d86
+Spawn [002 Inspiring OMZ CLI Graphics](002%20Inspiring%20OMZ%20CLI%20Graphics.md) ^spawn-entry-a58d86
 
 (2)
 

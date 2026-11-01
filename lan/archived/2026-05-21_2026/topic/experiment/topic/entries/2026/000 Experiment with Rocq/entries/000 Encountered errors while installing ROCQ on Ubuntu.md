@@ -1,20 +1,20 @@
 ---
-parent: "[[000 Experiment with Rocq]]"
-spawned_by: "[[000 Install ROCQ on Ubuntu]]"
+parent: '[[000 Experiment with Rocq]]'
+spawned_by: '[[000 Install ROCQ on Ubuntu]]'
 context_type: entry
 ---
 
-Parent: [[000 Experiment with Rocq]]
+Parent: [000 Experiment with Rocq](../000%20Experiment%20with%20Rocq.md)
 
-Spawned by: [[000 Install ROCQ on Ubuntu]]
+Spawned by: [000 Install ROCQ on Ubuntu](../tasks/000%20Install%20ROCQ%20on%20Ubuntu.md)
 
-Spawned in: [[000 Install ROCQ on Ubuntu#^spawn-entry-1603ff|^spawn-entry-1603ff]]
+Spawned in: [^spawn-entry-1603ff](../tasks/000%20Install%20ROCQ%20on%20Ubuntu.md#spawn-entry-1603ff)
 
 # 1 Journal
 
 2026-01-27 Wk 5 Tue - 14:39 +03:00
 
-```sh
+````sh
 sudo apt-get install build-essential
 
 # in /home/lan/Downloads
@@ -37,9 +37,9 @@ Include (i) exclude (e) or select (s) large packages? (i/e/s/c=cancel) i
 Apparently this switch already exists. It is recommended to delete the switch,
 so that you get a clean and well defined result.
 Shall the existing switch be kept (k) or deleted (d) ? (k/d/c=cancel) d
-```
+````
 
-```
+````
 ===== FINAL OPAM SANITY CHECKS =====
 [NOTE] These are the repositories in use by the current switch. Use '--all' to see all configured repositories.
 [NOTE] These are the repositories in use by the current switch. Use '--all' to see all configured repositories.
@@ -47,15 +47,15 @@ Shall the existing switch be kept (k) or deleted (d) ? (k/d/c=cancel) d
 [NOTE] These are the repositories in use by the current switch. Use '--all' to see all configured repositories.
 ===== INSTALL PREREQUISITES (PARALLEL) =====
 [ERROR] Package dune-configurator has no version 3.16.1.
-```
+````
 
 2026-01-27 Wk 5 Tue - 14:42 +03:00
 
-[#474 comment](https://github.com/rocq-prover/platform/issues/474#issuecomment-3095520722) mentions that we should try to update the tag, and that no new installer is used for this.
+[\#474 comment](https://github.com/rocq-prover/platform/issues/474#issuecomment-3095520722) mentions that we should try to update the tag, and that no new installer is used for this.
 
 Let's try over `2025.08.0`.
 
-```sh
+````sh
 sudo apt-get install build-essential
 
 # in /home/lan/Downloads
@@ -78,4 +78,4 @@ Build opam packages parallel (p) or sequential (s)? (p/s/c=cancel) p
 Number of parallel make jobs (number in 1..16, c=cancel) 16
 Install non open source SW CompCert (y) or (n)? (y/n/c=cancel) y
 Include (i) exclude (e) or select (s) large packages? (i/e/s/c=cancel) i
-```
+````

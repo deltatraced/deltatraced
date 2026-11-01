@@ -2,12 +2,11 @@
 context_type: idea
 ---
 
-Parent: [[000 Wiki OSS Contribution]]
+Parent: [000 Wiki OSS Contribution](../000%20Wiki%20OSS%20Contribution.md)
 
-Spawned by: [[000 Wiki Proc OSS Contribution]]
+Spawned by: [000 Wiki Proc OSS Contribution](../../../wikiproc/000%20Wiki%20Proc%20OSS%20Contribution/000%20Wiki%20Proc%20OSS%20Contribution.md)
 
-Spawned in: [[000 Wiki Proc OSS Contribution#^spawn-idea-39292c|^spawn-idea-39292c]]
-
+Spawned in: [^spawn-idea-39292c](../../../wikiproc/000%20Wiki%20Proc%20OSS%20Contribution/000%20Wiki%20Proc%20OSS%20Contribution.md#spawn-idea-39292c)
 
 # Silverbullet
 
@@ -17,7 +16,7 @@ Spawned in: [[000 Wiki Proc OSS Contribution#^spawn-idea-39292c|^spawn-idea-3929
 
 The name of the item, as well as the links searched here are too long. It would be preferable if it showed me a truncated view favoring the right rather than the left for both the title name and the link suggestions.
 
-![[Pasted image 20260602085003.png]]
+![Pasted image 20260602085003.png](../../../../../../../../attachments/Pasted%20image%2020260602085003.png)
 (2)
 
 2026-06-04 Wk 23 Thu - 02:43 +03:00

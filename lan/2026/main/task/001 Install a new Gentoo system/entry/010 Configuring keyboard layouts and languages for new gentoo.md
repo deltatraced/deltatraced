@@ -2,11 +2,11 @@
 context_type: entry
 ---
 
-Parent: [[lan/2026/main/task/001 Install a new Gentoo system/001 Install a new Gentoo system]]
+Parent: [lan/2026/main/task/001 Install a new Gentoo system/001 Install a new Gentoo system](../001%20Install%20a%20new%20Gentoo%20system.md)
 
-Spawned by: [[lan/2026/main/task/001 Install a new Gentoo system/entry/002 Quick new Installs for Gentoo System]]
+Spawned by: [lan/2026/main/task/001 Install a new Gentoo system/entry/002 Quick new Installs for Gentoo System](002%20Quick%20new%20Installs%20for%20Gentoo%20System.md)
 
-Spawned in: [[lan/2026/main/task/001 Install a new Gentoo system/entry/002 Quick new Installs for Gentoo System#^spawn-entry-72fffc|^spawn-entry-72fffc]]
+Spawned in: [^spawn-entry-72fffc](002%20Quick%20new%20Installs%20for%20Gentoo%20System.md#spawn-entry-72fffc)
 
 # Journal
 
@@ -20,14 +20,14 @@ https://wiki.gentoo.org/wiki/Localization/Guide
 
 Find codes with `find /usr/share/keymaps/i386/ | grep 'fr-'`
 
-```sh
+````sh
 # in /home/lan/src/cloned/cb/lan22h/dotfiles/etc/sway/config {
 	input type:keyboard {
 		xkb_layout "us,ar"
 		xkb_options "grp:alt_shift_toggle"
 	}
 # }
-```
+````
 
 2026-08-22 Wk 34 Sat - 23:29 +03:00
 
@@ -35,11 +35,11 @@ https://fcitx-im.org/wiki/Install_and_Configure
 
 We can do
 
-```
+````
 sway input type:keyboard xkb_layout us
 sway input type:keyboard xkb_layout fn
 sway input type:keyboard xkb_layout eg
-```
+````
 
 to switch keyboard layouts manually also.
 
@@ -55,18 +55,18 @@ Okay I fixed my sway config, right now I have that it needs to be copied directl
 
 Now that I can switch keyboard layouts with alt+shift, I need to add pinyin. We need IME keyboard support.
 
-- https://fcitx-im.org/wiki/Using_Fcitx_5_on_Wayland
-- $\to$ https://fcitx-im.org/wiki/Using_Fcitx_5_on_Wayland#Sway
+* https://fcitx-im.org/wiki/Using_Fcitx_5_on_Wayland
+* $\to$ https://fcitx-im.org/wiki/Using_Fcitx_5_on_Wayland#Sway
 
 https://wiki.gentoo.org/wiki/Fcitx
 
-[[002 Quick new Installs for Gentoo System#Fcitx]]
+[002 Quick new Installs for Gentoo System > Fcitx](002%20Quick%20new%20Installs%20for%20Gentoo%20System.md#fcitx)
 
 2026-08-23 Wk 34 Sun - 01:45 +03:00
 
 https://www.reddit.com/r/swaywm/comments/i6qlos/how_do_i_use_an_ime_with_sway/
 
-A user by the name `SpaceshipOperations` there has some guidelines. For example their configuration mentions setting 
+A user by the name `SpaceshipOperations` there has some guidelines. For example their configuration mentions setting
 
 They also set `GTK_IM_MODULE=fcitx` which also appears here: https://wiki.archlinux.org/title/Fcitx5
 

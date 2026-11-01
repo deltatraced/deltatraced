@@ -2,23 +2,23 @@
 context_type: entry
 ---
 
-Parent: [[lan/2026/topic/study-math/002 Mikan Problem Entries/entry/001 Mikan Problem Attempt Entries/001 Mikan Problem Attempt Entries]]
+Parent: [lan/2026/topic/study-math/002 Mikan Problem Entries/entry/001 Mikan Problem Attempt Entries/001 Mikan Problem Attempt Entries](../001%20Mikan%20Problem%20Attempt%20Entries.md)
 
-Spawned by: [[lan/2026/topic/study-math/002 Mikan Problem Entries/entry/001 Mikan Problem Attempt Entries/entry/000 Weekly Mikan Problem Attempts]]
+Spawned by: [lan/2026/topic/study-math/002 Mikan Problem Entries/entry/001 Mikan Problem Attempt Entries/entry/000 Weekly Mikan Problem Attempts](000%20Weekly%20Mikan%20Problem%20Attempts.md)
 
-Spawned in: [[lan/2026/topic/study-math/002 Mikan Problem Entries/entry/001 Mikan Problem Attempt Entries/entry/000 Weekly Mikan Problem Attempts#^spawn-entry-b1f228|^spawn-entry-b1f228]]
+Spawned in: [^spawn-entry-b1f228](000%20Weekly%20Mikan%20Problem%20Attempts.md#spawn-entry-b1f228)
 
 # Journal
 
 2026-11-01 Wk 44 Sun - 09:23 +03:00
 
-General week notes: [[008 TSW 26 Wk 44]]
+General week notes: [008 TSW 26 Wk 44](../../../../../../main/entry/007%20Thought%20Stream%20Weeks/entry/008%20TSW%2026%20Wk%2044.md)
 
 ## ≡≃≡code-Fin
 
 2026-11-01 Wk 44 Sun - 00:46 +03:00
 
-```haskell
+````haskell
 ≡≃≡code-Fin :
     {len : ℕ}
   → (a b : Fin len)
@@ -52,9 +52,8 @@ General week notes: [[008 TSW 26 Wk 44]]
 
     fro-to : {len : ℕ} → (a b : Fin len) → (encode a b) hasRetract (decode a b)
     fro-to = {!!}
-```
+````
 
 Why did the case `to-fro {suc len} (sucᶠ a) (sucᶠ b)` simplify to be exactly its inductive hypothesis?
 
 I think because in `encode-refl` this also occurs. In that case, we only had `(sucᶠ a)`. But through `J` then I expect that the same thing applied to `(sucᶠ b)` now.
-

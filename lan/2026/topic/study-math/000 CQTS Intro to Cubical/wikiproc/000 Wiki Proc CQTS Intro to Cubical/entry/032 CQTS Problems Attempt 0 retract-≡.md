@@ -2,23 +2,23 @@
 context_type: entry
 ---
 
-Parent: [[lan/2026/topic/study-math/000 CQTS Intro to Cubical/wikiproc/000 Wiki Proc CQTS Intro to Cubical/000 Wiki Proc CQTS Intro to Cubical]]
+Parent: [lan/2026/topic/study-math/000 CQTS Intro to Cubical/wikiproc/000 Wiki Proc CQTS Intro to Cubical/000 Wiki Proc CQTS Intro to Cubical](../000%20Wiki%20Proc%20CQTS%20Intro%20to%20Cubical.md)
 
-Spawned by: [[lan/2026/topic/study-math/000 CQTS Intro to Cubical/wikiproc/000 Wiki Proc CQTS Intro to Cubical/entry/009 CQTS Problems Attempt Entries]]
+Spawned by: [lan/2026/topic/study-math/000 CQTS Intro to Cubical/wikiproc/000 Wiki Proc CQTS Intro to Cubical/entry/009 CQTS Problems Attempt Entries](009%20CQTS%20Problems%20Attempt%20Entries.md)
 
-Spawned in: [[lan/2026/topic/study-math/000 CQTS Intro to Cubical/wikiproc/000 Wiki Proc CQTS Intro to Cubical/entry/009 CQTS Problems Attempt Entries#^spawn-entry-ed4686|^spawn-entry-ed4686]]
+Spawned in: [^spawn-entry-ed4686](009%20CQTS%20Problems%20Attempt%20Entries.md#spawn-entry-ed4686)
 
 # Journal
 
 2026-09-29 Wk 40 Tue - 12:54 +03:00
 
-Previous attempt was at [[001 Proc CQTS retract equiv]]. Now continuing here.
+Previous attempt was at [001 Proc CQTS retract equiv](001%20Proc%20CQTS%20retract%20equiv.md). Now continuing here.
 
-[[000 CQTS Intro to Cubical Templates]]
+[000 CQTS Intro to Cubical Templates](../../../wiki/000%20Wiki%20CQTS%20Intro%20to%20Cubical/entry/000%20CQTS%20Intro%20to%20Cubical%20Templates.md)
 
 This is the cube we can figure out is plausible from the hint at the start.
 
-```haskell
+````haskell
 -- in /home/lan/src/idea/cb/lan22h-experiments/problems-mkn/proj/gh/cqts/introduction-to-cubical/cqts-lect2/src/lect-2-7-propositions.agda
 
 --                     ↓ —
@@ -39,18 +39,17 @@ This is the cube we can figure out is plausible from the hint at the start.
 --                ↑ ?
 -- r̬ = ?, r̂ = ?
 -- q = ?
-```
+````
 
-- `(Line îk̬)` probably should be p to easily solve `(i = i1)` face.
+* `(Line îk̬)` probably should be p to easily solve `(i = i1)` face.
 
 `r̬ = (r .section .map a̬)` can't be right because that would be of type `B`, and this is a cube of type `A`.
 
 When they wrote `r (s x)` then I infer it means `r .section .map` for `s`, and `r .map` for `r`, which brings us back to `A`.
 
-
 2026-09-29 Wk 40 Tue - 13:58 +03:00
 
-```haskell
+````haskell
 -- in /home/lan/src/idea/cb/lan22h-experiments/problems-mkn/proj/gh/cqts/introduction-to-cubical/cqts-lect2/src/lect-2-7-propositions.agda
 
 --                     ↓ —
@@ -77,7 +76,7 @@ When they wrote `r (s x)` then I infer it means `r .section .map` for `s`, and `
 --  ŝ₁ = r .section .proof  â
 -- t = ap (λ a → r .map (r .section .map a)) p
 -- q = (sym s̬) ∙∙ t ∙∙ ŝ
-```
+````
 
 Now we inferred the rest of the values.
 
@@ -87,7 +86,7 @@ Now we inferred the rest of the values.
 
 Let's refactor
 
-```haskell
+````haskell
 -- in /home/lan/src/idea/cb/lan22h-experiments/problems-mkn/proj/gh/cqts/introduction-to-cubical/cqts-lect2/src/lect-2-7-propositions.agda
 
 retract-≡ r .map pB =
@@ -95,11 +94,11 @@ retract-≡ r .map pB =
   r .map (r .section .map a̬ )  ≡⟨ ap (λ b → r .map b) pB  ⟩
   r .map (r .section .map  â)  ≡⟨ r .section .proof â ⟩
   â                            ∎
-```
+````
 
 to
 
-```haskell
+````haskell
 -- in /home/lan/src/idea/cb/lan22h-experiments/problems-mkn/proj/gh/cqts/introduction-to-cubical/cqts-lect2/src/lect-2-7-propositions.agda
 retract-≡ r .map pB = (sym s̮) ∙∙ t ∙∙ ŝ
   where
@@ -109,19 +108,19 @@ retract-≡ r .map pB = (sym s̮) ∙∙ t ∙∙ ŝ
     ŝ = r .section .proof â
     t : r .map (r .section .map a̮) ≡ r .map (r .section .map â)
     t = ap (λ b → r .map b) pB
-```
+````
 
 There was a weird subtle difference in how I wrote the bot `a`s:
 
-```
+````
 a̮ a̬
-```
+````
 
 2026-09-29 Wk 40 Tue - 14:49 +03:00
 
 Now this is what is remaining to be solved, which is now put in the same form as the square we need to solve for:
 
-```haskell
+````haskell
 -- in /home/lan/src/idea/cb/lan22h-experiments/problems-mkn/proj/gh/cqts/introduction-to-cubical/cqts-lect2/src/lect-2-7-propositions.agda
 retract-≡ r .section .proof p = h0
   where
@@ -133,11 +132,11 @@ retract-≡ r .section .proof p = h0
     t = ap (λ a → r .map (r .section .map a)) p
     h0 : ((sym s̮) ∙∙ t ∙∙ ŝ) ≡ p
     h0 = {!!}
-```
+````
 
 2026-09-29 Wk 40 Tue - 15:02 +03:00
 
-```haskell
+````haskell
 -- in /home/lan/src/idea/cb/lan22h-experiments/problems-mkn/proj/gh/cqts/introduction-to-cubical/cqts-lect2/src/lect-2-7-propositions.agda
 
 retract-≡-squareTube :
@@ -170,12 +169,11 @@ retract-≡-squareTube r p i j k (i = i1) = {!!}
     Sq : Square A refl refl p p
     Sq j k = {!!}
 -- [...]
-```
+````
 
 This is not ideal, having to repeat all these definitions for each case split. I would have liked for them to be local though. I could make them global, but I don't want these very short names in the global namespace. Though I guess maybe declaring them private could help with that. But for now I'll do the duplication and focus on solving this.
 
 Of course I could also only include the ones that are used in each one, but I'm including all in general now just to have flexibility as I may vary the square faces while solving for this. I do want all these symbols accessible.
-
 
 --/ 2026-09-29 Wk 40 Tue - 15:51 +03:00
 
@@ -189,7 +187,7 @@ That worked. So `private` inside a `module _` is useful for shared local definit
 
 2026-09-29 Wk 40 Tue - 15:16 +03:00
 
-```haskell
+````haskell
 -- in /home/lan/src/idea/cb/lan22h-experiments/problems-mkn/proj/gh/cqts/introduction-to-cubical/cqts-lect2/src/lect-2-7-propositions.agda
 
 --                     ↓ —
@@ -216,7 +214,7 @@ That worked. So `private` inside a `module _` is useful for shared local definit
 --  ŝ₁ = r .section .proof  â
 -- t = ap (λ a → r .map (r .section .map a)) p
 -- q = (sym s̬) ∙∙ t ∙∙ ŝ
-```
+````
 
 Ok so this choice requires us to solve the hard ware `Square A t p s̬ ŝ`.
 
@@ -230,12 +228,12 @@ My hypothesis can be wrong if somehow this solves it. But it can also be wrong i
 
 Let's save the current partial solution for tube for the above square first.
 
-```sh
+````sh
 cat /dev/random | head -n1 | sha1sum | head -c8
 
 # out
 5a667d86
-```
+````
 
 It's in https://codeberg.org/lan22h-experiments/note-files/src/branch/main/paste/5a667d86
 
@@ -243,8 +241,7 @@ It's in https://codeberg.org/lan22h-experiments/note-files/src/branch/main/paste
 
 Now let's try to close the lid on this partial cube:
 
-
-```haskell
+````haskell
 -- in /home/lan/src/idea/cb/lan22h-experiments/problems-mkn/proj/gh/cqts/introduction-to-cubical/cqts-lect2/src/lect-2-7-propositions.agda
 
 --                     ↓ —
@@ -271,20 +268,20 @@ Now let's try to close the lid on this partial cube:
 --  ŝ₁ = r .section .proof  â
 -- t = ap (λ a → r .map (r .section .map a)) p
 -- q = (sym s̬) ∙∙ t ∙∙ ŝ
-```
+````
 
 Now `(k = i0)` is just another instance of `∙∙-filler`.
 
 2026-09-29 Wk 40 Tue - 16:09 +03:00
 
-```haskell
+````haskell
     retract-≡-square :
         (p : a̮ ≡ â)
       → Square A (q p) p refl refl
     retract-≡-square p i j = {!hcomp (~ i ∨ ∂ j) (retract-≡-squareTube p i j)!}
-```
+````
 
-```haskell
+````haskell
 Goal: A
 ———— Boundary (wanted) —————————————————————————————————————
 j = i0 ⊢ a̮
@@ -297,7 +294,7 @@ j = i0 ⊢ hcomp i1 (λ k _ → lect-2-7-propositions.Sq p i k i k)
 j = i1 ⊢ hcomp i1 (λ k _ → lect-2-7-propositions.Sq p i k i k)
 i = i0 ⊢ hcomp i1 (λ k _ → lect-2-7-propositions.Sq p j k j k)
 i = i1 ⊢ hcomp (∂ j) (retract-≡-squareTube p i1 j)
-```
+````
 
 Yup, the `(i = i1)` face test of the lid face *is* the shared line `Line (îk̂)` we suspected. I would expect if we change the orientation of the lid and shared line that it would track a line on the lid square that would also be the one corresponding to the matching line on the partial cube.
 
@@ -305,7 +302,7 @@ But as you see, we expect `p j` in there, not a double composite of anything, so
 
 Note that there's nothing special with it only filling one place here. It is precisely the missing lines from the lid square that get filled up.:
 
-```haskell
+````haskell
     retract-≡-squareTube :
         (p : a̮ ≡ â)
         (i j k : I)
@@ -315,9 +312,9 @@ Note that there's nothing special with it only filling one place here. It is pre
         (p : a̮ ≡ â)
       → Square A (q p) p refl refl
     retract-≡-square p i j = {!hcomp (∂ j) (retract-≡-squareTube p i j)!}
-```
+````
 
-```haskell
+````haskell
 Goal: A
 ———— Boundary (wanted) —————————————————————————————————————
 j = i0 ⊢ a̮
@@ -330,7 +327,7 @@ j = i0 ⊢ hcomp (∂ i0) (λ k _ → lect-2-7-propositions.Sq p i k i k)
 j = i1 ⊢ hcomp (∂ i1) (λ k _ → lect-2-7-propositions.Sq p i k i k)
 i = i0 ⊢ hcomp (∂ j) (retract-≡-squareTube p i0 j)
 i = i1 ⊢ hcomp (∂ j) (retract-≡-squareTube p i1 j)
-```
+````
 
 Since I omitted both `i` faces, both were taken as hcomps in faces `(i = i0)` and `(i = i1)`. We can still think of this as shared lines with the lid for subcube faces we omitted.
 
@@ -338,7 +335,7 @@ Since I omitted both `i` faces, both were taken as hcomps in faces `(i = i0)` an
 
 So anyway, back to the solution in https://codeberg.org/lan22h-experiments/note-files/src/branch/main/paste/5a667d86 although we'll just rewrite it. Because we made changed with the module private variables:
 
-```haskell
+````haskell
 module _
   {ℓ₁ ℓ₂ : Level}
   {A : Type ℓ₁}
@@ -355,13 +352,13 @@ module _
       t p = ap (λ a → r .map (r .section .map a)) p
       q : (p : a̮ ≡ â) → a̮ ≡ â
       q p = (sym s̮) ∙∙ (t p) ∙∙ ŝ
-```
+````
 
 2026-09-29 Wk 40 Tue - 17:14 +03:00
 
 This almost works:
 
-```haskell
+````haskell
       --               ŝ  
       --         r̂  — — — >  â        
       --         ^           ^              ^
@@ -385,23 +382,23 @@ This almost works:
       --         |           |              . — >
       --         r̮  — — — >  a̮                i
       --               s̮  
-```
+````
 
 But because of how we defined `t`:
 
-```haskell
+````haskell
 t : (p : a̮ ≡ â) → r .map (r .section .map a̮) ≡ r .map (r .section .map â)
 t p = ap (λ a → r .map (r .section .map a)) p
-```
+````
 
 it does not resolve. So maybe we can redefine `t` like this instead and retry:
 
-```haskell
+````haskell
 t : (p : a̮ ≡ â) → r .map (r .section .map a̮) ≡ r .map (r .section .map â)
 t p = s̮ ∙∙ p ∙∙ (sym ŝ)
-```
+````
 
-```haskell
+````haskell
       sq-k0 :
           (p : a̮ ≡ â)
         → Square A (t p) ((refl ∙ p) ∙ refl) s̮ ŝ
@@ -413,52 +410,51 @@ t p = s̮ ∙∙ p ∙∙ (sym ŝ)
           sq i j = p j
           sq̮ : Square A s̮ refl s̮ refl
           sq̮ i j = s̮ (i ∨ j)
-```
-
+````
 
 It works if we have
 
-- `((refl ∙ p) ∙ refl)`
+* `((refl ∙ p) ∙ refl)`
 
-```haskell
+````haskell
 t : (p : a̮ ≡ â) → r .map (r .section .map a̮) ≡ r .map (r .section .map â)
 t p = (s̮ ∙ p) ∙ (sym ŝ)
-```
+````
 
 So we need to simplify this square.
 
 Further, this re-definition of `t` is problematic for defining `q`. Now this goal no longer resolves:
 
-```haskell
+````haskell
 retract-≡ .section .proof p = {!h0!}
   where
     h0 : q p ≡ p
     h0 i j = retract-≡-square p i j
-```
+````
 
-Since with `t` defined itself via double composition, our definition of `q` could simplify back to `p`. 
+Since with `t` defined itself via double composition, our definition of `q` could simplify back to `p`.
 
-```haskell
+````haskell
 t : (p : a̮ ≡ â) → r .map (r .section .map a̮) ≡ r .map (r .section .map â)
 t p = ap (λ a → r .map (r .section .map a)) p
-```
+````
 
 Might also be due to how I defined this:
 
-```haskell
+````haskell
 retract-≡ .map pB = (sym s̮) ∙∙ tB ∙∙ ŝ
   where
     tB : r .map (r .section .map a̮) ≡ r .map (r .section .map â)
     tB = ap (λ b → r .map b) pB
-```
+````
 
 2026-09-29 Wk 40 Tue - 18:26 +03:00
 
-We can use `∙-juxtapose-vertical` and `∙-juxtapose-horizontal` to substitute paths in a square too to simplify what we got, but this might increase in complexity because it goes through `_∙_`, forming more complexity, but we can try. It may simplify and just replace if the composition is just `refl ∙ refl`. 
+We can use `∙-juxtapose-vertical` and `∙-juxtapose-horizontal` to substitute paths in a square too to simplify what we got, but this might increase in complexity because it goes through `_∙_`, forming more complexity, but we can try. It may simplify and just replace if the composition is just `refl ∙ refl`.
 
 Though we also are only getting one refl in our case, like with `ŝ ∙ refl`.
 
-```haskell
+````haskell
 --               ŝ           —                     
 --         r̂  — — — >  â  — — — >  â               
 --         ^           ^           ^                     ^
@@ -469,11 +465,11 @@ Though we also are only getting one refl in our case, like with `ŝ ∙ refl`.
 -- p₁ = (refl ∙ p) ∙ refl
 -- p₂ = (refl ∙ p)
 -- t₁ = (s̮ ∙ p) ∙ (sym ŝ)
-```
+````
 
 It's not reducing `ŝ ∙ refl` and `s̮ ∙ refl`.
 
-```haskell
+````haskell
 --               ŝ           —                     
 --         r̂  — — — >  â  — — — >  â               
 --         ^           ^           ^                     ^
@@ -489,9 +485,9 @@ sq1 i j = {!∙-juxtapose-horizontal sq0 sq̂ i j!}
   where
     sq̂ : Square A ((refl ∙ p) ∙ refl) (refl ∙ p) refl refl
     sq̂ i j = ∙-idr (refl ∙ p) (~ i) j
-```
+````
 
-```haskell
+````haskell
 Goal: A
 ———— Boundary (wanted) —————————————————————————————————————
 j = i0 ⊢ r .section .proof a̮ i
@@ -522,22 +518,22 @@ i = i0 ⊢ hcomp (j ∨ ~ j)
           (λ i₂ → r .section .proof â (~ i₂)) j)
 i = i1 ⊢ hcomp (j ∨ ~ j)
          (double-comp-box (λ i₂ → a̮) (λ i₂ → a̮) p j)
-```
+````
 
-Of course if the square was `p p refl refl` or like that, then we could just reduce it to a path and use `subst`.  
+Of course if the square was `p p refl refl` or like that, then we could just reduce it to a path and use `subst`.
 
 2026-09-29 Wk 40 Tue - 19:05 +03:00
 
 Actually we can just use subst, since it works on any part of a type.
 
-```haskell
+````haskell
 sq1 : Square A ((s̮ ∙ p) ∙ (sym ŝ)) (refl ∙ p) s̮ ŝ
 sq1 i j = subst (λ a' → Square A ((s̮ ∙ p) ∙ sym ŝ) a' s̮ ŝ)
            (sym (∙-idr (refl ∙ p))) sq0 i j
 sq2 : Square A ((s̮ ∙ p) ∙ (sym ŝ)) p s̮ ŝ
 sq2 i j = subst (λ a' → Square A ((s̮ ∙ p) ∙ sym ŝ) a' s̮ ŝ)
            (sym (∙-idl p)) sq1 i j
-```
+````
 
 Like this!
 
@@ -545,7 +541,7 @@ Like this!
 
 I proves these additional path properties:
 
-```haskell
+````haskell
 ∙∙-refl-ends-same :
     (p : a ≡ b)
   → (q : b ≡ c)
@@ -556,18 +552,18 @@ I proves these additional path properties:
   → (q : b ≡ c)
   → (r : c ≡ d)
   → (p ∙ q) ∙ r ≡ p ∙∙ q ∙∙ r
-```
+````
 
 We needed `∙∙-refl-ends-same` to prove `∙-two-nested-to-∙∙`.
 
 Now we can simplify the composition a bit:
 
-```haskell
+````haskell
           sq3 : Square A (s̮ ∙∙ p ∙∙ (sym ŝ)) p s̮ ŝ
           sq3 i j =
             subst (λ a' → Square A a' p s̮ ŝ)
              (∙-two-nested-to-∙∙ s̮ p (sym ŝ)) sq2 i j
-```
+````
 
 Though I guess this is a bit loaded, so maybe the authors expect a simpler way without all this. But we still have to deal with the `t` issues, so we don't have a solution.
 
@@ -577,20 +573,20 @@ Next, maybe we should try to find a path from `(s̮ ∙∙ p ∙∙ (sym ŝ))` 
 
 2026-09-30 Wk 40 Wed - 08:10 +03:00
 
-We did some more elaboration, finding out that the map is `q` and the section map is `pB`. 
+We did some more elaboration, finding out that the map is `q` and the section map is `pB`.
 
 `q`  makes use of `t` which comes from when we don't have access to `p` necessarily, but do have access to `pB`. So it seems equating `t`  and `t₂`
 
-```haskell
+````haskell
 t : (pB : b̬ ≡ b̂) → r̬ ≡ r̂
 t pB = ap (λ b → r .map b) pB
 t₂ : (p : a̬ ≡ â) → r̬ ≡ r̂
 t₂ p = s̬ ∙∙ p ∙∙ (sym ŝ)
-```
+````
 
 So it's unclear how we can break down `t` here:
 
-```haskell
+````haskell
 --               —  
 --         r̂  — — — >  r̂        
 --         ^           ^              ^
@@ -614,7 +610,7 @@ So it's unclear how we can break down `t` here:
 --         |           |              . — >
 --         r̮  — — — >  r̬                i
 --               —  
-```
+````
 
 It's not going to be `q`, since `q` is built off of it, and our goal in the first place *is* `q (pB p) ≡ p`, so that would not constitute a subproblem.
 
@@ -628,7 +624,7 @@ We save it so we can rewind and try something else.
 
 If we had `t≡t₂` we could just solve for this more directly:
 
-```haskell
+````haskell
 --                     ↓ —
 --                â — — — — — — — — > â
 --              / ^                 / ^
@@ -654,21 +650,21 @@ If we had `t≡t₂` we could just solve for this more directly:
 -- t = ap (λ a → r .map (r .section .map a)) p
 -- t₂ = s̬ ∙∙ p ∙∙ (sym ŝ)
 -- q = (sym s̬) ∙∙ t ∙∙ ŝ
-```
+````
 
 so could it be the hint suggested a different square so we take a different route from requiring `t≡t₂`? Because we ended up making the `(k = i0)` square in the hint require this for its construction.
 
-```haskell
+````haskell
 sq-k0 :
     (p : a̬ ≡ â)
   → Square A (t (pB p)) p s̬ ŝ
-```
+````
 
 2026-09-30 Wk 40 Wed - 09:10 +03:00
 
 This is the hint cube:
 
-```
+````
                 y — — — — — — — — > y
               / ^                 / ^
       .map  /   |            p  /   |
@@ -683,24 +679,24 @@ This is the hint cube:
         |   /               |   /
         | /                 | /
      r (s x) — — — — — — —  x
-```
+````
 
 They didn't use a double composition for q, but some `.map`. Could that mean something else?
 
 I interpreted it as the double composite because of this hint:
 
-```
+````
 -- Hint: Using ∙∙ gives the cleanest argument!
-```
+````
 
 2026-09-30 Wk 40 Wed - 10:48 +03:00
 
-```haskell
+````haskell
 ĝ : B → A
 ĝ = r .map
 f : A → B
 f = r .section .map
-```
+````
 
 Could we make use of of the fact that ĝ and f are one-directional inverses to turn `ap (ĝ ∘ f) p` into `ap (idfun) p`?
 
@@ -708,75 +704,74 @@ The issue is doing that would no longer have it be in the path `r̬ ≡ r̂`.
 
 In any case, instead of `t₂` maybe we can use `t₃` which builds from `p` but also computationally reduces like `t`
 
-```haskell
+````haskell
 t : (pB : b̬ ≡ b̂) → r̬ ≡ r̂
 t pB = ap ĝ pB
 t₂ : (p : a̬ ≡ â) → r̬ ≡ r̂
 t₂ p = s̬ ∙∙ p ∙∙ (sym ŝ)
 t₃ : (p : a̬ ≡ â) → r̬ ≡ r̂
 t₃ p = ap (ĝ ∘ f) p
-```
+````
 
-```haskell
+````haskell
 t≡t₃ :
     (p : a̬ ≡ â)
   → t (pB p) ≡ t₃ p
 t≡t₃ p = refl
-```
+````
 
 The reason I'm calling `r .map` `ĝ` is because it's the retract map from the original equivalence.
 
 Since `t₃` reduces like `t`, it doesn't seem to help. We're still unsure how to solve the `(k = i0)` face
 
-```haskell
+````haskell
 Sq : Square A (t₃ p) p s̬ ŝ
 Sq i j = {!!}
-```
+````
 
 2026-09-30 Wk 40 Wed - 11:35 +03:00
 
-```haskell
+````haskell
 retract-≡ .map pB i = {!subst (λ (f' : A → A) → f' a̬ ≡ f' â) ĝ∘f≡idfun (ap ĝ pB) i!}
-```
+````
 
 this is not resolving. It resolves when we undo
 
-```haskell
+````haskell
 retract-≡ .section .proof p = {!h0!}
-```
+````
 
-I guess because this is a different solution from `q`. 
+I guess because this is a different solution from `q`.
 
 Now our goal instead is
 
-```haskell
+````haskell
 Goal: (λ i →
          subst (λ f' → f' a̬ ≡ f' â) ĝ∘f≡idfun (ap ĝ (pB p)) i)
       ≡ p
-```
+````
 
-
-```haskell
+````haskell
 retract-≡ .map pB = subst (λ (f' : A → A) → f' a̬ ≡ f' â) ĝ∘f≡idfun (ap ĝ pB)
-```
+````
 
 Removing the `i` simplified the goal here
 
-```haskell
+````haskell
 retract-≡ .section .proof p = {!!}
-```
+````
 
-```haskell
+````haskell
 Goal: subst (λ f' → f' a̬ ≡ f' â) ĝ∘f≡idfun (ap ĝ (pB p)) ≡ p
-```
+````
 
-```haskell
+````haskell
 -- C-u C-u C-,
 Goal: transport-fixing
       (λ i → r .section .proof a̬ i ≡ r .section .proof â i) i0
       (λ i → r .map (r .section .map (p i)))
       ≡ p
-```
+````
 
 though this looks even more complicated to work with than `q`.
 
@@ -784,18 +779,18 @@ though this looks even more complicated to work with than `q`.
 
 It allows us to try to reverse the roles, where `t` depends on `q` instead:
 
-```haskell
+````haskell
 q₂ : (pB : b̬ ≡ b̂) → a̬ ≡ â
 q₂ pB = subst (λ (f' : A → A) → f' a̬ ≡ f' â) ĝ∘f≡idfun (ap ĝ pB)
 t₄ : (pB : b̬ ≡ b̂) → r̬ ≡ r̂
 t₄ pB = s̬ ∙∙ (q₂ pB) ∙∙ (sym ŝ)
-```
+````
 
-Not that this would buy us much, since we still cannot equate `q₂` with `p`. 
+Not that this would buy us much, since we still cannot equate `q₂` with `p`.
 
 2026-09-30 Wk 40 Wed - 12:55 +03:00
 
-```
+````
 The terms
   ((i ∨ ~ i) ∨ j ∨ ~ j) ∨ ~ k
 and
@@ -803,7 +798,7 @@ and
 are not equal at type I
 when checking that the expression retract-≡-squareTube p i j has
 type (k : I) → Partial ((∂ i ∨ ∂ j) ∨ ~ k) _A_803
-```
+````
 
 Yup `(k = i0)` is mandatory in the cube to fill the lid at `(k = i1)`, since it is `(k = i0)` that slides across k to make it walled by the formula for the square faces between `(k = i0)` and `(k = i1)`.
 
@@ -815,7 +810,7 @@ Okay, had help from ncf again who helped me some months back. It did not cross m
 
 Let's clean up, we don't need all the one letter variables for this. I was doing it to explore and draw cubes by hand faster but it can hinder readability. It might also have had effect in me not trying that solution since I was a bit fixated on drawing cubes and trying different paths in it.
 
-```haskell
+````haskell
 private
   ĝ : B → A
   ĝ = r .map
@@ -849,4 +844,4 @@ private
   ĝ∘f≡idfun i a = r .section .proof a i
   q₂ : (pB : b̬ ≡ b̂) → a̬ ≡ â
   q₂ pB = subst (λ (f' : A → A) → f' a̬ ≡ f' â) ĝ∘f≡idfun (ap ĝ pB)
-```
+````

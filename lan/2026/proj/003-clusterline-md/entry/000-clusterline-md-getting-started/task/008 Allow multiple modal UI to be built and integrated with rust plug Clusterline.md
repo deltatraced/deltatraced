@@ -3,11 +3,11 @@ context_type: task
 status: done
 ---
 
-Parent: [[lan/2026/proj/003-clusterline-md/entry/000-clusterline-md-getting-started/000-clusterline-md-getting-started]]
+Parent: [lan/2026/proj/003-clusterline-md/entry/000-clusterline-md-getting-started/000-clusterline-md-getting-started](../000-clusterline-md-getting-started.md)
 
-Spawned by: [[lan/2026/proj/003-clusterline-md/entry/000-clusterline-md-getting-started/task/005 Add a custom fuzzy selector window with some text]]
+Spawned by: [lan/2026/proj/003-clusterline-md/entry/000-clusterline-md-getting-started/task/005 Add a custom fuzzy selector window with some text](005%20Add%20a%20custom%20fuzzy%20selector%20window%20with%20some%20text.md)
 
-Spawned in: [[lan/2026/proj/003-clusterline-md/entry/000-clusterline-md-getting-started/task/005 Add a custom fuzzy selector window with some text#^spawn-task-0f48e4|^spawn-task-0f48e4]]
+Spawned in: [^spawn-task-0f48e4](005%20Add%20a%20custom%20fuzzy%20selector%20window%20with%20some%20text.md#spawn-task-0f48e4)
 
 # Decision
 
@@ -22,11 +22,11 @@ The easiest solution would be with a build flag. We only need to build one widge
 There was some discourse on how far `npm run` wants to support flags:
 
 1. https://stackoverflow.com/questions/76972845/how-do-i-add-conditional-flag-in-my-script-in-package-json-file
-2. https://github.com/npm/npm/pull/5518
+1. https://github.com/npm/npm/pull/5518
 
 For simplicity, we can just use environment variables.
 
-```json
+````json
 // in /home/lan/src/cloned/cb/lan22h/clusterlinemd/clusterline-ui/package.json
 
 {
@@ -34,9 +34,9 @@ For simplicity, we can just use environment variables.
 		"greet": "echo Hello $SomeUser"
 	}
 }
-```
+````
 
-```sh
+````sh
 # in /home/lan/src/cloned/cb/lan22h/clusterlinemd/clusterline-ui
 SomeUser="Lan" npm run greet
 
@@ -45,7 +45,7 @@ SomeUser="Lan" npm run greet
 > echo Hello $SomeUser
 
 Hello Lan
-```
+````
 
 We have `posthtml` for html building and `esbuild` for javascript building. Both would still need to accept this as a compilation option.
 
@@ -79,10 +79,10 @@ Updated `clusterline-ui/build.sh` to save `index_{INDEX}.html` and `index_{INDEX
 
 We confirm that app switching via `$INDEX` works all the way through being passed to silverbullet by the rust plug.
 
-```sh
+````sh
 # in /home/lan/src/cloned/cb/lan22h/clusterlinemd
 git commit
 [main e63b9ce] allow clusterline-ui to build multiple widgets
-```
+````
 
 OK

@@ -2,7 +2,7 @@
 
 ## 1.1 Lan, Informal
 
-The extended [[016 Real|real numbers]]. Includes additional the values like $\infty$  and $-\infty$ which are respectively greater or smaller than every other real number.
+The extended [real numbers](016%20Real.md). Includes additional the values like $\infty$  and $-\infty$ which are respectively greater or smaller than every other real number.
 
 It is denoted $\overline{\mathbb{R}}$ .
 

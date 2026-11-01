@@ -2,11 +2,11 @@
 context_type: entry
 ---
 
-Parent: [[lan/2026/topic/study-math/000 CQTS Intro to Cubical/wikiproc/000 Wiki Proc CQTS Intro to Cubical/000 Wiki Proc CQTS Intro to Cubical]]
+Parent: [lan/2026/topic/study-math/000 CQTS Intro to Cubical/wikiproc/000 Wiki Proc CQTS Intro to Cubical/000 Wiki Proc CQTS Intro to Cubical](../000%20Wiki%20Proc%20CQTS%20Intro%20to%20Cubical.md)
 
-Spawned by: [[009 CQTS Problems Attempt Entries]]
+Spawned by: [009 CQTS Problems Attempt Entries](009%20CQTS%20Problems%20Attempt%20Entries.md)
 
-Spawned in: [[009 CQTS Problems Attempt Entries#^spawn-entry-3186e4|^spawn-entry-3186e4]]
+Spawned in: [^spawn-entry-3186e4](009%20CQTS%20Problems%20Attempt%20Entries.md#spawn-entry-3186e4)
 
 # Journal
 
@@ -14,7 +14,7 @@ Spawned in: [[009 CQTS Problems Attempt Entries#^spawn-entry-3186e4|^spawn-entry
 
 In `/home/lan/src/idea/cb/lan22h-experiments/problems-mkn/proj/gh/cqts/introduction-to-cubical/cqts-lect2/src/lect-2-3-substitution-and-J.agda`,
 
-```haskell
+````haskell
 module _
   {ℓ : Level}
   {A : Type ℓ}
@@ -25,20 +25,20 @@ module _
       → (p : a ≡ â)
       → Q a refl ≡ Q â p
     J-line Q p i = {!!}
-```
+````
 
-```
+````
 Goal: Type ℓ
 ———— Boundary (wanted) —————————————————————————————————————
 i = i0 ⊢ Q a refl
 i = i1 ⊢ Q â p
-```
+````
 
 We want to show what the square for this is.
 
 So far we have a square that is at least
 
-```
+````
 --                ?
 --         a₀₁ — — — > a₁₁       
 --          ^           ^          ^
@@ -47,11 +47,11 @@ So far we have a square that is at least
 --         a₀₀ — — — > a₁₀           i
 --                ?    
 --   a₀₀ a₀₁ a₁₀ a₁₁ = ?
-```
+````
 
 This looks like it can derive from a square by construction via application of `Q a`:
 
-```
+````
 --                ?
 --         a₀₁ — — — > a₁₁       
 --          ^           ^          ^
@@ -60,16 +60,16 @@ This looks like it can derive from a square by construction via application of `
 --         a₀₀ — — — > a₁₀           i
 --                ?    
 --   a₀₀ a₀₁ a₁₀ a₁₁ = ?
-```
+````
 
 Treating this as the goal, we want to create a square that gives us `refl` at `i=i0` and `p` at `i=i1`.
 
-Recall that `refl` indicates that the endpoints are constant with regard to some path. And `∧ ∨` short circuit to constant paths for some endpoints. 
+Recall that `refl` indicates that the endpoints are constant with regard to some path. And `∧ ∨` short circuit to constant paths for some endpoints.
 i0 for `∧` and i1 for `∨`.
 
 We know one of the constant paths is at `i=i0`, so we expect `∧`:
 
-```haskell
+````haskell
 module _
   {ℓ : Level}
   {A : Type ℓ}
@@ -80,9 +80,9 @@ module _
         (p : a ≡ â)
       → Square A refl p refl p
     target-square p i j = p (i ∧ j)
-```
+````
 
-```
+````
 --                p
 --         a₀₁ — — — > a₁₁       
 --          ^           ^          ^
@@ -90,11 +90,11 @@ module _
 --          |           |          . — >
 --         a₀₀ — — — > a₁₀           i
 --              refl    
-```
+````
 
 This choices turns out to be `connection∧`:
 
-```haskell
+````haskell
 module _
   {ℓ : Level}
   {A : Type ℓ}
@@ -111,6 +111,6 @@ module _
       (p : a ≡ b)
       → Square A refl p refl p
     connection∧ p i j = p (i ∧ j)
-```
+````
 
 A square allows us to construct a path of paths of interest, like from refl to p.

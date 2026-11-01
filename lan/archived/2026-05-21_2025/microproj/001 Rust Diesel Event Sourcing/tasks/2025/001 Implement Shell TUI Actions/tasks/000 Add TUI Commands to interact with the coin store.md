@@ -1,15 +1,15 @@
 ---
-parent: "[[001 Implement Shell TUI Actions]]"
-spawned_by: "[[001 Implement Shell TUI Actions]]"
+parent: '[[001 Implement Shell TUI Actions]]'
+spawned_by: '[[001 Implement Shell TUI Actions]]'
 context_type: task
 status: todo
 ---
 
-Parent: [[001 Implement Shell TUI Actions]]
+Parent: [001 Implement Shell TUI Actions](../001%20Implement%20Shell%20TUI%20Actions.md)
 
-Spawned by: [[001 Implement Shell TUI Actions]]
+Spawned by: [001 Implement Shell TUI Actions](../001%20Implement%20Shell%20TUI%20Actions.md)
 
-Spawned in: [[001 Implement Shell TUI Actions#^spawn-task-519857|^spawn-task-519857]]
+Spawned in: [^spawn-task-519857](../001%20Implement%20Shell%20TUI%20Actions.md#spawn-task-519857)
 
 # 1 Journal
 
@@ -19,16 +19,16 @@ Let's just set their coins to 0 to start with.
 
 2025-10-21 Wk 43 Tue - 22:35 +03:00
 
-```rust
+````rust
 let results = coin_store_events
 	.filter(ev_action.eq(EventAction::Open))
 //   ~~~~~~
 	.select(coin_store::Event::as_select())
 	.get_results(conn);
 ;
-```
+````
 
-```rust
+````rust
 error[E0034]: multiple applicable items in scope
    --> src/bin/demo.rs:153:10
     |
@@ -63,23 +63,23 @@ help: disambiguate the method for candidate #3
 153 -         .filter(ev_action.eq(EventAction::Open))
 152 +     let results = diesel::QueryDsl::filter(coin_store_events, ev_action.eq(EventAction::Open))
     |
-```
+````
 
 It seems I have to disambiguate filter
 
-```rust
+````rust
     let results = coin_store_events
         .pipe(|tbl| FilterDsl::filter(tbl, ev_action.eq(EventAction::Open)))
         .select(coin_store::Event::as_select())
         .get_results(conn)
     ;
-```
+````
 
 This can work...
 
 2025-10-21 Wk 43 Tue - 23:19 +03:00
 
-```sh
+````sh
 # in /home/lan/src/cloned/gh/deltachives/2025-002-credit-store-demo-rs
 git commit -m "adding commands to impl for demo"
 
@@ -92,7 +92,7 @@ Run tests................................................................Passed
 Check clippy lints.......................................................Passed
 [main f85cc7f] adding commands to impl for demo
  4 files changed, 243 insertions(+), 16 deletions(-)
-```
+````
 
 2025-10-22 Wk 43 Wed - 11:13 +03:00
 
@@ -102,7 +102,7 @@ There's [gh wassasin/deterministic-hash](https://github.com/wassasin/determinist
 
 It provides an [implementation](https://github.com/Wassasin/deterministic-hash/blob/d4d58242bdb5d2fae589b23cc688e28904135215/src/lib.rs#L31C9-L31C15) of `DeterministicHasher<T>` for any derive of `Hash` which seems to expose the trait `Hasher<T>` here.
 
-```sh
+````sh
 # in /home/lan/src/cloned/gh/deltachives/2025-002-credit-store-demo-rs
 cargo add deterministic-hash
 
@@ -113,11 +113,11 @@ cargo add deterministic-hash
     Blocking waiting for file lock on package cache
      Locking 1 package to latest Rust 1.89.0 compatible version
       Adding deterministic-hash v1.0.2
-```
+````
 
 2025-10-22 Wk 43 Wed - 11:34 +03:00
 
-```sh
+````sh
 # in /home/lan/src/cloned/gh/deltachives/2025-002-credit-store-demo-rs
 cargo add crc
 
@@ -129,9 +129,9 @@ cargo add crc
      Locking 2 packages to latest Rust 1.89.0 compatible versions
       Adding crc v3.3.0
       Adding crc-catalog v2.4.0
-```
+````
 
-```rust
+````rust
 error[E0603]: module `crc32` is private
   --> src/bin/demo.rs:50:52
    |
@@ -148,21 +148,21 @@ help: consider importing this struct instead
 50 -     let mut hasher = DeterministicHasher::new(crc::crc32::Digest::new(crc::crc32::KOOPMAN));
 50 +     let mut hasher = DeterministicHasher::new(crc::Digest::new(crc::crc32::KOOPMAN));
    |
-```
+````
 
 Their [usage](https://github.com/Wassasin/deterministic-hash/blob/d4d58242bdb5d2fae589b23cc688e28904135215/src/lib.rs#L24) of `crc::crc32` is private
 
- Following the suggestion of the error leads to more.
+Following the suggestion of the error leads to more.
 
 2025-10-22 Wk 43 Wed - 11:59 +03:00
 
 2025-10-22 Wk 43 Wed - 13:33 +03:00
 
-[gh mrhooray/crc-rs](https://github.com/mrhooray/crc-rs) 
+[gh mrhooray/crc-rs](https://github.com/mrhooray/crc-rs)
 
-```rust
+````rust
 const X25: crc::Crc<u16> = crc::Crc::<u16>::new(&crc::CRC_16_IBM_SDLC);
-```
+````
 
 2025-10-22 Wk 43 Wed - 17:09 +03:00
 
@@ -170,7 +170,7 @@ Can't seem to use `X25` as a `Hasher` directly, but we can with [docs.rs crc32fa
 
 This works:
 
-```rust
+````rust
 use crc32fast::Hasher;
 
 let obj_id: u32 = {
@@ -179,7 +179,7 @@ let obj_id: u32 = {
 
 	hasher.as_inner().clone().finalize()
 };
-```
+````
 
 2025-10-22 Wk 43 Wed - 17:26 +03:00
 
@@ -189,9 +189,9 @@ For printing wallets and transactions let's use [gh zhiburt/tabled](https://gith
 
 2025-10-22 Wk 43 Wed - 23:46 +03:00
 
-We also checked on displaying millis back to readable time. We can do it with 
+We also checked on displaying millis back to readable time. We can do it with
 
-```rust
+````rust
 pub fn display_timestamp(timestamp: f32) -> String {
     use chrono::{DateTime, TimeZone, Utc};
 
@@ -207,9 +207,9 @@ pub fn display_timestamp(timestamp: f32) -> String {
 
     format!("{}", datetime)
 }
-```
+````
 
-```sh
+````sh
 # in /home/lan/src/cloned/gh/deltachives/2025-002-credit-store-demo-rs
 git commit
 
@@ -223,9 +223,9 @@ Check clippy lints.......................................................Passed
 [main 0b5ed59] added commands to show wallet and records and add expenses and income
  Date: Wed Oct 22 23:46:12 2025 +0300
  6 files changed, 590 insertions(+), 64 deletions(-)
-```
+````
 
-Now we can show wallets, or records. When we show records, we also include descriptions and human readable times. 
+Now we can show wallets, or records. When we show records, we also include descriptions and human readable times.
 
 2025-10-23 Wk 43 Thu - 05:37 +03:00
 
@@ -233,7 +233,7 @@ For undo toggles, we need to operate not on the events grouped but on the genera
 
 2025-10-23 Wk 43 Thu - 06:52 +03:00
 
-```
+````
 | coins toggle id
 ╭────┬─────────┬─────────────────────────────┬────────┬─────────────┬─────────────╮
 │ id │ toggled │ timestamp                   │ person │ total_coins │ description │
@@ -243,7 +243,7 @@ For undo toggles, we need to operate not on the events grouped but on the genera
 │ 10 │ true    │ 2025-10-23 03:49:55.328 UTC │ Lan    │ -1000       │ Big debt    │
 ╰────┴─────────┴─────────────────────────────┴────────┴─────────────┴─────────────╯
 enter Select event id to toggle (u32) or type [q]uit: 
-```
+````
 
 Nothing should be toggled off in the beginning.
 
@@ -251,14 +251,14 @@ Nothing should be toggled off in the beginning.
 
 Seems it only keeps the chosen toggle id and disables everything else.
 
-```rust
+````rust
 // in fn coin_store_toggle_by_id
 // TODO added to test toggle logic
 set_coin_store_events_partial_to_full(&mut mut_state.conn)
 	.map_err(|e| ShiError::General { msg: e.to_string() })?;
-```
+````
 
-```
+````
 # in /home/lan/src/cloned/gh/deltachives/2025-002-credit-store-demo-rs
 cargo run --bin demo
 
@@ -287,17 +287,17 @@ Toggled event enabled
 │ 4  │ false   │ 2025-10-23 04:09:34.976 UTC │ Lan    │ 50          │ some job    │
 ╰────┴─────────┴─────────────────────────────┴────────┴─────────────┴─────────────╯
 enter Description substring or type [q]uit: 
-```
+````
 
 2025-10-23 Wk 43 Thu - 10:22 +03:00
 
-```diff
+````diff
 // in fn coin_store_toggle_by_id
 let in_partial = objects_p
 	.iter()
 -	.any(|object_p| object_p.id == object.id);
 +	.any(|object_p| object_p.ev_id == object.ev_id);
-```
+````
 
 The IDs are constantly changing for these partial groups as they're deleted and regenerated, and the ID is incremental.
 
@@ -305,11 +305,11 @@ The IDs are constantly changing for these partial groups as they're deleted and 
 
 I implemented all the commands, but there is an issue. When we push a new frame, it will capture events from reset lower span frames, and not the latest.
 
-if we think to only capture the latest, then at span 50, we may need to know the latest for all spans 1..49. Or we need to freeze sourcing at the latest parent span's creation. 
+if we think to only capture the latest, then at span 50, we may need to know the latest for all spans 1..49. Or we need to freeze sourcing at the latest parent span's creation.
 
 2025-10-23 Wk 43 Thu - 11:11 +03:00
 
-```sh
+````sh
 # in /home/lan/src/cloned/gh/deltachives/2025-002-credit-store-demo-rs
 git commit -m "implemented demo commands"
 
@@ -324,13 +324,12 @@ Check clippy lints.......................................................Passed
  5 files changed, 550 insertions(+), 154 deletions(-)
  delete mode 100644 migrations/2025-09-12-162639_create_credit_store/down.sql
  delete mode 100644 migrations/2025-09-12-162639_create_credit_store/up.sql
-```
+````
 
-We need to fix this back at the demo in [[004 Investigate options for materializing views into tables using SQL]]
+We need to fix this back at the demo in [004 Investigate options for materializing views into tables using SQL](../../000%20Implement%20the%20Event%20Accumulator/investigations/004%20Investigate%20options%20for%20materializing%20views%20into%20tables%20using%20SQL.md)
 
-Spawn [[000 Upper Span frames sources from reset lower span frames]] ^spawn-issue-4f102d
+Spawn [000 Upper Span frames sources from reset lower span frames](../../000%20Implement%20the%20Event%20Accumulator/issues/000%20Upper%20Span%20frames%20sources%20from%20reset%20lower%20span%20frames.md) ^spawn-issue-4f102d
 
 2025-10-23 Wk 43 Thu - 12:12 +03:00
 
 Nonetheless, we have a demo here, despite the bug. Let's add some animations to the guide.md
-

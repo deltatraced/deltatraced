@@ -2,21 +2,21 @@
 context_type: entry
 ---
 
-Parent: [[lan/2026/topic/study-math/001 Cubical Analysis I/entry/000 Cubical Analysis I/000 Cubical Analysis I]]
+Parent: [lan/2026/topic/study-math/001 Cubical Analysis I/entry/000 Cubical Analysis I/000 Cubical Analysis I](../000%20Cubical%20Analysis%20I.md)
 
-Spawned by: [[lan/2026/topic/study-math/001 Cubical Analysis I/entry/000 Cubical Analysis I/entry/005 Cubical Analysis I Thought Stream 26 Wk 43]]
+Spawned by: [lan/2026/topic/study-math/001 Cubical Analysis I/entry/000 Cubical Analysis I/entry/005 Cubical Analysis I Thought Stream 26 Wk 43](005%20Cubical%20Analysis%20I%20Thought%20Stream%2026%20Wk%2043.md)
 
-Spawned in: [[lan/2026/topic/study-math/001 Cubical Analysis I/entry/000 Cubical Analysis I/entry/005 Cubical Analysis I Thought Stream 26 Wk 43#^spawn-entry-862439|^spawn-entry-862439]]
+Spawned in: [^spawn-entry-862439](005%20Cubical%20Analysis%20I%20Thought%20Stream%2026%20Wk%2043.md#spawn-entry-862439)
 
 # Journal
 
 2026-10-19 Wk 43 Mon - 14:36 +03:00
 
-Coming from [[005 Cubical Analysis I Thought Stream 26 Wk 43]]
+Coming from [005 Cubical Analysis I Thought Stream 26 Wk 43](005%20Cubical%20Analysis%20I%20Thought%20Stream%2026%20Wk%2043.md)
 
 There it is, the addition commutativity/associativity permutations proof obligations issue.
 
-```haskell
+````haskell
 ∙ℕ-distsOver-+ℕ-l :
   (a b c : ℕ)
   → a ∙ℕ (b +ℕ c) ≡ (a ∙ℕ b) +ℕ (a ∙ℕ c)
@@ -28,11 +28,11 @@ There it is, the addition commutativity/associativity permutations proof obligat
     ≡⟨ {!!} ⟩
   (a ∙ℕ b) +ℕ b +ℕ ((a ∙ℕ c) +ℕ c)
     ∎
-```
+````
 
 In RocQ I ran into more and more involved ones. So much so I made propositions like the below to deal with them.
 
-```
+````
 Proposition add_comm_8_a0_swap_a1 : forall a0 a1 a2 a3 a4 a5 a6 a7 : nat, 
   a0 + a1 + a2 + a3 + a4 + a5 + a6 + a7 = a1 + a0 + a2 + a3 + a4 + a5 + a6 + a7.
 
@@ -53,7 +53,7 @@ Proposition add_comm_8_a0_swap_a6 : forall a0 a1 a2 a3 a4 a5 a6 a7 : nat,
 
 Proposition add_comm_8_a0_swap_a7 : forall a0 a1 a2 a3 a4 a5 a6 a7 : nat, 
   a0 + a1 + a2 + a3 + a4 + a5 + a6 + a7 = a7 + a1 + a2 + a3 + a4 + a5 + a6 + a0.
-```
+````
 
 Is there a way to avoid having to do these permutation puzzles? Can we make all permutations equal in some way?
 
@@ -95,9 +95,9 @@ Tutorial for reflection in Agda: https://github.com/alhassy/gentle-intro-to-refl
 
 I'm able to get things like `Term` from `Reflection` under mikan:
 
-```haskell
+````haskell
 import Agda.Builtin.Reflection using (Term)
-```
+````
 
 Though it conflicts with some definitions that I made in `cqts-bg` like for `Nat` currently.
 
@@ -111,16 +111,16 @@ I'm not able to find any `TakeWhile` or `toDec` in `/home/lan/.cabal/store/ghc-9
 
 Their example is
 
-```haskell
+````haskell
 module-name : String
 module-name = takeWhile (toDec (λ c → not (c Char.== '.'))) ⟨𝒮⟩ showName (quote Red)
-```
+````
 
 But this seems strange. Shouldn't we instead give `takeWhile` a map that, for any `a : A` gives us that `p a ≡ true` is decidable? Because this depends on each `a` in the list, not on the whole map being decidable. Let's do it that way.
 
 Like this:
 
-```haskell
+````haskell
 module _
   {ℓ : Level}
   {A : Type ℓ}
@@ -136,11 +136,11 @@ module _
         h0 : Dec (p a ≡ true) → List A
         h0 (yes pa) = a :: takeWhile f as
         h0 (no ¬pa) = takeWhile f as
-```
+````
 
 Then we can use this to give it maps turned into decidable to true procedures:
 
-```haskell
+````haskell
 module _
   {ℓ : Level}
   {A : Type ℓ}
@@ -149,22 +149,22 @@ module _
         (p : A → Bool)
       → ((a : A) → Dec (p a ≡ true))
     Dec-≡true p a = Dec≡-Bool (p a) true
-```
+````
 
 Now we can do this:
 
-```haskell
+````haskell
 module-name : String
 module-name = takeWhile (Dec-≡true (λ c → not (primCharEquality c '.')))
               ⟨𝒮⟩ primShowQName (quote Red)
 			  
 _ : module-name ≡ "mkn-indexRGBRed"
 _ = {!!}
-```
+````
 
 Though we made a mistake in the logic. I think `takeWhile` should stop once it encounters the first false condition. What I implemented was instead `filter`.
 
-```haskell
+````haskell
 module _
   {ℓ : Level}
   {A : Type ℓ}
@@ -183,11 +183,11 @@ module _
 
 _ = test-identical (primShowQName (quote Red)) "mkn-index.RGB.Red"
 _ = test-identical module-name "mkn-index"
-```
+````
 
 --/ 2026-10-27 Wk 44 Tue - 00:05 +03:00
 
-```haskell
+````haskell
     List-takeWhile :
         (f : (a : A) → Dec (p a ≡ true))
       → List A
@@ -209,11 +209,11 @@ _ = test-identical module-name "mkn-index"
         h0 : Bool → List A
         h0 false = []
         h0 true = a :: List-takeWhile' f as
-```
+````
 
 Hmm, `List-takeWhile'` would've worked for us too.
 
-```haskell
+````haskell
 module-name : String
 --module-name = List-takeWhile (Dec-≡true (λ c → not (primCharEquality c '.')))
 --                ⟨𝒮⟩ primShowQName (quote Red)
@@ -223,7 +223,7 @@ module-name = List-takeWhile' (λ c → not (primCharEquality c '.'))
 
 _ = test-identical (primShowQName (quote Red)) "mkn-index.RGB.Red"
 _ = test-identical module-name "mkn-index"
-```
+````
 
 In this case, we do not use the fact that the boolean property being true for more than just case splitting, but it might come in handy if the property itself is of interest. In `List-takeWhile'`, we will not have that information that we can substitute `p a` for `true`. We will just have an opaque `true`.
 
@@ -235,20 +235,20 @@ https://github.com/oisdk/agda-ring-solver/ authors say it was later added to the
 
 2026-10-26 Wk 44 Mon - 14:14 +03:00
 
-```haskell
+````haskell
 unquoteDecl IsRed =
   do ty ← quoteTC (RGB → Set)
  declareDef (𝓋𝓇𝒶 IsRed) ty
  defineFun IsRed   [ clause [ 𝓋𝓇𝒶 (var "x") ] (def (quote _≡_) (“ℓ₀” ∷ “RGB” ∷ “Red” ∷ 𝓋𝓇𝓋 0 [] ∷ [])) ]
-```
+````
 
-This seems outdated. 
+This seems outdated.
 
 For example `clause` seems wrong.
 
 https://agda.readthedocs.io/en/latest/language/reflection.html#id3 shows a different way to write clause:
 
-```haskell
+````haskell
     [ clause
       ( ("A" , arg′ visible (agda-sort (lit 0)))
       ∷ ("x" , arg′ visible (var 0 []))
@@ -258,7 +258,7 @@ https://agda.readthedocs.io/en/latest/language/reflection.html#id3 shows a diffe
       ∷ [] )
       (var 0 [])
     ]
-```
+````
 
 So the `"x"` part is part of the telescope.
 
@@ -266,7 +266,7 @@ There was a fork of the repo that attempted to change the content, but did not c
 
 Anyway, this works:
 
-```haskell
+````haskell
   -- Defining 
   -- IsRed x = Path RGB x Red
   defIsRed : (id-name : Name) → TC ⊤
@@ -290,11 +290,11 @@ Anyway, this works:
     defIsRed id-name
     
   unquoteDecl IsRed = mkIsRed IsRed
-```
+````
 
 2026-10-27 Wk 44 Tue - 19:39 +03:00
 
-```haskell
+````haskell
   macro
     _trivially-has-rid_ :
         (let A = ℕ)
@@ -317,20 +317,20 @@ Anyway, this works:
 
 
   _ = _trivially-has-rid_ _+ℕ_ zero -- bad
-```
+````
 
-```
+````
 /home/lan/src/cloned/cb/lan22h-experiments/problems-mkn/exp/mkn-index/src/mkn-index.agda:521.7-36: error: [DeBruijnIndexOutOfScope]
 de Bruijn index 4 is not in scope in the context (x : _)
 when checking that the expression
 unquote (_+ℕ_ trivially-has-rid zero) has type _761
-```
+````
 
 --/ 2026-10-27 Wk 44 Tue - 20:22 +03:00
 
 If you use `quoteTC` instead of `quoteTerm` here, it allows it.
 
-```haskell
+````haskell
   macro
     _trivially-has-rid_ :
         (let A = ℕ)
@@ -357,6 +357,6 @@ If you use `quoteTC` instead of `quoteTerm` here, it allows it.
 
   _ : ∀ (x : ℕ) → x ∙ℕ 1 ≡ x
   _ = _∙ℕ_ trivially-has-rid 1
-```
+````
 
 --/

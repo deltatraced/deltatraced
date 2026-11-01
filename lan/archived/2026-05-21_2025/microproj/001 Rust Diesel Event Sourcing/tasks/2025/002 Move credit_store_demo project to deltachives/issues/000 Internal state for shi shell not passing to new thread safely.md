@@ -1,15 +1,15 @@
 ---
-parent: "[[002 Move credit_store_demo project to deltachives]]"
-spawned_by: "[[000 Modularize shi shell use in credit store demo]]"
+parent: '[[002 Move credit_store_demo project to deltachives]]'
+spawned_by: '[[000 Modularize shi shell use in credit store demo]]'
 context_type: issue
 status: done
 ---
 
-Parent: [[002 Move credit_store_demo project to deltachives]]
+Parent: [002 Move credit_store_demo project to deltachives](../002%20Move%20credit_store_demo%20project%20to%20deltachives.md)
 
-Spawned by: [[000 Modularize shi shell use in credit store demo]]
+Spawned by: [000 Modularize shi shell use in credit store demo](../tasks/000%20Modularize%20shi%20shell%20use%20in%20credit%20store%20demo.md)
 
-Spawned in: [[000 Modularize shi shell use in credit store demo#^spawn-issue-26db0c|^spawn-issue-26db0c]]
+Spawned in: [^spawn-issue-26db0c](../tasks/000%20Modularize%20shi%20shell%20use%20in%20credit%20store%20demo.md#spawn-issue-26db0c)
 
 # 1 Journal
 
@@ -17,7 +17,7 @@ Spawned in: [[000 Modularize shi shell use in credit store demo#^spawn-issue-26d
 
 We're trying to spawn a thread for the shell to run commands from. Right now we pass some internal state `S` with an associated lifetime `'a` that corresponds to the shell lifetime. This worked for `create_shell`, but not for passing it to the a thread.
 
-```
+````
 error[E0277]: `S` cannot be sent between threads safely
    --> src/drivers/shell.rs:54:19
     |
@@ -51,7 +51,7 @@ help: consider further restricting type parameter `S` with trait `Send`
     |
 53  | fn spawn_shell_loop_thread<'a, S: 'a + std::marker::Send>(shell_state: S, commands: Vec<Command<'a, S>>) -> JoinHandle<Result<(), SpawnShellLoopThreadError>> {
     |                                      +++++++++++++++++++
-```
+````
 
 2025-09-19 Wk 38 Fri - 03:57 +03:00
 

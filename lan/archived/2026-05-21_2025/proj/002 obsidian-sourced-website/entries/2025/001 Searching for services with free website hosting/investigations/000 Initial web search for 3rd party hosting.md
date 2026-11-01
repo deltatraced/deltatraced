@@ -1,10 +1,8 @@
-
 # 1 Journal
 
+* [ ] 
 
-- [ ]
-
-From [[#^spawn-invst-818f9d]] in [[001 Searching for services with free website hosting]]
+From [^spawn-invst-818f9d](000%20Initial%20web%20search%20for%203rd%20party%20hosting.md#spawn-invst-818f9d) in [001 Searching for services with free website hosting](../001%20Searching%20for%20services%20with%20free%20website%20hosting.md)
 
 2025-08-12 Wk 33 Tue - 17:05
 

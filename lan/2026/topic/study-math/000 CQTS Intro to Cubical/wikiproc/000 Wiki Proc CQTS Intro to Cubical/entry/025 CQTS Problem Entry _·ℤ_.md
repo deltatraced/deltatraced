@@ -2,11 +2,11 @@
 context_type: entry
 ---
 
-Parent: [[lan/2026/topic/study-math/000 CQTS Intro to Cubical/wikiproc/000 Wiki Proc CQTS Intro to Cubical/000 Wiki Proc CQTS Intro to Cubical]]
+Parent: [lan/2026/topic/study-math/000 CQTS Intro to Cubical/wikiproc/000 Wiki Proc CQTS Intro to Cubical/000 Wiki Proc CQTS Intro to Cubical](../000%20Wiki%20Proc%20CQTS%20Intro%20to%20Cubical.md)
 
-Spawned by: [[lan/2026/topic/study-math/000 CQTS Intro to Cubical/wikiproc/000 Wiki Proc CQTS Intro to Cubical/entry/005 CQTS Problem Entries]]
+Spawned by: [lan/2026/topic/study-math/000 CQTS Intro to Cubical/wikiproc/000 Wiki Proc CQTS Intro to Cubical/entry/005 CQTS Problem Entries](005%20CQTS%20Problem%20Entries.md)
 
-Spawned in: [[lan/2026/topic/study-math/000 CQTS Intro to Cubical/wikiproc/000 Wiki Proc CQTS Intro to Cubical/entry/005 CQTS Problem Entries#^spawn-entry-6c6520|^spawn-entry-6c6520]]
+Spawned in: [^spawn-entry-6c6520](005%20CQTS%20Problem%20Entries.md#spawn-entry-6c6520)
 
 # Journal
 
@@ -14,25 +14,25 @@ Spawned in: [[lan/2026/topic/study-math/000 CQTS Intro to Cubical/wikiproc/000 W
 
 This is in `/home/lan/src/idea/cb/lan22h-experiments/problems-mkn/proj/gh/cqts/introduction-to-cubical/cqts-lect1/src/lect-1-2-inductive-types.agda`.
 
-```lua
+````lua
 -- Hint: case split on only one of the sides 
 _·ℤ_ : ℤ → ℤ → ℤ
 pos zero ·ℤ b = pos zero
 pos (suc a) ·ℤ b = b +ℤ ((pos a) ·ℤ b)
 negsuc a ·ℤ b = - ((pos (suc a)) ·ℤ b)
-```
+````
 
 This gives us an error.
 
-```lua
+````lua
 -- Hint: case split on only one of the sides 
 _·ℤ_ : ℤ → ℤ → ℤ
 pos zero ·ℤ b = pos zero
 pos (suc a) ·ℤ b = b +ℤ ((pos a) ·ℤ b)
 negsuc a ·ℤ b = - ((pos (suc a)) ·ℤ b)
-```
+````
 
-```sh
+````sh
 # in /home/lan/src/idea/cb/lan22h-experiments/problems-mkn/proj/gh/cqts/introduction-to-cubical/cqts-lect1
 mikan src/lect-1-2-inductive-types.agda
 
@@ -43,6 +43,6 @@ Termination checking failed for the following function:
 Problematic call:
   pos (suc a) ·ℤ b
     (at /home/lan/src/idea/cb/lan22h-experiments/problems-mkn/proj/gh/cqts/introduction-to-cubical/cqts-lect1/src/lect-1-2-inductive-types.agda:392.34-36)
-```
+````
 
 I guess there is no structural decrement in the definition of `negsuc a ·ℤ b`, so it rejects it.

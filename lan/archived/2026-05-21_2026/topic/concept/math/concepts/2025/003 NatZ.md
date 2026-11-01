@@ -1,3 +1,3 @@
-#definition #type
+\#definition #type
 
-The [[000 Nat|natural numbers]], with zero.
+The [natural numbers](000%20Nat.md), with zero.

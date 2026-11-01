@@ -2,13 +2,13 @@
 context_type: entry
 ---
 
-Parent: [[lan/2026/topic/concept/000 Atomic/wiki/003 Wiki Clusterline Concepts/003 Wiki Clusterline Concepts]]
+Parent: [lan/2026/topic/concept/000 Atomic/wiki/003 Wiki Clusterline Concepts/003 Wiki Clusterline Concepts](../003%20Wiki%20Clusterline%20Concepts.md)
 
-Spawned by: [[lan/2026/topic/concept/000 Atomic/wikiproc/003 Wiki Proc Clusterline Concepts/003 Wiki Proc Clusterline Concepts]]
+Spawned by: [lan/2026/topic/concept/000 Atomic/wikiproc/003 Wiki Proc Clusterline Concepts/003 Wiki Proc Clusterline Concepts](../../../wikiproc/003%20Wiki%20Proc%20Clusterline%20Concepts/003%20Wiki%20Proc%20Clusterline%20Concepts.md)
 
-Spawned in: [[lan/2026/topic/concept/000 Atomic/wikiproc/003 Wiki Proc Clusterline Concepts/003 Wiki Proc Clusterline Concepts#^spawn-entry-939257|^spawn-entry-939257]]
+Spawned in: [^spawn-entry-939257](../../../wikiproc/003%20Wiki%20Proc%20Clusterline%20Concepts/003%20Wiki%20Proc%20Clusterline%20Concepts.md#spawn-entry-939257)
 
-Process Note: [[003 Proc Learning is an apprenticeship to signs]]
+Process Note: [003 Proc Learning is an apprenticeship to signs](../../../wikiproc/003%20Wiki%20Proc%20Clusterline%20Concepts/entry/003%20Proc%20Learning%20is%20an%20apprenticeship%20to%20signs.md)
 
 ---
 
@@ -18,13 +18,13 @@ Here we argue that it is learning is not the end of an intent or goal; but the b
 
 It is not something we *do* but something that is *done* to us.
 
-This does not mean that it does not involve our agency, but that focusing on learning itself is a step removed from focusing on the particulars of our practice itself. When we focus on learning to be better, we risk to fall into self-judgment. We ask questions like "Why am I not improving?" or "How can I learn?" as if there is a singular activity that answers to these context-divorced questions. 
+This does not mean that it does not involve our agency, but that focusing on learning itself is a step removed from focusing on the particulars of our practice itself. When we focus on learning to be better, we risk to fall into self-judgment. We ask questions like "Why am I not improving?" or "How can I learn?" as if there is a singular activity that answers to these context-divorced questions.
 
 We may approach "learning how to learn" the same way we initially learn; as if learning is the task, and we need a step by step derivation in order to learn. However, there is no such task. Learning is not merely the ability to complete a task but a change in how we see and interpret the world. It is a kind of growth that happens to us; and not an objective that we meet.
 
-Learning is what happens to us when our engagements with [[006 Signs of our practice]] changes. An artist interacts with shapes and colors in a fundamentally different way from a non-artist; there is no todo list that makes one an artist. Mimicking artists helps us grow precisely because it throws us into an environment where we can begin to engage with the signs of art. And through repeated deliberate engagement with the signs of art; the shapes, the colors, the subtle signs that shape experiences that I could only speak of if I trained myself to be an artist; do we then grow to become artists.
+Learning is what happens to us when our engagements with [006 Signs of our practice](../concept/006%20Signs%20of%20our%20practice.md) changes. An artist interacts with shapes and colors in a fundamentally different way from a non-artist; there is no todo list that makes one an artist. Mimicking artists helps us grow precisely because it throws us into an environment where we can begin to engage with the signs of art. And through repeated deliberate engagement with the signs of art; the shapes, the colors, the subtle signs that shape experiences that I could only speak of if I trained myself to be an artist; do we then grow to become artists.
 
-Sometimes we see our practice as a means to an end; to create an asset, a product, a program, to finish a task, but this risks orienting us to dismiss the signs of our practice. 
+Sometimes we see our practice as a means to an end; to create an asset, a product, a program, to finish a task, but this risks orienting us to dismiss the signs of our practice.
 
 There is a common argument about mathematics that was once believed to be useless, only to become a very central part later on, such as with cryptography. It goes as if what justified the mathematicians working on these fields was the final practical value achieved much later. However, mathematics, like art, is a world. What brought mathematicians to these lands which, then, were said to have no practical value is a mathematical interest and intuition developed as mathematicians.
 

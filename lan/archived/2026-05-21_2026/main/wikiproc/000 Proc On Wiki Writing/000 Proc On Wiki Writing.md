@@ -1,4 +1,3 @@
-
 # 1 Journal
 
 2026-03-20 Wk 12 Fri - 10:33 +03:00
@@ -9,6 +8,6 @@ I ran into a tension here where even in a process note, when it comes to excessi
 
 2026-03-20 Wk 12 Fri - 10:40 +03:00
 
-It's also interesting to look at what I've tried with math concepts like [[000 Nat]].
+It's also interesting to look at what I've tried with math concepts like [000 Nat](../../../topic/concept/math/concepts/2025/000%20Nat.md).
 
-That also had to be editable, it is referring to a concept and not to historical thinking about it. This should follow a similar structure, but it's more general, we're not talking about an atomic one-note-per-concept. 
+That also had to be editable, it is referring to a concept and not to historical thinking about it. This should follow a similar structure, but it's more general, we're not talking about an atomic one-note-per-concept.

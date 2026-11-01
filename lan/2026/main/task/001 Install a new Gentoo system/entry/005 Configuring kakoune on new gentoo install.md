@@ -2,11 +2,11 @@
 context_type: entry
 ---
 
-Parent: [[lan/2026/main/task/001 Install a new Gentoo system/001 Install a new Gentoo system]]
+Parent: [lan/2026/main/task/001 Install a new Gentoo system/001 Install a new Gentoo system](../001%20Install%20a%20new%20Gentoo%20system.md)
 
-Spawned by: [[lan/2026/main/task/001 Install a new Gentoo system/entry/002 Quick new Installs for Gentoo System]]
+Spawned by: [lan/2026/main/task/001 Install a new Gentoo system/entry/002 Quick new Installs for Gentoo System](002%20Quick%20new%20Installs%20for%20Gentoo%20System.md)
 
-Spawned in: [[lan/2026/main/task/001 Install a new Gentoo system/entry/002 Quick new Installs for Gentoo System#^spawn-entry-58a03e|^spawn-entry-58a03e]]
+Spawned in: [^spawn-entry-58a03e](002%20Quick%20new%20Installs%20for%20Gentoo%20System.md#spawn-entry-58a03e)
 
 # Journal
 
@@ -14,7 +14,7 @@ Spawned in: [[lan/2026/main/task/001 Install a new Gentoo system/entry/002 Quick
 
 This requires installation of https://github.com/theimpostor/osc:
 
-```
+````
 # in /home/lan/src/cloned/cb/lan22h/dotfiles/etc/kak/kakrc {
 	hook global RegisterModified '"' %{
 	    nop %sh{
@@ -35,7 +35,7 @@ This requires installation of https://github.com/theimpostor/osc:
 
 # in /home/lan/src/cloned/cb/lan22h/dotfiles/etc/kak/
 ./install.sh
-```
+````
 
 2026-08-02 Wk 31 Sun - 15:09 +03:00
 

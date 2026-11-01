@@ -1,6 +1,6 @@
 # 1 Objective
 
-The general theme in our posts on [[lan/2025/post/001 Star Days ★|Star Days]] and [[002 Atomic Contexts and Respect|Atomic contexts and Respect]] has been on attention. 
+The general theme in our posts on [Star Days](001%20Star%20Days%20%E2%98%85.md) and [Atomic contexts and Respect](002%20Atomic%20Contexts%20and%20Respect.md) has been on attention.
 
 Attention in declaring our intents, in maintaining presence, and in reducing big vague contexts into small specific contexts.
 
@@ -22,7 +22,7 @@ Often, we make judgments such as "I am bad at drawing hands". We look at our dra
 
 Because of societal expectations and habits, such judgments can obtain a lot of weight in our minds. But what do you notice about my judgment "I am bad at drawing hands" with respect to art? Does it attend to signs of art, such as shapes, curves, lines, perspective, references, or does it only attend to us? That we do not produce something?
 
-As explained before, learning happens to us as we attend to the signs of our practice, in this case of art. To draw good hands, then, it is through those encounters with art that we can translate our intentions to drawings. 
+As explained before, learning happens to us as we attend to the signs of our practice, in this case of art. To draw good hands, then, it is through those encounters with art that we can translate our intentions to drawings.
 
 Rather than thinking in terms of whether our work is good or bad, we can instead think in terms of what we intend to produce, what activities we judge would bring our intent into production, and what discrepancies we encounter once we make our attempt.
 
@@ -32,7 +32,7 @@ This can be liberating. If I draw something, or I program, I cannot do bad or fa
 
 Taking notes is often pragmatic. People take notes to remember things. They jot down ideas quickly for reference.
 
-I take a different approach. The method developed in [[lan/2025/post/002 Atomic Contexts and Respect|Atomic contexts and Respect]] builds clusters and graphs of many small notes. The reason for this is to document my experience as I work. Each note functions like a river of timestamped logs, because I simply note what happens to me during work. When evidence surfaces, like a compiler error, I note it because it is this error that then prompts me to make a judgment. My notes, then, are less about categorizing, building a wiki, or remembering, and more about recording what signs change me and prompt me to act or judge.
+I take a different approach. The method developed in [Atomic contexts and Respect](002%20Atomic%20Contexts%20and%20Respect.md) builds clusters and graphs of many small notes. The reason for this is to document my experience as I work. Each note functions like a river of timestamped logs, because I simply note what happens to me during work. When evidence surfaces, like a compiler error, I note it because it is this error that then prompts me to make a judgment. My notes, then, are less about categorizing, building a wiki, or remembering, and more about recording what signs change me and prompt me to act or judge.
 
 Judgments are grounded by reasons. They present relevant facts that satisfy the needs that prompted them. Reasons are inferred and interpreted from the evidence, which is the signs that our practice emits and prompts us to decipher.
 
@@ -42,7 +42,7 @@ This approach also allows me to engage with my prior judgments and reasons. My j
 
 # 5 The End
 
-Thank you for reading! 
+Thank you for reading!
 
 As always, feel free to engage with this work by [opening a github issue](https://github.com/deltatraced/delta-trace/issues/new) or contacting me through mailto:lanhikarixx@gmail.com.
 

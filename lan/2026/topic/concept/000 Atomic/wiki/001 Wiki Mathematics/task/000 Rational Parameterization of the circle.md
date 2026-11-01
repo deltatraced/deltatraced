@@ -3,11 +3,11 @@ context_type: task
 status: todo
 ---
 
-Parent: [[001 Wiki Mathematics]]
+Parent: [001 Wiki Mathematics](../001%20Wiki%20Mathematics.md)
 
-Spawned by: [[001 Wiki Proc Mathematics]]
+Spawned by: [001 Wiki Proc Mathematics](../../../wikiproc/001%20Wiki%20Proc%20Mathematics/001%20Wiki%20Proc%20Mathematics.md)
 
-Spawned in: [[001 Wiki Proc Mathematics#^spawn-task-4186cd|^spawn-task-4186cd]]
+Spawned in: [^spawn-task-4186cd](../../../wikiproc/001%20Wiki%20Proc%20Mathematics/001%20Wiki%20Proc%20Mathematics.md#spawn-task-4186cd)
 
 # Problem
 
@@ -15,9 +15,9 @@ We want to define a function `e` that takes a unique rational parameter `h` and 
 
 # Proof
 
-See the [[#3 Explanation|Explanation]] below.
+See the [Explanation](000%20Rational%20Parameterization%20of%20the%20circle.md#3-explanation) below.
 
-```haskell
+````haskell
 record Vect2 : Type where
   constructor vect2
   field
@@ -149,20 +149,19 @@ module _
 		E₂ᵣ = (E₂ .fst) E₀ᵣ
 		
 
-```
+````
 
 # Explanation
 
 Starting from a point `A` on the unit circle, let it be `(-1, 0)`, we want to cast a ray to any other point on the circle, call it `B`. When we do this, we always cross the y-axis at a point, whose y-component distance from the origin we will label `h`. There is a unique point on the circle for every unique point we intersect the y-axis. Because of this, we are interested to find a map from `h` to the coordinates of the point `B`. Let's graph what we have so far:
 
-![[Pasted image 20260430150504.png]]
-
+![Pasted image 20260430150504.png](../../../../../../../../attachments/Pasted%20image%2020260430150504.png)
 
 We have further labeled `x₁` and `y₁` as the x-component and y-component values of point `B`. We also labeled point `Bₕ` for the point intersecting the y-axis in the line `AB` and point `Bₓ` for the x-projection of `B`.
 
 Now let's solve a map from `h` to the coordinates `(x₁, y₁)`:
 
-```haskell
+````haskell
 record Vect2 : Type where
   constructor vect2
   field
@@ -192,11 +191,11 @@ module _
 		e : (h : ℚ) → Vect2
 		e h .x = {! 0!}
 		e h .y = {! 1!}
-```
+````
 
 In order to obtain an expression `y₁ ≡ ? x₁ h ` for some map `? : ℚ → ℚ → ℚ`, consider that the line segments `ABₕ` and `AB` lie on the same line, and thus share the same slope:
 
-```haskell
+````haskell
 module _
 	slope : Vect2 → Vect2 → ℚ
 	slope a b = (b .y - a .y) / (b .x - a .x)
@@ -209,11 +208,11 @@ module _
 	
 	where
 		{- ... -}
-```
+````
 
 Let's elaborate the equality of the slopes of the lines `ABₕ` and `AB`:
 
-```haskell
+````haskell
 module _
 	{- ... -}
 	where
@@ -234,11 +233,11 @@ module _
 			    x₁ + 1                           ↔⟨ _ ⟩
 				  
 			y₁ ≡ h (x₁ + 1)                      ↔∎
-```
+````
 
 Now we can fill hole `{! 2!}` with `h (x₁ + 1)`. This gives us an expression of `y₁` in terms of `x₁` and `h`.
 
-```haskell
+````haskell
 module _
 	{- ... -}
 	where
@@ -246,18 +245,18 @@ module _
 
 		E₀ᵣ : y₁ ≡ h (x₁ + 1)  
 		E₀ᵣ = (E₀ .fst) L₁-same-slope
-```
+````
 
 So for `y₁ ≡ ? x₁ h`, the expression in `?` we were looking for wasextra point at infinity to account for this, or some other solution
 
-```haskell
+````haskell
 _ : ℚ → ℚ → ℚ
 _ x₁ h = h (x₁ + 1)
-```
+````
 
 Next we want to express `x₁` in terms of `h`. To be able to do this, we will make use of our new expression for `y₁` above and the fact that the point `B` lies on the circle.
 
-```haskell
+````haskell
 module _
 	{- ... -}
 	where
@@ -292,11 +291,11 @@ module _
 			     1 - h²
 			x₁ ≡ –––––– 
 			     1 + h²                          ↔∎
-```
+````
 
 Now we have an expression for `x₁` to fill in the hole `{! 2!}`:
 
-```haskell
+````haskell
 module _
 	{- ... -}
 	where
@@ -309,11 +308,11 @@ module _
 		E₁ᵣ : x₁ ≡ ––––––
 				   1 + h²
 		E₁ᵣ = (E₁ .fst) (cir-B .snd)
-```
+````
 
 Recall that we expressed `y₁` in terms of `x₁` and `h` in `E₀ᵣ`. Now that we have expressed `x₁` in terms of `h`, let's further elaborate `y₁` solely in terms of `h`:
 
-```haskell
+````haskell
 module _
 	{- ... -}
 	where
@@ -336,11 +335,11 @@ module _
 				   2h
 			y₁ ≡ ––––––             
 			     1 + h²                          ↔∎
-```
+````
 
-Now we have the expression for `y₁` in terms of `h` to put in hole `{! 2!}:
+Now we have the expression for `y₁` in terms of `h` to put in hole \`{! 2!}:
 
-```haskell
+````haskell
 module _
 	{- ... -}
 	where
@@ -352,22 +351,22 @@ module _
 		E₂ᵣ : y₁ ≡ ––––––
 			       1 + h²
 		E₂ᵣ = (E₂ .fst) E₀ᵣ
-```
+````
 
 Now we can finish off the original problem. We wanted a map `e` that sends a value for `h` to a point on the circle. By sweeping `h`, we should get all rational points on the circle.
 
-```haskell
+````haskell
 module _
 	{- ... -}
 	where
 		e : (h : ℚ) → Vect2
 		e h .x = {! 0!}
 		e h .y = {! 1!}
-```
+````
 
 Based on our investigation, `E₁ᵣ` shows us how we must implement `e h .x` and `E₂ᵣ` shows us how we must implement `e h .y` so that this map guarantees sending `h`  to a unique point on the circle:
 
-```haskell
+````haskell
 module _
 	{- ... -}
 	where
@@ -376,6 +375,6 @@ module _
 		e h .y = 2h / (1 + h²)
 	 -- e h .x = E₁ᵣ i1
 	 -- e h .y = E₂ᵣ i1
-```
+````
 
 The full solution is put in the proof section.

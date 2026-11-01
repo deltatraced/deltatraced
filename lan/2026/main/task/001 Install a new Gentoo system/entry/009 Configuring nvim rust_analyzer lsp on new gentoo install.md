@@ -2,11 +2,11 @@
 context_type: entry
 ---
 
-Parent: [[lan/2026/main/task/001 Install a new Gentoo system/001 Install a new Gentoo system]]
+Parent: [lan/2026/main/task/001 Install a new Gentoo system/001 Install a new Gentoo system](../001%20Install%20a%20new%20Gentoo%20system.md)
 
-Spawned by: [[lan/2026/main/task/001 Install a new Gentoo system/entry/006 Configuring nvim on new gentoo install]]
+Spawned by: [lan/2026/main/task/001 Install a new Gentoo system/entry/006 Configuring nvim on new gentoo install](006%20Configuring%20nvim%20on%20new%20gentoo%20install.md)
 
-Spawned in: [[lan/2026/main/task/001 Install a new Gentoo system/entry/006 Configuring nvim on new gentoo install#^spawn-entry-0ac83f|^spawn-entry-0ac83f]]
+Spawned in: [^spawn-entry-0ac83f](006%20Configuring%20nvim%20on%20new%20gentoo%20install.md#spawn-entry-0ac83f)
 
 # Journal
 
@@ -32,16 +32,16 @@ https://github.com/neovim/nvim-lspconfig
 
 They deprecated `require('lspconfig')` as of `nvim 0.11+`. (Mine: `nvim --version # out (relevant) { NVIM v0.11.7 }`.)
 
-They mention that as of `nvim 0.12+` there is a built-in `vim.pack` plugin manager. But I don't have access to this. Let's upgrade: [[002 Quick new Installs for Gentoo System]]
+They mention that as of `nvim 0.12+` there is a built-in `vim.pack` plugin manager. But I don't have access to this. Let's upgrade: [002 Quick new Installs for Gentoo System](002%20Quick%20new%20Installs%20for%20Gentoo%20System.md)
 
 `nvim --version # out (relevant) { NVIM v0.12.3 }`
 
 Adding
 
-```lua
+````lua
 -- in /home/lan/src/cloned/cb/lan22h/dotfiles/etc/nvim/init_d/plugin/init.lua
 vim.pack.add{ { src = 'https://github.com/neovim/nvim-lspconfig' }, }
-```
+````
 
 2026-08-03 Wk 32 Mon - 21:33 +03:00
 
@@ -49,7 +49,7 @@ https://github.com/rust-lang/rust-analyzer
 
 Adding config from https://rust-analyzer.github.io/book/other_editors.html#nvim-lsp
 
-Install rust-analyzer: [[002 Quick new Installs for Gentoo System]]
+Install rust-analyzer: [002 Quick new Installs for Gentoo System](002%20Quick%20new%20Installs%20for%20Gentoo%20System.md)
 
 2026-08-03 Wk 32 Mon - 23:08 +03:00
 
@@ -59,13 +59,13 @@ We can `ctrl+]` into symbols in our project, but not currently for other crates.
 
 2026-08-04 Wk 32 Tue - 00:18 +03:00
 
-```sh
+````sh
 # in /home/lan/src/cloned/cb/lan22h/dotfiles
 git commit
 
 # out
 [main 03f1450] configure rust lsp for nvim
-```
+````
 
 2026-08-04 Wk 32 Tue - 00:26 +03:00
 
@@ -85,8 +85,8 @@ We can perform code actions, like importing, with `gra`.
 
 2026-08-04 Wk 32 Tue - 11:53 +03:00
 
-- [x] https://neovim.io/doc/user/lsp/#lsp-autocompletion
-- $\to$  https://neovim.io/doc/user/lsp/#lsp-attach
+* [x] https://neovim.io/doc/user/lsp/#lsp-autocompletion
+* $\to$  https://neovim.io/doc/user/lsp/#lsp-attach
 
 Not sure if I want autocompletion, it seems to do the same thing as `C-x C-o` but is auto triggered? Anyway we can use `C-y` to make a selection from that menu.
 
@@ -100,24 +100,26 @@ https://lsp-devtools.readthedocs.io/en/latest/capabilities/text-document/complet
 
 Where is `vim.lsp.completion`?
 
-- Search commits for `vim.lsp`
-- $\to$ https://github.com/neovim/neovim/commit/929e644a5a94497f1234a2b3b28abe5bbc8066ee
-- $\to$ https://github.com/neovim/neovim/blob/master/runtime/lua/vim/lsp/completion.lua
+* Search commits for `vim.lsp`
 
-- https://github.com/neovim/neovim/blob/a29297ac538f9a86bbcd5e59cc8a9e3494b263c6/runtime/lua/vim/lsp/completion.lua#L1319 `vim.lsp.completion.enable`
+* $\to$ https://github.com/neovim/neovim/commit/929e644a5a94497f1234a2b3b28abe5bbc8066ee
+
+* $\to$ https://github.com/neovim/neovim/blob/master/runtime/lua/vim/lsp/completion.lua
+
+* https://github.com/neovim/neovim/blob/a29297ac538f9a86bbcd5e59cc8a9e3494b263c6/runtime/lua/vim/lsp/completion.lua#L1319 `vim.lsp.completion.enable`
 
 We can see the `autotrigger `option we explicitly set disabled
 
-```lua
+````lua
 # in https://github.com/neovim/neovim/blob/a29297ac538f9a86bbcd5e59cc8a9e3494b263c6/runtime/lua/vim/lsp/completion.lua#L1220
 --- @field autotrigger? boolean  (default: false) When true, completion triggers automatically based on the server's `triggerCharacters`.
-```
+````
 
 Via https://github.com/neovim/neovim/blob/a29297ac538f9a86bbcd5e59cc8a9e3494b263c6/runtime/lua/vim/lsp/completion.lua#L11,
 
-```
+````
 :set completeopt+=menuone,noselect,popup
-```
+````
 
 It also mentioned this in the docs here: https://neovim.io/doc/user/lsp/#lsp-completion
 

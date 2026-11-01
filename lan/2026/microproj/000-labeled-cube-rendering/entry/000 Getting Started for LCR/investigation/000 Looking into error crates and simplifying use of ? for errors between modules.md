@@ -1,15 +1,15 @@
 ---
-parent: "[[000 Getting Started for LCR]]"
-spawned_by: "[[002 Setup openGL rendering app in rust and do some dev]]"
+parent: '[[000 Getting Started for LCR]]'
+spawned_by: '[[002 Setup openGL rendering app in rust and do some dev]]'
 context_type: investigation
 status: done
 ---
 
-Parent: [[000 Getting Started for LCR]]
+Parent: [000 Getting Started for LCR](../000%20Getting%20Started%20for%20LCR.md)
 
-Spawned by: [[002 Setup openGL rendering app in rust and do some dev]]
+Spawned by: [002 Setup openGL rendering app in rust and do some dev](../task/002%20Setup%20openGL%20rendering%20app%20in%20rust%20and%20do%20some%20dev.md)
 
-Spawned in: [[002 Setup openGL rendering app in rust and do some dev#^spawn-invst-d25645|^spawn-invst-d25645]]
+Spawned in: [^spawn-invst-d25645](../task/002%20Setup%20openGL%20rendering%20app%20in%20rust%20and%20do%20some%20dev.md#spawn-invst-d25645)
 
 # 1 Conclusion
 
@@ -19,19 +19,19 @@ We ended up choosing `error_set` and to have a unified `errors.rs` file to be ab
 
 2026-05-19 Wk 21 Tue - 01:10 +03:00
 
-It seems it was made so that you would have a single `errors.rs` with a single, project-wide error set. This makes sense in that it will be deriving all possible subset `From` implementations in resolving `error_set::error_set!`. It seems it should be possible to import into that macro, and handle all possible permutations but this time only with the new elements in the new `error_set!` imported into, but they may have avoided this complexity by instead requiring a single `error_set!`. Note that you can still source error types as usual between multiple `error_set!`s. 
+It seems it was made so that you would have a single `errors.rs` with a single, project-wide error set. This makes sense in that it will be deriving all possible subset `From` implementations in resolving `error_set::error_set!`. It seems it should be possible to import into that macro, and handle all possible permutations but this time only with the new elements in the new `error_set!` imported into, but they may have avoided this complexity by instead requiring a single `error_set!`. Note that you can still source error types as usual between multiple `error_set!`s.
 
 Let's see how `?` behaves with a repro,
 
-```sh
+````sh
 # in /home/lan/src/cloned/gh/deltachives/labeled-cube-rendering-2026-m000/rs/src/repro
 ls
 
 # out
 a.rs  b.rs  c.rs  mod.rs
-```
+````
 
-```rust
+````rust
 // in ../../Cargo.toml
 error_set = "0.9.1"
 
@@ -106,7 +106,7 @@ pub fn compute() -> Result<(), ErrorsC> {
 }
 
 
-```
+````
 
 In this example, `?` works fine in `b::compute`, It behaves like `$[from]`.  If we have one `error_set!` per module, then this will at least eliminate nesting that happens through `ConsumerError -> ModuleError -> TypeInModuleError`, where we are two layers deep and `?` is not an option from `TypeInModuleError` to `ConsumerError`.
 

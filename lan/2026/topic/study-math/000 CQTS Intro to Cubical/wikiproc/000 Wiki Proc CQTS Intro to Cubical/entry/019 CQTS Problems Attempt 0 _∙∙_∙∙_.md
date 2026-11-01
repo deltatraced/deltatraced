@@ -2,11 +2,11 @@
 context_type: entry
 ---
 
-Parent: [[lan/2026/topic/study-math/000 CQTS Intro to Cubical/wikiproc/000 Wiki Proc CQTS Intro to Cubical/000 Wiki Proc CQTS Intro to Cubical]]
+Parent: [lan/2026/topic/study-math/000 CQTS Intro to Cubical/wikiproc/000 Wiki Proc CQTS Intro to Cubical/000 Wiki Proc CQTS Intro to Cubical](../000%20Wiki%20Proc%20CQTS%20Intro%20to%20Cubical.md)
 
-Spawned by: [[009 CQTS Problems Attempt Entries]]
+Spawned by: [009 CQTS Problems Attempt Entries](009%20CQTS%20Problems%20Attempt%20Entries.md)
 
-Spawned in: [[009 CQTS Problems Attempt Entries#^spawn-entry-2f20be|^spawn-entry-2f20be]]
+Spawned in: [^spawn-entry-2f20be](009%20CQTS%20Problems%20Attempt%20Entries.md#spawn-entry-2f20be)
 
 # Journal
 
@@ -16,7 +16,7 @@ in `/home/lan/src/idea/cb/lan22h-experiments/problems-mkn/proj/gh/cqts/introduct
 
 in `/home/lan/src/cloned/gh/CQTS/branches/introduction-to-cubical@solve/lectures/2--Paths-and-Identifications/2-4--Composition-and-Filling.lagda.md`,
 
-```haskell
+````haskell
  _∙∙_∙∙_ :
      (r : a ≡ b)
    → (p : b ≡ c)
@@ -25,13 +25,13 @@ in `/home/lan/src/cloned/gh/CQTS/branches/introduction-to-cubical@solve/lectures
  (r ∙∙ p ∙∙ q) i = hcomp (∂ i) ((double-comp-box r p q i))    diamond-tube-alt p q i j k (i = i0) = {!!}
     diamond-tube-alt p q i j k (i = i1) = {!!}
 
-```
+````
 
 Why is it that hcomp for this only takes an interval formula that is i1 at (i=i0) and (i=i1), when the open box also has (j=i0) as a side?
 
 CQTS Authors explain:
 
-```
+````
 Writing more formally, ``hcomp`` takes in two arguments:
 
 * A formula `φ : I`, specifying which sides of the box are going to be
@@ -52,17 +52,16 @@ Writing more formally, ``hcomp`` takes in two arguments:
   similarly when `i = i1` and we are on the right side of the square.
   Otherwise, we only know for sure that `box j` is defined when `j =
   i0`, in which case we are on the bottom of the square.
-```
-
+````
 
 Well box is `box : (i j : I) → Partial (open-box i j) A`, it seems they mean this when evaluated at `i` to the first argument of hcomp `∂ a`:
 
-- `box : (i j : I) → Partial ((~ i) ∨ i ∨ (~ j)) A`
-- $\to$ `box : (j : I) → Partial (∂ i ∨ (~ j)) A`
+* `box : (i j : I) → Partial ((~ i) ∨ i ∨ (~ j)) A`
+* $\to$ `box : (j : I) → Partial (∂ i ∨ (~ j)) A`
 
-The other thing is that ` _∙∙_∙∙_` is a 1-cube path. In its very definition, it could not supply us with more than one interval. 
+The other thing is that ` _∙∙_∙∙_` is a 1-cube path. In its very definition, it could not supply us with more than one interval.
 
-```
+````
 --                  
 --         a  .......  d        
 --         ^           ^              ^
@@ -70,7 +69,7 @@ The other thing is that ` _∙∙_∙∙_` is a 1-cube path. In its very definit
 --         |           |              . — >
 --         b  — — — >  c                i
 --              p   
-```
+````
 
 So maybe we should interpret the the first argument of `hcomp` as specifying the endpoints of the lid 1-cube to fill in, which runs from the face (i = i0) to the face (i = i1).
 
@@ -80,13 +79,13 @@ At `i = i0` `box j` should resolve to `(sym r) j`, and at `i = i1` `box j` shoul
 
 So it seems for any partial n-cube open box, in order to perform hcomp on it (close the lid), we need to specify as the first argument of hcomp a formula for an (n-1) cube face sliding in the direction of the open (n-1) cube face.
 
-In our case this is a formula of 1-cube faces, sliding in the direction of the open lid (i = i0 $\to$ i = i1). So one variable is always left unspecified in the first argumen: the one that is defined as the upper surface of the sweep. 
+In our case this is a formula of 1-cube faces, sliding in the direction of the open lid (i = i0 $\to$ i = i1). So one variable is always left unspecified in the first argumen: the one that is defined as the upper surface of the sweep.
 
-Then because only one missing variable remains in `box j` (no matter the n-dimension of the subcube), its formula should always be `(φ ∨ ~ j)`, the second argument expects our third defined case already as the only remaining pattern `(j = i0)` we need to define to close the lid and perform the sweep. 
+Then because only one missing variable remains in `box j` (no matter the n-dimension of the subcube), its formula should always be `(φ ∨ ~ j)`, the second argument expects our third defined case already as the only remaining pattern `(j = i0)` we need to define to close the lid and perform the sweep.
 
 If we omit the j case with this bad `double-comp-box'`, it will complain about it:
 
-```haskell
+````haskell
     double-comp-box' :
         (r : a ≡ b)
       → (p : b ≡ c)
@@ -106,9 +105,9 @@ If we omit the j case with this bad `double-comp-box'`, it will complain about i
       → (a ≡ d)
     (r ∙∙ p ∙∙ q) i = hcomp (∂ i) ((double-comp-box' r p q i))
 							--      ~~~~~~~~~~~~~~~~~~~~~~~~ problem
-```
+````
 
-```
+````
 The terms
   (i ∨ ~ i) ∨ ~ j
 and
@@ -116,7 +115,7 @@ and
 are not equal at type I
 when checking that the expression double-comp-box' r p q i has type
 (j : I) → Partial (∂ i ∨ ~ j) _A_301
-```
+````
 
 Another way to state it is that the formula φ specifies the boundaries of the lid subcube. For a line, those are the endpoints, but for a square it would require 2 interval variables to get its boundaries within the cube.
 

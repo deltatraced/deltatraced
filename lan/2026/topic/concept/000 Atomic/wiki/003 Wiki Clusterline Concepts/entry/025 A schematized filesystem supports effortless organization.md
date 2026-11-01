@@ -2,21 +2,21 @@
 context_type: entry
 ---
 
-Parent: [[lan/2026/topic/concept/000 Atomic/wiki/003 Wiki Clusterline Concepts/003 Wiki Clusterline Concepts]]
+Parent: [lan/2026/topic/concept/000 Atomic/wiki/003 Wiki Clusterline Concepts/003 Wiki Clusterline Concepts](../003%20Wiki%20Clusterline%20Concepts.md)
 
-Spawned by: [[lan/2026/topic/concept/000 Atomic/wikiproc/003 Wiki Proc Clusterline Concepts/003 Wiki Proc Clusterline Concepts]]
+Spawned by: [lan/2026/topic/concept/000 Atomic/wikiproc/003 Wiki Proc Clusterline Concepts/003 Wiki Proc Clusterline Concepts](../../../wikiproc/003%20Wiki%20Proc%20Clusterline%20Concepts/003%20Wiki%20Proc%20Clusterline%20Concepts.md)
 
-Spawned in: [[lan/2026/topic/concept/000 Atomic/wikiproc/003 Wiki Proc Clusterline Concepts/003 Wiki Proc Clusterline Concepts#^spawn-entry-a0e76f|^spawn-entry-a0e76f]]
+Spawned in: [^spawn-entry-a0e76f](../../../wikiproc/003%20Wiki%20Proc%20Clusterline%20Concepts/003%20Wiki%20Proc%20Clusterline%20Concepts.md#spawn-entry-a0e76f)
 
 ---
 
 # Benefits of schematized filesystems
 
-A schema-less filesystem imposes many decisions on the note user. Where should we put a note? How should we group notes? One may opt for emergant organization via linking alone and act on a flat list, but the emergent links may not always be optimal for navigation. 
+A schema-less filesystem imposes many decisions on the note user. Where should we put a note? How should we group notes? One may opt for emergant organization via linking alone and act on a flat list, but the emergent links may not always be optimal for navigation.
 
 # Specifics of clusterline as an example
 
-For the case of clusterline, 
+For the case of clusterline,
 
 the note filesystem is a deterministic schema. In the notes root, one may have many users. `lan/` is my user, you may add another, we may have a `shared/` space of collaboration in writing.
 
@@ -25,14 +25,16 @@ Within `/{user}/` we have  `/{user}/YYYY` and `/{user}/archived`. This decision 
 Within a year or an archive, we have a collection of clusters (individual note graphs) that we call `clusterspace`s.
 
 clusterspaces have types that determine how they are to be interpreted. For example:
-- `/proj/000 My Proj` is a clusterspace of type project. It is a folder dedicated to all the work of that project.
-- `/microproj/001 My little experiment` is a clusterspace of type `microproj` which is a small project, often for demos, experiments, and other explanatory and exploratory purposes.
 
-There is the special clusterspace `main`, which comes without a type: `/main`. This is the user-wide clusterspace. 
+* `/proj/000 My Proj` is a clusterspace of type project. It is a folder dedicated to all the work of that project.
+* `/microproj/001 My little experiment` is a clusterspace of type `microproj` which is a small project, often for demos, experiments, and other explanatory and exploratory purposes.
+
+There is the special clusterspace `main`, which comes without a type: `/main`. This is the user-wide clusterspace.
 
 There is also a special clusterspace `/topic/{my topic}` where `{my topic}` may be set to any user-specified grouping of clusterspaces. For example:
-- `/topic/book-notes/{Author clusterspace}/`: `/topic/book-notes` allows us to dedicate a place for all author clusterspaces, which themselves explore various works of the author in question.
-- `/topic/oss/003 Open Source Proj/` to track open source projects under group `oss`.
+
+* `/topic/book-notes/{Author clusterspace}/`: `/topic/book-notes` allows us to dedicate a place for all author clusterspaces, which themselves explore various works of the author in question.
+* `/topic/oss/003 Open Source Proj/` to track open source projects under group `oss`.
 
 Next we have cluster types and clusters. Just like clusterspace types and clusterspaces, the types tell us how to interpret the cluster. Some clusters are of type `task`, so they are actionable. Others of type `entry`, which is useful for organization and open-ended exploration. Some are of type `issue`, which can index code forge issues like from a github project. The clusters themselves contain a core note with their same name, so: `/topic/oss/003 Open Source Proj/task/000 Build SilverBulletmd/000 Build Silvrebulletmd`.
 
@@ -42,7 +44,7 @@ At the levels of the clusterspace and the cluster we may add `st/{status}` befor
 
 clusterspaces, clusters, and subnotes all begin with a triplet number `NNN` which helps giving them a stable point of reference. We can refer to them by number, and they are more stable in case of title renames.
 
-It would be tedious to maintain all this manually, so we ought to use some tooling that respects this schema. This is the purpose of the `clusterline-md` set of tools: [[001 Goals for clusterlinemd]]
+It would be tedious to maintain all this manually, so we ought to use some tooling that respects this schema. This is the purpose of the `clusterline-md` set of tools: [001 Goals for clusterlinemd](../../../../../../proj/003-clusterline-md/entry/001%20Goals%20for%20clusterlinemd/001%20Goals%20for%20clusterlinemd.md)
 
 **in Summary,**
 

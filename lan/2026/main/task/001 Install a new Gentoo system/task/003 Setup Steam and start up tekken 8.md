@@ -3,33 +3,33 @@ context_type: task
 status: done
 ---
 
-Parent: [[lan/2026/main/task/001 Install a new Gentoo system/001 Install a new Gentoo system]]
+Parent: [lan/2026/main/task/001 Install a new Gentoo system/001 Install a new Gentoo system](../001%20Install%20a%20new%20Gentoo%20system.md)
 
-Spawned by: [[lan/2026/main/task/001 Install a new Gentoo system/001 Install a new Gentoo system]]
+Spawned by: [lan/2026/main/task/001 Install a new Gentoo system/001 Install a new Gentoo system](../001%20Install%20a%20new%20Gentoo%20system.md)
 
-Spawned in: [[lan/2026/main/task/001 Install a new Gentoo system/001 Install a new Gentoo system#^spawn-task-b01daf|^spawn-task-b01daf]]
+Spawned in: [^spawn-task-b01daf](../001%20Install%20a%20new%20Gentoo%20system.md#spawn-task-b01daf)
 
-Overview: [[001 Overview Install a new Gentoo system]]
+Overview: [001 Overview Install a new Gentoo system](../entry/001%20Overview%20Install%20a%20new%20Gentoo%20system.md)
 
 # Journal
 
 2026-07-27 Wk 31 Mon - 00:30 +03:00
 
-[[002 Enable my bluetooth speakers, bluetooth headset, and wired headset to play music on youtube]]
+[002 Enable my bluetooth speakers, bluetooth headset, and wired headset to play music on youtube](002%20Enable%20my%20bluetooth%20speakers,%20bluetooth%20headset,%20and%20wired%20headset%20to%20play%20music%20on%20youtube.md)
 
 By now we at least have music in my wired headset. Let's set up steam.
 
 https://wiki.gentoo.org/wiki/Steam
 
-```sh
+````sh
 su
 eselect repository enable steam-overlay
 emaint sync -r steam-overlay
-```
+````
 
 It seems we have to specify a long file for steam:
 
-```sh
+````sh
 # in /etc/portage/package.use/steam
 app-accessibility/at-spi2-core    abi_x86_32
 app-arch/bzip2                    abi_x86_32
@@ -224,38 +224,38 @@ x11-drivers/nvidia-drivers  abi_x86_32
 
 games-util/steam-launcher -steamruntime
 
-```
+````
 
-```sh
+````sh
 # in /etc/portage/package.accept_keywords/steam
 */*::steam-overlay
 games-util/game-device-udev-rules
 sys-libs/libudev-compat
-```
+````
 
-```sh
+````sh
 # in /etc/portage/package.license/steam
 games-util/steam-launcher ValveSteamLicense
-```
+````
 
-```
+````
 From https://wiki.gentoo.org/wiki/Steam,
 
 The overlay enables the Steam runtime by default. If you'd like to rely solely on Gentoo packages, then disable the `steamruntime` USE flag. Use the esteam utility later to scan your installed native Linux games for additional Gentoo packages required by them. Note that Gentoo packages do not cover the entirety of the runtime, so a small number of games may not work.
-```
+````
 
 Let's try to disable `steamruntime`. Added to above use flags.
 
-```sh
+````sh
 su
 emerge --ask games-util/steam-launcher
-```
+````
 
 Moving `/etc/portage/package.license` the file into `/etc/portage/package.license/license` so we could also add a `steam` license file.
 
 There are some configurations that are recommended to be added, and they all depend on `X`. But I don't want to add `X`.
 
-```sh
+````sh
 find /etc/portage -type f | grep '._cfg' # out {
 	/etc/portage/package.use/x11-drivers/._cfg0000_nvidia-drivers
 # }
@@ -308,7 +308,7 @@ cat /etc/portage/package.use/x11-drivers/._cfg0000_nvidia-drivers # out (relevan
 	# required by games-util/steam-launcher (argument)
 	>=media-libs/libepoxy-1.5.10-r3 X
 # }
-```
+````
 
 Let's add the above to `/etc/portage/package.use/steam`
 
@@ -316,31 +316,32 @@ https://wiki.gentoo.org/wiki/Steam seems to suggest it is required to have it th
 
 We also are getting a circular dependency with `sys-libs/ncurses`, which they resolve with:
 
-```sh
+````sh
 USE="-gpm" emerge --ask --oneshot sys-libs/ncurses
 emerge --ask games-util/steam-launcher
 emerge --ask --oneshot sys-libs/ncurses gpm
-```
+````
 
 There are 163 packages for steam here.
 
 2026-07-27 Wk 31 Mon - 07:27 +03:00
 
-```
+````
 3DERROR: ld.so: object '/usr/lib/libextest.so' from LD_PRELOAD cannot be preloaded (wrong ELF class: ELFCLASS32): ignored.
 ERROR: ld.so: object '/usr/lib/libextest.so' from LD_PRELOAD cannot be preloaded (wrong ELF class: ELFCLASS32): ignored.
 ERROR: ld.so: object '/usr/lib/libextest.so' from LD_PRELOAD cannot be preloaded (wrong ELF class: ELFCLASS32): ignored.
-```
+````
 
 When trying to run `steam` in sway
 
-```
+````
 * Error: esteam started as unprivileged user and sudo unavailable
-```
+````
 
 When we try to run `esteam` instead.
 
-> Do not run emerge --unmerge @steam to remove Steam as it may make the system unusable. Instead use emerge --ask --depclean @steam for this method.
+ > 
+ > Do not run emerge --unmerge @steam to remove Steam as it may make the system unusable. Instead use emerge --ask --depclean @steam for this method.
 
 Something to keep in mind.
 
@@ -350,15 +351,17 @@ It is supposed to run as X.
 
 https://wiki.gentoo.org/wiki/Xwayland
 
-```sh
+````sh
 emerge --ask x11-base/xwayland
-```
+````
 
-> The most common game related issues are solved by enabling the `stack-realign` USE flag on the [sys-libs/glibc](https://packages.gentoo.org/packages/sys-libs/glibc) package and re-emerge the [@world set](https://wiki.gentoo.org/wiki/World_set_\(Portage\) "World set (Portage)"). It is a good
+ > 
+ > The most common game related issues are solved by enabling the `stack-realign` USE flag on the [sys-libs/glibc](https://packages.gentoo.org/packages/sys-libs/glibc) package and re-emerge the [@world set](https://wiki.gentoo.org/wiki/World_set_(Portage) "World set (Portage)"). It is a good
 
-> If you want to play games through proton, don't forget to add the `vulkan` USE flag on the [media-libs/mesa](https://packages.gentoo.org/packages/media-libs/mesa) package.
+ > 
+ > If you want to play games through proton, don't forget to add the `vulkan` USE flag on the [media-libs/mesa](https://packages.gentoo.org/packages/media-libs/mesa) package.
 
-```sh
+````sh
 # in /etc/portage/package.use/sys-libs/glibc {
 	sys-libs/glibc stack-realign
 # }
@@ -369,30 +372,30 @@ emerge --ask x11-base/xwayland
 
 emerge --ask --changed-use media-libs/mesa # did not run any install
 emerge --ask --changed-use --deep @world
-```
+````
 
 2026-07-27 Wk 31 Mon - 09:44 +03:00
 
 I have `X` disabled for sway:
 
-```sh
+````sh
 equery uses sway
 
 # out (relevant)
  * Found these USE flags for gui-wm/sway-1.11:
  U I
  - - X          : Enable support for X11 applications (XWayland)
-```
+````
 
 Enable and rebuild. We need Xwayland for steam.
 
-```diff
+````diff
 # in /etc/portage/package.use/gui-wm/sway
 -gui-wm/sway wallpapers -X
 +gui-wm/sway wallpapers X
-```
+````
 
-```sh
+````sh
 # recommended changes
 find /etc/portage/ -type f | grep _cfg # out {
 	/etc/portage/package.use/x11-drivers/._cfg0000_nvidia-drivers
@@ -404,9 +407,9 @@ cat /etc/portage/package.use/x11-drivers/._cfg0000_nvidia-drivers # out (relevan
 	# required by @world (argument)
 	>=gui-libs/wlroots-0.19.2:0.19 X
 # }
-```
+````
 
-```sh
+````sh
 # in /etc/portage/package.use/gui-libs/wlroots {
 	# required by gui-wm/sway-1.11::gentoo
 	# required by @selected
@@ -416,7 +419,7 @@ cat /etc/portage/package.use/x11-drivers/._cfg0000_nvidia-drivers # out (relevan
 
 su
 emerge --ask --changed-use gui-wm/sway
-```
+````
 
 2026-07-27 Wk 31 Mon - 10:32 +03:00
 

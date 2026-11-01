@@ -2,7 +2,7 @@
 
 ## 1.1 Wiki definition
 
-A [[001 Set|set]] $A$ is said to be a subset of another set $B$ if all elements of $A$ are elements of $B$. Then we also say that $B$ is a superset of $A$.
+A [set](001%20Set.md) $A$ is said to be a subset of another set $B$ if all elements of $A$ are elements of $B$. Then we also say that $B$ is a superset of $A$.
 
 We use the symbol $\subseteq$ to denote subset. $A \subseteq B$ means that A is a subset of B.
 

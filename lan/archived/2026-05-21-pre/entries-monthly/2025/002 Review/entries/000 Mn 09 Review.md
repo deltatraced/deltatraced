@@ -1,16 +1,16 @@
 ---
-parent: "[[002 Review]]"
-spawned_by: "[[002 Review]]"
+parent: '[[002 Review]]'
+spawned_by: '[[002 Review]]'
 context_type: entry
 ---
 
-Parent: [[002 Review]]
+Parent: [002 Review](../002%20Review.md)
 
-Spawned by: [[002 Review]]
+Spawned by: [002 Review](../002%20Review.md)
 
-Spawned in: [[002 Review#^spawn-entry-41b6e6|^spawn-entry-41b6e6]]
+Spawned in: [^spawn-entry-41b6e6](../002%20Review.md#spawn-entry-41b6e6)
 
-[[Mn 09 September]]
+[Mn 09 September](../../../../../2026-05-21_2025/main/overview/monthly/2025/Mn%2009%20September.md)
 
 # 2 Purpose
 

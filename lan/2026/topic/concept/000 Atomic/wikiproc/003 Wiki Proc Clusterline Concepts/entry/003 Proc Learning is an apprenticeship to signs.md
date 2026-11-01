@@ -2,13 +2,13 @@
 context_type: entry
 ---
 
-Parent: [[lan/2026/topic/concept/000 Atomic/wikiproc/003 Wiki Proc Clusterline Concepts/003 Wiki Proc Clusterline Concepts]]
+Parent: [lan/2026/topic/concept/000 Atomic/wikiproc/003 Wiki Proc Clusterline Concepts/003 Wiki Proc Clusterline Concepts](../003%20Wiki%20Proc%20Clusterline%20Concepts.md)
 
-Spawned by: [[lan/2026/topic/concept/000 Atomic/wikiproc/003 Wiki Proc Clusterline Concepts/003 Wiki Proc Clusterline Concepts]]
+Spawned by: [lan/2026/topic/concept/000 Atomic/wikiproc/003 Wiki Proc Clusterline Concepts/003 Wiki Proc Clusterline Concepts](../003%20Wiki%20Proc%20Clusterline%20Concepts.md)
 
-Spawned in: [[lan/2026/topic/concept/000 Atomic/wikiproc/003 Wiki Proc Clusterline Concepts/003 Wiki Proc Clusterline Concepts#^spawn-entry-e09d9f|^spawn-entry-e09d9f]]
+Spawned in: [^spawn-entry-e09d9f](../003%20Wiki%20Proc%20Clusterline%20Concepts.md#spawn-entry-e09d9f)
 
-Artifact Note: [[020 Learning is an apprenticeship to signs]]
+Artifact Note: [020 Learning is an apprenticeship to signs](../../../wiki/003%20Wiki%20Clusterline%20Concepts/entry/020%20Learning%20is%20an%20apprenticeship%20to%20signs.md)
 
 # Journal
 

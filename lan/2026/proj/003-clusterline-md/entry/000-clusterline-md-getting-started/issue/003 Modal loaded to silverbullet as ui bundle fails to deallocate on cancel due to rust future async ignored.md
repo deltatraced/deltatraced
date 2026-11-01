@@ -3,11 +3,11 @@ context_type: issue
 status: done
 ---
 
-Parent: [[lan/2026/proj/003-clusterline-md/entry/000-clusterline-md-getting-started/000-clusterline-md-getting-started]]
+Parent: [lan/2026/proj/003-clusterline-md/entry/000-clusterline-md-getting-started/000-clusterline-md-getting-started](../000-clusterline-md-getting-started.md)
 
-Spawned by: [[lan/2026/proj/003-clusterline-md/entry/000-clusterline-md-getting-started/entry/002 Issues for Include rust plug post message in clusterline-ui and replace it with logs in test build]]
+Spawned by: [lan/2026/proj/003-clusterline-md/entry/000-clusterline-md-getting-started/entry/002 Issues for Include rust plug post message in clusterline-ui and replace it with logs in test build](../entry/002%20Issues%20for%20Include%20rust%20plug%20post%20message%20in%20clusterline-ui%20and%20replace%20it%20with%20logs%20in%20test%20build.md)
 
-Spawned in: [[lan/2026/proj/003-clusterline-md/entry/000-clusterline-md-getting-started/entry/002 Issues for Include rust plug post message in clusterline-ui and replace it with logs in test build#^spawn-issue-96f454|^spawn-issue-96f454]]
+Spawned in: [^spawn-issue-96f454](../entry/002%20Issues%20for%20Include%20rust%20plug%20post%20message%20in%20clusterline-ui%20and%20replace%20it%20with%20logs%20in%20test%20build.md#spawn-issue-96f454)
 
 # Inference
 
@@ -19,7 +19,7 @@ $\therefore$ Futures in rust must be passed to an executor or awaited, or the co
 
 This doesn't close the modal dialog, but pressing ESC another time will print the same logs then close it, but when we call `greet` again it will not show. In fact this time we lose control of the editor and can't get back to it.
 
-When disabling `let _ = editor::hide_panel(PanelLocation\:\:Modal);` in `on_canceled_json`, then a single `Esc` closes the modal. 
+When disabling `let _ = editor::hide_panel(PanelLocation\:\:Modal);` in `on_canceled_json`, then a single `Esc` closes the modal.
 
 `/html/body/div[1]/div[3]/div/iframe` shows under `#document` in the silverbullet runtime DOM the ui bundle html injected, including the hidden tag with the initialized JSON. This data was not removed or replaced after cancellation.
 
@@ -31,14 +31,14 @@ https://github.com/MrMugame/silversearch/
 
 From `modal/components/ModalContainer.svelte`,
 
-```svelte
+````svelte
 <dialog
     class="sb-modal-box"
     oncancel={(e: Event) => {
         e.preventDefault();
         syscall("editor.hidePanel", "modal");
     }}
-```
+````
 
 `editor.hidePanel` is called from within the UI bundle code. But does it matter?
 
@@ -50,19 +50,20 @@ Let's make it so we post a message and then hide the panel in typescript.
 
 Is there any indication that we must call `editor.hidePanel` in the panel code rather than through the plug? We call `showPanel` through the plug.
 
-> **aside** silverbullet `plugs/object-graph/ui/use_escape.ts > fn useEscape` is a useful reference for canceling with escape.
+ > 
+ > **aside** silverbullet `plugs/object-graph/ui/use_escape.ts > fn useEscape` is a useful reference for canceling with escape.
 
 It doesn't throw an exception, and documentation is not clear about any such discrepancy of environments.
 
 Adding a `Clusterline: test` command with the content
 
-```ts
+````ts
 export async function ts_test() {
   console.log("hiding panel");
 
   syscall("editor.hidePanel", "modal");
 }
-```
+````
 
 to try to hide it through the plug independent of cancel.
 
@@ -70,7 +71,7 @@ Even though neither the rust plug nor the UI bundle call `hidePanel`, it suffice
 
 Let's try to do this with the test command over in the rust side:
 
-```rust
+````rust
 // in /home/lan/src/cloned/cb/lan22h/clusterlinemd/clusterline-rs/src/lib.rs
 #[wasm_bindgen]
 pub async fn test() {
@@ -78,13 +79,13 @@ pub async fn test() {
 
     let _ = editor::hide_panel(PanelLocation::Modal);
 }
-```
+````
 
 This reproduces the problem, it is unable to cause `(div id="sb-root")` to be removed.
 
-The problem fails to be reproduced with 
+The problem fails to be reproduced with
 
-```ts
+````ts
 // in /home/lan/src/cloned/cb/lan22h/clusterlinemd/clusterline-rs/src/lib.rs
 #[wasm_bindgen]
 pub async fn test() {
@@ -92,7 +93,7 @@ pub async fn test() {
 
     editor::hide_panel(PanelLocation::Modal).await;
 }
-```
+````
 
 --/ 2026-07-07 Wk 28 Tue - 07:42 +03:00
 
@@ -104,6 +105,6 @@ https://rustc-dev-guide.rust-lang.org/mir/index.html
 
 https://docs.rs/futures/latest/futures/
 
-We don't await; so nothing happens. The future is like a certificate of a task to be executed eventually by a task system. This would imply that discarding the future should resulted in a no-op. 
+We don't await; so nothing happens. The future is like a certificate of a task to be executed eventually by a task system. This would imply that discarding the future should resulted in a no-op.
 
 OK

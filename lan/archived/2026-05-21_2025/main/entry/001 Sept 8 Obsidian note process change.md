@@ -4,7 +4,7 @@
 
 ## 1.1 On the old format
 
-If you look at [[001 Note heading categories and method]] you will find that we created a whole new "type of file".
+If you look at [001 Note heading categories and method](../doc/001%20Note%20heading%20categories%20and%20method/001%20Note%20heading%20categories%20and%20method.md) you will find that we created a whole new "type of file".
 
 It always comes with pre-defined category headings, and subheadings are then entries. Like tasks, issues, investigations...
 
@@ -20,7 +20,7 @@ We still want to preserve the fact that there exists a single big context file, 
 
 We propose the following folder structure:
 
-```
+````
 NNN Task Name/
 	tasks/
 	issues/
@@ -29,7 +29,7 @@ NNN Task Name/
 	ideas/
 	side-notes/
 	NNN Task Name
-```
+````
 
 For weekly entries, replace `NNN` with `Wk WW NNN`.
 
@@ -37,7 +37,7 @@ It is important that the folder and main note name match. This is how we will au
 
 Here's an example:
 
-```
+````
 015 Do my math homework/
 	tasks/
 		000 Solve Problem 3.4
@@ -61,7 +61,7 @@ Here's an example:
 		000 Comment about the book author website
 		...
 	015 Do my math homework
-```
+````
 
 ## 1.3 Index heading
 
@@ -69,7 +69,7 @@ Big context notes should still maintain an **index** of all their small context 
 
 This means that `NNN Task Name` is required to have a heading `Index`:
 
-```
+````
 # Index
 
 ## Tasks
@@ -79,9 +79,9 @@ This means that `NNN Task Name` is required to have a heading `Index`:
 ...
 
 ## Issues
-```
+````
 
-This follows the same heading procedure detailed in [[001 Note heading categories and method]] and `(now deleted) Note Headings`, except they are just for indexing.
+This follows the same heading procedure detailed in [001 Note heading categories and method](../doc/001%20Note%20heading%20categories%20and%20method/001%20Note%20heading%20categories%20and%20method.md) and `(now deleted) Note Headings`, except they are just for indexing.
 
 This will allow us to decouple from the folder structure and navigate through the note content itself. We will also know by the note content that it is a big context by seeing whether it contains an Index heading.
 
@@ -89,7 +89,7 @@ In addition, we used to add `### Pend` to entries currently pending, and similar
 
 Let's do an Index file example for `015 Do my math homework`:
 
-```
+````
 # Index
 
 ## Tasks
@@ -125,7 +125,7 @@ Let's do an Index file example for `015 Do my math homework`:
 
 [[000 Comment about the book author website]]
 
-```
+````
 
 ### 1.3.1 What this will achieve
 
@@ -135,15 +135,16 @@ This also opens our entries to the power of having tags.
 
 Obsidian and other tools can treat each context note file as a first class citizens.  This comes with the following benefits:
 -graph relations will work out of the box and they can have named relations to other notes.
-- Obsidian maintains a history of notes visited. This did not work for headings visited before, so we can go back to the previous note we came from much more easily.
+
+* Obsidian maintains a history of notes visited. This did not work for headings visited before, so we can go back to the previous note we came from much more easily.
 
 # 2 Clarified Timestamp Proposal
 
 In every note we've written, we've included timestamps like
 
-```
+````
 2025-09-08 Wk 37 Mon 18:56
-```
+````
 
 Ok, 18:56 in what timezone? It is unclear. So it makes correlating times with other artifacts like git commits difficult for others, and potentially even for me if I travel countries.
 
@@ -157,9 +158,9 @@ This can be configured in `Obsidian Settings > Core Plugins > Templates > Time F
 
 Now we include timestamps like
 
-```
+````
 2025-09-08 Wk 37 Mon - 19:02 +03:00
-```
+````
 
 to signify UTC+03:00.
 
@@ -187,16 +188,16 @@ These are very central changes. Almost every note file we've written follows the
 
 This process should also be automated to reduce human error. Here are some things that should be automated:
 
-- [ ] Command to turn a note file into a big note file and makes it compliant with the category folders, index heading template, and expected folder structure.
-- [ ] Command to convert between small and big notes, but only for notes with zero sub entries.
-- [ ] Command to spawn new entries under the same big note context and tracks the specific spawning entry and links position spawned from.
-- [ ] Allows the user to specify the category by selection (tasks/issues/ ...)
-- [ ] Estalbishes a dual link bridges between spawner and spawned
-- [ ] Updates the big note index and ensures the new small note specifies it as a parent
-- [ ] triple indices are automatically added.
-- [ ] Does not include spawner information if spawned from the big note outside any heading within it
+* [ ] Command to turn a note file into a big note file and makes it compliant with the category folders, index heading template, and expected folder structure.
+* [ ] Command to convert between small and big notes, but only for notes with zero sub entries.
+* [ ] Command to spawn new entries under the same big note context and tracks the specific spawning entry and links position spawned from.
+* [ ] Allows the user to specify the category by selection (tasks/issues/ ...)
+* [ ] Estalbishes a dual link bridges between spawner and spawned
+* [ ] Updates the big note index and ensures the new small note specifies it as a parent
+* [ ] triple indices are automatically added.
+* [ ] Does not include spawner information if spawned from the big note outside any heading within it
 
 # 5 Related Tasks
 
-- [ ] Rewrite [[001 Note heading categories and method]]
-- [ ] [Migration Task](https://github.com/LanHikari22/lan-setup-notes/blob/webview/lan/tasks/2025/000%20Note%20Repo%20Migration%20Sept%208/000%20Note%20Repo%20Migration%20Sept%208.md)
+* [ ] Rewrite [001 Note heading categories and method](../doc/001%20Note%20heading%20categories%20and%20method/001%20Note%20heading%20categories%20and%20method.md)
+* [ ] [Migration Task](https://github.com/LanHikari22/lan-setup-notes/blob/webview/lan/tasks/2025/000%20Note%20Repo%20Migration%20Sept%208/000%20Note%20Repo%20Migration%20Sept%208.md)

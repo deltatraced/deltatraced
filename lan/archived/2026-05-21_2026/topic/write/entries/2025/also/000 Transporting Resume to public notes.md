@@ -1,5 +1,5 @@
 ---
-writes: "[[Software Engineer (Resume)]]"
+writes: '[[Software Engineer (Resume)]]'
 status: pend
 ---
 

@@ -2,11 +2,11 @@
 context_type: entry
 ---
 
-Parent: [[lan/2026/topic/study-math/000 CQTS Intro to Cubical/wikiproc/000 Wiki Proc CQTS Intro to Cubical/000 Wiki Proc CQTS Intro to Cubical]]
+Parent: [lan/2026/topic/study-math/000 CQTS Intro to Cubical/wikiproc/000 Wiki Proc CQTS Intro to Cubical/000 Wiki Proc CQTS Intro to Cubical](../000%20Wiki%20Proc%20CQTS%20Intro%20to%20Cubical.md)
 
-Spawned by: [[lan/2026/topic/study-math/000 CQTS Intro to Cubical/wikiproc/000 Wiki Proc CQTS Intro to Cubical/entry/005 CQTS Problem Entries]]
+Spawned by: [lan/2026/topic/study-math/000 CQTS Intro to Cubical/wikiproc/000 Wiki Proc CQTS Intro to Cubical/entry/005 CQTS Problem Entries](005%20CQTS%20Problem%20Entries.md)
 
-Spawned in: [[lan/2026/topic/study-math/000 CQTS Intro to Cubical/wikiproc/000 Wiki Proc CQTS Intro to Cubical/entry/005 CQTS Problem Entries#^spawn-entry-8bbe2e|^spawn-entry-8bbe2e]]
+Spawned in: [^spawn-entry-8bbe2e](005%20CQTS%20Problem%20Entries.md#spawn-entry-8bbe2e)
 
 # Journal
 
@@ -14,7 +14,7 @@ Spawned in: [[lan/2026/topic/study-math/000 CQTS Intro to Cubical/wikiproc/000 W
 
 In `/home/lan/src/idea/cb/lan22h-experiments/problems-mkn/proj/gh/cqts/introduction-to-cubical/cqts-lect2/src/lect-2-1-paths.agda`,
 
-```haskell
+````haskell
     --           p  
     --      a — — — > b
     --      ^         ^          ^
@@ -26,7 +26,7 @@ In `/home/lan/src/idea/cb/lan22h-experiments/problems-mkn/proj/gh/cqts/introduct
       (p : a ≡ b)
       → Square A refl refl p p
     stretch-vertical p i j = p i
-```
+````
 
 --/  2026-09-16 Wk 38 Wed - 06:17 +03:00
 
@@ -36,7 +36,7 @@ No matter what the value, a change in `j` will do nothing. Since we're only sens
 
 Similarly `p j` would suggest that horizontal change is ignored, but vertical is the endpoints of `p`, so we would expect the flip:
 
-```haskell
+````haskell
     --      refl  
     --   b — — — > b
     --   ^         ^       ^
@@ -48,7 +48,7 @@ Similarly `p j` would suggest that horizontal change is ignored, but vertical is
       (p : a ≡ b)
       → Square A p p refl refl
     stretch-horizontal p i j = p j
-```
+````
 
 Since `Square` is defined via a square sweep, we can also think of `i` as picking the type of vertical slice paths, these are different in the case of `stretch-vertical` by the `p` endpoints, but nothing else differentiates them further, so then the vertical slice paths are refl.
 --/

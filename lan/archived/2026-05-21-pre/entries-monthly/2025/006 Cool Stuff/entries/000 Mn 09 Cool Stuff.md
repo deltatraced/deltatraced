@@ -1,16 +1,16 @@
 ---
-parent: "[[006 Cool Stuff]]"
-spawned_by: "[[006 Cool Stuff]]"
+parent: '[[006 Cool Stuff]]'
+spawned_by: '[[006 Cool Stuff]]'
 context_type: entry
 ---
 
-Parent: [[006 Cool Stuff]]
+Parent: [006 Cool Stuff](../006%20Cool%20Stuff.md)
 
-Spawned by: [[006 Cool Stuff]]
+Spawned by: [006 Cool Stuff](../006%20Cool%20Stuff.md)
 
-Spawned in: [[006 Cool Stuff#^spawn-entry-3f5bb7|^spawn-entry-3f5bb7]]
+Spawned in: [^spawn-entry-3f5bb7](../006%20Cool%20Stuff.md#spawn-entry-3f5bb7)
 
-[[Mn 09 September]]
+[Mn 09 September](../../../../../2026-05-21_2025/main/overview/monthly/2025/Mn%2009%20September.md)
 
 # 1 Purpose
 

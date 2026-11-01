@@ -4,4 +4,4 @@
 
 See the wiki: [Set function](https://en.wikipedia.org/wiki/Set_function)
 
-a set function is a function from an [[007 σ-algebra|σ-algebra]] to the [[017 RealExt|extended real numbers]] $\overline{\mathbb{R}}$
+a set function is a function from an [σ-algebra](007%20%CF%83-algebra.md) to the [extended real numbers](017%20RealExt.md) $\overline{\mathbb{R}}$

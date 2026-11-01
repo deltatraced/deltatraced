@@ -3,11 +3,11 @@ context_type: issue
 status: done
 ---
 
-Parent: [[000 SB Option to only have base name in title]]
+Parent: [000 SB Option to only have base name in title](../000%20SB%20Option%20to%20only%20have%20base%20name%20in%20title.md)
 
-Spawned by: [[000 SB Impl opt in tile as basename only via Std defined service]]
+Spawned by: [000 SB Impl opt in tile as basename only via Std defined service](../task/000%20SB%20Impl%20opt%20in%20tile%20as%20basename%20only%20via%20Std%20defined%20service.md)
 
-Spawned in: [[000 SB Impl opt in tile as basename only via Std defined service#^spawn-issue-b202e7|^spawn-issue-b202e7]]
+Spawned in: [^spawn-issue-b202e7](../task/000%20SB%20Impl%20opt%20in%20tile%20as%20basename%20only%20via%20Std%20defined%20service.md#spawn-issue-b202e7)
 
 # Journal
 
@@ -27,14 +27,14 @@ This is still happening even with checking that  `client.clientSystem.scriptsLoa
 
 Let's make use of discovery then invocation directly instead of
 
-```ts
+````ts
 // in plug-api/lib/ref.ts > fn customizePageTitleViaService
 return await client.clientSystem.serviceRegistry.invokeBestMatch("customizePageTitle", path);
-```
+````
 
 by replacing it with
 
-```ts
+````ts
 // in plug-api/lib/ref.ts > fn customizePageTitleViaService
 const services = await client.clientSystem.serviceRegistry.discover("customizePageTitle", path);
 
@@ -45,13 +45,13 @@ if (services.length === 0) {
 } else {
   return await client.clientSystem.serviceRegistry.invoke(services[0], path);
 }
-```
+````
 
 This will prevent the errors but then we will get pages with no title until we interact with the page!
 
 We can try to change the dependency in
 
-```ts
+````ts
 // in client/editor_ui.tsx > fn ViewComponent
 useEffect(() => {
   // Ask a service to possibly customize the title, or otherwise just use the path.
@@ -60,7 +60,7 @@ useEffect(() => {
 		viewState.pageTitle = title;
 	})
 }, [viewState.current, ]);
-```
+````
 
 and add `client.clientSystem.scriptsLoaded`.
 
@@ -70,7 +70,7 @@ No good. Weirder is the title shows immediately on reload then disappears.
 
 Adding some debugging logs.
 
-```ts
+````ts
 // in plug-api/lib/ref.ts > fn customizePageTitleViaService
 const services = await client.clientSystem.serviceRegistry.discover("customizePageTitle", path);
 console.log(`AAA00 customizePageTitleViaService (cur (j ${JSON.stringify(client.ui.viewState.current)})) (loaded? ${client.clientSystem.scriptsLoaded}) (services (j ${JSON.stringify(services)}) `);
@@ -78,13 +78,13 @@ console.log(`AAA00 customizePageTitleViaService (cur (j ${JSON.stringify(client.
 // in client/service_registry.ts > fn ServiceRegistry::define
 const id = globalThis.crypto.randomUUID();
 console.log(`AAA01 ServiceRegistry::define (spec (j ${JSON.stringify(spec)}))`)
-```
+````
 
 `AAA01` never triggers, and `AAA00` always has it as true for `loaded`. Often runs twice per page.
 
 There was a big indexing job, which seems to have affected the behavior here...
 
-```
+````
 // 12 more AAA01 logs for other selectors above
 [Client] AAA01 ServiceRegistry::define (spec (j {"selector":"customizePageTitle","match":{"priority":1}}))
 
@@ -101,7 +101,7 @@ There was a big indexing job, which seems to have affected the behavior here...
 [Client] AAA00 customizePageTitleViaService (cur (j ...)) (loaded? true) (services (j [])
 
 // The 15 AAA01 logs repeat below one more time
-```
+````
 
 For some reason the service discovery seems to be intermittent, it's re-initialized, and is emptied right around when we check for it.
 
@@ -109,11 +109,11 @@ For some reason the service discovery seems to be intermittent, it's re-initiali
 
 Whether table of contents appears or not also seems intermittent.
 
-Updating logs, 
+Updating logs,
 
-- For `AAA00`, loaded has always been true, and we don't need to log the current page medata
+* For `AAA00`, loaded has always been true, and we don't need to log the current page medata
 
-```ts
+````ts
 // in plug-api/lib/ref.ts > fn customizePageTitleViaService
 const services = await client.clientSystem.serviceRegistry.discover("customizePageTitle", path);
 console.log(`AAA00 customizePageTitleViaService (services (j ${JSON.stringify(services)}))`);
@@ -121,11 +121,11 @@ console.log(`AAA00 customizePageTitleViaService (services (j ${JSON.stringify(se
 // in client/service_registry.ts > fn ServiceRegistry::define
 const id = globalThis.crypto.randomUUID();
 console.log(`AAA01 ServiceRegistry::define (spec (j ${JSON.stringify(spec)}))`)
-```
+````
 
-Also updating 
+Also updating
 
-```diff
+````diff
 // in client/editor_ui.tsx > fn ViewComponent()
 useEffect(() => {
   // Ask a service to possibly customize the title, or otherwise just use the path.
@@ -135,7 +135,7 @@ useEffect(() => {
 	})
 -}, [viewState.current, ]);
 +}, [viewState.current === undefined, ]);
-```
+````
 
 Because we don't care about content changes, only presence.
 

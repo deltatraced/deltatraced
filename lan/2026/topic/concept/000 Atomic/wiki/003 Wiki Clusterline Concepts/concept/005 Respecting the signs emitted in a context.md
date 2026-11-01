@@ -2,15 +2,15 @@
 context_type: concept
 ---
 
-Parent: [[lan/2026/topic/concept/000 Atomic/wiki/003 Wiki Clusterline Concepts/003 Wiki Clusterline Concepts]]
+Parent: [lan/2026/topic/concept/000 Atomic/wiki/003 Wiki Clusterline Concepts/003 Wiki Clusterline Concepts](../003%20Wiki%20Clusterline%20Concepts.md)
 
-Spawned by: [[lan/2026/topic/concept/000 Atomic/wikiproc/003 Wiki Proc Clusterline Concepts/003 Wiki Proc Clusterline Concepts]]
+Spawned by: [lan/2026/topic/concept/000 Atomic/wikiproc/003 Wiki Proc Clusterline Concepts/003 Wiki Proc Clusterline Concepts](../../../wikiproc/003%20Wiki%20Proc%20Clusterline%20Concepts/003%20Wiki%20Proc%20Clusterline%20Concepts.md)
 
-Spawned in: [[lan/2026/topic/concept/000 Atomic/wikiproc/003 Wiki Proc Clusterline Concepts/003 Wiki Proc Clusterline Concepts#^spawn-cncpt-174420|^spawn-cncpt-174420]]
+Spawned in: [^spawn-cncpt-174420](../../../wikiproc/003%20Wiki%20Proc%20Clusterline%20Concepts/003%20Wiki%20Proc%20Clusterline%20Concepts.md#spawn-cncpt-174420)
 
 ---
 
-In order to draw apt judgments and succeed in our practice, we ought to respect [[006 Signs of our practice|signs of our practice]].
+In order to draw apt judgments and succeed in our practice, we ought to respect [signs of our practice](006%20Signs%20of%20our%20practice.md).
 
 In any given context, respecting its signs means providing it with the necessary attention, commitment, and deliberation.
 

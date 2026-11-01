@@ -1,14 +1,14 @@
 ---
-parent: "[[000 Experiment with Rocq]]"
-spawned_by: "[[000 Experiment with Rocq]]"
+parent: '[[000 Experiment with Rocq]]'
+spawned_by: '[[000 Experiment with Rocq]]'
 context_type: entry
 ---
 
-Parent: [[000 Experiment with Rocq]]
+Parent: [000 Experiment with Rocq](../000%20Experiment%20with%20Rocq.md)
 
-Spawned by: [[000 Experiment with Rocq]]
+Spawned by: [000 Experiment with Rocq](../000%20Experiment%20with%20Rocq.md)
 
-Spawned in: [[000 Experiment with Rocq#^spawn-entry-3f9c98|^spawn-entry-3f9c98]]
+Spawned in: [^spawn-entry-3f9c98](../000%20Experiment%20with%20Rocq.md#spawn-entry-3f9c98)
 
 # 1 Journal
 
@@ -24,4 +24,4 @@ Spawned in: [[000 Experiment with Rocq#^spawn-entry-3f9c98|^spawn-entry-3f9c98]]
 
 2026-02-06 Wk 6 Fri - 12:25 +03:00
 
-Spawn [[001 Attempting to prove mult_cancel for nat]] ^spawn-task-aa36aa
+Spawn [001 Attempting to prove mult_cancel for nat](../tasks/001%20Attempting%20to%20prove%20mult_cancel%20for%20nat.md) ^spawn-task-aa36aa

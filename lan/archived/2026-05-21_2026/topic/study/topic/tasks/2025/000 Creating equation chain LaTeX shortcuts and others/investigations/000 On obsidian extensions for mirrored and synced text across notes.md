@@ -1,6 +1,4 @@
-
 # 1 Journal
-
 
 2025-07-28 Wk 31 Mon - 06:29
 
@@ -8,7 +6,13 @@
 
 We can already copy sections this way:
 
-![[lan/archived/2026-05-21_2026/topic/study/books/math/2025/000 A transition to Advanced Mathematics/README]]
+I found this book [here](../../../../../../resources/math/entries/2025/000%20Math%20Studying%20Direction/000%20Math%20Studying%20Direction.md#22-finding-recommendations-on-prereqs-for-type-theory).
+
+It can be read [here](https://mathdept.byu.edu/%7Epace/Transition_v104.pdf).
+
+# 1 Entries
+
+[Wk 30 Starting out](../../../../../books/math/2025/000%20A%20transition%20to%20Advanced%20Mathematics/entries/weekly/2025/Wk%2030%20000%20Math%20Book%20000%20Starting%20out.md)
 
 This feature is [embeds](https://help.obsidian.md/embeds) in obsidian.
 

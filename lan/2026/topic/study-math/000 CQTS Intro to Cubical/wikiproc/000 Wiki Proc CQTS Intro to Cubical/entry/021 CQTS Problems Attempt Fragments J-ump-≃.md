@@ -2,11 +2,11 @@
 context_type: entry
 ---
 
-Parent: [[lan/2026/topic/study-math/000 CQTS Intro to Cubical/wikiproc/000 Wiki Proc CQTS Intro to Cubical/000 Wiki Proc CQTS Intro to Cubical]]
+Parent: [lan/2026/topic/study-math/000 CQTS Intro to Cubical/wikiproc/000 Wiki Proc CQTS Intro to Cubical/000 Wiki Proc CQTS Intro to Cubical](../000%20Wiki%20Proc%20CQTS%20Intro%20to%20Cubical.md)
 
-Spawned by: [[lan/2026/topic/study-math/000 CQTS Intro to Cubical/wikiproc/000 Wiki Proc CQTS Intro to Cubical/entry/010 CQTS Problems Attempt Fragments]]
+Spawned by: [lan/2026/topic/study-math/000 CQTS Intro to Cubical/wikiproc/000 Wiki Proc CQTS Intro to Cubical/entry/010 CQTS Problems Attempt Fragments](010%20CQTS%20Problems%20Attempt%20Fragments.md)
 
-Spawned in: [[lan/2026/topic/study-math/000 CQTS Intro to Cubical/wikiproc/000 Wiki Proc CQTS Intro to Cubical/entry/010 CQTS Problems Attempt Fragments#^spawn-entry-f60bcc|^spawn-entry-f60bcc]]
+Spawned in: [^spawn-entry-f60bcc](010%20CQTS%20Problems%20Attempt%20Fragments.md#spawn-entry-f60bcc)
 
 # Journal
 
@@ -14,9 +14,9 @@ Spawned in: [[lan/2026/topic/study-math/000 CQTS Intro to Cubical/wikiproc/000 W
 
 2026-09-20 Wk 38 Sun - 21:17 +03:00
 
-[[009 CQTS Problems Attempt Entries#`J-ump-≃`]]
+\[\[009 CQTS Problems Attempt Entries#`J-ump-≃`\]\]
 
-```haskell
+````haskell
 module _
   {ℓ : Level}
   {A : Type ℓ}
@@ -55,7 +55,7 @@ module _
             h1 i = J-refl Q (f a̬ refl) i
             h0 : Path (Q a p) (J Q r p) (f a p)
             h0 j = {!J Q₁!}
-```
+````
 
 But this changes the problem if I allow the type to vary.
 
@@ -65,9 +65,9 @@ It should suffice that `J` isn't within the same module, so its `Q` can be varie
 
 2026-09-20 Wk 38 Sun - 23:11 +03:00
 
-[[009 CQTS Problems Attempt Entries#`J-ump-≃`]]
+\[\[009 CQTS Problems Attempt Entries#`J-ump-≃`\]\]
 
-```haskell
+````haskell
 module _
   {ℓ : Level}
   {A : Type ℓ}
@@ -105,13 +105,13 @@ module _
             h1 i = J-refl Q (f a̬ refl) i
             h0 : Path (Q a p) (J Q r p) (f a p)
             h0 j = {!J Q₁!}
-```
+````
 
-In Q₂ I was trying to define a path that accommodates both a̬ and a', so I was trying to use `(p j) p'` but running into issues that `(p j)` is not being computationally reduced, and thus not in the form `a̬ ≡ a` expected by `Q`. 
+In Q₂ I was trying to define a path that accommodates both a̬ and a', so I was trying to use `(p j) p'` but running into issues that `(p j)` is not being computationally reduced, and thus not in the form `a̬ ≡ a` expected by `Q`.
 
 But also I don't think I need to do this.
 
-```haskell
+````haskell
 module _
   {ℓ : Level}
   {A : Type ℓ}
@@ -123,11 +123,11 @@ module _
       → Q a̬ refl ≡ Q â p
     J-line Q p i = Q (p i) (connection∧ p i)
       -- connection∧ lets us construct a path refl → p
-```
+````
 
 You see here that `Q` already accommodates both `a̬ â` and `refl p`. So long as the left is a̬, the right can be whatever is the first arg of `Q`.
 
-The point of this though is I'm trying to find a path from `h1` to `h0`. 
+The point of this though is I'm trying to find a path from `h1` to `h0`.
 
 Still I want to `Q a̬ refl` and `Q a p` are different types, even if `refl` and `p` are settled by choice of `a`.
 
@@ -135,7 +135,7 @@ Still I want to `Q a̬ refl` and `Q a p` are different types, even if `refl` and
 
 Having issue using this which is at universe level `(ℓ-suc ℓ)` when universe level `ℓ` is expected.
 
-```haskell
+````haskell
 Q₁ : (a' : A) → a̬ ≡ a' → Type (ℓ-suc ℓ)
 Q₁ a' p' = (Path (Q a̬ refl) (J Q r refl) (f a̬ refl)) ≡ (Path (Q a' p') (J Q r p') (f a' p'))
 r₁ : Q₁ a̬ refl
@@ -143,15 +143,15 @@ r₁ = r₁-1
   where
 	r₁-1 : (Path (Q a̬ refl) (J Q r refl) (f a̬ refl)) ≡ (Path (Q a̬ refl) (J Q r refl) (f a̬ refl))
 	r₁-1 = refl
-```
+````
 
 2026-09-21 Wk 39 Mon - 01:55 +03:00
 
-[[#`J-ump-≃` - Errata Specified value f a p and J Q r p as path]]
+\[\[\#`J-ump-≃` - Errata Specified value f a p and J Q r p as path\]\]
 
 Since we want a path  `h0 : Path (Q a p) (J Q r p) (f a p)` we could try to derive this from some square
 
-```haskell
+````haskell
 --                  ? 
 --            ?  — — — >  f a p    
 --            ^           ^          ^
@@ -159,21 +159,21 @@ Since we want a path  `h0 : Path (Q a p) (J Q r p) (f a p)` we could try to deri
 --            |           |          . — >
 --            ?  — — — >  J Q r p      i
 --                  ? 
-```
+````
 
-```haskell
+````haskell
 h1 : Path (Q a̬ refl) (J Q r refl) r
 h0 : Path (Q a p) (J Q r p) (f a p)
-```
+````
 
 Gives us four values:
 
-```
+````
 Q a̬ refl : (J Q r refl)  r
 Q a p    : (J Q r p)     (f a p)
-```
+````
 
-```haskell
+````haskell
 --                  ? 
 --      f a̬ refl — — — >  f a p    
 --            ^           ^          ^
@@ -182,7 +182,7 @@ Q a p    : (J Q r p)     (f a p)
 --    J Q r refl — — — >  J Q r p      i
 --                  ? 
 -- r = f a̬ refl
-```
+````
 
 Though we can't make this, because we don't have the side `h0`, and we shouldn't be solving this with filling a subcube.
 
@@ -190,13 +190,13 @@ Though we can't make this, because we don't have the side `h0`, and we shouldn't
 
 2026-09-21 Wk 39 Mon - 02:02 +03:00
 
-In [[#`J-ump-≃` - Q might already take into account path and refl variance]] I wrote
+In \[\[\#`J-ump-≃` - Q might already take into account path and refl variance\]\] I wrote
 
 (quote)
 
 Since we want a path  `h0 : Path (Q a p) (J Q r p) (f a p)` we could try to derive this from some square
 
-```haskell
+````haskell
 --                  ? 
 --            ?  — — — >  ?        
 --            ^           ^          ^
@@ -204,13 +204,13 @@ Since we want a path  `h0 : Path (Q a p) (J Q r p) (f a p)` we could try to deri
 --            |           |          . — >
 --            ?  — — — >  ?            i
 --                  ? 
-```
+````
 
 (/quote)
 
 But `f a p` is not a path. It's a value of type `Q a p`.  Might be better to say we need a square like this:
 
-```haskell
+````haskell
 --                  ? 
 --            ?  — — — >  f a p    
 --            ^           ^          ^
@@ -218,7 +218,7 @@ But `f a p` is not a path. It's a value of type `Q a p`.  Might be better to say
 --            |           |          . — >
 --            ?  — — — >  J Q r p      i
 --                  ? 
-```
+````
 
 if we've had a square `Square _ p q refl refl` for example, and we had the path `p`, we could derive the path `q`. But also at this point we haven't reached subcube filling.
 
@@ -228,23 +228,23 @@ if we've had a square `Square _ p q refl refl` for example, and we had the path 
 
 Reminder,
 
-```haskell
+````haskell
 J :
 	(Q : (a : A) → a̬ ≡ a → Type ℓ)
   → (r : Q a̬ refl)
   → (p : a̬ ≡ â)
   → Q â p
 J Q r p = transport (J-line Q p) r
-```
+````
 
 2026-09-21 Wk 39 Mon - 02:34 +03:00
 
 Didn't end up needing this. I made it since for every `Q` we make, we need a refl version to use with `J`, but that was already what I was desigining when making `h0` and `h1`, so it was exactly `h1`.
 
-```haskell
+````haskell
 r₂ : Q₂ a̬ refl
 r₂ = r₂-1
   where
 	r₂-1 : Path (Q a̬ refl) (J Q r refl) (f a̬ refl)
 	r₂-1 = h1
-```
+````

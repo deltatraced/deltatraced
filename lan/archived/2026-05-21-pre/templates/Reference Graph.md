@@ -1,5 +1,5 @@
 
-```mermaid
+````mermaid
 graph TD
 
 %% Settings
@@ -17,4 +17,4 @@ A3 --> |also_on| A2
 A3 --> |used_with & cites| A1
 
 %% N3_1 -.-> |about| A3
-```
+````

@@ -1,15 +1,15 @@
 ---
-parent: "[[000 Implement the Event Accumulator]]"
-spawned_by: "[[000 Implement the Event Accumulator]]"
+parent: '[[000 Implement the Event Accumulator]]'
+spawned_by: '[[000 Implement the Event Accumulator]]'
 context_type: investigation
 status: done
 ---
 
-Parent: [[000 Implement the Event Accumulator]]
+Parent: [000 Implement the Event Accumulator](../000%20Implement%20the%20Event%20Accumulator.md)
 
-Spawned by: [[000 Implement the Event Accumulator]]
+Spawned by: [000 Implement the Event Accumulator](../000%20Implement%20the%20Event%20Accumulator.md)
 
-Spawned in: [[000 Implement the Event Accumulator#^spawn-invst-3617a0|^spawn-invst-3617a0]]
+Spawned in: [^spawn-invst-3617a0](../000%20Implement%20the%20Event%20Accumulator.md#spawn-invst-3617a0)
 
 # 1 Objective
 
@@ -19,7 +19,7 @@ Secondarily, we would like to figure out general group bys to be used in the vie
 
 # 2 Related
 
-[[001 Create coin table events to experiment with aggregation being in views]]
+[001 Create coin table events to experiment with aggregation being in views](../tasks/001%20Create%20coin%20table%20events%20to%20experiment%20with%20aggregation%20being%20in%20views.md)
 
 # 3 Journal
 
@@ -69,7 +69,7 @@ The group bys we want are non-categorical. This [stackoverflow answer](https://s
 
 There is a [tutorial](https://www.sqlservertutorial.net/sql-server-basics/sql-server-recursive-cte/) for recursive CTEs. This is a useful template for a recursive CTE from there
 
-```sql
+````sql
 WITH expression_name (column_list)
 AS
 (
@@ -82,12 +82,12 @@ AS
 -- references expression name
 SELECT *
 FROM   expression_name
-```
+````
 
 But their basic example doesn't work out of the box in sqlite3.
 
-Spawn [[001 Creating a basic counter with a recursive CTE in sqlite3]] ^spawn-howto-d079c0
+Spawn [001 Creating a basic counter with a recursive CTE in sqlite3](../howtos/001%20Creating%20a%20basic%20counter%20with%20a%20recursive%20CTE%20in%20sqlite3.md) ^spawn-howto-d079c0
 
 2025-09-26 Wk 39 Fri - 21:18 +03:00
 
-Spawn [[002 Creating a basic table duplicator with recursive CTE in sqlite3]] ^spawn-howto-1d4875
+Spawn [002 Creating a basic table duplicator with recursive CTE in sqlite3](../howtos/002%20Creating%20a%20basic%20table%20duplicator%20with%20recursive%20CTE%20in%20sqlite3.md) ^spawn-howto-1d4875

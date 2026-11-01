@@ -1,20 +1,18 @@
-
 # 1 Journal
 
+* [x] Reject
 
-- [x] Reject
-
-From [[#^spawn-issue-d4b55b]] in [[#3.4 Send web messages to terminal to collect experiment data]]
+From [^spawn-issue-d4b55b](001%20Errors%20while%20attempting%20to%20import%20zeromq%20for%20non-node%20platform.md#spawn-issue-d4b55b) in [3.4 Send web messages to terminal to collect experiment data](001%20Errors%20while%20attempting%20to%20import%20zeromq%20for%20non-node%20platform.md#34-send-web-messages-to-terminal-to-collect-experiment-data)
 
 2025-07-30 Wk 31 Wed - 13:00
 
 Ran into this issue while trying to build the pub/sub example for [zeromq.js](https://zeromq.github.io/zeromq.js/).
 
-```sh
+````sh
 npm install zeromq
-```
+````
 
-```ts
+````ts
 ✘ [ERROR] Could not resolve "fs"
 
     node_modules/cmake-ts/build/loader.js:1:116:
@@ -23,17 +21,17 @@ npm install zeromq
 
   The package "fs" wasn't found on the file system but is built into node. Are you trying to bundle
   for node? You can use "--platform=node" to do that, which will remove this error.
-```
+````
 
 These are the available platforms
 
-```sh
+````sh
 npx esbuild --help | less
 
 # out (relevant) 
   --platform=...        Platform target (browser | node | neutral,
                         default browser)
-```
+````
 
 Our script runs directly on the browser for this game.
 

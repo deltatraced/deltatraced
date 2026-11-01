@@ -3,11 +3,11 @@ context_type: howto
 status: done
 ---
 
-Parent: [[lan/2026/main/wikiproc/001 Wiki Proc HowTos/001 Wiki Proc HowTos]]
+Parent: [lan/2026/main/wikiproc/001 Wiki Proc HowTos/001 Wiki Proc HowTos](../001%20Wiki%20Proc%20HowTos.md)
 
-Spawned by: [[lan/2026/main/wikiproc/001 Wiki Proc HowTos/001 Wiki Proc HowTos]]
+Spawned by: [lan/2026/main/wikiproc/001 Wiki Proc HowTos/001 Wiki Proc HowTos](../001%20Wiki%20Proc%20HowTos.md)
 
-Spawned in: [[lan/2026/main/wikiproc/001 Wiki Proc HowTos/001 Wiki Proc HowTos#^spawn-howto-7cec3c|^spawn-howto-7cec3c]]
+Spawned in: [^spawn-howto-7cec3c](../001%20Wiki%20Proc%20HowTos.md#spawn-howto-7cec3c)
 
 # What?
 
@@ -21,23 +21,24 @@ We provide two solutions that use `sed -n "$start,${end}p`. The `two_pos_ranges.
 
 `pos_neg_ranges` can be used with the following:
 
-```sh
+````sh
 function cat_range { inp="$(cat /dev/stdin)" && echo "$inp" | sed -n "$1,$(expr "$(echo "$inp" | wc -l)" + $2)p"; }
-```
+````
 
 Where `$1` and `$2` are to be specified as the positive start and negative end line indices.
+
 # Journal
 
 2026-08-27 Wk 35 Thu - 00:31 +03:00
 
 https://unix.stackexchange.com/a/288525
 
-This has multiple uses with `sed`. We explored prior getting the nth line in [[000 Shell Cat Nth Line]]
+This has multiple uses with `sed`. We explored prior getting the nth line in [000 Shell Cat Nth Line](000%20Shell%20Cat%20Nth%20Line.md)
 
 2026-08-27 Wk 35 Thu - 01:36 +03:00
 
 Since I wanted a more intuitive interface of specifying the lines from the top then the lines from the bottom I settled on
 
-```sh
+````sh
 function cat_range { inp="$(cat /dev/stdin)" && echo "$inp" | sed -n "$1,$(expr "$(echo "$inp" | wc -l)" + $2)p"; }
-```
+````

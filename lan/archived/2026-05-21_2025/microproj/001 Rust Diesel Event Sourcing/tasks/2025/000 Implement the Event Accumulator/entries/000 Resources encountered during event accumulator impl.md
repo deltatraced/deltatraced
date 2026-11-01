@@ -1,16 +1,16 @@
 ---
-parent: "[[000 Implement the Event Accumulator]]"
-spawned_by: "[[000 Implement the Event Accumulator]]"
+parent: '[[000 Implement the Event Accumulator]]'
+spawned_by: '[[000 Implement the Event Accumulator]]'
 context_type: entry
 ---
 
-#resources
+\#resources
 
-Parent: [[000 Implement the Event Accumulator]]
+Parent: [000 Implement the Event Accumulator](../000%20Implement%20the%20Event%20Accumulator.md)
 
-Spawned by: [[000 Implement the Event Accumulator]]
+Spawned by: [000 Implement the Event Accumulator](../000%20Implement%20the%20Event%20Accumulator.md)
 
-Spawned in: [[000 Implement the Event Accumulator#^spawn-entry-4b539d|^spawn-entry-4b539d]]
+Spawned in: [^spawn-entry-4b539d](../000%20Implement%20the%20Event%20Accumulator.md#spawn-entry-4b539d)
 
 # 1 Journal
 
@@ -34,6 +34,6 @@ From 2 weeks ago,
 
 2025-10-03 Wk 40 Fri - 10:50 +03:00
 
-From [[004 Investigate options for materializing views into tables using SQL]],
+From [004 Investigate options for materializing views into tables using SQL](../investigations/004%20Investigate%20options%20for%20materializing%20views%20into%20tables%20using%20SQL.md),
 
 Sqlite Trigger Tutorial [2](https://www.sqlitetutorial.net/sqlite-trigger/) includes example usage of `RAISE` for email validation.

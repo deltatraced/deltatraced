@@ -3,17 +3,17 @@ context_type: investigation
 status: done
 ---
 
-Parent: [[lan/2026/main/task/001 Install a new Gentoo system/001 Install a new Gentoo system]]
+Parent: [lan/2026/main/task/001 Install a new Gentoo system/001 Install a new Gentoo system](../001%20Install%20a%20new%20Gentoo%20system.md)
 
-Spawned by: [[lan/2026/main/task/001 Install a new Gentoo system/task/004 Setup a new code editor for new gentoo]]
+Spawned by: [lan/2026/main/task/001 Install a new Gentoo system/task/004 Setup a new code editor for new gentoo](../task/004%20Setup%20a%20new%20code%20editor%20for%20new%20gentoo.md)
 
-Spawned in: [[lan/2026/main/task/001 Install a new Gentoo system/task/004 Setup a new code editor for new gentoo#^spawn-invst-cc6f66|^spawn-invst-cc6f66]]
+Spawned in: [^spawn-invst-cc6f66](../task/004%20Setup%20a%20new%20code%20editor%20for%20new%20gentoo.md#spawn-invst-cc6f66)
 
 # Resolution
 
-```sh
+````sh
 FILES=$(find "$PWD"/my_folder/ -type f) && for file in $FILES; do source $file; done
-```
+````
 
 `find` here will recursively get the full path of all files. Then we loop each one and source it.
 
@@ -29,7 +29,7 @@ New repo at `/home/lan/src/cloned/cb/lan22h/dotfiles`.
 
 Doing a test for the multiple file sourcing,
 
-```sh
+````sh
 # in lan-proart > /home/lan/src/cloned/cb/lan22h/dotfiles/etc/test
 tree -a .
 
@@ -41,11 +41,11 @@ tree -a .
     └── 1     # Prints Hello 1
 
 2 directories, 3 files
-```
+````
 
 https://stackoverflow.com/a/918931 | IFS use
 
-```sh
+````sh
 IFS=' ' read -ra TOKENS <<< "A B C"
 
 echo ${TOKENS[0]} ${TOKENS[1]} ${TOKENS[2]} ${TOKENS[3]} ${TOKENS[-1]} ${TOKENS[-2]} # out {
@@ -61,14 +61,14 @@ for i in ${TOKENS[@]}; do echo $i; done # out {
 	B
 	C
 # }
-```
+````
 
-```
+````
 echo ${TOKENS[0]} ${TOKENS[1]} ${TOKENS[2]} ${TOKENS[3]} ${TOKENS[-1]} ${TOKENS[-2]}
      "A"          "B"          "C"          ""           "C"           "B"
-```
+````
 
-```sh
+````sh
 # in /home/lan/src/cloned/cb/lan22h/dotfiles/etc/test
 FILES=$(find "$PWD"/test2/ -type f) && for file in $FILES; do echo $file; done # out {
 	/home/lan/src/cloned/cb/lan22h/dotfiles/etc/test/test2/0
@@ -79,11 +79,12 @@ FILES=$(find "$PWD"/test2/ -type f) && for file in $FILES; do source $file; done
 	0 Hello
 	1 Hello
 # }
-```
+````
 
 This also works for nested folders. It should suffice for us as we just want to source files in a folder.
-```sh
-```
+
+````sh
+````
 
 2026-07-30 Wk 31 Thu - 07:05 +03:00
 
@@ -92,5 +93,3 @@ Turns out `script_dir=$(dirname "$(readlink -f "$0")")` is not robust against `s
 https://stackoverflow.com/questions/59895/how-do-i-get-the-directory-where-a-bash-script-is-located-from-within-the-script
 
 Better use `${BASH_SOURCE[0]}`.
-
-

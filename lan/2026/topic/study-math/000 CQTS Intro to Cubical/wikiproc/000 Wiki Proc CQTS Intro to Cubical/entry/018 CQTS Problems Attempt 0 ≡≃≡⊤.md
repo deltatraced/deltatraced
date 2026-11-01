@@ -2,11 +2,11 @@
 context_type: entry
 ---
 
-Parent: [[lan/2026/topic/study-math/000 CQTS Intro to Cubical/wikiproc/000 Wiki Proc CQTS Intro to Cubical/000 Wiki Proc CQTS Intro to Cubical]]
+Parent: [lan/2026/topic/study-math/000 CQTS Intro to Cubical/wikiproc/000 Wiki Proc CQTS Intro to Cubical/000 Wiki Proc CQTS Intro to Cubical](../000%20Wiki%20Proc%20CQTS%20Intro%20to%20Cubical.md)
 
-Spawned by: [[009 CQTS Problems Attempt Entries]]
+Spawned by: [009 CQTS Problems Attempt Entries](009%20CQTS%20Problems%20Attempt%20Entries.md)
 
-Spawned in: [[009 CQTS Problems Attempt Entries#^spawn-entry-0aaed8|^spawn-entry-0aaed8]]
+Spawned in: [^spawn-entry-0aaed8](009%20CQTS%20Problems%20Attempt%20Entries.md#spawn-entry-0aaed8)
 
 # Journal
 
@@ -16,7 +16,7 @@ This should be the encode-decode method template, replace ⊤ for some other ind
 
 I made a modification to what the CQTS authors did, which is to declare the code at the same level as the equivalence, so that we can refer to it more uniformly.
 
-```haskell
+````haskell
 ≡code-⊤ : ⊤ → ⊤ → Type ℓ-zero
 ≡code-⊤ a̬ â = {!!}
 
@@ -40,11 +40,11 @@ I made a modification to what the CQTS authors did, which is to declare the code
 
     fro-to : (a̬ â : ⊤) → (encode a̬ â) hasRetract (decode a̬ â)
     fro-to a̬ â = J (λ a p → (decode a̬ a) (encode a̬ a p) ≡ p) (fro-to-refl a̬)
-```
+````
 
 Type formers can look a little different:
 
-```haskell
+````haskell
 module _
   {ℓ₁ ℓ₂ : Level}
   {A : Type ℓ₁}
@@ -73,6 +73,6 @@ module _
     
         fro-to : (a̬ â : A ⊎ B) → (encode a̬ â) hasRetract (decode a̬ â)
         fro-to a̬ â = J (λ a p → (decode a̬ a) (encode a̬ a p) ≡ p) (fro-to-refl a̬)
-```
+````
 
 You'll also have to decide whether `encode` defined through `encode-refl` is necessary or whether to do it directly. Same for `fro-to`.

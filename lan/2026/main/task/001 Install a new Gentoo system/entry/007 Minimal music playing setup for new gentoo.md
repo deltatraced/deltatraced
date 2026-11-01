@@ -2,11 +2,11 @@
 context_type: entry
 ---
 
-Parent: [[lan/2026/main/task/001 Install a new Gentoo system/001 Install a new Gentoo system]]
+Parent: [lan/2026/main/task/001 Install a new Gentoo system/001 Install a new Gentoo system](../001%20Install%20a%20new%20Gentoo%20system.md)
 
-Spawned by: [[lan/2026/main/task/001 Install a new Gentoo system/001 Install a new Gentoo system]]
+Spawned by: [lan/2026/main/task/001 Install a new Gentoo system/001 Install a new Gentoo system](../001%20Install%20a%20new%20Gentoo%20system.md)
 
-Spawned in: [[lan/2026/main/task/001 Install a new Gentoo system/001 Install a new Gentoo system#^spawn-entry-b7c9f8|^spawn-entry-b7c9f8]]
+Spawned in: [^spawn-entry-b7c9f8](../001%20Install%20a%20new%20Gentoo%20system.md#spawn-entry-b7c9f8)
 
 # Journal
 
@@ -26,7 +26,7 @@ For use of tools like `yt-dlp` I like to have an index filesystem where files ar
 
 # Files
 
-```sh
+````sh
 # in ~/music/play
 #!/bin/bash
 
@@ -39,9 +39,9 @@ ec=$?
 echo "$(date +%s) $script_dir/$song" >> $script_dir/HISTORY
 
 librewolf "$script_dir/$song"
-```
+````
 
-```sh
+````sh
 # in ~/music/hplay
 #!/bin/bash
 
@@ -55,9 +55,9 @@ song=$(echo "$date_song" | cut -d' ' -f2-)
 echo "$date_song" >> "$script_dir/HISTORY"
 
 librewolf "$song"
-```
+````
 
-```sh
+````sh
 # in ~/music/tplay
 #!/bin/bash
 
@@ -71,5 +71,4 @@ song=$(echo "$song_tags" | cut -d'|' -f1)
 echo "$(date +%s) $script_dir/$song" >> $script_dir/HISTORY
 
 librewolf "$song"
-```
-
+````

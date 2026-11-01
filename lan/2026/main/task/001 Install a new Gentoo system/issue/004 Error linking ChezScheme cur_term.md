@@ -3,17 +3,17 @@ context_type: issue
 status: wontfix
 ---
 
-Parent: [[lan/2026/main/task/001 Install a new Gentoo system/001 Install a new Gentoo system]]
+Parent: [lan/2026/main/task/001 Install a new Gentoo system/001 Install a new Gentoo system](../001%20Install%20a%20new%20Gentoo%20system.md)
 
-Spawned by: [[lan/2026/main/task/001 Install a new Gentoo system/entry/002 Quick new Installs for Gentoo System]]
+Spawned by: [lan/2026/main/task/001 Install a new Gentoo system/entry/002 Quick new Installs for Gentoo System](../entry/002%20Quick%20new%20Installs%20for%20Gentoo%20System.md)
 
-Spawned in: [[lan/2026/main/task/001 Install a new Gentoo system/entry/002 Quick new Installs for Gentoo System#^spawn-issue-838600|^spawn-issue-838600]]
+Spawned in: [^spawn-issue-838600](../entry/002%20Quick%20new%20Installs%20for%20Gentoo%20System.md#spawn-issue-838600)
 
 # Journal
 
 2026-09-04 Wk 36 Fri - 10:27 +03:00
 
-```sh
+````sh
 REPO=cisco/ChezScheme && git clone --filter=blob:none git@github.com:$REPO ~/src/cloned/gh/$REPO
 
 # in /home/lan/src/cloned/gh/cisco/ChezScheme
@@ -29,18 +29,17 @@ link failed
  in loop
  in module->hash
 make: *** [Makefile:8: build] Error 1
-```
+````
 
 https://github.com/cisco/ChezScheme/blob/main/BUILDING mentions
 
-```
+````
  * Header files and libraries for ncurses   [unless --disable-curses]
  * Header files and libraries for X windows [unless --disable-x11]
-```
+````
 
 It's unclear why we will want to use these, so let's disable them.
 
 Also, we can get this through a gentoo package instead.
 
 https://packages.gentoo.org/packages/dev-scheme/chez
-

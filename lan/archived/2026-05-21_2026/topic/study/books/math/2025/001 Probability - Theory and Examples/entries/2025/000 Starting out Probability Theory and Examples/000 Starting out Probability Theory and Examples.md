@@ -26,31 +26,33 @@ In [wiki Probability space](https://en.wikipedia.org/wiki/Probability_space), th
 
 2025-08-30 Wk 35 Sat - 08:45
 
-Putting probability space definition in [[000 Probability Space]]
+Putting probability space definition in [000 Probability Space](../../../concepts/2025/000%20Probability%20Space.md)
 
 2025-09-06 Wk 36 Sat - 22:53
 
-Last we reached is defining the properties continuity from below and continuity from above for [[000 Probability Space]]
+Last we reached is defining the properties continuity from below and continuity from above for [000 Probability Space](../../../concepts/2025/000%20Probability%20Space.md)
 
 # 3 Errata
 
 ## 3.1 non-empty collection not missing empty subset
 
-In [[#^errata-e14827]]
+In [^errata-e14827](000%20Starting%20out%20Probability%20Theory%20and%20Examples.md#errata-e14827)
 
 I wrote
 
-> $\mathcal{F}$ is a [[007 σ-algebra|σ-algebra]] over $\Omega$, so it can holds elements up to $\wp(\Omega) - \lbrace \varnothing \rbrace$ where $\wp$ denotes the powerset.
+ > 
+ > $\mathcal{F}$ is a [σ-algebra](../../../../../../../../concept/math/concepts/2025/007%20%CF%83-algebra.md) over $\Omega$, so it can holds elements up to $\wp(\Omega) - \lbrace \varnothing \rbrace$ where $\wp$ denotes the powerset.
 
 but this is not true. This is because I misinterpreted the definition of σ-algebra. It reads:
 
-> A σ-algebra on a set $X$ is a non-empty collection $\Sigma$ of [[005 subset|subsets]] of $X$ closed under [[006 compliment|compliment]], [[010 Countable set|countable]] [[008 union|union]], and [[010 Countable set|countable]] [[014 intersection|intersections]].
+ > 
+ > A σ-algebra on a set $X$ is a non-empty collection $\Sigma$ of [subsets](../../../../../../../../concept/math/concepts/2025/005%20subset.md) of $X$ closed under [compliment](../../../../../../../../concept/math/concepts/2025/006%20compliment.md), [countable](../../../../../../../../concept/math/concepts/2025/010%20Countable%20set.md) [union](../../../../../../../../concept/math/concepts/2025/008%20union.md), and [countable](../../../../../../../../concept/math/concepts/2025/010%20Countable%20set.md) [intersections](../../../../../../../../concept/math/concepts/2025/014%20intersection.md).
 
 The algebra itself must be a *non-empty collection*. I interpreted it as *not having the empty set*.
 
 So as correction,
 
-$\mathcal{F}$ is a [[007 σ-algebra|σ-algebra]] over $\Omega$, so it can hold elements up to $\wp(\Omega)$ where $\wp$ denotes the powerset.
+$\mathcal{F}$ is a [σ-algebra](../../../../../../../../concept/math/concepts/2025/007%20%CF%83-algebra.md) over $\Omega$, so it can hold elements up to $\wp(\Omega)$ where $\wp$ denotes the powerset.
 
 # 4 LaTeX Config
 

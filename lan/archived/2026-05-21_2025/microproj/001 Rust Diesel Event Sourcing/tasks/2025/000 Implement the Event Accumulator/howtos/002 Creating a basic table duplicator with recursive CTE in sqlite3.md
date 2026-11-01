@@ -1,15 +1,15 @@
 ---
-parent: "[[000 Implement the Event Accumulator]]"
-spawned_by: "[[001 Use of views and CTEs with sqlite3 and diesel-rs]]"
+parent: '[[000 Implement the Event Accumulator]]'
+spawned_by: '[[001 Use of views and CTEs with sqlite3 and diesel-rs]]'
 context_type: howto
 status: done
 ---
 
-Parent: [[000 Implement the Event Accumulator]]
+Parent: [000 Implement the Event Accumulator](../000%20Implement%20the%20Event%20Accumulator.md)
 
-Spawned by: [[001 Use of views and CTEs with sqlite3 and diesel-rs]]
+Spawned by: [001 Use of views and CTEs with sqlite3 and diesel-rs](../investigations/001%20Use%20of%20views%20and%20CTEs%20with%20sqlite3%20and%20diesel-rs.md)
 
-Spawned in: [[001 Use of views and CTEs with sqlite3 and diesel-rs#^spawn-howto-1d4875|^spawn-howto-1d4875]]
+Spawned in: [^spawn-howto-1d4875](../investigations/001%20Use%20of%20views%20and%20CTEs%20with%20sqlite3%20and%20diesel-rs.md#spawn-howto-1d4875)
 
 # 1 Objective
 
@@ -19,14 +19,14 @@ Given some table, duplicate its rows $N$ times, and append an extra column for e
 
 # 2 Related
 
-- [[001 Creating a basic counter with a recursive CTE in sqlite3]]
-- [[003 Create a natural numbers table and group by divisibility up to N]]
+* [001 Creating a basic counter with a recursive CTE in sqlite3](001%20Creating%20a%20basic%20counter%20with%20a%20recursive%20CTE%20in%20sqlite3.md)
+* [003 Create a natural numbers table and group by divisibility up to N](../investigations/003%20Create%20a%20natural%20numbers%20table%20and%20group%20by%20divisibility%20up%20to%20N.md)
 
 # 3 Journal
 
 2025-09-26 Wk 39 Fri - 23:34 +03:00
 
-```sql
+````sql
 -- in duplicator.sql
 CREATE TABLE constants (
   id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, 
@@ -56,9 +56,9 @@ WITH RECURSIVE duplicator(dup, name, color, cost) AS (
     WHERE dup < (SELECT max FROM constants)
 )
 SELECT * FROM duplicator;
-```
+````
 
-```sh
+````sh
 cat duplicator.sql | sqlite3
 
 # out
@@ -74,7 +74,7 @@ cat duplicator.sql | sqlite3
 4|banana|yellow|9
 5|strawberry|red|10
 5|banana|yellow|9
-```
+````
 
 2025-09-26 Wk 39 Fri - 23:44 +03:00
 
@@ -92,7 +92,7 @@ This [stackoverflow answer](https://stackoverflow.com/a/24862165/6944447) explor
 
 With this we're able to join `dup` and `id` of `alphabets`, which could be any table that we want to act as the duplication load.
 
-```sql
+````sql
 -- in duplicator.sql
 CREATE TABLE constants (
   id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, 
@@ -141,9 +141,9 @@ SELECT
 FROM duplicator t2
 JOIN alphabet t1 ON t2.dup = t1.id
 ;
-```
+````
 
-```sh
+````sh
 cat duplicator.sql | sqlite3
 
 # out
@@ -157,13 +157,13 @@ cat duplicator.sql | sqlite3
 4|banana|yellow|9|4|d|D
 5|strawberry|red|10|5|e|E
 5|banana|yellow|9|5|e|E
-```
+````
 
 2025-09-27 Wk 39 Sat - 02:18 +03:00
 
 In case `id` does not match `dup` for some reason but we expect the tables to be of the same size, we can use a windowing function to generate an index and then join on that index
 
-```sql
+````sql
 --- in duplicator.sql
 CREATE TABLE constants (
   id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, 
@@ -213,9 +213,9 @@ FROM duplicator t1
 JOIN 
 	(SELECT ROW_NUMBER() OVER () AS rownumber, * FROM alphabet) t2 
 	ON t1.dup = t2.rownumber
-```
+````
 
-```sh
+````sh
 cat duplicator.sql | sqlite3
 
 # out
@@ -229,4 +229,4 @@ cat duplicator.sql | sqlite3
 4|banana|yellow|9|4|4|d|D
 5|strawberry|red|10|5|5|e|E
 5|banana|yellow|9|5|5|e|E
-```
+````

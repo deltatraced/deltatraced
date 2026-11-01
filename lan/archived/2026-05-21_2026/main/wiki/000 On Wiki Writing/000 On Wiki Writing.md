@@ -2,9 +2,9 @@
 vc-id: 7966fba8-5f9f-4e88-9884-8d5f438f345a
 ---
 
-A wiki-style note departs from the process-style followed across note repositories like this. See more about the meaning of process oriented notes in [[000 Note Taking Philosophy]]. 
+A wiki-style note departs from the process-style followed across note repositories like this. See more about the meaning of process oriented notes in [000 Note Taking Philosophy](../../../../../2025/post/000%20Note%20Taking%20Philosophy.md).
 
-To remain compatible with the vision brought in that post, any wiki note cluster `W` will usually have a corresponding `Notes for W` under `wiki/YYYY/process`. For example for this wiki cluster, you can find it at [[000 Proc On Wiki Writing]]. There, changes may be noted, and the same principles apply of tracing our historical reasoning. But in a wiki note cluster, notes may be edited with time. 
+To remain compatible with the vision brought in that post, any wiki note cluster `W` will usually have a corresponding `Notes for W` under `wiki/YYYY/process`. For example for this wiki cluster, you can find it at [000 Proc On Wiki Writing](../../wikiproc/000%20Proc%20On%20Wiki%20Writing/000%20Proc%20On%20Wiki%20Writing.md). There, changes may be noted, and the same principles apply of tracing our historical reasoning. But in a wiki note cluster, notes may be edited with time.
 
 We have followed a similar convention with writing posts, which had a corresponding note cluster `Writing for X` that would track the reasoning and historical evolution of the post's content. This extends the idea beyond blog posts. One use case is summarizing what we have discovered and learned from a project. Such writing is meant to evolve as we learn more, and it is also meant to take into account the process writing and the history in question. So the wiki entry, unlike a blog post, may reference prior process notes to draw conclusions. This is helpful because process notes are deliberately immutable, but also because our conclusions from them may evolve by editing the wiki entry in the future, maintaining a concise exploration of the topic without turning the wiki entry into an immutable set of developments itself. If necessary, that can go in the `Notes for W` during the construction of `W` or its modification.
 
@@ -12,7 +12,7 @@ This is also a better format for knowledge consolidation. To look up facts about
 
 This can be used for research, research is also an artifact, althrough the research process is useful to track as well, we still need to write a paper and it is the paper that will be judged for accuracy or used by others. The process mostly serves a pedagogical purpose or historical purpose in reviewing the researching process used, but a research paper in itself should aim to justify its conclusions by a reader who would otherwise not check for how it was constructed. This is in a similar sense to mathematical proofs being separate from the recording of the mathematician's day-to-day activity and experimentation to arrive at the proof. Verifying the proof does not require reviewing its construction history.
 
-Although the wiki is segmented by years, `Wiki/YYYY`, this does not mean that one cannot modify a wiki entry from a prior year. The year segment is just a method of clustering the entries (basically the cluster index `NNN` resets back to `000` following the next year). It is not meant to make them obsolete. 
+Although the wiki is segmented by years, `Wiki/YYYY`, this does not mean that one cannot modify a wiki entry from a prior year. The year segment is just a method of clustering the entries (basically the cluster index `NNN` resets back to `000` following the next year). It is not meant to make them obsolete.
 
 You will also not see timestamps here or the similar conventions used over in process notes. There is a general `wiki`, but we can also have specific `wiki`s under a specific topic, just like `task` folders for specific topics exist.
 

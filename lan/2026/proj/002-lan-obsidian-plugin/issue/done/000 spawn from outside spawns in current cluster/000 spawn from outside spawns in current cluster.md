@@ -1,4 +1,3 @@
-
 # 1 Problem
 
 `delta-trace i000`
@@ -15,7 +14,7 @@ Code in `/home/lan/src/cloned/gh/LanHikari22/lan-obsidian-plugin`.
 
 This should be the culprit:
 
-```ts
+````ts
 // in /home/lan/src/cloned/gh/LanHikari22/lan-obsidian-plugin/src/spawn_peripheral_note_command.ts
 	if (spawner_is_index) {
 		opt_index_file = spawner_file;
@@ -29,7 +28,7 @@ This should be the culprit:
 			spawner_file
 		);
 	}
-```
+````
 
 `opt_selected_bignote_root_folder`, which is the condition for spawning from outside, should take precedence in case it is both true that `opt_selected_bignote_root_folder` and `spawner_is_index`.
 

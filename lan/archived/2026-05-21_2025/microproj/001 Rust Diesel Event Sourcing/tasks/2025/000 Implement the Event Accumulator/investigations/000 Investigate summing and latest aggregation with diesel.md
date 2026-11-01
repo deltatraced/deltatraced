@@ -1,15 +1,15 @@
 ---
-parent: "[[000 Implement the Event Accumulator]]"
-spawned_by: "[[000 Implement the Event Accumulator]]"
+parent: '[[000 Implement the Event Accumulator]]'
+spawned_by: '[[000 Implement the Event Accumulator]]'
 context_type: investigation
 status: rejected
 ---
 
-Parent: [[000 Implement the Event Accumulator]]
+Parent: [000 Implement the Event Accumulator](../000%20Implement%20the%20Event%20Accumulator.md)
 
-Spawned by: [[000 Implement the Event Accumulator]]
+Spawned by: [000 Implement the Event Accumulator](../000%20Implement%20the%20Event%20Accumulator.md)
 
-Spawned in: [[000 Implement the Event Accumulator#^spawn-invst-bb50da|^spawn-invst-bb50da]]
+Spawned in: [^spawn-invst-bb50da](../000%20Implement%20the%20Event%20Accumulator.md#spawn-invst-bb50da)
 
 # 1 Objective
 

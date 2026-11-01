@@ -1,8 +1,6 @@
-
 # 1 Journal
 
-
-From [[#^spawn-idea-24ee1a]] in [[#3.1 Follow along wasmer documentation]]
+From [^spawn-idea-24ee1a](000%20wasmer.toml%20as%20reference%20for%20toml%20file%20documentation.md#spawn-idea-24ee1a) in [3.1 Follow along wasmer documentation](000%20wasmer.toml%20as%20reference%20for%20toml%20file%20documentation.md#31-follow-along-wasmer-documentation)
 
 2025-08-26 Wk 35 Tue - 22:56
 

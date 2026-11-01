@@ -1,6 +1,4 @@
-
 # 1 Journal
-
 
 2025-08-12 Wk 33 Tue - 17:08
 
@@ -8,7 +6,7 @@ From [hostinger domain name tutorial](https://www.hostinger.com/tutorials/what-i
 
 Something like www.google.com is a domain name. It's broken into 3 levels:
 
-- Top-Level Domain (TLD)
+* Top-Level Domain (TLD)
 
 In our case, `www.google.com` -> `.com`.
 
@@ -18,11 +16,11 @@ It's also referred to as the domain name extension.
 
 You can find a list of different top level domains in [wikipedia](https://en.wikipedia.org/wiki/List_of_Internet_top-level_domains) -> [iana.org domain db](https://www.iana.org/domains/root/db).
 
-- Second-Level Domain (SLD)
+* Second-Level Domain (SLD)
 
 In our case, `www.google.com` -> `google`.
 
-- Third-Level Domain (subdomain)
+* Third-Level Domain (subdomain)
 
 This is the `www` in `www.google.com`, but it also could be the `howtos` in `howtos.mywebsite.com`
 

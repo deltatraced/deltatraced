@@ -3,19 +3,19 @@ context_type: investigation
 status: todo
 ---
 
-Parent: [[000 Wiki Proc Personal Notes Cloud]]
+Parent: [000 Wiki Proc Personal Notes Cloud](../000%20Wiki%20Proc%20Personal%20Notes%20Cloud.md)
 
-Spawned by: [[000 Wiki Proc Personal Notes Cloud]]
+Spawned by: [000 Wiki Proc Personal Notes Cloud](../000%20Wiki%20Proc%20Personal%20Notes%20Cloud.md)
 
-Spawned in: [[000 Wiki Proc Personal Notes Cloud#^spawn-invst-4d0969|^spawn-invst-4d0969]]
+Spawned in: [^spawn-invst-4d0969](../000%20Wiki%20Proc%20Personal%20Notes%20Cloud.md#spawn-invst-4d0969)
 
-Overview: [[000 Overview Wiki Proc Personal Notes Cloud]]
+Overview: [000 Overview Wiki Proc Personal Notes Cloud](../entry/000%20Overview%20Wiki%20Proc%20Personal%20Notes%20Cloud.md)
 
 # Answer
 
 1. You can get the `$5/mo` plan at https://www.ionos.com/servers/vps for an affordable VPS if you cannot host on your own.
 
-```sh
+````sh
 # For the $5/mo plan with ionos
 
 $ less /proc/meminfo
@@ -39,8 +39,7 @@ cache size      : 512 KB
 $ df -H .
 Filesystem      Size  Used Avail Use% Mounted on
 /dev/vda1        93G  2.4G   91G   3% /
-```
-
+````
 
 # Journal
 
@@ -57,8 +56,8 @@ You can get free 8GB, already comes apparently with nextcloud with https://fie.n
 This seems very heavy-handed. Not sure at a first glance how to extend this, it is its own self-complete product.
 
 1. https://www.linuxlinks.com/best-free-open-source-self-hosted-cloud-storage-tools/
-	- branch
-		1. https://github.com/AtalayaLabs/OxiCloud
+   * branch
+     1. https://github.com/AtalayaLabs/OxiCloud
 
 Some VPS services,
 

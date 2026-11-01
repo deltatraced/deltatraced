@@ -2,17 +2,17 @@
 context_type: entry
 ---
 
-Parent: [[lan/2026/topic/study-math/000 CQTS Intro to Cubical/wikiproc/000 Wiki Proc CQTS Intro to Cubical/000 Wiki Proc CQTS Intro to Cubical]]
+Parent: [lan/2026/topic/study-math/000 CQTS Intro to Cubical/wikiproc/000 Wiki Proc CQTS Intro to Cubical/000 Wiki Proc CQTS Intro to Cubical](../000%20Wiki%20Proc%20CQTS%20Intro%20to%20Cubical.md)
 
-Spawned by: [[009 CQTS Problems Attempt Entries]]
+Spawned by: [009 CQTS Problems Attempt Entries](009%20CQTS%20Problems%20Attempt%20Entries.md)
 
-Spawned in: [[009 CQTS Problems Attempt Entries#^spawn-entry-c4ff1d|^spawn-entry-c4ff1d]]
+Spawned in: [^spawn-entry-c4ff1d](009%20CQTS%20Problems%20Attempt%20Entries.md#spawn-entry-c4ff1d)
 
 # Journal
 
 2026-09-20 Wk 38 Sun - 21:19 +03:00
 
-- [[021 CQTS Problems Attempt Fragments J-ump-≃]]
+* [021 CQTS Problems Attempt Fragments J-ump-≃](021%20CQTS%20Problems%20Attempt%20Fragments%20J-ump-%E2%89%83.md)
 
 2026-09-20 Wk 38 Sun - 05:37 +03:00
 
@@ -20,7 +20,7 @@ In `/home/lan/src/idea/cb/lan22h-experiments/problems-mkn/proj/gh/cqts/introduct
 
 ncf gave me a hint before on this some months back, but let's try to solve it again before we check that again, I might remember.
 
-```haskell
+````haskell
 module _
   {ℓ : Level}
   {A : Type ℓ}
@@ -48,9 +48,9 @@ module _
           where
             r : Q a̬ refl
             r = f a̬ refl
-```
+````
 
-```haskell
+````haskell
 fro-to f i a p = {! !}
 
 -- goal
@@ -65,13 +65,13 @@ Goal: Q a p
 i = i0 ⊢ transport-fixing (λ i₁ → Q (p i₁) (λ j → p (i₁ ∧ j))) i0
          (f a̬ (λ i₁ → a̬))
 i = i1 ⊢ f a p
-```
+````
 
 The idea is we can design a `Q` that simplifies this retract proof.
 
 From the above goal, we can see that `transport-fixing (λ i₁ → Q (p i₁) (λ j → p (i₁ ∧ j))) i0` is our definition of `J`. We want:
 
-```haskell
+````haskell
 fro-to : to hasRetract ret
 fro-to f i a p = h0 i
   where
@@ -79,7 +79,7 @@ fro-to f i a p = h0 i
 	r = f a̬ refl
 	h0 : J Q r p ≡ f a p
 	h0 = {!!}
-```
+````
 
 Now we want to use `J` to solve this. Having `J` as the path induction has it so it suffices to solve a simpler version, with `refl` instead of `p`.
 
@@ -87,7 +87,7 @@ Now we want to use `J` to solve this. Having `J` as the path induction has it so
 
 Yup, just choosing a `Q` that that can resolve to the path of `h1` or `h0` via `J` solves this:
 
-```haskell
+````haskell
 module _
   {ℓ : Level}
   {A : Type ℓ}
@@ -118,7 +118,7 @@ module _
             Q₁ a' p' = Path (Q a' p') (J Q r p') (f a' p')
             h0 : Path (Q a p) (J Q r p) (f a p)
             h0 = J Q₁ h1 p
-```
+````
 
 Now let's check out our prior solution and what the hint we got was.
 
@@ -126,15 +126,15 @@ Creating a random file name: `cat /dev/random | head -n1 | sha1sum | head -c8`
 
 The previous attempt is in `/home/lan/src/cloned/cb/lan22h-experiments/note-files/paste/5ced8d7f`.
 
-```haskell
+````haskell
 --  Exercise: (Hint: this is an instance of `J-refl`)
     to-fro : isSection to fro
     to-fro q = J-refl Q q
-```
+````
 
 We got this.
 
-```haskell
+````haskell
 --  Exercise: (Hint: use `J` again!)
     fro-to : isRetract to fro
     fro-to f i y p = P₀ i
@@ -143,6 +143,6 @@ We got this.
         P₁ = J-refl Q (f x refl)
         P₀ : Path (Q y p) (J Q (f x refl) p) (f y p) -- hint
         P₀ = J (λ y₁ p₁ → Path (Q y₁ p₁) (J Q (f x refl) p₁) (f y₁ p₁)) P₁ p
-```
+````
 
 Pretty much the same solution, although I've done more abstractions in my case, while here I did it more inline.

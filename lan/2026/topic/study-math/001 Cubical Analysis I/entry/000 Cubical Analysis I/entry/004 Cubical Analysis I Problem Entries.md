@@ -2,10 +2,10 @@
 context_type: entry
 ---
 
-Parent: [[000 Cubical Analysis I]]
+Parent: [000 Cubical Analysis I](../000%20Cubical%20Analysis%20I.md)
 
-Spawned by: [[000 Cubical Analysis I]]
+Spawned by: [000 Cubical Analysis I](../000%20Cubical%20Analysis%20I.md)
 
-Spawned in: [[000 Cubical Analysis I#^spawn-entry-bf890f|^spawn-entry-bf890f]]
+Spawned in: [^spawn-entry-bf890f](../000%20Cubical%20Analysis%20I.md#spawn-entry-bf890f)
 
 # Journal

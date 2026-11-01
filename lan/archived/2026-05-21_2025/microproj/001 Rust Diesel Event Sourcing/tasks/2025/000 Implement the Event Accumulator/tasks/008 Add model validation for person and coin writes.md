@@ -1,15 +1,15 @@
 ---
-parent: "[[000 Implement the Event Accumulator]]"
-spawned_by: "[[005 Model coin_store_hist and related in diesel]]"
+parent: '[[000 Implement the Event Accumulator]]'
+spawned_by: '[[005 Model coin_store_hist and related in diesel]]'
 context_type: task
 status: done
 ---
 
-Parent: [[000 Implement the Event Accumulator]]
+Parent: [000 Implement the Event Accumulator](../000%20Implement%20the%20Event%20Accumulator.md)
 
-Spawned by: [[005 Model coin_store_hist and related in diesel]]
+Spawned by: [005 Model coin_store_hist and related in diesel](005%20Model%20coin_store_hist%20and%20related%20in%20diesel.md)
 
-Spawned in: [[005 Model coin_store_hist and related in diesel#^spawn-task-d31c69|^spawn-task-d31c69]]
+Spawned in: [^spawn-task-d31c69](005%20Model%20coin_store_hist%20and%20related%20in%20diesel.md#spawn-task-d31c69)
 
 # 1 Journal
 
@@ -25,18 +25,18 @@ They make use of [FromSql](https://docs.diesel.rs/2.3.x/diesel/deserialize/trait
 
 The main error we get when we replace `String` and `&'a str` for `Person` and `&'a Person` in `create_diesel_hist_structs` macros is
 
-```rust
+````rust
 the trait bound `Person: FromSqlRow<diesel::sql_types::Text, Sqlite>` is not satisfied  
 double check your type mappings via the documentation of `diesel::sql_types::Text`  
 `diesel::sql_query` requires the loading target to column names for loading values.  
 You need to provide a type that explicitly derives `diesel::deserialize::QueryableByName`
-```
+````
 
 2025-10-20 Wk 43 Mon - 23:35 +03:00
 
 For the implementation of `FromSql` and `ToSql`,
 
-```rust
+````rust
 use diesel::{backend::Backend, deserialize::FromSql, serialize::ToSql};
 use thiserror::Error;
 
@@ -81,17 +81,17 @@ where
         self.s.to_sql(out)
     }
 }
-```
+````
 
-Note that extra constraints on `String` were needed for use of `String::from_sql` and `self.s.to_sql`. 
+Note that extra constraints on `String` were needed for use of `String::from_sql` and `self.s.to_sql`.
 
 2025-10-20 Wk 43 Mon - 23:37 +03:00
 
 The diesel error persists about [FromSqlRow](https://docs.diesel.rs/2.3.x/diesel/deserialize/trait.FromSqlRow.html). There's also this error:
 
-```
+````
 the trait bound `Person: diesel::Expression` is not satisfied
-```
+````
 
 2025-10-21 Wk 43 Tue - 01:01 +03:00
 
@@ -101,7 +101,7 @@ Let's try [docs.rs diesel_derive_newtype](https://docs.rs/diesel-derive-newtype/
 
 This works
 
-```rust
+````rust
 
 #[derive(Debug, Clone, Hash, PartialEq, Eq, DieselNewType)]
 pub struct Person(String);
@@ -122,7 +122,7 @@ impl Person {
         }
     }
 }
-```
+````
 
 2025-10-21 Wk 43 Tue - 16:42 +03:00
 
@@ -130,7 +130,7 @@ There shouldn't be `AsExpression` or `sql_type` on `PersonNewError`, this was me
 
 Correction:
 
-```rust
+````rust
 
 #[derive(Debug, Clone, Hash, PartialEq, Eq, DieselNewType)]
 pub struct Person(String);
@@ -150,4 +150,4 @@ impl Person {
         }
     }
 }
-```
+````

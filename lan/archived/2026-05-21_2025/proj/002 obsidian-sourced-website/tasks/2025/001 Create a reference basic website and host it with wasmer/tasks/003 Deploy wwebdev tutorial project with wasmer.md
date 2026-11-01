@@ -1,10 +1,8 @@
-
 # 1 Journal
 
+* [x] 
 
-- [x]
-
-From [[#^spawn-task-7ad6e5]] in [[#3.3 Follow with wweb static npm website tutorial]]
+From [^spawn-task-7ad6e5](003%20Deploy%20wwebdev%20tutorial%20project%20with%20wasmer.md#spawn-task-7ad6e5) in [3.3 Follow with wweb static npm website tutorial](003%20Deploy%20wwebdev%20tutorial%20project%20with%20wasmer.md#33-follow-with-wweb-static-npm-website-tutorial)
 
 2025-09-02 Wk 36 Tue - 11:53
 
@@ -13,7 +11,8 @@ We can use wasmer's [static website example](https://github.com/wasmer-examples/
 This uses their [WASIX](https://docs.wasmer.io/runtime/runners/wasix) runner over `wasmer-static-web-site`. Let's copy their [wasmer.toml](https://raw.githubusercontent.com/wasmer-examples/static-website/refs/heads/main/wasmer.toml):
 
 (update)
-```toml
+
+````toml
 [dependencies]
 "wasmer/static-web-server" = "^1"
 
@@ -28,7 +27,7 @@ runner = "https://webc.org/runner/wasi"
 
 [command.annotations.wasi]
 main-args = ["-w", "/settings/config.toml"]
-```
+````
 
 <details>
 <summary>errata</summary>
@@ -36,22 +35,22 @@ main-args = ["-w", "/settings/config.toml"]
 2025-09-02 Wk 36 Tue - 12:15
 Seems it requires us to use `/public`:
 
-```sh
+````sh
 2025-09-02T09:10:09.424496Z ERROR static_web_server::server: server failed to start up: root directory was not found or inaccessible
 
 Caused by:
 
     path /public was not found or inaccessible
-```
+````
 
 Move everything `/dist` to `/public`.
 
 Then
 
-```sh
+````sh
 wasmer app delete
 wasmer app create # and deploy
-```
+````
 
 </details>
 
@@ -63,9 +62,9 @@ Copy [app.yaml](https://raw.githubusercontent.com/wasmer-examples/static-website
 
 Then, we can deploy with
 
-```sh
+````sh
 wasmer deploy
-```
+````
 
 2025-09-02 Wk 36 Tue - 12:19
 

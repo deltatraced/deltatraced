@@ -1,10 +1,8 @@
-
 # 1 Journal
 
+* [x] 
 
-- [x]
-
-From [[#^spawn-howto-9f5c66]] in [[#4.1 Paint.exe crashed with error code 0xDEADFEED]]
+From [^spawn-howto-9f5c66](000%20Open%20the%20Windows%20Registery%20to%20fix%20Paint.exe!.md#spawn-howto-9f5c66) in [4.1 Paint.exe crashed with error code 0xDEADFEED](000%20Open%20the%20Windows%20Registery%20to%20fix%20Paint.exe!.md#41-paintexe-crashed-with-error-code-0xdeadfeed)
 
 2025-08-12 Wk 33 Tue - 13:24
 
@@ -18,4 +16,4 @@ Now this is your first encounter with non-linearity! We have just solved this Ho
 
 If you're using Obsidian with my settings here, you can put your editor cursor in those links and do `Ctrl + . ` to enter them quickly.
 
-Let's return to [[#^spawn-howto-9f5c66|our spawner]]!
+Let's return to [our spawner](000%20Open%20the%20Windows%20Registery%20to%20fix%20Paint.exe!.md#spawn-howto-9f5c66)!

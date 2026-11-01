@@ -1,15 +1,15 @@
 ---
-parent: "[[002 Move credit_store_demo project to deltachives]]"
-spawned_by: "[[000 Modularize shi shell use in credit store demo]]"
+parent: '[[002 Move credit_store_demo project to deltachives]]'
+spawned_by: '[[000 Modularize shi shell use in credit store demo]]'
 context_type: investigation
 status: done
 ---
 
-Parent: [[002 Move credit_store_demo project to deltachives]]
+Parent: [002 Move credit_store_demo project to deltachives](../002%20Move%20credit_store_demo%20project%20to%20deltachives.md)
 
-Spawned by: [[000 Modularize shi shell use in credit store demo]]
+Spawned by: [000 Modularize shi shell use in credit store demo](../tasks/000%20Modularize%20shi%20shell%20use%20in%20credit%20store%20demo.md)
 
-Spawned in: [[000 Modularize shi shell use in credit store demo#^spawn-invst-3cfcad|^spawn-invst-3cfcad]]
+Spawned in: [^spawn-invst-3cfcad](../tasks/000%20Modularize%20shi%20shell%20use%20in%20credit%20store%20demo.md#spawn-invst-3cfcad)
 
 # 1 Journal
 
@@ -29,7 +29,7 @@ For arguments,
 
 We created an experiment file `expt000` to capture some ideas here.
 
-```rust
+````rust
 fn main() {
     let person = Person {};
 
@@ -49,20 +49,20 @@ That search engine is your friend! Just go ask it about Food.
 Meow!
 That search engine is your friend! Just go ask it about Art.
 ???
-```
+````
 
 These are the two signatures:
 
-```rust
+````rust
 fn discuss(talker: &impl Talk)
 fn conversate<T: Talk>(talker: &T)
-```
+````
 
 They perform the same function, but `conversate` in this case is more versatile as it can be specialized to the exact implementation via `conversate::<Cat>` for example. It also gives us all type information right in call site, which is useful.
 
-![[Pasted image 20250918211939.png]]
+![Pasted image 20250918211939.png](../../../../../../../../../attachments/Pasted%20image%2020250918211939.png)
 
-![[Pasted image 20250918212407.png]]
+![Pasted image 20250918212407.png](../../../../../../../../../attachments/Pasted%20image%2020250918212407.png)
 
 This information is lost with `impl Talk`, so prefer to use [generic parameters](https://doc.rust-lang.org/reference/items/generics.html).
 
@@ -82,7 +82,7 @@ In my context,
 
 I'm getting this error:
 
-```rust
+````rust
 error[E0790]: cannot call associated function on trait without specifying the corresponding `impl` type
   --> src/drivers/shell.rs:34:23
    |
@@ -91,10 +91,10 @@ error[E0790]: cannot call associated function on trait without specifying the co
 ...
 34 |     let shell_state = InternalShellState::init_shell_state()
    |                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ cannot call associated function of trait
-```
+````
 
 2025-09-18 Wk 38 Thu - 23:14 +03:00
 
 This is reproduced in `expt000`,
 
-![[Pasted image 20250918231512.png]]
+![Pasted image 20250918231512.png](../../../../../../../../../attachments/Pasted%20image%2020250918231512.png)

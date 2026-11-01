@@ -2,29 +2,29 @@
 context_type: entry
 ---
 
-Parent: [[lan/2026/main/entry/006 Now Logs/006 Now Logs]]
+Parent: [lan/2026/main/entry/006 Now Logs/006 Now Logs](../006%20Now%20Logs.md)
 
-Spawned by: [[lan/2026/main/entry/006 Now Logs/entry/001 End of Week Log]]
+Spawned by: [lan/2026/main/entry/006 Now Logs/entry/001 End of Week Log](001%20End%20of%20Week%20Log.md)
 
-Spawned in: [[lan/2026/main/entry/006 Now Logs/entry/001 End of Week Log#^spawn-entry-8c131b|^spawn-entry-8c131b]]
+Spawned in: [^spawn-entry-8c131b](001%20End%20of%20Week%20Log.md#spawn-entry-8c131b)
 
-Prev: [[002 EOW Log 26 Wk 38]]
+Prev: [002 EOW Log 26 Wk 38](002%20EOW%20Log%2026%20Wk%2038.md)
 
-Next: [[005 EOW Log 26 Wk 40]]
+Next: [005 EOW Log 26 Wk 40](../../007%20Thought%20Stream%20Weeks/entry/005%20EOW%20Log%2026%20Wk%2040.md)
 
 # Journal
 
 2026-09-28 Wk 40 Mon - 23:01 +03:00
 
-[[002 TSW 26 Wk 39]]
+[002 TSW 26 Wk 39](../../007%20Thought%20Stream%20Weeks/entry/002%20TSW%2026%20Wk%2039.md)
 
-Like the previous week [[002 EOW Log 26 Wk 38]], we're continuing the 3D printing project, and also CQTS Lecture note studying for cubical agda.
+Like the previous week [002 EOW Log 26 Wk 38](002%20EOW%20Log%2026%20Wk%2038.md), we're continuing the 3D printing project, and also CQTS Lecture note studying for cubical agda.
 
 2026-09-28 Wk 40 Mon - 23:02 +03:00
 
 On the 3D Printing side,
 
-At the beginning of week 39 I was diagnosing setting failures that cause me to do bad prints with PETG filament. 
+At the beginning of week 39 I was diagnosing setting failures that cause me to do bad prints with PETG filament.
 
 I didn't seem to be able do good prints with the PETG settings from https://github.com/Ankermgmt/prusaslicer-ankermake-ce-profiles. But doing it with the AnkerMake v1.5.21 default PETG Black settings seems to work alright.
 
@@ -38,9 +38,9 @@ https://www.youtube.com/watch?v=00lXbrWMZwo
 
 There are also some small defects in the PETG prints:
 
-![[Pasted image 20260928232321.png]]
+![Pasted image 20260928232321.png](../../../../../../attachments/Pasted%20image%2020260928232321.png)
 
-![[Pasted image 20260928232333.png]]
+![Pasted image 20260928232333.png](../../../../../../attachments/Pasted%20image%2020260928232333.png)
 
 Not exactly sure what causes this, although some of them could at least be cleaned up manually more.
 

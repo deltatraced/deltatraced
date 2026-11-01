@@ -2,17 +2,17 @@
 context_type: entry
 ---
 
-Parent: [[lan/2026/topic/logs/000 Records/wikiproc/000 Wiki Proc Error Source Records/000 Wiki Proc Error Source Records]]
+Parent: [lan/2026/topic/logs/000 Records/wikiproc/000 Wiki Proc Error Source Records/000 Wiki Proc Error Source Records](../000%20Wiki%20Proc%20Error%20Source%20Records.md)
 
-Spawned by: [[lan/2026/topic/logs/000 Records/wikiproc/000 Wiki Proc Error Source Records/000 Wiki Proc Error Source Records]]
+Spawned by: [lan/2026/topic/logs/000 Records/wikiproc/000 Wiki Proc Error Source Records/000 Wiki Proc Error Source Records](../000%20Wiki%20Proc%20Error%20Source%20Records.md)
 
-Spawned in: [[lan/2026/topic/logs/000 Records/wikiproc/000 Wiki Proc Error Source Records/000 Wiki Proc Error Source Records#^spawn-entry-8199af|^spawn-entry-8199af]]
+Spawned in: [^spawn-entry-8199af](../000%20Wiki%20Proc%20Error%20Source%20Records.md#spawn-entry-8199af)
 
 ---
 
 # Message
 
-```rust
+````rust
    Compiling leptos v0.8.19
 error[E0308]: mismatched types
    --> /home/lan/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/leptos-0.8.19/src/hydration/mod.rs:178:5
@@ -32,11 +32,11 @@ error[E0308]: mismatched types
 
 For more information about this error, try `rustc --explain E0308`.
 error: could not compile `leptos` (lib) due to 1 previous error
-```
+````
 
 # Versions
 
-```yaml
+````yaml
 # in Cargo.toml
 [dependencies]
 leptos = { version = "0.8.0" }
@@ -47,22 +47,23 @@ leptos_axum = { version = "0.8.0", optional = true }
 leptos_meta = { version = "0.8.0" }
 tokio = { version = "1", features = ["rt-multi-thread"], optional = true }
 wasm-bindgen = { version = "0.2.106", optional = true }
-```
+````
 
 # Description
 
 You get this error message if you have the edition in `Cargo.toml` as `2018`.
+
 # Reproduction
 
 From https://github.com/leptos-rs/leptos,
 
 Just follow the instructions
 
-```sh
+````sh
 cargo install cargo-leptos --locked
 cargo leptos new --git https://github.com/leptos-rs/start-axum
 cd [your project name]
-```
+````
 
 But then in `Cargo.toml`, change the edition from `2021` to `2018`
 

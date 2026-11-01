@@ -1,6 +1,7 @@
 ---
 status: done
 ---
+
 # 1 Objective
 
 Capturing any documentation on this project prior to this point of 2025-08-02 Wk 31 Sat - 10:39.
@@ -23,10 +24,11 @@ A Formalism of PWM typical duty cycle to be varied with `a` from 0 to 1
 
 [desmos simulation 2](https://www.desmos.com/calculator/2upmz8gsp4).
 
-> I've modeled embedding a load signal like a sin(t) into the PWM,
-> `a` can be modified for a fixed duty cycle shown in blue (slightly shifted up for clarity),
-> while `b` and `c` are parameters for the sin signal converted to the variable
-> PWM duty cycle
+ > 
+ > I've modeled embedding a load signal like a sin(t) into the PWM,
+ > `a` can be modified for a fixed duty cycle shown in blue (slightly shifted up for clarity),
+ > while `b` and `c` are parameters for the sin signal converted to the variable
+ > PWM duty cycle
 
 [desmos simulation 3](https://www.desmos.com/calculator/dpzwieksjr).
 
@@ -64,13 +66,13 @@ April 29 2024
 
 [Transistor 2N3906 (PNP)](https://www.onsemi.com/pdf/datasheet/2n3906-d.pdf).
 
-For a PNP transistor to conduct, Vb < Ve - 0.7V usually.
+For a PNP transistor to conduct, Vb \< Ve - 0.7V usually.
 
 Facing the square side, Left to right: Emitter, Base, Collector
 
 The symbol has an arrow on the emitter down pointing *towards* the base. This means PNP. If it was pointing *away*, it would be NPN. For PNP, current flows from emitter to collector, as indicated by the arrow on the emitter towards the base.
 
-To satisfy the condition Vb < Ve - 0.7V, we connect Ve to VCC. This lets it conduct on Vb=0 -> 0 < VCC - 0.7V and not conduct on Vb=VCC -> VCC </< VCC - 0.7V
+To satisfy the condition Vb \< Ve - 0.7V, we connect Ve to VCC. This lets it conduct on Vb=0 -> 0 \< VCC - 0.7V and not conduct on Vb=VCC -> VCC \</\< VCC - 0.7V
 
 Judging by the amplitude of the output sound, I seem to get a louder signal. However, it is strange that VCC also outputs sound (and a kind of sinusoid), which might mean that this system ground is not attenuating the cap current.
 

@@ -1,20 +1,20 @@
 ---
-parent: "[[000 Wiki Proc introduction-to-cubical archive]]"
-spawned_by: "[[000 Wiki Proc introduction-to-cubical archive]]"
+parent: '[[000 Wiki Proc introduction-to-cubical archive]]'
+spawned_by: '[[000 Wiki Proc introduction-to-cubical archive]]'
 context_type: entry
 ---
 
-Parent: [[000 Wiki Proc introduction-to-cubical archive]]
+Parent: [000 Wiki Proc introduction-to-cubical archive](../000%20Wiki%20Proc%20introduction-to-cubical%20archive.md)
 
-Spawned by: [[000 Wiki Proc introduction-to-cubical archive]]
+Spawned by: [000 Wiki Proc introduction-to-cubical archive](../000%20Wiki%20Proc%20introduction-to-cubical%20archive.md)
 
-Spawned in: [[000 Wiki Proc introduction-to-cubical archive#^spawn-entry-279326|^spawn-entry-279326]]
+Spawned in: [^spawn-entry-279326](../000%20Wiki%20Proc%20introduction-to-cubical%20archive.md#spawn-entry-279326)
 
 # 1 Journal
 
 2026-05-05 Wk 19 Tue - 17:58 +03:00
 
-```haskell
+````haskell
 iterateⁿ-predℤ-square : {x : A} → (p : x ≡ x) → (n : ℤ) → Square (iterateⁿ p (predℤ n)) (iterateⁿ p n) refl p
 -- Exercise:
 iterateⁿ-predℤ-square p (pos zero)    i j = p (i ∨ ~ j) -- Use a connection
@@ -34,7 +34,7 @@ iterateⁿ-predℤ-square p (pos (suc n)) = Sq₀ -- Try `∙-filler` for `p`
     -- ∙-filler : (p : x ≡ y) (q : y ≡ z) → Square p (p ∙ q) refl q
     -- Sq₀ = {!∙-filler p (Sq₁)!}
     -- Sq₀ i = {! ∙-filler p (Sq₁ i) i !}
-```
+````
 
 I spent a long time just trying to somehow get `∙-filler` and `Sq₁` to somehow fit together, but they didn't.
 
@@ -44,14 +44,14 @@ I was expecting this problem would be solved by induction, and I had to use `∙
 
 Now having problems with this
 
-```haskell
+````haskell
 iterateⁿ-predℤ-square p (negsuc n) = Sq₀ -- Try `∙-filler` for `sym p`
   where
     Sq₀ : Square (iterateⁿ p (negsuc n) ∙ sym p) (iterateⁿ p (negsuc n)) refl p
     Sq₀ i j = {!∙-filler (iterateⁿ p (negsuc n) ∙ sym p) p i j !}
-```
+````
 
-```
+````
 Goal and Context
 
 Agda v2.8.0
@@ -71,7 +71,7 @@ j = i0 ⊢ refl i
 j = i1 ⊢ p i 
 i = i0 ⊢ (iterateⁿ p (negsuc n) ∙ sym p) j 
 i = i1 ⊢ ((iterateⁿ p (negsuc n) ∙ sym p) ∙ p) j
-```
+````
 
 I need `sym p` and `p` to cancel for `i = i1` for all this to match.
 
@@ -79,11 +79,11 @@ I need `sym p` and `p` to cancel for `i = i1` for all this to match.
 
 This is it! Just had to come at it from the other direction rather than adding too much and hoping to cancel
 
-```haskell
+````haskell
 iterateⁿ-predℤ-square p (negsuc n) = Sq₀ -- Try `∙-filler` for `sym p`
   where
     Sq₁ : Square (iterateⁿ p (negsuc n)) (iterateⁿ p (negsuc n) ∙ sym p) refl (sym p)
     Sq₁ = ∙-filler (iterateⁿ p (negsuc n)) (sym p)
     Sq₀ : Square (iterateⁿ p (negsuc n) ∙ sym p) (iterateⁿ p (negsuc n)) refl p
     Sq₀ i j = Sq₁ (~ i) j
-```
+````

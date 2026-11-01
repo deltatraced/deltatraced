@@ -1,14 +1,14 @@
-#post #process
+\#post #process
 
-- [1 Objective](#1-objective)
-- [2 Process and Deliverables](#2-process-and-deliverables)
-- [2.1 Overview](#21-overview)
-- [2.2 Public by default](#22-public-by-default)
-- [3 Different categories of writing](#3-different-categories-of-writing)
-- [3.1 Notes (Process)](#31-notes-process)
-- [3.2 Posts (Deliverable)](#32-posts-deliverable)
-- [3.3 Documentation (Deliverable)](#33-documentation-deliverable)
-- [4 On Use of Large Language Models (LLMs)](#4-on-use-of-large-language-models-llms)
+* [1 Objective](#1-objective)
+* [2 Process and Deliverables](#2-process-and-deliverables)
+* [2.1 Overview](#21-overview)
+* [2.2 Public by default](#22-public-by-default)
+* [3 Different categories of writing](#3-different-categories-of-writing)
+* [3.1 Notes (Process)](#31-notes-process)
+* [3.2 Posts (Deliverable)](#32-posts-deliverable)
+* [3.3 Documentation (Deliverable)](#33-documentation-deliverable)
+* [4 On Use of Large Language Models (LLMs)](#4-on-use-of-large-language-models-llms)
 
 # 1 Objective
 
@@ -41,6 +41,7 @@ By contrast, notes are often taken private, so we get to see deliverables but th
 # 3 Different categories of writing
 
 When writing, three different categories are considered. Each with its own mode of operation and optimizing for different goals.
+
 ## 3.1 Notes (Process)
 
 Notes are often written as the work is done and in those cases optimize for recording efficiency and to allow the creator to organize their thoughts and clarify next moves.
@@ -53,9 +54,10 @@ Notes may be edited as they are written to ensure accuracy, but they generally s
 
 When reading notes, remember that they are written with the creator's methodology and the tasks at hand as the focus. They may not be linear or made to be easily digestible to a reader. Posts are written with readers in mind, but notes serve creation.
 
-Writing posts, documentation, programming, researching, etc. Those are all creative acts and can have associated note entries for them. For example, this post itself has associated notes in [[001 Writing for Note Taking Philosophy]]. In general, posts will not refer to notes but only to other posts or deliverables. But an exception has been made for demonstration purposes.
+Writing posts, documentation, programming, researching, etc. Those are all creative acts and can have associated note entries for them. For example, this post itself has associated notes in [001 Writing for Note Taking Philosophy](../../archived/2026-05-21_2026/topic/write/entries/2025/archived/001%20Writing%20for%20Note%20Taking%20Philosophy/001%20Writing%20for%20Note%20Taking%20Philosophy.md). In general, posts will not refer to notes but only to other posts or deliverables. But an exception has been made for demonstration purposes.
 
 Tasks, projects, documentation, posts, etc. are deliverables and they can have corresponding notes. Notes absorb the uncertainties and interim research, execution, planning, evaluation, and any general stream-of-consciousness about the deliverable. By keeping all of this out of the deliverables, they can remain concise and effective at accomplishing their purpose.
+
 ## 3.2 Posts (Deliverable)
 
 Posts, like this entry, are written with readers in mind first. This involves much more editing than for notes since posts are deliverables that should be clearly written, serve their proposed purpose, and be easy to understand by readers. This is in contrast with notes which serve more as historical records of the creation of a deliverable.
@@ -72,7 +74,7 @@ If documentation is included in note repositories, it is clearly marked as docum
 
 # 4 On Use of Large Language Models (LLMs)
 
-[edited 2026-09-04 Wk 36 Fri - 13:21 +03:00]
+\[edited 2026-09-04 Wk 36 Fri - 13:21 +03:00\]
 
 This note repository, `deltatraced`, has come to be my way for expressing my joy for striving for exactness with my work.
 

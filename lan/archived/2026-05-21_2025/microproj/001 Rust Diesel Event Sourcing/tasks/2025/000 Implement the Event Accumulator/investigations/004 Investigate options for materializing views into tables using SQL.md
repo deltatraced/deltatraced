@@ -1,15 +1,15 @@
 ---
-parent: "[[000 Implement the Event Accumulator]]"
-spawned_by: "[[000 To materialize grouped events and accumulated objects into tables via software]]"
+parent: '[[000 Implement the Event Accumulator]]'
+spawned_by: '[[000 To materialize grouped events and accumulated objects into tables via software]]'
 context_type: investigation
 status: done
 ---
 
-Parent: [[000 Implement the Event Accumulator]]
+Parent: [000 Implement the Event Accumulator](../000%20Implement%20the%20Event%20Accumulator.md)
 
-Spawned by: [[000 To materialize grouped events and accumulated objects into tables via software]]
+Spawned by: [000 To materialize grouped events and accumulated objects into tables via software](../judgments/000%20To%20materialize%20grouped%20events%20and%20accumulated%20objects%20into%20tables%20via%20software.md)
 
-Spawned in: [[000 To materialize grouped events and accumulated objects into tables via software#^spawn-invst-f54b9e|^spawn-invst-f54b9e]]
+Spawned in: [^spawn-invst-f54b9e](../judgments/000%20To%20materialize%20grouped%20events%20and%20accumulated%20objects%20into%20tables%20via%20software.md#spawn-invst-f54b9e)
 
 # 1 Journal
 
@@ -23,7 +23,7 @@ They explain in this [stackoverflow post](https://stackoverflow.com/questions/13
 
 2025-10-03 Wk 40 Fri - 09:05 +03:00
 
-From to [[001 Use of views and CTEs with sqlite3 and diesel-rs]],
+From to [001 Use of views and CTEs with sqlite3 and diesel-rs](001%20Use%20of%20views%20and%20CTEs%20with%20sqlite3%20and%20diesel-rs.md),
 
 [sqldocs.org sqlite views post](https://sqldocs.org/sqlite-database/sqlite-views/)
 
@@ -35,13 +35,13 @@ sqlite documentation can be found here: [sqlite.org docs](https://sqlite.org/doc
 
 2025-10-03 Wk 40 Fri - 09:49 +03:00
 
-Let's continue the work from the sql in [[002 Investigate group by logic for frame and span to include up to span]]
+Let's continue the work from the sql in [002 Investigate group by logic for frame and span to include up to span](002%20Investigate%20group%20by%20logic%20for%20frame%20and%20span%20to%20include%20up%20to%20span.md)
 
 2025-10-03 Wk 40 Fri - 10:16 +03:00
 
 Tutorials on sqlite trigger include [1](https://www.mssqltips.com/sqlservertip/7429/sql-triggers-for-inserts-updates-and-deletes-on-a-table/) [2](https://www.sqlitetutorial.net/sqlite-trigger/) [3 (for instead of)](https://www.sqlitetutorial.net/sqlite-instead-of-triggers/)
 
-Sqlite Trigger Tutorial [2](https://www.sqlitetutorial.net/sqlite-trigger/) includes example usage of `RAISE` for email validation. Adding to [[000 Resources encountered during event accumulator impl]]
+Sqlite Trigger Tutorial [2](https://www.sqlitetutorial.net/sqlite-trigger/) includes example usage of `RAISE` for email validation. Adding to [000 Resources encountered during event accumulator impl](../entries/000%20Resources%20encountered%20during%20event%20accumulator%20impl.md)
 
 2025-10-03 Wk 40 Fri - 11:22 +03:00
 
@@ -57,7 +57,7 @@ We can use [sql insert into select tut](https://www.w3schools.com/SQL/sql_insert
 
 2025-10-03 Wk 40 Fri - 11:59 +03:00
 
-```sql
+````sql
 CREATE TRIGGER trg_update_coin_store_hist
 	AFTER INSERT ON coin_store_events
 BEGIN
@@ -65,17 +65,17 @@ BEGIN
 	SELECT t1.*
 	FROM v_coin_store_hist AS t1;
 END;
-```
+````
 
 gives us
 
-```
+````
 Parse error near line 131: table coin_store_hist has 8 columns but 7 values were supplied
-```
+````
 
 Despite we set it to autoincrement IDs in
 
-```sql
+````sql
 CREATE TABLE coin_store_hist (
   id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
   grp_id INTEGER NOT NULL,
@@ -86,15 +86,15 @@ CREATE TABLE coin_store_hist (
   person TEXT NOT NULL,
   coins INTEGER NOT NULL
 );
-```
+````
 
 We can use
 
-```
+````
 row_number() over () as id
-```
+````
 
-```sql
+````sql
 CREATE TRIGGER trg_update_coin_store_hist
 	AFTER INSERT ON coin_store_events
 BEGIN
@@ -104,13 +104,13 @@ BEGIN
 		t1.*
 	FROM v_coin_store_hist AS t1;
 END;
-```
+````
 
 Now the issue is that it will be duplicating over the items on each insert event. We need to clear it.
 
 As per [sql_delete tut](https://www.w3schools.com/sql/sql_delete.asp),
 
-```sql
+````sql
 CREATE TRIGGER trg_update_coin_store_hist
 	AFTER INSERT ON coin_store_events
 BEGIN
@@ -121,7 +121,7 @@ BEGIN
 		t1.*
 	FROM v_coin_store_hist AS t1;
 END;
-```
+````
 
 With this we compute the table each time on event insert!
 
@@ -133,7 +133,7 @@ Note that to test this we had to move all the inserts to the end.
 
 Here is the new updated experiment:
 
-```sql
+````sql
 -- in events.sql
 CREATE TABLE coin_store_diffs (
   id INTEGER NOT NULL PRIMARY KEY,
@@ -296,15 +296,15 @@ INSERT INTO coin_store_events (opt_diff_id, ev_action, span, frame, created_on_t
 ;
 
 .save "events.db"
-```
+````
 
-```sh
+````sh
 cat events.sql | sqlite3 && vd events.db
-```
+````
 
-![[Pasted image 20251003121458.png]]
+![Pasted image 20251003121458.png](../../../../../../../../../attachments/Pasted%20image%2020251003121458.png)
 
-![[Pasted image 20251003121525.png]]
+![Pasted image 20251003121525.png](../../../../../../../../../attachments/Pasted%20image%2020251003121525.png)
 
 The views have been materialized into tables, all in SQL!
 
@@ -312,18 +312,18 @@ The views have been materialized into tables, all in SQL!
 
 Let's test if this also works through visidata.
 
-![[Pasted image 20251003122215.png]]
+![Pasted image 20251003122215.png](../../../../../../../../../attachments/Pasted%20image%2020251003122215.png)
 
-```sh
+````sh
 date +%s.%N
 
 # out
 1759483426.073928817
-```
+````
 
-![[Pasted image 20251003122446.png]]
+![Pasted image 20251003122446.png](../../../../../../../../../attachments/Pasted%20image%2020251003122446.png)
 
-![[Pasted image 20251003122526.png]]
+![Pasted image 20251003122526.png](../../../../../../../../../attachments/Pasted%20image%2020251003122526.png)
 
 `zCtrl+S` for both to commit the changes.
 
@@ -335,7 +335,7 @@ Actually just doing a reload with Ctrl+R brings the changes!
 
 Just gotta be mindful about the event timestamps so that insertions go to the right frames.
 
-![[Pasted image 20251003123718.png]]
+![Pasted image 20251003123718.png](../../../../../../../../../attachments/Pasted%20image%2020251003123718.png)
 
 2025-10-03 Wk 40 Fri - 12:38 +03:00
 
@@ -347,23 +347,23 @@ We can do one more thing. In order to give the user general history building cap
 
 It works! An arbitrary query now can be used to update the partial history!
 
-```sql
+````sql
 DELETE FROM coin_store_events_grouped_partial;
 
 INSERT INTO coin_store_events_grouped_partial
 SELECT * 
 FROM coin_store_events_grouped
 WHERE obj_id <> 1;
-```
+````
 
-![[Pasted image 20251003133514.png]]
-![[Pasted image 20251003133538.png]]
+![Pasted image 20251003133514.png](../../../../../../../../../attachments/Pasted%20image%2020251003133514.png)
+![Pasted image 20251003133538.png](../../../../../../../../../attachments/Pasted%20image%2020251003133538.png)
 
 2025-10-03 Wk 40 Fri - 13:40 +03:00
 
 Now for the ever growing experiment again. We will simplify all of this with some automation later on.
 
-```sql
+````sql
 -- in events.db
 CREATE TABLE coin_store_diffs (
   id INTEGER NOT NULL PRIMARY KEY,
@@ -603,4 +603,4 @@ FROM coin_store_events_grouped
 WHERE obj_id <> 1;
 
 .save "events.db"
-```
+````

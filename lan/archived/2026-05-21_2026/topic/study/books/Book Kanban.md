@@ -6,40 +6,28 @@ kanban-plugin: list
 
 ## Backlog
 
-- [ ] Math
-
+* [ ] Math
 
 ## Todo
 
-
-
 ## Active
 
-- [ ] Math
-- [ ] [[lan/archived/2026-05-21_2026/topic/study/books/math/2025/000 A transition to Advanced Mathematics/README|A Transition to Advanced Mathematics]]
-- [ ] [[lan/archived/2026-05-21_2026/topic/study/books/math/2025/001 Probability - Theory and Examples/README|Probability - Theory and Examples]]
-
+* [ ] Math
+* [ ] [A Transition to Advanced Mathematics](math/2025/000%20A%20transition%20to%20Advanced%20Mathematics/README.md)
+* [ ] [Probability - Theory and Examples](math/2025/001%20Probability%20-%20Theory%20and%20Examples/README.md)
 
 ## Done
 
-
-
 ## Rejected
-
-
 
 ## Blocked
 
-
-
 ## Archived
 
-
-
-
-
 %% kanban:settings
-```
+
+````
 {"kanban-plugin":"list","list-collapse":[false,false,false,false,false,false,false]}
-```
+````
+
 %%

@@ -2,15 +2,15 @@
 context_type: entry
 ---
 
-Parent: [[lan/2026/topic/concept/000 Atomic/wiki/003 Wiki Clusterline Concepts/003 Wiki Clusterline Concepts]]
+Parent: [lan/2026/topic/concept/000 Atomic/wiki/003 Wiki Clusterline Concepts/003 Wiki Clusterline Concepts](../003%20Wiki%20Clusterline%20Concepts.md)
 
-Spawned by: [[lan/2026/topic/concept/000 Atomic/wikiproc/003 Wiki Proc Clusterline Concepts/003 Wiki Proc Clusterline Concepts]]
+Spawned by: [lan/2026/topic/concept/000 Atomic/wikiproc/003 Wiki Proc Clusterline Concepts/003 Wiki Proc Clusterline Concepts](../../../wikiproc/003%20Wiki%20Proc%20Clusterline%20Concepts/003%20Wiki%20Proc%20Clusterline%20Concepts.md)
 
-Spawned in: [[lan/2026/topic/concept/000 Atomic/wikiproc/003 Wiki Proc Clusterline Concepts/003 Wiki Proc Clusterline Concepts#^spawn-entry-24e442|^spawn-entry-24e442]]
+Spawned in: [^spawn-entry-24e442](../../../wikiproc/003%20Wiki%20Proc%20Clusterline%20Concepts/003%20Wiki%20Proc%20Clusterline%20Concepts.md#spawn-entry-24e442)
 
 ---
 
-[[020 Learning is an apprenticeship to signs]]. But we often engage in premature self-judgment instead. I try to draw a painting, and immediately my mind may focus on how bad my drawing of hands is. This redirects my attention from engaging with art, to instead thinking more about my self; my social status; my image of my own capabilities, and so on.
+[020 Learning is an apprenticeship to signs](020%20Learning%20is%20an%20apprenticeship%20to%20signs.md). But we often engage in premature self-judgment instead. I try to draw a painting, and immediately my mind may focus on how bad my drawing of hands is. This redirects my attention from engaging with art, to instead thinking more about my self; my social status; my image of my own capabilities, and so on.
 
 Part of learning art is being able to produce art that is appealing to us. To draw good hands; but the self-judgment "I am bad at drawing hands" is opaque, self-centered, and distracts from the technical signs of what actually produces good art. It may be a useful signal to reorient us in where to practice next, but risks becoming a solid belief that distorts us from seeing what about our engagement with art produces those results.
 

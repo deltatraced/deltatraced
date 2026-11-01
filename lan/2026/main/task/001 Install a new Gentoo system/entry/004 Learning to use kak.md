@@ -2,11 +2,11 @@
 context_type: entry
 ---
 
-Parent: [[lan/2026/main/task/001 Install a new Gentoo system/001 Install a new Gentoo system]]
+Parent: [lan/2026/main/task/001 Install a new Gentoo system/001 Install a new Gentoo system](../001%20Install%20a%20new%20Gentoo%20system.md)
 
-Spawned by: [[lan/2026/main/task/001 Install a new Gentoo system/task/004 Setup a new code editor for new gentoo]]
+Spawned by: [lan/2026/main/task/001 Install a new Gentoo system/task/004 Setup a new code editor for new gentoo](../task/004%20Setup%20a%20new%20code%20editor%20for%20new%20gentoo.md)
 
-Spawned in: [[lan/2026/main/task/001 Install a new Gentoo system/task/004 Setup a new code editor for new gentoo#^spawn-entry-717e09|^spawn-entry-717e09]]
+Spawned in: [^spawn-entry-717e09](../task/004%20Setup%20a%20new%20code%20editor%20for%20new%20gentoo.md#spawn-entry-717e09)
 
 # Journal
 
@@ -46,4 +46,4 @@ Used to be able to do `ce` to delete word in vim... Now we can do `ec` (and `wc`
 
 Hmm I am able to paste from a register with `p`
 
-`%` still works for going between parentheses, and now it selects. 
+`%` still works for going between parentheses, and now it selects.

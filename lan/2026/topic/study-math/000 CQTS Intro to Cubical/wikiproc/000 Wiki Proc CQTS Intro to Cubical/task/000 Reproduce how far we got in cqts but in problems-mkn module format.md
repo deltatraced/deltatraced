@@ -3,11 +3,11 @@ context_type: task
 status: todo
 ---
 
-Parent: [[lan/2026/topic/study-math/000 CQTS Intro to Cubical/wikiproc/000 Wiki Proc CQTS Intro to Cubical/000 Wiki Proc CQTS Intro to Cubical]]
+Parent: [lan/2026/topic/study-math/000 CQTS Intro to Cubical/wikiproc/000 Wiki Proc CQTS Intro to Cubical/000 Wiki Proc CQTS Intro to Cubical](../000%20Wiki%20Proc%20CQTS%20Intro%20to%20Cubical.md)
 
-Spawned by: [[lan/2026/topic/study-math/000 CQTS Intro to Cubical/wikiproc/000 Wiki Proc CQTS Intro to Cubical/entry/001 Proc CQTS retract equiv]]
+Spawned by: [lan/2026/topic/study-math/000 CQTS Intro to Cubical/wikiproc/000 Wiki Proc CQTS Intro to Cubical/entry/001 Proc CQTS retract equiv](../entry/001%20Proc%20CQTS%20retract%20equiv.md)
 
-Spawned in: [[lan/2026/topic/study-math/000 CQTS Intro to Cubical/wikiproc/000 Wiki Proc CQTS Intro to Cubical/entry/001 Proc CQTS retract equiv#^spawn-task-89aed8|^spawn-task-89aed8]]
+Spawned in: [^spawn-task-89aed8](../entry/001%20Proc%20CQTS%20retract%20equiv.md#spawn-task-89aed8)
 
 # What?
 
@@ -21,7 +21,7 @@ First we setup the project structure, and then we carry on to reimplement the so
 
 2026-08-24 Wk 35 Mon - 00:19 +03:00
 
-Spawn [[lan/2026/topic/study-math/000 CQTS Intro to Cubical/wikiproc/000 Wiki Proc CQTS Intro to Cubical/task/001 Setup two mikan projects and have one depend on the other through problems-mkn git root]] ^spawn-task-ae85d1
+Spawn [lan/2026/topic/study-math/000 CQTS Intro to Cubical/wikiproc/000 Wiki Proc CQTS Intro to Cubical/task/001 Setup two mikan projects and have one depend on the other through problems-mkn git root](001%20Setup%20two%20mikan%20projects%20and%20have%20one%20depend%20on%20the%20other%20through%20problems-mkn%20git%20root.md) ^spawn-task-ae85d1
 
 2026-08-24 Wk 35 Mon - 03:24 +03:00
 
@@ -29,11 +29,11 @@ Now that we can have modules and dependencies, let's start bringing in things we
 
 2026-08-24 Wk 35 Mon - 03:44 +03:00
 
-```haskell
+````haskell
 -- in /home/lan/src/cloned/gh/CQTS/branches/introduction-to-cubical@solve/lectures/1--Type-Theory/1-1--Types-and-Functions.lagda.md
 double : ℕ → ℕ
 double x = 2 · x
-```
+````
 
 Okay, we need to define ℕ to be able to write down the definition of `double`  in `cqts-lect1.agda`. Its definition is in `/home/lan/src/cloned/gh/CQTS/branches/introduction-to-cubical@solve/lectures/Library/Prelude.lagda.md`
 
@@ -41,29 +41,29 @@ Okay, we need to define ℕ to be able to write down the definition of `double` 
 
 I wonder why this inconsistency with agda mode input:
 
-```
+````
 aₐ a_b a_c a_d aₑ a_f a_g aₕ aᵢ aⱼ aₖ aₗ aₘ aₙ aₒ aₚ a_q aᵣ aₛ aₜ aᵤ a̬ a_w aₓ a_y a_z
-```
+````
 
-- https://wiki.portal.chalmers.se/agda/Main/Community
-- $\to$ https://agda.zulipchat.com/#recent
+* https://wiki.portal.chalmers.se/agda/Main/Community
+* $\to$ https://agda.zulipchat.com/#recent
 
-[#general > agda-mode inconsistent subscript letters @ 💬](https://agda.zulipchat.com/#narrow/channel/238741-general/topic/agda-mode.20inconsistent.20subscript.20letters/near/618390085)
+[\#general > agda-mode inconsistent subscript letters @ 💬](https://agda.zulipchat.com/#narrow/channel/238741-general/topic/agda-mode.20inconsistent.20subscript.20letters/near/618390085)
 
 superscript has inconsistencies too:
 
-```
+````
 aᵃ aᵇ aᶜ aᵈ aᵉ aᶠ aᵍ aʰ aⁱ aʲ aᵏ a⃖ aᵐ aⁿ aᵒ aᵖ a𐞥 a⃗ aˢ aᵗ aᵘ ǎ aʷ aˣ aʸ aᶻ
 aᴬ aᴮ aĈ aᴰ aᴱ aꟳ aᴳ aᴴ aᴵ aᴶ aᴷ aᴸ aᴹ aᴺ aᴼ aᴾ aꟴ aᴿ aŜ aᵀ aᵁ aⱽ aᵂ âX aŶ aẐ
-```
+````
 
 2026-08-25 Wk 35 Tue - 09:05 +03:00
 
-Spawn [[003 mkn If I do not specify the universe levels of type arguments - are they assumed type 0?]] ^spawn-invst-756aad
+Spawn [003 mkn If I do not specify the universe levels of type arguments - are they assumed type 0?](../investigation/003%20mkn%20If%20I%20do%20not%20specify%20the%20universe%20levels%20of%20type%20arguments%20-%20are%20they%20assumed%20type%200%3F.md) ^spawn-invst-756aad
 
 2026-08-27 Wk 35 Thu - 07:38 +03:00
 
-```haskell
+````haskell
 -- in /home/lan/src/idea/cb/lan22h-experiments/problems-mkn/proj/gh/cqts/introduction-to-cubical/cqts-lect1/src/cqts-lect1.agda
 Σ-map¹ :
   {ℓ₁ ℓ₂ ℓ₃ ℓ₄ : Level}
@@ -76,7 +76,7 @@ Spawn [[003 mkn If I do not specify the universe levels of type arguments - are 
   → (Σ[ a ∈ A ] B a → Σ[ a' ∈ A' ] B' a')
 
 Σ-map¹ f g (a , b) = f a , g b
-```
+````
 
 This type should be more strict than this. We should be able to map to an `Σ[ a' ∈ A' ] B' a'` where `a' ≡ f a` holds, but this should do for this review and we're just in the first lecture.
 
@@ -86,12 +86,12 @@ In `cqts-lect1.agda` I have been giving outputs of different universe levels tha
 
 2026-08-28 Wk 35 Fri - 05:40 +03:00
 
-```haskell
+````haskell
 -- in /home/lan/src/idea/cb/lan22h-experiments/problems-mkn/proj/gh/cqts/introduction-to-cubical/cqts-lect1/src/lect-1-2-inductive-types.agda
 data List (A : Type) : Type where
   [] : List A
   _::_ : A → List A → List A
-```
+````
 
 I think it's good to think of the constructors to an inductive type as being their own declared objects, rather than as functions.
 
@@ -100,5 +100,3 @@ So here we have an object `[] : List A`. We also have objects whose definition d
 This is why we don't have to supply a definition for this as if it were a function declaration. The last enter in the constructor is the type in question and signifies that it is an object of that type, but it may depend on some other data, including of the type itself.
 
 2026-09-06 Wk 36 Sun - 09:55 +03:00
-
-
